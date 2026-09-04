@@ -66,7 +66,7 @@ capitulos/
 - **Departamento / Provincia / Localidad:** Santa Cruz / Ñuflo de Chávez / San Julián — Distrito Educativo San Julián
 - **Programa o carrera:** SISTEMAS INFORMÁTICOS (Técnico Medio) — Nivel Secundario Comunitario Productivo, Bachillerato Técnico Humanístico (BTH)
 - **Título del proyecto de grado:** SISTEMA WEB DE INSCRIPCIÓN PARA EL MÓDULO TECNOLÓGICO PRODUCTIVO SAN JULIÁN BTH — VERSIÓN 2.0
-- **Subtítulo o nombre comercial del producto/servicio:** Optimización de la Plataforma de Registro Estudiantil y Asignación de Cupos
+- **Subtítulo o nombre comercial del producto/servicio:** Integración de Autoservicio de Credenciales, Matriculación Documental Auditada y Asignación Automatizada por Unidad Educativa
 - **Nombre(s) completo(s) del/los autor(es):** Heidy Quiroga Colque y Sharon Liz Quino
 - **Correo electrónico del autor:** [DATO PENDIENTE]
 - **Nombre completo del tutor/asesor:** Ing. Juan Vladimir Ramirez Flores

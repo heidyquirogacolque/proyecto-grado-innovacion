@@ -38,19 +38,19 @@ Todos los archivos fuente de los capítulos se encuentran en el directorio `capi
 * **Archivo de ensamble:** `capitulos/04_desarrollo_innovacion/main.tex`
 * **Propósito:** Explicar exhaustivamente la construcción técnica de la solución.
 * **Archivos y Contenido:**
-  * `diseno.tex`: Diseño técnico del producto/servicio, arquitectura y especificaciones técnicas (`tablas/especificaciones_tecnicas_ejemplo.tex`).
-  * `planificacion.tex`: Planificación y cronograma de fases de desarrollo (`tablas/cronograma_ejemplo.tex`).
-  * `recursos.tex`: Recursos humanos, materiales, equipos y financieros empleados.
-  * `calculo_costos.tex`: Cálculo de costos de inversión, operativos y costos totales (`tablas/costos_ejemplo.tex`).
+  * `diseno.tex`: Diseño técnico del producto/servicio, arquitectura 3 capas y especificaciones técnicas (`tablas/especificaciones_tecnicas_ejemplo.tex` 1.5 MB, >100 req/min).
+  * `planificacion.tex`: Planificación y cronograma de 10 fases Feb-Nov 2026 (`tablas/cronograma_ejemplo.tex` + Gantt `fig:gantt` booktabs).
+  * `recursos.tex`: Recursos humanos (2 tablas: `estructura_organizacional_ejemplo.tex` 34 h/sem + `recursos_humanos_roles.tex` Rol/Encargado/Tarea aleatoria 3 filas), materiales (`inversiones_ejemplo.tex`) y financieros (`costos_ejemplo.tex`).
+  * `calculo_costos.tex`: Cálculo de costos de inversión (`costos_produccion_ejemplo.tex` 13556 Bs), operativos fijos (`costos_fijos_ejemplo.tex` 190 Bs/mes 4 ítems) y variables (`costos_variables_ejemplo.tex` 100 Bs/ciclo 4 ítems) + sostenibilidad (0.50/20000).
 
 ### Capítulo 5: Metodología (`capitulos/05_metodologia/`)
 * **Archivo de ensamble:** `capitulos/05_metodologia/main.tex`
 * **Propósito:** Detallar el enfoque científico y métodos usados para validar la innovación.
 * **Archivos y Contenido:**
-  * `tipo_investigacion.tex`: Tipo de investigación, nivel y diseño metodológico.
-  * `poblacion_muestra.tex`: Población objetivo y tamaño de muestra de prueba.
-  * `tecnicas_instrumentos.tex`: Técnicas e instrumentos de recolección de datos.
-  * `analisis_datos.tex`: Procedimiento de procesamiento y análisis estadístico/funcional.
+  * `tipo_investigacion.tex`: Tipo de investigación mixto, alcance descriptivo-propositivo-evaluativo, diseño pre-experimental + operacionalización VI+7 VD (`tab:operacionalizacion`).
+  * `poblacion_muestra.tex`: Población humana (400→60+5 conveniencia) y unidades técnicas (7 carreras ×5 corridas Benchmark).
+  * `tecnicas_instrumentos.tex`: Técnicas Likert piloto 5 + entrevista + pruebas caja negra Apache Benchmark 2.4.58.
+  * `analisis_datos.tex`: Procedimiento descriptiva + Antes vs Después + logs ACID + costo-beneficio + criterio validación 95%.
 
 ### Capítulo 6: Estrategia de Mejora y Proyección (`capitulos/06_estrategia_mejora/`)
 * **Archivo de ensamble:** `capitulos/06_estrategia_mejora/main.tex`
@@ -70,10 +70,10 @@ Todos los archivos fuente de los capítulos se encuentran en el directorio `capi
 ### Capítulo 8: Proyecto de Vida (`capitulos/08_proyecto_vida/`)
 * **Archivo de ensamble:** `capitulos/08_proyecto_vida/main.tex`
 * **Propósito:** Relacionar el desarrollo tecnológico con el futuro vocacional y profesional del estudiante.
-* **Contenido Principal:**
-  * Proyección universitaria y profesional en carreras técnicas y científicas.
-  * Habilidades técnicas (hard skills) y socioemocionales (soft skills) consolidadas.
-  * Compromiso ético y de transferencia tecnológica hacia la comunidad.
+* **Archivos y Contenido:**
+  * `aspiraciones.tex`: Aspiraciones académicas y profesionales (UAGRM Ingeniería Sistemas/Informática).
+  * `competencias.tex`: Competencias técnicas (HTML5/CSS3/JS/PHP/PostgreSQL) y socioemocionales desarrolladas.
+  * `compromiso.tex`: Compromiso ético y proyección comunitaria (talleres alfabetización digital, emprendimiento).
 
 ### Capítulo 9: Conclusiones y Recomendaciones (`capitulos/09_conclusiones_recomendaciones/`)
 * **Archivo de ensamble:** `capitulos/09_conclusiones_recomendaciones/main.tex`

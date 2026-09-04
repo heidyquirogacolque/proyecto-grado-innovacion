@@ -7,7 +7,22 @@ Este archivo define la estructura, reglas y flujos de trabajo del proyecto para 
 ### 📋 Resumen del Proyecto
 
 * **Nombre:** Proyecto de Grado BTH - Innovación Tecnológica (LaTeX Modular)
-* **Objetivo:** Plantilla modular y parametrizada en LaTeX para la redacción de proyectos de grado y tesis académicas bajo la modalidad de Innovación Tecnológica.
+* **Plantilla:** Proyecto de Grado BTH — Innovación Tecnológica (LaTeX Modular) - Repositorio `proyecto-grado-innovacion`
+* **Institución:** MÓDULO TECNOLÓGICO PRODUCTIVO SAN JULIÁN — DISTRITO EDUCATIVO SAN JULIÁN — SANTA CRUZ - BOLIVIA
+* **Especialidad Técnica BTH:** SISTEMAS INFORMÁTICOS (TÉCNICO MEDIO)
+* **Título del Proyecto:** SISTEMA WEB DE INSCRIPCIÓN PARA EL MÓDULO TECNOLÓGICO PRODUCTIVO SAN JULIÁN BTH --- VERSIÓN 2.0
+* **Subtítulo / Prototipo:** Integración de Autoservicio de Credenciales, Matriculación Documental Auditada y Asignación Automatizada por Unidad Educativa
+* **Autores:** Heidy Quiroga Colque / Sharon Liz Quino
+* **Tutor / Asesor:** Ing. Juan Vladimir Ramirez Flores (Tutor Guía)
+* **Localidad y Gestión:** San Julián, Santa Cruz -- Bolivia | 2026
+* **Objetivo General:** Desarrollar e implementar el SISTEMA WEB DE INSCRIPCIÓN PARA EL MÓDULO TECNOLÓGICO PRODUCTIVO SAN JULIÁN BTH --- VERSIÓN 2.0, que integre la recuperación autónoma de credenciales, la matriculación documental auditada y la asignación automatizada a cursos y paralelos por unidad educativa de procedencia, para garantizar a cerca de 400 postulantes anuales un proceso escolar equitativo, eficiente y transparente en la gestión 2026.
+* **Objetivos Específicos:**
+  1. Diagnosticar las deficiencias operativas y los requerimientos funcionales del proceso de inscripción y matriculación del BTH de San Julián, mediante encuestas estructuradas a 60 estudiantes postulantes y entrevistas semiestructuradas a 5 funcionarios, durante el primer bimestre de 2026.
+  2. Diseñar la arquitectura del sistema, el modelo de base de datos relacional normalizado y la interfaz de usuario para los tres módulos críticos: autoservicio de credenciales (validación C.I. + fecha de nacimiento, criterio de diseño: resolución objetivo $<$2 min), matriculación documental auditada y distribución automatizada a cursos y paralelos por unidad educativa.
+  3. Desarrollar los módulos de la Versión 2.0 bajo arquitectura cliente-servidor (HTML5, CSS3, JavaScript, PHP y PostgreSQL 16 con control transaccional ACID y bloqueo pesimista row-level locking), con validaciones reactivas y comprobantes PDF con código de verificación.
+  4. Validar el funcionamiento operativo y el impacto socioeducativo del sistema mediante pruebas funcionales de caja negra, pruebas de concurrencia y estrés ($>$100 peticiones/min, latencia $<$1.2 s, 0 sobrecupos) y medición de satisfacción de usuarios (encuesta Likert a 60 estudiantes; meta: usabilidad $\geq$90\% y tasa de errores $<$5\%).
+  5. Evaluar el costo-beneficio y la sostenibilidad de la solución, contrastando la inversión total de 13556 Bs (100\% recursos propios) y el costo operativo de 190 Bs/mes frente al ahorro colectivo superior a 20000 Bs por gestión en pasajes, refrigerios y papelería, con costo marginal por postulante $<$0.50 Bs y recuperación en menos de una gestión.
+* **Tema / Dominio Técnico:** Desarrollo de software web — Sistema de inscripción escolar — Arquitectura cliente-servidor 3 capas (HTML5/CSS3/JS, PHP 8.2/Apache 2.4, PostgreSQL 16.4 ACID row-level locking), Self-Service Password Reset (C.I.+fecha nacimiento), gestión documental y distribución por unidad educativa
 * **Normativa:** Cumple con el Reglamento de Graduación del Bachillerato Técnico Humanístico (BTH) en Bolivia (Resolución Ministerial RM 0912/2023, ver [docs/REGLAMENTO_BTH__RM_0912_2023.pdf](docs/REGLAMENTO_BTH__RM_0912_2023.pdf)).
 * **Modalidad Implementada:** **Innovación Tecnológica** estructurada en 9 capítulos dentro del directorio `capitulos/`.
 
@@ -40,6 +55,10 @@ proyecto-grado-innovacion/
 ├── main.tex                                # Entrada principal de compilación LaTeX (\input{capitulos/index.tex})
 ├── README.md                               # Guía del usuario para compilar y usar la plantilla
 ├── AGENTS.md                               # Instrucciones y reglas para Agentes de IA (este archivo)
+├── GLOSARIO.md                             # Glosario de términos normativos, metodológicos y técnicos
+├── ESTILO.md                               # Guía editorial y tiempos verbales por capítulo
+├── ESTADO.md                               # Matriz de seguimiento de completitud por archivo
+├── METODOLOGIA.md                          # Resumen metodológico transversal (enfoque, población, técnicas, métricas)
 ├── ESTRUCTURA_CAPITULOS.md                 # Detalle temático de los 9 capítulos de Innovación Tecnológica
 ├── compilar.sh                             # Script ejecutable de compilación (pdflatex + biber) y limpieza
 ├── estilos/
@@ -52,7 +71,7 @@ proyecto-grado-innovacion/
 │   ├── dedicatoria.tex                     # Dedicatorias (\begin{estilodedicatoria}{Dedicatoria})
 │   └── resumen.tex                         # Resúmenes (\capitulopreliminar, \palabrasclave, \keywords, \simikuna)
 ├── capitulos/                              # Modalidad: Innovación Tecnológica (Capítulos 1 al 9)
-│   ├── index.tex                           # Ensamble de los 9 capítulos
+│   ├── index.tex                           # Ensamble maestro de los 9 capítulos
 │   ├── 01_introduccion/                    # Cap. 1: main.tex, contexto_general.tex, motivacion_pertinencia.tex, contribucion_esperada.tex
 │   ├── 02_planteamiento_problema/          # Cap. 2: main.tex, diagnostico.tex, identificacion_problema.tex, formulacion_problema.tex, objetivos.tex, justificacion.tex
 │   ├── 03_marco_referencial/               # Cap. 3: main.tex, antecedentes.tex, bases_teoricas.tex, marco_conceptual.tex
@@ -60,22 +79,24 @@ proyecto-grado-innovacion/
 │   ├── 05_metodologia/                     # Cap. 5: main.tex, tipo_investigacion.tex, poblacion_muestra.tex, tecnicas_instrumentos.tex, analisis_datos.tex
 │   ├── 06_estrategia_mejora/               # Cap. 6: main.tex, plan_mejora.tex, proyeccion_escalamiento.tex
 │   ├── 07_resultados/                      # Cap. 7: main.tex, resultados_obtenidos.tex, beneficios_impacto.tex, comparacion_antes_despues.tex
-│   ├── 08_proyecto_vida/                   # Cap. 8: main.tex
+│   ├── 08_proyecto_vida/                   # Cap. 8: main.tex → aspiraciones.tex, competencias.tex, compromiso.tex (modularizado)
 │   └── 09_conclusiones_recomendaciones/    # Cap. 9: main.tex, conclusiones.tex, recomendaciones.tex
 ├── tablas/                                 # Tablas independientes incluidas vía \input{}
 │   ├── README.md                           # Guía para estructurar tablas APA 7 con booktabs
-│   ├── tabla_ejemplo.tex                   # Plantilla base de tabla
-│   ├── estudio_mercado_ejemplo.tex         # Tabla de análisis de mercado
-│   ├── estructura_organizacional_ejemplo.tex # Matriz de estructura organizacional, cargos y remuneraciones
-│   ├── inversiones_ejemplo.tex             # Plan de inversión
-│   ├── costos_produccion_ejemplo.tex       # Tabla de costos operativos de producción
-│   ├── indicadores_financieros_ejemplo.tex # Resumen de indicadores financieros y punto de equilibrio
-│   ├── resultados_piloto_ejemplo.tex       # Resultados obtenidos en prueba piloto vs metas
-│   ├── costos_ejemplo.tex                  # Resumen de estructura de costos
-│   ├── cronograma_ejemplo.tex              # Cronograma de actividades por fases
-│   ├── especificaciones_tecnicas_ejemplo.tex # Matriz de especificaciones técnicas
-│   ├── plan_mejora_ejemplo.tex             # Matriz del plan de mejora continua
-│   └── comparacion_antes_despues_ejemplo.tex # Matriz de comparación antes vs después
+│   ├── brechas_diagnostico.tex             # Brechas operativas 2022-2025 (Cap.2)
+│   ├── estructura_organizacional_ejemplo.tex # Asignación roles y carga horaria 34 h/sem
+│   ├── recursos_humanos_roles.tex          # Distribución rol-encargado-tarea aleatoria (Cap.4)
+│   ├── inversiones_ejemplo.tex             # Inventario recursos materiales y tecnológicos
+│   ├── costos_produccion_ejemplo.tex       # Presupuesto inversión 13556 Bs
+│   ├── costos_fijos_ejemplo.tex            # Costos fijos 190.00 Bs/mes (4 ítems)
+│   ├── costos_variables_ejemplo.tex        # Costos variables 100.00 Bs/ciclo (4 ítems)
+│   ├── costos_ejemplo.tex                  # Financiamiento 100.0%
+│   ├── cronograma_ejemplo.tex              # Cronograma 10 fases Feb-Nov 2026
+│   ├── especificaciones_tecnicas_ejemplo.tex # Especificaciones 3 capas + validación OE4
+│   ├── plan_mejora_ejemplo.tex             # Matriz plan mejora 5 cols (con Responsable)
+│   ├── comparacion_antes_despues_ejemplo.tex # Comparación -90%/-100% (8 indicadores)
+│   ├── indicadores_financieros_ejemplo.tex # Indicadores sostenibilidad (<1 gestión)
+│   └── tabla_ejemplo.tex                   # Plantilla base
 ├── codigo/                                 # Código fuente y scripts (.py, .cpp, .ino, .sql, etc.)
 │   ├── README.md                           # Guía para almacenar e importar código externo
 │   └── ejemplo_controlador.py              # Script de prueba importable vía \lstinputlisting
@@ -88,7 +109,7 @@ proyecto-grado-innovacion/
 │   ├── marco_portada_bth.png               # Marco decorativo perimetral azul de la portada BTH
 │   └── logo_bth.png                        # Logotipo institucional oficial del Módulo San Julián
 ├── bibliografia/                           # Bibliografía BibLaTeX (APA 7ma Edición)
-│   └── referencias.bib                     # Base de datos de referencias (.bib) formateada en APA 7
+│   └── referencias.bib                     # Base de datos de referencias (.bib) 16 entradas verificadas
 ├── anexos/                                 # Apéndices del documento
 │   ├── README.md                           # Guía para añadir y estructurar anexos
 │   ├── index.tex                           # Ensamble de anexos con \capitulopreliminar{ANEXOS}
@@ -159,7 +180,7 @@ proyecto-grado-innovacion/
   - Citas múltiples: `\parencite{clave1, clave2}`.
 * **Inclusión de la Lista de Referencias:** Se imprime en `main.tex` mediante `\printbibliography[heading=bibintoc, title={Bibliografía}]`.
 * **Numeración de Capítulos:** La bibliografía y los anexos deben ser no numerados (`numberless` en `titlesec`) para evitar prefijos decimales o de capítulo.
-* **Numeración de Página:** Toda la sección de Bibliografía y Anexos debe estar totalmente limpia de números de página y cabeceras mediante la macro global `\configurarseccionfinal` (`\pagestyle{empty}` y `\assignpagestyle{\chapter}{empty}`).
+* **Numeración de Página:** Toda la sección de Bibliografía y Anexos debe estar totalmente limpia de números de página y cabeceras mediante la macro global `\configurarseccionfinal` (`\pagestyle{empty}` y `\assignpagestyle{\chapter}{empty}`) — aplicada antes de bibliografía y anexos (`main.tex:38,42`).
 * **Estructura de Anexos:** Cada anexo individual debe declararse mediante `\seccionanexo{Título del Anexo}` para registrarse automáticamente en la tabla de contenidos sin numeración. El ensamble general en `anexos/index.tex` usa `\capitulopreliminar{ANEXOS}`.
 
 ### 6. Inserción y Verificación de Tablas e Imágenes
