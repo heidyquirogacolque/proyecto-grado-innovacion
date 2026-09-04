@@ -1,0 +1,52 @@
+\section{Diseño del producto o servicio}
+\label{sec:diseno}
+
+El SISTEMA WEB DE INSCRIPCIÓN PARA EL MÓDULO TECNOLÓGICO PRODUCTIVO SAN JULIÁN BTH --- VERSIÓN 2.0 ha sido concebido como una plataforma web integral que abarca la totalidad del ciclo de registro escolar en el MÓDULO TECNOLÓGICO PRODUCTIVO SAN JULIÁN. A diferencia de esquemas parciales, la solución unifica la preinscripción en línea realizada al cierre de la gestión previa con la confirmación de la matrícula formal y la organización académica en la gestión lectiva correspondiente.
+
+\subsection{Arquitectura modular de software}
+
+La solución técnica se estructura bajo una arquitectura cliente-servidor desacoplada en tres capas fundamentales:
+
+\begin{itemize}
+    \item \textbf{Capa de Presentación (Frontend):} Desarrollada con estándares abiertos HTML5, hojas de estilo CSS3 con diseño adaptable y scripts de validación reactiva en JavaScript. Se ejecuta directamente en el navegador del usuario (computador o teléfono móvil), permitiendo verificar formatos de carnet y datos obligatorios en tiempo real antes de enviar peticiones a la red.
+    \item \textbf{Capa de Lógica del Negocio (Backend):} Implementada en lenguaje PHP 8.x sobre servidor web Apache. Gestiona el procesamiento seguro de solicitudes, la validación de identidad para el restablecimiento de claves, las reglas de asignación documental y la lógica de agrupación en cursos y paralelos.
+    \item \textbf{Capa de Persistencia (Base de Datos):} Sustentada en el gestor relacional PostgreSQL 16. Implementa un esquema relacional normalizado con control estricto de transacciones bajo propiedades ACID y bloqueos a nivel de fila (row-level locking), garantizando la consistencia absoluta de las vacantes sin colisiones ni sobrecupos.
+\end{itemize}
+
+\subsection{Módulos funcionales del sistema}
+
+La plataforma integra los siguientes módulos especializados diseñados para dar respuesta directa a las problemáticas diagnosticadas:
+
+\begin{itemize}
+    \item \textbf{Módulo de Formulario Dinámico y Preinscripción:} Interfaz intuitiva y liviana que permite al postulante seleccionar su carrera de interés entre las siete especialidades técnicas habilitadas (Construcción Civil, Contaduría Pública, Electrónica, Gastronomía, Mecánica Automotriz, Sistemas Informáticos y Textiles y Confecciones) e ingresar sus datos personales y de contacto sin recargas innecesarias de página.
+    \item \textbf{Módulo de Control Transaccional de Vacantes:} Mecanismo automatizado que consulta y reserva cupos en tiempo real en la base de datos PostgreSQL, impidiendo la duplicidad de registros y asegurando que ninguna plaza sea asignada por encima del límite físico de cada taller.
+    \item \textbf{Módulo Autónomo de Recuperación de Credenciales:} Servicio de autoservicio (Self-Service Password Reset) que permite al estudiante recuperar su usuario o restablecer su contraseña de manera autónoma e inmediata mediante la validación de datos personales inequívocos (número de C.I. y fecha de nacimiento), erradicando las filas presenciales y evitando la pérdida del cupo vocacional.
+    \item \textbf{Módulo Administrativo de Matriculación Documental:} Herramienta administrativa para la gestión lectiva siguiente que permite a la secretaría del BTH registrar, cotejar y auditar en el sistema la presentación física de los requisitos obligatorios: libretas de calificaciones de 1ro a 3ro de secundaria, cédula de identidad de los tutores, fotocopia de carnet de identidad y certificado de nacimiento, completando el expediente digital formal.
+    \item \textbf{Módulo de Asignación a Cursos y Paralelos por Unidad Educativa:} Funcionalidad que distribuye y matricula automáticamente a los postulantes aceptados en cursos y paralelos específicos (tales como 4to A o 4to B) en función de la unidad educativa de procedencia a la que pertenecen, garantizando la articulación horaria y el equilibrio numérico en cada aula y taller.
+    \item \textbf{Generador de Comprobantes Digitales Oficiales:} Emisión instantánea de fichas de preinscripción y matrícula en formato PDF descargable e imprimible, provistas de un código alfanumérico único de verificación institucional.
+    \item \textbf{Panel de Control y Reportes para Directivos:} Interfaz administrativa que ofrece métricas en tiempo real sobre el estado de vacantes por carrera, porcentajes de matriculación documental completada y exportación de listas consolidadas por paralelo.
+\end{itemize}
+
+\subsection{Flujo operativo del ciclo completo de matrícula}
+
+La operación del sistema se articula en cinco fases correlativas:
+
+\begin{enumerate}
+    \item \textbf{Fase 1 (Preinscripción y reserva de cupo):} El postulante ingresa desde cualquier dispositivo móvil o PC, completa el formulario validado en cliente y reserva su vacante en la especialidad elegida durante el cierre de la gestión previa.
+    \item \textbf{Fase 2 (Soporte y recuperación autónoma):} En caso de olvido de credenciales, el usuario accede al módulo de recuperación, valida su identidad y restablece su acceso al instante sin acudir a ventanillas físicas.
+    \item \textbf{Fase 3 (Emisión de ficha preliminar):} El sistema genera y descarga el comprobante digital oficial de preinscripción con el que el estudiante acredita su cupo reservado.
+    \item \textbf{Fase 4 (Matriculación documental formal):} Al inicio de la gestión escolar siguiente, el estudiante presenta sus documentos físicos en secretaría, donde el personal verifica y tilda en la plataforma las libretas de 1ro a 3ro de secundaria, cédula de tutores, carnet y certificado de nacimiento.
+    \item \textbf{Fase 5 (Asignación académica en cursos y paralelos):} El sistema agrupa a los estudiantes en sus paralelos correspondientes según su colegio de origen, consolidando las listas de clase oficiales del BTH.
+\end{enumerate}
+
+\subsection{Especificaciones técnicas del software}
+
+En la Tabla~\ref{tab:especificaciones_tecnicas} se resumen los parámetros técnicos, tecnologías aplicadas y requerimientos de entorno que sustentan la plataforma.
+
+\input{tablas/especificaciones_tecnicas_ejemplo.tex}
+
+\subsection{Utilidad institucional y estándares de calidad}
+
+La utilidad de la plataforma es directa e inmediata: erradica las extenuantes filas nocturnas a la intemperie, descentraliza la atención institucional, democratiza el acceso a las plazas técnicas y otorga total transparencia a la gestión del BTH en San Julián.
+
+Desde la perspectiva de calidad del software (ISO/IEC 25010 y directrices W3C), el sistema destaca por su alta usabilidad, con navegación intuitiva adaptada a usuarios de diversa destreza digital; fiabilidad y seguridad, resguardando la privacidad de los datos personales con contraseñas cifradas y control transaccional ACID; y eficiencia de desempeño, habiendo sido optimizado para consumir un promedio inferior a 1.5 megabytes de datos móviles por trámite, asegurando una operatividad ágil aun bajo coberturas celulares intermitentes en las zonas rurales del municipio.

@@ -1,0 +1,393 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{estilos/estilos}[2026/08/23 Configuración Modular de Estilos - Proyecto de Grado BTH]
+
+% ============================================================
+% 1. CARGAR CONFIGURACIÓN CENTRALIZADA
+% ============================================================
+\input{estilos/configuracion.tex}
+
+% ============================================================
+% 2. PAQUETES DE FORMATO, IDIOMA Y CODIFICACIÓN
+% ============================================================
+\RequirePackage[spanish, es-tabla]{babel}
+\RequirePackage[utf8]{inputenc}
+\RequirePackage[T1]{fontenc}
+\RequirePackage{etoolbox}
+
+% ============================================================
+% 3. CONTROL DE SILABACIÓN (DESACTIVAR GUIÓN DE FIN DE LÍNEA)
+% ============================================================
+\hyphenpenalty=10000
+\exhyphenpenalty=10000
+\righthyphenmin=62
+\lefthyphenmin=62
+\tolerance=2000
+\emergencystretch=3em
+\hbadness=2000
+
+% ============================================================
+% 4. DIMENSIONES DE PÁGINA Y MÁRGENES (Formato Carta BTH)
+% ============================================================
+% Carta: Izquierdo: 3.0 cm | Derecho, Superior e Inferior: 2.5 cm
+\RequirePackage{geometry}
+\geometry{
+    letterpaper,
+    top=2.5cm,
+    bottom=2.5cm,
+    left=3.0cm,
+    right=2.5cm,
+    headheight=15pt,
+    headsep=0pt
+}
+
+% ============================================================
+% 5. TIPOGRAFÍA, INTERLINEADO Y ESPACIADO DE PÁRRAFOS
+% ============================================================
+% Arial (helvet) para texto principal, Courier para código
+\RequirePackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\RequirePackage{courier}
+
+% Interlineado 1.5 en el cuerpo del texto
+\RequirePackage{setspace}
+\onehalfspacing
+
+% Espaciado estándar entre párrafos estilo Microsoft Word
+% Carga parskip con el espaciado posterior y sangría configurados centralmente
+\RequirePackage[
+    skip=\espacioposteriorparrafo,
+    indent=\sangriaprimeralinea
+]{parskip}
+
+% ============================================================
+% 6. COLORES INSTITUCIONALES Y DE DISEÑO
+% ============================================================
+\RequirePackage{xcolor}
+\definecolor{primary}{RGB}{24, 106, 59}      % Verde institucional
+\definecolor{secondary}{RGB}{35, 155, 86}    % Verde secundario
+\definecolor{darktext}{RGB}{33, 33, 33}      % Texto oscuro
+\definecolor{lightgray}{RGB}{245, 245, 245}  % Fondo claro
+
+% ============================================================
+% 7. FORMATO DE TÍTULOS (Normas APA 7ma Edición Adaptadas)
+% ============================================================
+\RequirePackage{titlesec}
+
+% Nivel 1 (\chapter) - Alineado a la izquierda, Negrita, sin palabra "Capítulo"
+\titleformat{\chapter}[block]
+  {\normalfont\Large\bfseries\setstretch{1.0}}
+  {\thechapter.}{0.5em}{}
+\titlespacing*{\chapter}{0pt}{-15pt}{10pt}
+
+% Nivel 1 sin numerar (Bibliografía, Anexos, Resumen)
+\titleformat{name=\chapter,numberless}[block]
+  {\normalfont\Large\bfseries\setstretch{1.0}}
+  {}{0pt}{}
+\titlespacing*{name=\chapter,numberless}{0pt}{-15pt}{20pt}
+
+% Nivel 2 (\section) - Alineado a la izquierda, Negrita
+\titleformat{\section}
+  {\normalfont\large\bfseries\setstretch{1.0}}
+  {\thesection}{1em}{}
+\titlespacing*{\section}{0pt}{12pt}{6pt}
+
+% Nivel 3 (\subsection) - Alineado a la izquierda, Negrita y Cursiva
+\titleformat{\subsection}
+  {\normalfont\large\bfseries\itshape\setstretch{1.0}}
+  {\thesubsection}{1em}{}
+\titlespacing*{\subsection}{0pt}{12pt}{6pt}
+
+% Nivel 4 (\subsubsection) - Sangría 1.27cm, Negrita, tipo run-in con punto
+\titleformat{\subsubsection}[runin]
+  {\normalfont\normalsize\bfseries\setstretch{1.0}}
+  {\thesubsubsection}{1em}{}[.]
+\titlespacing*{\subsubsection}
+  {1.27cm}{12pt}{0.5em}
+
+% Nivel 5 (\paragraph) - Sangría 1.27cm, Negrita y Cursiva, tipo run-in con punto
+\titleformat{\paragraph}[runin]
+  {\normalfont\normalsize\bfseries\itshape}
+  {\theparagraph}{1em}{}[.]
+\titlespacing*{\paragraph}
+  {1.27cm}{12pt}{0.5em}
+
+% ============================================================
+% 8. ENCABEZADOS Y PIES DE PÁGINA
+% ============================================================
+\RequirePackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\cfoot{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% ============================================================
+% 9. TABLAS, FIGURAS Y ROTULACIÓN (APA 7)
+% ============================================================
+\RequirePackage{graphicx}
+\graphicspath{{imagenes/}} % Directorio por defecto para imágenes
+\RequirePackage{booktabs}
+\RequirePackage{array}
+\RequirePackage{tabularx}
+\RequirePackage{adjustbox}
+\RequirePackage{caption}
+\RequirePackage{subcaption}
+\RequirePackage{eso-pic}
+
+% Configuración de etiquetas según Normas APA 7ma Edición
+\ifdefstring{\estilorotuloapa}{estricto}{%
+    % APA 7 Oficial: Número en negrita (línea 1) y título descriptivo en cursiva (línea 2)
+    \captionsetup{
+        font={small},
+        labelfont={bf},
+        textfont={it},
+        labelsep=newline,
+        justification=justified,
+        singlelinecheck=false,
+        skip=6pt
+    }
+}{%
+    % Variante adaptada: Rótulo y título en una sola línea
+    \captionsetup{
+        font={small},
+        labelfont={bf},
+        labelsep=colon,
+        justification=justified,
+        singlelinecheck=false,
+        skip=6pt
+    }
+}
+
+% Posición superior obligatoria para rótulos de tablas y figuras en APA 7
+\captionsetup[table]{position=top, skip=6pt}
+\captionsetup[figure]{position=top, skip=6pt}
+
+% Configuración para subfiguras comparativas
+\captionsetup[sub]{
+    font=footnotesize,
+    labelfont={bf},
+    labelsep=space,
+    textfont=normalfont
+}
+
+% Columnas flexibles automáticas con tabularx para tablas que respetan \textwidth
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}
+\newcolumntype{C}{>{\centering\arraybackslash}X}
+\newcolumntype{R}{>{\raggedleft\arraybackslash}X}
+
+% Espaciado vertical óptimo entre filas de tablas
+\renewcommand{\arraystretch}{1.15}
+
+% ============================================================
+% 10. LISTAS Y ENUMERACIONES
+% ============================================================
+\RequirePackage{enumitem}
+\setlist{noitemsep, topsep=3pt, leftmargin=1.5em}
+
+% ============================================================
+% 11. BIBLIOGRAFÍA APA 7ma EDICIÓN (BibLaTeX + Biber)
+% ============================================================
+\RequirePackage[autostyle]{csquotes}
+\RequirePackage[
+    style=apa,
+    backend=biber,
+    sortcites=true,
+    sorting=nyt
+]{biblatex}
+\addbibresource{bibliografia/referencias.bib}
+\DeclareLanguageMapping{spanish}{spanish-apa}
+
+% ============================================================
+% 12. ENLACES E HIPERVÍNCULOS
+% ============================================================
+\RequirePackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    citecolor=secondary,
+    urlcolor=primary,
+    pdfstartview=FitH,
+    pdftitle={\tituloproyecto},
+    pdfauthor={\autorproyecto},
+    pdfsubject={\modalidad\ - \especialidad},
+    pdfkeywords={BTH, Bolivia, \modalidad, \especialidad}
+}
+
+% ============================================================
+% 13. CÓDIGO FUENTE Y LENGUAJES DE PROGRAMACIÓN (Listings)
+% ============================================================
+\RequirePackage{listings}
+
+% Colores de sintaxis para listings
+\definecolor{codebg}{RGB}{248, 249, 250}
+\definecolor{codeborder}{RGB}{222, 226, 230}
+\definecolor{codekeyword}{RGB}{0, 51, 179}
+\definecolor{codestring}{RGB}{6, 125, 23}
+\definecolor{codecomment}{RGB}{115, 120, 130}
+\definecolor{codenumbers}{RGB}{140, 145, 155}
+\definecolor{codeidentifier}{RGB}{36, 41, 47}
+
+% Estilo predeterminado de código
+\lstdefinestyle{estilocodigo}{
+    backgroundcolor=\color{codebg},
+    commentstyle=\color{codecomment}\itshape,
+    keywordstyle=\color{codekeyword}\bfseries,
+    numberstyle=\tiny\color{codenumbers},
+    stringstyle=\color{codestring},
+    identifierstyle=\color{codeidentifier},
+    basicstyle=\ttfamily\footnotesize\setstretch{1.0},
+    columns=flexible,
+    breaklines=true,               % Activar ajuste y división automática de líneas (wordwrap)
+    breakatwhitespace=false,       % Permite ajustar en cualquier punto si la instrucción es larga
+    breakautoindent=true,          % Conserva la indentación del bloque en líneas envueltas
+    breakindent=1.5em,             % Sangría visual adicional para líneas continuadas
+    captionpos=b,
+    keepspaces=false,
+    numbers=left,
+    numbersep=8pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=4,
+    frame=single,
+    frameround=tttt,
+    rulecolor=\color{codeborder},
+    xleftmargin=1.8em,
+    framexleftmargin=1.5em,
+    xrightmargin=0.5em,
+    inputencoding=utf8,
+    extendedchars=true,
+    literate=
+        {á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1
+        {Á}{{\'A}}1 {É}{{\'E}}1 {Í}{{\'I}}1 {Ó}{{\'O}}1 {Ú}{{\'U}}1
+        {ñ}{{\~n}}1 {Ñ}{{\~N}}1
+        {¿}{{?`}}1 {¡}{{!`}}1
+        {ü}{{\"u}}1 {Ü}{{\"U}}1
+}
+
+% Activar estilo por defecto
+\lstset{style=estilocodigo}
+
+% Rótulos de código en español
+\renewcommand{\lstlistingname}{Código}
+\renewcommand{\lstlistlistingname}{Índice de Códigos}
+
+% Restaurar penalizaciones de partición para permitir wordwrap en listings
+\makeatletter
+\lst@AddToHook{Init}{\hyphenpenalty=50\exhyphenpenalty=50\tolerance=10000\hbadness=10000}
+\makeatother
+
+% ============================================================
+% 14. ENTORNO PARA DEDICATORIAS Y AGRADECIMIENTOS
+% ============================================================
+% Alinea el título y el contenido a la parte inferior en una misma hoja,
+% sin separación excesiva entre ellos y con registro automático en el TOC.
+\NewDocumentEnvironment{estilodedicatoria}{ o g }{%
+    \clearpage
+    \thispagestyle{plain}%
+    \IfValueTF{#1}{%
+        \phantomsection
+        \addcontentsline{toc}{chapter}{#1}%
+    }{%
+        \IfValueTF{#2}{%
+            \phantomsection
+            \addcontentsline{toc}{chapter}{#2}%
+        }{}%
+    }%
+    \vspace*{\fill}%
+    \begin{raggedleft}%
+    \IfValueTF{#1}{%
+        {\normalfont\Large\bfseries #1\par}%
+    }{%
+        \IfValueTF{#2}{%
+            {\normalfont\Large\bfseries #2\par}%
+        }{}%
+    }%
+    \itshape
+}{%
+    \par\end{raggedleft}%
+    \clearpage
+}
+
+% ============================================================
+% 15. COMANDOS PARA CAPÍTULOS PRELIMINARES Y RESUMEN
+% ============================================================
+% Capítulos preliminares no numerados con entrada automática en TOC
+\newcommand{\capitulopreliminar}[1]{%
+    \chapter*{#1}%
+    \addcontentsline{toc}{chapter}{#1}%
+}
+
+% Formato semántico para palabras clave en resúmenes
+\newcommand{\palabrasclave}[1]{\vspace{0.5cm}\noindent\textbf{Palabras clave:} #1\par}
+\newcommand{\keywords}[1]{\vspace{0.5cm}\noindent\textbf{Keywords:} #1\par}
+\newcommand{\simikuna}[1]{\vspace{0.5cm}\noindent\textbf{Simikuna:} #1\par}
+
+% ============================================================
+% 16. ESTILOS DE PÁGINA PARA SECCIONES FINALES (BIBLIOGRAFÍA Y ANEXOS)
+% ============================================================
+\newcommand{\configurarseccionfinal}{%
+    \pagestyle{empty}%
+    \assignpagestyle{\chapter}{empty}%
+}
+
+% ============================================================
+% 17. COMANDOS PARA SECCIONES DE ANEXOS
+% ============================================================
+\newcommand{\seccionanexo}[1]{%
+    \section*{#1}%
+    \addcontentsline{toc}{section}{#1}%
+}
+
+% ============================================================
+% 18. NOTAS DE TABLA Y FIGURAS (NORMAS APA 7)
+% ============================================================
+% Nota al pie de tabla según Normas APA 7ma Edición
+\newcommand{\notatabla}[1]{%
+    \par\vspace{4pt}%
+    {\small\textit{Nota.} #1\par}%
+}
+
+% Nota al pie de figura según Normas APA 7ma Edición
+\newcommand{\notafigura}[1]{%
+    \par\vspace{\espacionotafigura}%
+    {\small\textit{Nota.} #1\par}%
+}
+
+% ============================================================
+% 19. TIPOGRAFÍA Y FORMATO DE CARÁTULA
+% ============================================================
+\newcommand{\titulocaratula}[1]{{\LARGE\bfseries\color{primary} #1\par}}
+\newcommand{\subtitulocaratula}[1]{{\large\bfseries #1\par}}
+
+% ============================================================
+% 20. COMANDO SEMÁNTICO PARA FIGURAS E IMÁGENES (NORMAS APA 7)
+% ============================================================
+% Macro estandarizada para inserción ágil de figuras e imágenes
+% cumpliendo la estructura APA 7ma Edición:
+% - Rótulo y título ubicados ARRIBA de la imagen (\caption).
+% - Contenido visual centrado (\centering).
+% - Nota al pie opcional con formato semántico (\notafigura).
+%
+% Sintaxis: \incluirfigura[ancho]{archivo}{Título}{etiqueta}{Nota}
+%   #1 [ancho]    : Opcional. Ancho de la figura (por defecto \anchuraimagenpredeterminada).
+%   #2 {archivo}  : Obligatorio. Nombre del archivo en imagenes/ (ej: diagrama.png).
+%   #3 {Título}   : Obligatorio. Título descriptivo según APA 7 (arriba de la imagen).
+%   #4 {etiqueta} : Obligatorio. Clave para referencia cruzada \ref{} (ej: fig:mi_figura).
+%   #5 {Nota}     : Obligatorio (dejar {} si no aplica). Nota explicativa o fuente al pie.
+\NewDocumentCommand{\incluirfigura}{ O{\anchuraimagenpredeterminada} m m m +m }{%
+    \begin{figure}[htbp]
+        \centering
+        \caption{#3}
+        \label{#4}
+        \includegraphics[width=#1]{#2}
+        \ifblank{#5}{}{\notafigura{#5}}
+    \end{figure}%
+}
+
+% ============================================================
+% 21. ESTILOS Y MACROS MODULARES DE LA CARÁTULA OFICIAL BTH
+% ============================================================
+\RequirePackage{estilos/caratula}
+
+\endinput

@@ -1,0 +1,45 @@
+# ==========================================
+#  Vendor-Neutral AI Agent Ignore File
+# ==========================================
+
+# Excluir archivos compilados y de depuración de LaTeX
+*.aux
+*.log
+*.toc
+*.lof
+*.lot
+*.out
+*.bbl
+*.blg
+*.run.xml
+*.bcf
+*.fdb_latexmk
+*.fls
+*.synctex.gz
+*.upa
+*.upb
+*.listing
+*-blx.bib
+
+# Excluir binarios pesados y PDFs
+*.pdf
+main.pdf
+!docs/*.pdf
+
+# Excluir archivos auxiliares recursivamente
+capitulos/**/*.aux
+docs/**/*.aux
+preliminares/**/*.aux
+anexos/**/*.aux
+estilos/**/*.aux
+tablas/**/*.aux
+codigo/**/*.aux
+imagenes/**/*.aux
+
+# Directorios temporales y cachés de entornos/IDEs
+.antigravitycli/
+.cline/
+.cursor/
+.idea/
+.vscode/
+

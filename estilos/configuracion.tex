@@ -1,0 +1,159 @@
+% ============================================================
+%  CONFIGURACIÓN CENTRALIZADA DEL PROYECTO (BTH / ACADÉMICO)
+%  Modifique ÚNICAMENTE este archivo para personalizar todos los
+%  datos de la carátula, encabezados y metadatos del documento.
+% ============================================================
+
+% ------------------------------------------------------------
+% 1. DATOS INSTITUCIONALES (Normativa BTH - RM 0912/2023)
+% ------------------------------------------------------------
+\newcommand{\departamento}{SANTA CRUZ - BOLIVIA}
+\newcommand{\distritoeducativo}{DISTRITO EDUCATIVO SAN JULIÁN}
+\newcommand{\institucion}{MÓDULO TECNOLÓGICO PRODUCTIVO SAN JULIÁN}
+\newcommand{\facultad}{NIVEL SECUNDARIO COMUNITARIO PRODUCTIVO} % Opcional / Universidad
+
+% ------------------------------------------------------------
+% 2. MODALIDAD Y CARRERA / ESPECIALIDAD
+% ------------------------------------------------------------
+% Modalidad BTH: "INNOVACIÓN TECNOLÓGICA"
+\newcommand{\modalidad}{INNOVACIÓN TECNOLÓGICA}
+\newcommand{\especialidad}{SISTEMAS INFORMÁTICOS}
+\newcommand{\nivelformacion}{TÉCNICO MEDIO}
+
+% ------------------------------------------------------------
+% 3. DATOS DEL PROYECTO
+% ------------------------------------------------------------
+\newcommand{\tituloproyecto}{SISTEMA WEB DE INSCRIPCIÓN PARA EL MÓDULO TECNOLÓGICO PRODUCTIVO SAN JULIÁN BTH --- VERSIÓN 2.0}
+\newcommand{\subtituloproyecto}{Optimización de la Plataforma de Registro Estudiantil y Asignación de Cupos}
+
+% ------------------------------------------------------------
+% 4. DATOS DEL / DE LOS ESTUDIANTE(S) / AUTOR(ES)
+%    (El reglamento BTH permite proyectos individuales o en parejas)
+% ------------------------------------------------------------
+% Estudiante / Autor 1 (Obligatorio)
+\newcommand{\autoruno}{Heidy Quiroga Colque}
+\newcommand{\emailautoruno}{}
+
+% Estudiante / Autor 2 (Opcional: deje vacío si es individual)
+\newcommand{\autordos}{Sharon Liz Quino} % Ej: Sharon Liz Quino (dejar vacío si no aplica)
+\newcommand{\emailautordos}{}
+
+% Etiquetas descriptivas
+\newcommand{\etiquetaautor}{Postulantes:}
+
+% ------------------------------------------------------------
+% 5. DATOS DEL TUTOR / ASESOR GUÍA
+% ------------------------------------------------------------
+\newcommand{\tutorproyecto}{Ing. Juan Vladimir Ramirez Flores}
+\newcommand{\cargotutorproyecto}{Tutor Guía}
+\newcommand{\etiquetatutor}{Tutor:}
+
+% ------------------------------------------------------------
+% 6. LUGAR, GESTIÓN Y FECHA
+% ------------------------------------------------------------
+\newcommand{\lugarproyecto}{San Julián, Santa Cruz -- Bolivia}
+\newcommand{\gestionproyecto}{2026}
+\newcommand{\fechaproyecto}{2026}
+
+% ------------------------------------------------------------
+% 7. MACROS DE COMPATIBILIDAD (Para metadatos automáticos)
+% ------------------------------------------------------------
+\newcommand{\autorproyecto}{\autoruno\ifx\autordos\empty\else, \autordos\fi}
+\newcommand{\emailautor}{\emailautoruno}
+\newcommand{\programa}{\especialidad\ (\nivelformacion)}
+
+% ------------------------------------------------------------
+% 8. ESPACIADO DE PÁRRAFOS (Estilo Microsoft Word)
+% ------------------------------------------------------------
+% Espaciado posterior estándar después de cada párrafo:
+% - 8pt : Valor estándar predeterminado de Microsoft Word moderno (Office 2013-365)
+% - 6pt : Alternativa común para formato académico compacto
+% - 0pt : Formato LaTeX clásico (sin separación entre párrafos)
+\newcommand{\espacioposteriorparrafo}{8pt}
+
+% Sangría de primera línea del párrafo:
+% - 0pt    : Estándar en Microsoft Word cuando hay espaciado posterior (estilo bloque)
+% - 1.27cm : Estándar APA 7 tradicional (si se prefiere sangría sin espaciado posterior)
+\newcommand{\sangriaprimeralinea}{0pt}
+
+% ------------------------------------------------------------
+% 9. ESPACIADOS DE PRELIMINARES Y DIAGRAMACIÓN
+% ------------------------------------------------------------
+% Espacio superior vertical de compatibilidad (el entorno estilodedicatoria alinea al fondo con \vfill)
+\newcommand{\espaciosuperiordedicatoria}{3cm}
+
+% ------------------------------------------------------------
+% 10. CONFIGURACIÓN DE FIGURAS E IMÁGENES (NORMAS APA 7)
+% ------------------------------------------------------------
+% Ancho predeterminado estándar para figuras e ilustraciones:
+% Se recomienda 0.8\textwidth para mantener proporciones equilibradas
+% dentro de los márgenes de página carta (3.0 cm izq, 2.5 cm der).
+\newcommand{\anchuraimagenpredeterminada}{0.8\textwidth}
+
+% Espaciado vertical entre la parte inferior de la imagen y la nota al pie:
+\newcommand{\espacionotafigura}{4pt}
+
+% Estilo de presentación del rótulo (caption) para tablas y figuras:
+% - 'estricto' : Norma APA 7ma Edición oficial (2 líneas: número en negrita y título abajo en cursiva).
+% - 'enlinea'  : Formato adaptado compacto en 1 sola línea (ej. "Figura 1.1: Título de la figura").
+\newcommand{\estilorotuloapa}{estricto}
+
+% -------------------------------------------------------------------------
+% GUÍA RÁPIDA: CÓMO INSERTAR FIGURAS BAJO NORMAS APA 7MA EDICIÓN
+% -------------------------------------------------------------------------
+% Según las Normas APA 7ma Edición, las figuras siguen la misma convención
+% estructural y visual que las tablas:
+%
+% 1. RÓTULO Y TÍTULO ARRIBA DE LA IMAGEN:
+%    - Se colocan con el comando estándar \caption{...}.
+%    - El número de figura aparece en negrita (ej. "Figura 1.1:").
+%    - El título debe ser claro, conciso y explicativo.
+%
+% 2. CONTENIDO VISUAL CENTRADO:
+%    - La imagen debe estar centrada horizontalmente usando \centering.
+%    - Las imágenes deben almacenarse en la carpeta 'imagenes/' (.png, .jpg, .pdf).
+%    - Ajustar el ancho con [width=\anchuraimagenpredeterminada] o valor deseado.
+%
+% 3. NOTA AL PIE DE LA FIGURA (DEBAJO DE LA IMAGEN):
+%    - Se coloca obligatoriamente usando la macro semántica \notafigura{...}.
+%    - Imprime automáticamente el texto "Nota." en cursiva y el contenido aclaratorio.
+%    - Debe indicar la fuente o autoría:
+%      * De autoría propia: \notafigura{Elaboración propia.}
+%      * Con base en fuentes externas: \notafigura{Adaptado de \textcite{autor2024}.}
+%
+% FORMAS DE INCLUSIÓN EN EL DOCUMENTO:
+%
+% Forma 1: Mediante el entorno flotante estándar 'figure' (Recomendado):
+% \begin{figure}[htbp]
+%     \centering
+%     \caption{Diagrama de bloques funcional del sistema.}
+%     \label{fig:diagrama_bloques}
+%     \includegraphics[width=\anchuraimagenpredeterminada]{diagrama_bloques.png}
+%     \notafigura{Elaboración propia con base en especificaciones técnicas.}
+% \end{figure}
+%
+% Forma 2: Mediante la macro semántica '\incluirfigura' (Inserción rápida):
+% \incluirfigura[ancho opcional]{archivo}{Título}{clave_label}{Nota al pie}
+% Ejemplo:
+% \incluirfigura{diagrama_proceso.png}{Flujo de proceso productivo.}{fig:proceso}{Elaboración propia.}
+% -------------------------------------------------------------------------
+
+% ------------------------------------------------------------
+% 11. CONFIGURACIÓN DE PORTADA BTH (docs/portada.pdf)
+% ------------------------------------------------------------
+% Activar o desactivar el marco decorativo perimetral azul en la portada:
+% - 'true'  : Renderiza el marco azul con esquinas ornamentadas.
+% - 'false' : Portada limpia sin marco perimetral.
+\newcommand{\activarmarcobth}{true}
+
+% Recursos gráficos de la portada BTH
+\newcommand{\rutamarcobth}{imagenes/marco_portada_bth.png}
+\newcommand{\rutalogobth}{imagenes/logo_bth.png}
+
+% Dimensiones de marco y logotipo institucional
+\newcommand{\anchomarcobth}{468.8pt}
+\newcommand{\altomarcobth}{677.2pt}
+\newcommand{\alturalogobth}{5.8cm}
+
+% Fórmula oficial de titulación académica para el grado BTH (a lo mucho en 2 líneas)
+\newcommand{\formulagradobth}{PROYECTO DE INNOVACIÓN PARA OPTAR EL GRADO TÉCNICO MEDIO\\ EN \especialidad}

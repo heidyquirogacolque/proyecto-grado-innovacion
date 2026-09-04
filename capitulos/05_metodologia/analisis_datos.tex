@@ -1,0 +1,10 @@
+\section{Procedimiento de análisis de datos}
+\label{sec:analisis_datos}
+
+El procesamiento y análisis de la información recopilada se efectuó mediante la triangulación de métodos estadísticos, cualitativos y de auditoría de software:
+
+\begin{itemize}
+    \item \textbf{Estadística Descriptiva:} Tabulación computarizada de frecuencias absolutas y porcentuales relativas de las respuestas obtenidas en los cuestionarios de satisfacción, permitiendo caracterizar la percepción estudiantil sobre la usabilidad y autonomía del nuevo sistema.
+    \item \textbf{Análisis Comparativo de Métricas de Eficiencia (Antes vs.~Después):} Evaluación de contrastación operativa sobre variables críticas del servicio, tales como el tiempo promedio invertido en el trámite de recuperación de credenciales (reducción de horas o días de fila física a menos de 2 minutos en autoservicio) y el porcentaje de expedientes estudiantiles debidamente consolidados con respaldo documental en la base de datos.
+    \item \textbf{Auditoría de Logs e Integridad Transaccional:} Verificación de consistencia de los registros en PostgreSQL para certificar que el control de concurrencia impidió duplicidades en la reserva de vacantes y que la asignación a cursos y paralelos respetó estrictamente la pertenencia institucional de cada postulante.
+\end{itemize}

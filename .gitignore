@@ -1,0 +1,42 @@
+# ==========================================
+#  LaTeX Generated / Auxiliary Files
+# ==========================================
+*.aux
+*.log
+*.toc
+*.lof
+*.lot
+*.out
+*.bbl
+*.blg
+*.run.xml
+*.bcf
+*.fdb_latexmk
+*.fls
+*.synctex.gz
+*.upa
+*.upb
+*.listing
+*-blx.bib
+*.pdf
+!docs/*.pdf
+
+# Subdirectory auxiliaries
+capitulos/**/*.aux
+docs/**/*.aux
+preliminares/**/*.aux
+anexos/**/*.aux
+estilos/**/*.aux
+tablas/**/*.aux
+codigo/**/*.aux
+imagenes/**/*.aux
+
+# ==========================================
+#  IDE and Local Agent Cache Directories
+# ==========================================
+.antigravitycli/
+.cline/
+.cursor/
+.idea/
+.vscode/
+

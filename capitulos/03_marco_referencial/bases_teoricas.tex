@@ -1,0 +1,24 @@
+\section{Bases teóricas}
+\label{sec:bases_teoricas}
+
+El diseño e implementación del sistema web de inscripción se fundamenta en principios consolidados de las ciencias de la computación, la ingeniería de software y la gestión de información escolar:
+
+\subsection{Arquitectura Cliente-Servidor en Entornos Web}
+
+De acuerdo con \textcite{tanenbaum2021}, la arquitectura cliente-servidor constituye el modelo estructural predominante en internet. En esta arquitectura, la capa cliente (el navegador web en computadores o teléfonos inteligentes) se encarga de la captura, validación reactiva y presentación de la interfaz gráfica, mientras que la capa servidora (servidor web Apache y lenguaje PHP) ejecuta la lógica del negocio, procesa las solicitudes transaccionales e interactúa con el motor de base de datos relacional. Esta separación de responsabilidades garantiza modularidad, portabilidad y un mínimo consumo de ancho de banda en redes móviles de áreas intermedias.
+
+\subsection{Ingeniería de Software Web y Usabilidad Centrada en el Usuario}
+
+\textcite{pressman2020} definen la ingeniería de software web (WebE) como la aplicación metódica de principios disciplinados al desarrollo de aplicaciones seguras, escalables y mantenibles en la red. En entornos educativos con usuarios de diversa familiaridad tecnológica, la usabilidad resulta prioritaria. Se adoptan los principios de diseño centrado en el usuario, facilitando formularios limpios, retroalimentación reactiva ante omisiones y tiempos de respuesta ágiles que garantizan una experiencia de registro fluida y sin ambigüedades.
+
+\subsection{Seguridad Informática, Autenticación y Recuperación de Credenciales}
+
+La protección de los datos personales y el control de acceso al sistema se sustentan en los preceptos de seguridad de \textcite{stallings2021}, quien establece los principios de confidencialidad, integridad y disponibilidad. En particular, la gestión de identidades requiere mecanismos robustos de autenticación con contraseñas cifradas y funciones hash seguras en el servidor. Asimismo, la teoría de autoservicio de recuperación de credenciales (Self-Service Password Reset) postula que los sistemas modernos deben permitir la restauración autónoma de cuentas mediante validación de datos inequívocos del usuario (tales como número de cédula de identidad y fecha de nacimiento), erradicando la dependencia de soporte técnico presencial y previniendo el bloqueo involuntario del postulante.
+
+\subsection{Sistemas de Información y Gestión Documental Escolar}
+
+En la administración escolar contemporánea, los sistemas de información deben abarcar el ciclo integral del registro académico. La teoría de gestión documental institucional establece que la matrícula no concluye con una reserva preliminar de plaza, sino con la verificación probatoria y auditoría de los requisitos legales exigidos por el sistema educativo. El software debe proveer módulos de registro y cotejo de la documentación física presentada (libretas de calificaciones, cédulas de identidad y certificados de nacimiento), transformando expedientes dispersos en registros relacionales auditables con trazabilidad histórica.
+
+\subsection{Modelado Orientado a Objetos y Persistencia Transaccional ACID en PostgreSQL}
+
+Según \textcite{sommerville2020}, el modelado visual con el Lenguaje Unificado de Modelado (UML) permite proyectar de forma rigurosa la estructura de clases, entidades y diagramas de flujo antes de la construcción del código fuente. Por su parte, la persistencia y consistencia de los cupos por especialidad se garantiza mediante el motor relacional PostgreSQL \parencite{postgresql2025}, el cual cumple estrictamente las propiedades ACID (Atomicidad, Consistencia, Aislamiento y Durabilidad). Esto impide colisiones entre postulantes, garantiza que ninguna asignación quede inconclusa y asegura que el saldo de vacantes en las siete especialidades técnicas se actualice de forma atómica y transparente.

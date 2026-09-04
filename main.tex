@@ -1,0 +1,45 @@
+\documentclass[11pt, oneside]{report}
+
+% --- Cargar Configuración de Estilos (Arial, Carta, Márgenes e Interlineado 1.5) ---
+\usepackage{estilos/estilos}
+
+\begin{document}
+
+% --- Portada / Carátula Oficial ---
+\input{preliminares/caratula.tex}
+
+% --- Páginas Preliminares (Numeración Romana) ---
+\pagenumbering{roman}
+
+\input{preliminares/agradecimiento.tex}
+\input{preliminares/dedicatoria.tex}
+
+\cleardoublepage
+\tableofcontents
+\newpage
+\listoffigures
+\newpage
+\listoftables
+\newpage
+
+\input{preliminares/resumen.tex}
+
+% --- Cuerpo Principal (Numeración Arábiga) ---
+\cleardoublepage
+\pagenumbering{arabic}
+
+% ============================================================
+% === MODALIDAD: INNOVACIÓN TECNOLÓGICA (Capítulos 1 al 9) ===
+% ============================================================
+\input{capitulos/index.tex}
+
+% --- Bibliografía (Normas APA 7ma Edición) ---
+\cleardoublepage
+\configurarseccionfinal
+\printbibliography[heading=bibintoc, title={Bibliografía}]
+
+% --- Anexos y Apéndices ---
+\cleardoublepage
+\input{anexos/index.tex}
+
+\end{document}

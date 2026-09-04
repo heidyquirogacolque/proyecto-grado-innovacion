@@ -1,0 +1,11 @@
+\seccionanexo{Anexo B: Esquema Relacional de Base de Datos (PostgreSQL)}
+
+Estructura de tablas principales y restricciones relacionales implementadas en el gestor PostgreSQL 16 para garantizar el control transaccional ACID:
+
+\begin{itemize}
+    \item \textbf{Tabla especialidad:} Almacena las siete carreras técnicas habilitadas (id\_especialidad, nombre, cupos\_maximos, cupos\_disponibles, estado). Controla la disponibilidad física de plazas mediante restricciones CHECK (cupos\_disponibles $>=$ 0).
+    \item \textbf{Tabla postulante:} Contiene el padrón de estudiantes registrados (id\_postulante, ci, nombres, apellidos, fecha\_nacimiento, telefono, unidad\_educativa\_origen, id\_especialidad\_fk). Clave única sobre ci para impedir duplicidad de registros.
+    \item \textbf{Tabla matricula\_documental:} Gestiona la auditoría de requisitos físicos recibidos en secretaría (id\_matricula, id\_postulante\_fk, libretas\_secundaria\_ok, ci\_tutor\_ok, ci\_postulante\_ok, certificado\_nacimiento\_ok, fecha\_verificacion, funcionario\_auditor).
+    \item \textbf{Tabla asignacion\_paralelo:} Organiza a los matriculados en cursos y paralelos (id\_asignacion, id\_postulante\_fk, curso, paralelo, gestion, unidad\_educativa\_origen). Asegura balance de grupos y compatibilidad horaria.
+    \item \textbf{Tabla auditoria\_credenciales:} Registra los eventos de autoservicio de contraseñas (id\_log, ci, ip\_cliente, fecha\_hora, resultado\_validacion), asegurando trazabilidad de seguridad.
+\end{itemize}

@@ -1,0 +1,159 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{estilos/caratula}[2026/08/29 Estilos y diagramacion modular de la Caratula Oficial BTH]
+
+% ============================================================
+% PAQUETES REQUERIDOS PARA LA CARÁTULA
+% ============================================================
+\RequirePackage{geometry}
+\RequirePackage{graphicx}
+\RequirePackage{eso-pic}
+\RequirePackage{setspace}
+\RequirePackage{etoolbox}
+
+% ============================================================
+% 1. MARCO PERIMETRAL DECORATIVO BTH
+% ============================================================
+% Inserción del marco perimetral azul en segundo plano (solo en la carátula)
+\newcommand{\insertarmarcobth}{%
+    \ifdefstring{\activarmarcobth}{true}{%
+        \AddToShipoutPictureBG*{%
+            \AtPageCenter{%
+                \makebox(0,0){%
+                    \includegraphics[width=\anchomarcobth,height=\altomarcobth]{\rutamarcobth}%
+                }%
+            }%
+        }%
+    }{}%
+}
+
+% ============================================================
+% 2. TIPOGRAFÍA Y FORMATO DE BLOQUES INDIVIDUALES
+% ============================================================
+\newcommand{\institucionportadabth}[1]{%
+    \begin{minipage}{0.80\textwidth}
+        \centering\large\bfseries\setstretch{1.15} #1\par
+    \end{minipage}\par
+}
+
+\newcommand{\especialidadportadabth}[1]{{\large\bfseries ``#1''\par}}
+
+\newcommand{\tituloportadabth}[1]{%
+    \begin{minipage}{0.78\textwidth}
+        \centering\large\bfseries\setstretch{1.2} #1\par
+    \end{minipage}\par
+}
+
+\newcommand{\formulagradoportadabth}[1]{%
+    \begin{minipage}{0.88\textwidth}
+        \centering\normalsize\setstretch{1.15} #1\par
+    \end{minipage}\par
+}
+
+\newcommand{\etiquetapostulantesbth}[1]{{\normalsize\textbf{#1}\par}}
+
+\newcommand{\etiquetatutorbth}[1]{{\normalsize\textbf{#1}\par\vspace{-\parskip}}}
+
+\newcommand{\tutorportadabth}[1]{{\normalsize\setstretch{1.0} #1\par}}
+
+\newcommand{\pieportadabth}[2]{{\normalsize\bfseries\setstretch{1.0} #1\\#2\par}}
+
+% Macros de compatibilidad tipográfica previa
+\newcommand{\titulocaratula}[1]{\tituloportadabth{#1}}
+\newcommand{\subtitulocaratula}[1]{\formulagradoportadabth{#1}}
+
+% ============================================================
+% 3. BLOQUES SEMÁNTICOS ESTRUCTURADOS CON ESPACIADO INTEGRADO
+% ============================================================
+\newcommand{\bloqueinstitucionportada}[2]{%
+    \vspace*{0.2cm}%
+    \institucionportadabth{#1}%
+    \vspace{0.25cm}%
+    \especialidadportadabth{#2}%
+}
+
+\newcommand{\bloquelogoportada}[2][\alturalogobth]{%
+    \vspace{0.45cm}%
+    \par{\centering\includegraphics[height=#1]{#2}\par}%
+    \vspace{0.5cm}%
+}
+
+\newcommand{\bloquetituloportada}[1]{%
+    \tituloportadabth{#1}%
+    \vspace{0.45cm}%
+}
+
+\newcommand{\bloquegradoportada}[1]{%
+    \formulagradoportadabth{#1}%
+    \vspace{0.8cm}%
+}
+
+\newcommand{\bloquepostulantesportada}[3]{%
+    \begin{minipage}{0.48\textwidth}
+        \etiquetapostulantesbth{#1}%
+        \vspace{0.15cm}%
+        \ifdefempty{#3}{%
+            \noindent #2\par
+        }{%
+            \ifblank{#3}{%
+                \noindent #2\par
+            }{%
+                \noindent 1. #2\par
+                \vspace{0.12cm}%
+                \noindent 2. #3\par
+            }%
+        }%
+    \end{minipage}\par
+    \vspace{0.65cm}%
+}
+
+\newcommand{\bloquetutorportada}[2]{%
+    \etiquetatutorbth{#1}%
+    \tutorportadabth{#2}%
+    \vfill
+}
+
+\newcommand{\bloquepieportada}[2]{%
+    \pieportadabth{#1}{#2}%
+    \vspace*{2.0cm}%
+}
+
+% ============================================================
+% 4. ENTORNO Y COMANDO GLOBAL DE CARÁTULA
+% ============================================================
+% Entorno que encapsula la geometría (3.0 cm izq/der, 2.5 cm sup/inf),
+% tipografía Times New Roman (ptm), marco decorativo y centrado.
+\newenvironment{estilocaratulabth}{%
+    \newgeometry{left=3.0cm, right=3.0cm, top=2.5cm, bottom=2.5cm}%
+    \begin{titlepage}%
+        \renewcommand{\familydefault}{ptm}%
+        \normalfont
+        \insertarmarcobth
+        \centering
+}{%
+    \end{titlepage}%
+    \restoregeometry
+    \normalfont
+}
+
+% Alias semántico
+\let\estilocaratula\estilocaratulabth
+\let\endestilocaratula\endestilocaratulabth
+
+% Comando de alto nivel para generar automáticamente la carátula
+% oficial a partir de las variables de estilos/configuracion.tex
+\newcommand{\imprimircaratulabth}{%
+    \begin{estilocaratulabth}
+        \bloqueinstitucionportada{\institucion}{\especialidad}%
+        \bloquelogoportada{\rutalogobth}%
+        \bloquetituloportada{\tituloproyecto}%
+        \bloquegradoportada{\formulagradobth}%
+        \bloquepostulantesportada{\etiquetaautor}{\autoruno}{\autordos}%
+        \bloquetutorportada{\etiquetatutor}{\tutorproyecto}%
+        \bloquepieportada{\lugarproyecto}{\gestionproyecto}%
+    \end{estilocaratulabth}%
+}
+
+% Alias semántico
+\newcommand{\imprimircaratula}{\imprimircaratulabth}
+
+\endinput
