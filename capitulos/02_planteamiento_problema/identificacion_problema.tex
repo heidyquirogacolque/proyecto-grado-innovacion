@@ -1,10 +1,32 @@
 \section{Identificación del problema}
 \label{sec:identificacion_problema}
 
-A partir de los hallazgos cualitativos y cuantitativos obtenidos en el diagnóstico institucional, se establecen con precisión los siguientes tres problemas específicos que caracterizan el proceso de registro, matrícula y organización escolar en la institución:
+A partir de los hallazgos cualitativos y cuantitativos del diagnóstico (400 postulantes anuales, análisis 2022-2025 y relevamiento 2026 a 60 estudiantes y 5 funcionarios), se establece como \textbf{problema central} la \textit{ausencia de un sistema web integral en el Módulo Tecnológico Productivo San Julián BTH que garantice la recuperación autónoma de credenciales, la matriculación documental auditada y la asignación automatizada a cursos y paralelos por unidad educativa de procedencia}, lo que provoca pérdida de cupos vocacionales, expedientes truncos sin trazabilidad y desequilibrios horarios.
+
+Este problema central se descompone en tres causas raíces de naturaleza técnico-funcional —carencia de autoservicio de credenciales y ausencia de módulos administrativos para auditoría documental y para distribución por colegio de origen— cuyos efectos se manifiestan en concurrencia presencial masiva, frustración vocacional, sobrecarga de secretaría y conflictos de coordinación entre el módulo y las unidades educativas del distrito (ver Figura~\ref{fig:arbol_problemas}). Sus manifestaciones específicas son:
 
 \begin{itemize}
-    \item \textbf{Ausencia de recuperación de credenciales y pérdida de cupos vocacionales:} La plataforma informática no disponía de un autoservicio para la recuperación de contraseñas ni búsqueda de usuarios asignados, lo que forzó la asistencia física masiva de estudiantes al módulo para solicitar reseteos manuales; durante esta demora presencial, las plazas de las carreras más demandadas se agotaron, impidiendo que los postulantes accedieran a la especialidad de su preferencia y obligándolos a conformarse con opciones no deseadas.
-    \item \textbf{Inexistencia de un sistema para la matriculación documental posterior:} Carencia de un módulo administrativo en la gestión lectiva correspondiente para verificar, registrar y auditar en base de datos la presentación física de los requisitos obligatorios del postulante (libretas de calificaciones de 1ro a 3ro de secundaria, cédula de identidad de sus tutores, fotocopia de carnet de identidad y certificado de nacimiento), dejando trunco el ciclo formal de inscripción.
-    \item \textbf{Falta de un mecanismo de asignación a cursos y paralelos por unidad educativa:} La institución carecía de una herramienta automatizada para agrupar y matricular a los estudiantes en sus cursos y paralelos específicos en función de la unidad educativa de procedencia a la que pertenecen, propiciando desequilibrios en la cantidad de alumnos por taller, errores de asignación y severos cruces de horarios entre el módulo y los colegios del distrito.
+    \item \textbf{Ausencia de recuperación de credenciales y pérdida de cupos vocacionales:} La plataforma Versión 1.0 (2025) no disponía de autoservicio para la recuperación de contraseñas ni búsqueda de usuario (validación por C.I. y fecha de nacimiento), lo que forzó la asistencia física masiva para reseteos manuales; durante esa demora, las plazas de las carreras más demandadas se agotaron, impidiendo el acceso a la especialidad vocacional y obligando a conformarse con opciones no deseadas.
+    \item \textbf{Inexistencia de un sistema para la matriculación documental posterior:} Carencia de un módulo administrativo en la gestión lectiva correspondiente para verificar, registrar y auditar en base de datos la presentación física de los requisitos obligatorios (libretas de calificaciones de 1ro a 3ro de secundaria, cédula de identidad de tutores, fotocopia de carnet de identidad y certificado de nacimiento), dejando trunco el ciclo formal de inscripción con 0\% de trazabilidad digital en 2025.
+    \item \textbf{Falta de un mecanismo de asignación a cursos y paralelos por unidad educativa:} La institución carecía de una herramienta automatizada para agrupar y matricular a los estudiantes en sus cursos y paralelos específicos (4to A, 4to B) en función de la unidad educativa de procedencia, propiciando desequilibrios por taller, errores de transcripción y severos cruces de horarios entre el módulo y los colegios del distrito.
 \end{itemize}
+
+Si el problema no se resuelve, persisten las filas nocturnas a la intemperie con riesgo físico, la inequidad en el acceso a la formación técnica, los expedientes incompletos y la ineficiencia administrativa, comprometiendo el principio de equidad del BTH.
+
+\begin{figure}[htbp]
+    \centering
+    \caption{Árbol de problemas: causas, problema central y efectos en el proceso de inscripción BTH.}
+    \label{fig:arbol_problemas}
+    \begin{tabularx}{\textwidth}{L C R}
+        \toprule
+        \textbf{Causas raíces} & \textbf{Problema central} & \textbf{Efectos} \\
+        \midrule
+        1. Plataforma V1.0 sin autoservicio de credenciales (sin validación C.I. + fecha nacimiento) & \parbox[c]{0.32\textwidth}{\centering Ausencia de sistema web integral que garantice recovery autónomo, matriculación auditada y asignación por colegio} & 1. Concurrencia masiva para reseteo manual y pérdida de cupos vocacionales \\
+        \addlinespace
+        2. Inexistencia de módulo de matriculación documental en BD & & 2. Expedientes truncos, 0\% trazabilidad y sobrecarga de secretaría \\
+        \addlinespace
+        3. Asignación manual en planillas externas por colegio de origen & & 3. Desequilibrios por taller y cruces horarios con unidades educativas \\
+        \bottomrule
+    \end{tabularx}
+    \notafigura{Elaboración propia con base en el diagnóstico 2022-2026. La figura sintetiza la relación causal que fundamenta la Versión 2.0.}
+\end{figure}

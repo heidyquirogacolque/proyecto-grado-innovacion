@@ -7,13 +7,14 @@
         \textbf{Componente / Módulo} & \textbf{Tecnología / Parámetro} & \textbf{Especificación / Característica} \\
         \midrule
         Capa de Presentación (Frontend) & HTML5, CSS3, JavaScript ES6 & Interfaz responsiva adaptable a móviles y PC, validación reactiva de campos en cliente. \\
-        Capa de Lógica (Backend) & PHP 8.x sobre Apache 2.4 & Procesamiento seguro de peticiones, reglas de matrícula y control de sesiones. \\
-        Motor de Base de Datos & PostgreSQL 16 & Modelo relacional normalizado, transacciones ACID y bloqueo a nivel de fila (row-level locking). \\
+        Capa de Lógica (Backend) & PHP 8.2 sobre Apache 2.4 & Procesamiento seguro de peticiones, reglas de matrícula y control de sesiones. \\
+        Motor de Base de Datos & PostgreSQL 16.4 & Modelo relacional normalizado, transacciones ACID y bloqueo pesimista a nivel de fila (\texttt{FOR UPDATE}). \\
         Autoservicio de Credenciales & Validación de identidad con C.I. y fecha de nacimiento & Restablecimiento autónomo de contraseñas ($<$ 2 min). \\
         Matriculación Documental & Módulo de verificación en base de datos & Registro y auditoría digital de libretas de 1ro a 3ro, cédula de tutores, carnet y certificado. \\
         Asignación Académica & Distribución por cohorte y paralelo (4to A, 4to B) según colegio de procedencia & Agrupación automatizada en secciones. \\
-        Comprobantes Digitales & Generador de documentos PDF & Emisión instantánea de ficha de inscripción con código alfanumérico de verificación. \\
-        Eficiencia y Conectividad & Optimización y compresión web & Consumo de datos móviles $<$ 1,5 MB por trámite, operable en redes 3G/4G locales. \\
+        Comprobantes Digitales & Generador PDF (FPDF/TCPDF) & Emisión instantánea de ficha de inscripción con código alfanumérico único de verificación. \\
+        Eficiencia y Conectividad & Optimización y compresión web & Consumo de datos móviles $<$ 1.5 MB por trámite, operable en redes 3G/4G locales. \\
+        Validación y Pruebas (OE4) & Caja negra, concurrencia y estrés & $>$100 peticiones/min sin caídas, latencia $<$1.2 s, 0 sobrecupos, usabilidad $\geq$90\% y tasa errores $<$5\%. \\
         \bottomrule
     \end{tabularx}
     \notatabla{Especificaciones técnicas verificadas en el entorno operativo del BTH San Julián.}
