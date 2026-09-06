@@ -6,9 +6,9 @@
         \toprule
         \textbf{Componente / Módulo} & \textbf{Tecnología / Parámetro} & \textbf{Especificación / Característica} \\
         \midrule
-        Capa de Presentación (Frontend) & HTML5, CSS3, JavaScript ES6 & Interfaz responsiva adaptable a móviles y PC, validación reactiva de campos en cliente. \\
-        Capa de Lógica (Backend) & PHP 8.2 sobre Apache 2.4 & Procesamiento seguro de peticiones, reglas de matrícula y control de sesiones. \\
-        Motor de Base de Datos & PostgreSQL 16.4 & Modelo relacional normalizado, transacciones ACID y bloqueo pesimista a nivel de fila (\texttt{FOR UPDATE}). \\
+        Vista (View) & HTML5, CSS3, JavaScript ES6 + plantillas PHP & Interfaz responsiva adaptable a móviles y PC, validación reactiva y renderizado de comprobantes PDF. \\
+        Controlador (Controller) & PHP 8.2 sobre Apache 2.4 & Enrutamiento, control de sesiones, validación C.I. + fecha de nacimiento y reglas de matrícula/paralelos. \\
+        Modelo (Model) & PHP-PDO + PostgreSQL 16.4 & Clases de dominio y esquema relacional normalizado, transacciones ACID y bloqueo pesimista a nivel de fila (\texttt{FOR UPDATE}). \\
         Autoservicio de Credenciales & Validación de identidad con C.I. y fecha de nacimiento & Restablecimiento autónomo de contraseñas ($<$ 2 min). \\
         Matriculación Documental & Módulo de verificación en base de datos & Registro y auditoría digital de libretas de 1ro a 3ro, cédula de tutores, carnet y certificado. \\
         Asignación Académica & Distribución por cohorte y paralelo (4to A, 4to B) según colegio de procedencia & Agrupación automatizada en secciones. \\

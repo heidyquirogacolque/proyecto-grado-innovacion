@@ -1,88 +1,132 @@
 % ============================================================
-% Arquitectura Cliente-Servidor en Tres Capas — Cap. 4.1.1
+% Arquitectura MVC Pura — Cap. 4.1.1
 % Proyecto BTH V2.0 — Sistema Web de Inscripción MTP San Julián
+% Patrón Modelo-Vista-Controlador (MVC) — Pressman 2020
 % Formato: TikZ vectorial editable (APA 7)
 % Uso: \input{imagenes/arquitectura_tres_capas} dentro de figure
+% Nota: Mantiene nombre archivo por compatibilidad con label fig:arquitectura_mvc
 % ============================================================
 \begin{tikzpicture}[
-    capa/.style={
+    vista/.style={
         rectangle, rounded corners=5pt,
-        draw=primary!85, align=center,
-        font=\small,
-        minimum height=1.7cm,
-        inner sep=6pt,
-        text width=11.5cm
+        draw=primary!75, fill=secondary!13,
+        text=darktext, align=center,
+        font=\scriptsize,
+        text width=5.2cm, minimum height=2.0cm,
+        inner sep=5pt
+    },
+    controlador/.style={
+        rectangle, rounded corners=5pt,
+        draw=primary, fill=primary,
+        text=white, align=center,
+        font=\scriptsize\bfseries,
+        text width=5.2cm, minimum height=2.0cm,
+        inner sep=5pt
+    },
+    modelo/.style={
+        rectangle, rounded corners=5pt,
+        draw=primary!75, fill=lightgray,
+        text=darktext, align=center,
+        font=\scriptsize,
+        text width=5.2cm, minimum height=2.0cm,
+        inner sep=5pt
+    },
+    bd/.style={
+        cylinder, shape border rotate=90,
+        draw=primary!80, fill=primary!12,
+        text=darktext, align=center,
+        font=\scriptsize,
+        aspect=0.22, minimum height=1.25cm, minimum width=2.8cm,
+        inner sep=4pt
     },
     flecha/.style={
         -{Stealth[length=3mm,width=2.2mm]},
         thick, draw=primary!85
     },
-    flechaInv/.style={
-        {Stealth[length=3mm,width=2.2mm]}-,
-        thick, draw=primary!60
+    flechaDashed/.style={
+        -{Stealth[length=2.6mm,width=2mm]},
+        thick, draw=primary!55, dashed
     },
-    etiquetaCapa/.style={
+    etiqueta/.style={
         font=\scriptsize\bfseries, text=primary, align=center
     },
     detalle/.style={
         font=\scriptsize, text=darktext, align=center
     },
-    tituloCapa/.style={
-        font=\small\bfseries, align=center
+    nota/.style={
+        font=\tiny\itshape, text=darktext!65, align=center
     }
 ]
 
-% --- CAPA 1: PRESENTACIÓN (FRONTEND) ---
-\node[capa, fill=lightgray, draw=primary!70] (frontend) at (0, 4.2) {
-    \tituloCapa{1. Capa de Presentación \normalfont\textit{(Frontend)}}\\
-    \detalle{HTML5 \textbullet{} CSS3 responsivo \textbullet{} JavaScript ES6}\\
-    \detalle{\footnotesize Navegador del postulante (PC / móvil) — Validación reactiva en cliente}
+% --- USUARIO ---
+\node[font=\small, align=center] (usuario) at (0, 5.05) {\textbf{Usuario}};
+\node[font=\tiny, text=darktext!70, align=center] (usuarioDet) at (0, 4.68) {Postulante / Secretaría / Directivo};
+\node[detalle, font=\tiny\itshape, text=primary!70] at (0, 4.35) {$\sim$400 postulantes/año \textbullet{} 7 especialidades \textbullet{} móvil/PC};
+
+% Flecha Usuario -> Vista
+\draw[flecha] (usuario.south) -- (0, 3.65);
+\node[font=\tiny, fill=white, inner sep=1pt, text=primary!80] at (1.25, 4.10) {interactúa};
+
+% --- VISTA (izquierda) ---
+\node[vista] (vista) at (-4.35, 2.35) {
+    \textbf{VISTA}\\ \textit{(View)}\\
+    \footnotesize\normalfont HTML5 \textbullet{} CSS3 \textbullet{} JS ES6\\
+    \footnotesize\normalfont Plantillas PHP\\
+    \scriptsize\textit{Formularios, PDF, Panel}
 };
 
-\node[etiquetaCapa, rotate=90] at (-7.05, 4.2) {CLIENTE};
-
-% Icono usuario sutil (texto)
-\node[detalle, font=\tiny\itshape, text=primary!70] at (0, 5.32) {$\sim$400 postulantes/año \textbullet{} 7 especialidades \textbullet{} $<$1.5 MB/trámite};
-
-% --- FLECHA FRONTEND ↔ BACKEND ---
-\draw[flecha] (0, 3.30) -- (0, 2.30);
-\node[detalle, font=\tiny, fill=white, inner sep=1pt] at (2.15, 2.80) {HTTPS / JSON};
-\node[detalle, font=\tiny, fill=white, inner sep=1pt] at (-2.10, 2.80) {Validación};
-\draw[flechaInv, dashed, draw=primary!45] (0, 2.30) -- (0, 3.30);
-
-% --- CAPA 2: LÓGICA DE NEGOCIO (BACKEND) ---
-\node[capa, fill=secondary!14, draw=primary!70] (backend) at (0, 1.2) {
-    \tituloCapa{2. Capa de Lógica del Negocio \normalfont\textit{(Backend)}}\\
-    \detalle{PHP 8.2 sobre Apache 2.4}\\
-    \detalle{\footnotesize Sesiones, validación C.I.+fecha, reglas matrícula, agrupación paralelos}
+% --- CONTROLADOR (centro, destacado) ---
+\node[controlador] (controlador) at (0, 2.35) {
+    \textbf{CONTROLADOR}\\ \textit{(Controller)}\\
+    \footnotesize\normalfont PHP 8.2 / Apache 2.4\\
+    \scriptsize Routing, sesiones,\\[-1pt]\scriptsize validación C.I.+fecha,\\[-1pt]\scriptsize reglas matrícula/paralelos
 };
 
-\node[etiquetaCapa, rotate=90] at (-7.05, 1.2) {SERVIDOR};
-
-% --- FLECHA BACKEND ↔ BD ---
-\draw[flecha] (0, 0.30) -- (0, -0.70);
-\node[detalle, font=\tiny, fill=white, inner sep=1pt] at (2.35, -0.20) {SQL transaccional};
-\node[detalle, font=\tiny, fill=white, inner sep=1pt] at (-2.25, -0.20) {ACID};
-\draw[flechaInv, dashed, draw=primary!45] (0, -0.70) -- (0, 0.30);
-
-% --- CAPA 3: PERSISTENCIA (BASE DE DATOS) ---
-\node[capa, fill=primary, text=white, draw=primary] (bd) at (0, -1.85) {
-    {\small\bfseries 3. Capa de Persistencia \normalfont\textit{(Base de Datos)}}\\
-    {\scriptsize PostgreSQL 16.4 — Modelo relacional normalizado}\\
-    {\scriptsize\itshape Transacciones ACID + bloqueo pesimista \texttt{FOR UPDATE} — 0 sobrecupos}
+% --- MODELO (derecha) ---
+\node[modelo] (modelo) at (4.35, 2.35) {
+    \textbf{MODELO}\\ \textit{(Model)}\\
+    \footnotesize\normalfont Clases PHP + PDO\\
+    \footnotesize\normalfont PostgreSQL 16.4\\
+    \scriptsize\textit{ACID + FOR UPDATE}
 };
 
-\node[etiquetaCapa, rotate=90, text=white!90] at (-7.05, -1.85) {DATOS};
+% --- BASE DE DATOS (debajo de Modelo) ---
+\node[bd] (bd) at (4.35, -0.20) {PostgreSQL\\16.4};
 
-% --- Línea lateral vertical decorativa (opcional, sutil) ---
-\draw[primary!25, line width=2.5pt, rounded corners=3pt] (-6.55, 5.55) -- (-6.55, -2.75);
+% --- CONEXIONES MVC (ciclo) ---
+% Vista -> Controlador (evento)
+\draw[flecha] (vista.east) -- (controlador.west);
+\node[font=\tiny, fill=white, inner sep=1pt, text=primary!80] at (-2.18, 2.70) {evento};
 
-% --- Nota de rendimiento ---
-\node[detalle, font=\tiny\itshape, text=darktext!65, align=center] at (0, -2.95) {Validación OE4: $>$100 peticiones/min \textbullet{} latencia $<$1.2 s \textbullet{} usabilidad $\geq$90\% \textbullet{} errores $<$5\%};
+% Controlador -> Modelo (invoca)
+\draw[flecha] (controlador.east) -- (modelo.west);
+\node[font=\tiny, fill=white, inner sep=1pt, text=primary!80] at (2.18, 2.70) {invoca};
 
-% --- Borde sutil alrededor (desactivado para APA limpio) ---
-% \begin{scope}[on background layer]
-%   \node[fit=(frontend)(bd), draw=primary!12, rounded corners=7pt, inner sep=7pt] {};
-% \end{scope}
+% Controlador -> Vista (actualiza)
+\draw[flechaDashed] (controlador.west) -- (-2.00, 1.15) -- (vista.south);
+\node[font=\tiny, fill=white, inner sep=1pt, text=primary!60] at (-3.20, 1.10) {actualiza};
+
+% Modelo -> Controlador (datos / estado)
+\draw[flechaDashed] (modelo.south) -- (4.35, 0.85) -- (0, 0.85) -- (controlador.south);
+\node[font=\tiny, fill=white, inner sep=1pt, text=primary!60] at (2.65, 0.55) {estado};
+
+% Modelo <-> BD
+\draw[flecha] (modelo.south) -- (bd.north);
+\node[font=\tiny, fill=white, inner sep=1pt, text=primary!80] at (5.45, 1.05) {PDO / SQL};
+\draw[flechaDashed] (bd.north west) -- (3.55, 0.55) -- (modelo.south west);
+\node[font=\tiny, fill=white, inner sep=1pt, text=primary!60] at (3.30, 0.95) {ACID};
+
+% Usuario -> Vista (ya dibujado) y respuesta Vista -> Usuario (dashed)
+\draw[flechaDashed] (-1.2, 3.35) -- (-2.50, 3.35) -- (-2.50, 4.35) -- (-0.65, 4.35);
+\node[font=\tiny, fill=white, inner sep=1pt, text=primary!60] at (-2.55, 3.75) {render};
+
+% --- Agrupación Servidor ---
+\begin{scope}[on background layer]
+    \node[draw=primary!28, rounded corners=7pt, inner sep=6pt, fit=(vista)(controlador)(modelo)(bd), label={[font=\tiny\itshape,text=primary!60]north:Servidor Apache 2.4 + PHP-PDO}] (servidor) {};
+\end{scope}
+
+% --- Nota inferior ---
+\node[nota] at (0, -1.35) {Flujo: Vista delega evento al Controlador → Controlador invoca Modelo → Modelo persiste/recupera vía PDO (ACID + \texttt{FOR UPDATE}) → Controlador actualiza Vista};
+\node[nota, font=\tiny, text=darktext!55] at (0, -1.75) {Validación OE4: $>$100 peticiones/min \textbullet{} latencia $<$1.2 s \textbullet{} 0 sobrecupos \textbullet{} $<$1.5 MB/trámite};
 
 \end{tikzpicture}

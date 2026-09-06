@@ -3,24 +3,25 @@
 
 El SISTEMA WEB DE INSCRIPCIÓN PARA EL MÓDULO TECNOLÓGICO PRODUCTIVO SAN JULIÁN BTH --- VERSIÓN 2.0 ha sido concebido como una plataforma web integral que abarca la totalidad del ciclo de registro escolar en el MÓDULO TECNOLÓGICO PRODUCTIVO SAN JULIÁN. A diferencia de esquemas parciales, la solución unifica la preinscripción en línea realizada al cierre de la gestión previa con la confirmación de la matrícula formal y la organización académica en la gestión lectiva correspondiente.
 
-\subsection{Arquitectura modular de software}
+\subsection{Arquitectura MVC del sistema}
 
-La solución técnica se estructura bajo una arquitectura cliente-servidor desacoplada en tres capas fundamentales:
+La solución técnica se estructura bajo el patrón arquitectónico \textbf{Modelo--Vista--Controlador (MVC)}, que desacopla la presentación, la lógica de control y la gestión de datos para garantizar mantenibilidad, escalabilidad y separación de responsabilidades:
 
 \begin{itemize}
-    \item \textbf{Capa de Presentación (Frontend):} Desarrollada con estándares abiertos HTML5, hojas de estilo CSS3 con diseño adaptable y scripts de validación reactiva en JavaScript. Se ejecuta directamente en el navegador del usuario (computador o teléfono móvil), permitiendo verificar formatos de carnet y datos obligatorios en tiempo real antes de enviar peticiones a la red.
-    \item \textbf{Capa de Lógica del Negocio (Backend):} Implementada en lenguaje PHP 8.x sobre servidor web Apache. Gestiona el procesamiento seguro de solicitudes, la validación de identidad para el restablecimiento de claves, las reglas de asignación documental y la lógica de agrupación en cursos y paralelos.
-    \item \textbf{Capa de Persistencia (Base de Datos):} Sustentada en el gestor relacional PostgreSQL 16. Implementa un esquema relacional normalizado con control estricto de transacciones bajo propiedades ACID y bloqueos a nivel de fila (row-level locking), garantizando la consistencia absoluta de las vacantes sin colisiones ni sobrecupos.
+    \item \textbf{Vista (View):} Capa de presentación desarrollada con estándares abiertos HTML5, hojas de estilo CSS3 con diseño adaptable y scripts de validación reactiva en JavaScript. Se renderiza en el navegador del usuario (computador o teléfono móvil) y gestiona la interfaz de formularios, comprobantes PDF y paneles de consulta, verificando formatos de carnet y datos obligatorios en tiempo real antes de delegar al Controlador.
+    \item \textbf{Controlador (Controller):} Capa de control implementada en PHP 8.2 sobre servidor web Apache 2.4. Centraliza el enrutamiento de peticiones, el control de sesiones, la validación de identidad para el restablecimiento de claves (C.I. + fecha de nacimiento), las reglas de matriculación documental y la lógica de asignación a cursos y paralelos. Actúa como intermediario exclusivo entre la Vista y el Modelo.
+    \item \textbf{Modelo (Model):} Capa de dominio y persistencia sustentada en clases de dominio PHP con acceso a datos vía PDO y el gestor relacional PostgreSQL 16.4. Implementa el esquema relacional normalizado, las entidades de negocio y el control estricto de transacciones bajo propiedades ACID con bloqueos a nivel de fila (\texttt{FOR UPDATE} — \textit{row-level locking}), garantizando la consistencia absoluta de las vacantes sin colisiones ni sobrecupos.
 \end{itemize}
 
 \begin{figure}[htbp]
     \centering
-    \caption{Arquitectura cliente-servidor en tres capas del sistema BTH Versión 2.0.}
+    \caption{Arquitectura Modelo--Vista--Controlador (MVC) del sistema BTH Versión 2.0.}
+    \label{fig:arquitectura_mvc}
     \label{fig:arquitectura_tres_capas}
     \resizebox{0.92\textwidth}{!}{%
         \input{imagenes/arquitectura_tres_capas}
     }
-    \notafigura{Elaboración propia con base en \textcite{tanenbaum2021} y Tabla~\ref{tab:especificaciones_tecnicas}. La arquitectura desacopla presentación (HTML5/CSS3/JS), lógica (PHP 8.2/Apache 2.4) y persistencia (PostgreSQL 16.4 ACID \texttt{FOR UPDATE}).}
+    \notafigura{Elaboración propia con base en \textcite{pressman2020} y Tabla~\ref{tab:especificaciones_tecnicas}. La Vista delega eventos al Controlador; el Controlador invoca al Modelo vía PDO; el Modelo persiste en PostgreSQL 16.4 con transacciones ACID y bloqueo pesimista \texttt{FOR UPDATE}.}
 \end{figure}
 
 \subsection{Módulos funcionales del sistema}
@@ -58,6 +59,16 @@ La operación del sistema se articula en cinco fases correlativas:
     \item \textbf{Fase 4 (Matriculación documental formal):} Al inicio de la gestión escolar siguiente, el estudiante presenta sus documentos físicos en secretaría, donde el personal verifica y tilda en la plataforma las libretas de 1ro a 3ro de secundaria, cédula de tutores, carnet y certificado de nacimiento.
     \item \textbf{Fase 5 (Asignación académica en cursos y paralelos):} El sistema agrupa a los estudiantes en sus paralelos correspondientes según su colegio de origen, consolidando las listas de clase oficiales del BTH.
 \end{enumerate}
+
+\begin{figure}[htbp]
+    \centering
+    \caption{Flujo operativo del ciclo completo de matrícula (5 fases correlativas).}
+    \label{fig:flujo_matricula}
+    \resizebox{0.88\textwidth}{!}{%
+        \input{imagenes/flujo_matricula}
+    }
+    \notafigura{Elaboración propia. Fase 1 reserva atómica MVC (Vista→Controlador→Modelo) al cierre de la gestión previa; Fase 2 opcional de recuperación autónoma ($<$2 min, C.I.+fecha nacimiento); Fase 3 emisión PDF con código de verificación; Fase 4 matriculación documental auditada al 100\% en gestión siguiente; Fase 5 asignación automática por U.E. de procedencia (ver Tabla~\ref{tab:especificaciones_tecnicas}).}
+\end{figure}
 
 \subsection{Especificaciones técnicas del software}
 
