@@ -1,15 +1,32 @@
 \begin{table}[htbp]
     \centering
-    \caption{Distribución de roles y tareas por integrante del equipo (asignación aleatoria).}
+    \caption{Distribución de roles y tareas por integrante del equipo (asignación aleatoria entre autoras).}
     \label{tab:recursos_humanos_roles}
-    \begin{tabularx}{\textwidth}{L L L}
+    \small
+    \begin{tabularx}{\textwidth}{>{\hsize=0.70\hsize}L >{\hsize=0.80\hsize}L >{\hsize=1.50\hsize}L}
         \toprule
         \textbf{Rol} & \textbf{Encargado} & \textbf{Tarea Principal} \\
         \midrule
-        Coordinación General del Proyecto & Heidy Quiroga Colque & Planificación y seguimiento del cronograma Feb--Nov 2026, articulación con la Dirección Distrital y control de cumplimiento de los OE1--OE5. \\
-        Desarrollo Backend & Sharon Liz Quino & Lógica de negocio en PHP 8.2 sobre Apache, servicios de autoservicio de credenciales (C.I.+fecha de nacimiento) y control transaccional ACID PostgreSQL 16.4. \\
-        Documentación y Capacitación & Ing. Juan Vladimir Ramirez Flores & Supervisión metodológica, validación de la base de datos, control de calidad y elaboración de guías para talleres con las unidades educativas de origen. \\
+        Jefe de proyecto & Sharon Liz Quino & Planificación global Feb--Nov 2026, seguimiento OE1--OE5 y articulación con la Dirección Distrital. \\
+        \addlinespace
+        Analista de sistemas & Heidy Quiroga Colque & Levantamiento de requerimientos, modelado UML MVC y especificación de casos de uso de los 7 módulos. \\
+        \addlinespace
+        Diseñador UX/UI & Heidy Quiroga Colque & Prototipado responsivo HTML5/CSS3, validaciones JS reactivas y pruebas de usabilidad $\geq$90\%. \\
+        \addlinespace
+        Desarrollador Frontend & Sharon Liz Quino & Maquetación de la Vista (M1 formulario dinámico y M6 comprobantes PDF con código de verificación). \\
+        \addlinespace
+        Desarrollador Backend & Heidy Quiroga Colque & Lógica del Controlador en PHP 8.2/Apache (M2 control transaccional y M3 recovery C.I.+fecha <$2$ min). \\
+        \addlinespace
+        Administrador de base de datos & Sharon Liz Quino & Diseño del Modelo PDO--PostgreSQL 16.4, esquema normalizado ACID y \texttt{FOR UPDATE}, auditoría M4. \\
+        \addlinespace
+        Administrador de servidores / DevOps & Heidy Quiroga Colque & Despliegue Apache 2.4, \textit{backups}, monitoreo de $>$100 req/min y optimización <$1.5$ MB/trámite. \\
+        \addlinespace
+        Especialista en seguridad & Sharon Liz Quino & Hash de credenciales, control de sesiones, validación PDO y trazabilidad de logs. \\
+        \addlinespace
+        Tester o encargado de pruebas & Heidy Quiroga Colque & Pruebas de caja negra, concurrencia y estrés (latencia <$1.2$ s, 0 sobrecupos, errores <$5$\%). \\
+        \addlinespace
+        Soporte técnico & Sharon Liz Quino & Capacitación a secretaría académica, manuales de talleres y soporte post-implantación por U.E. de procedencia. \\
         \bottomrule
     \end{tabularx}
-    \notatabla{Asignación aleatoria entre los integrantes definidos en \texttt{estilos/configuracion.tex} (\autoruno, \autordos\ y \tutorproyecto), complementaria a la Tabla~\ref{tab:recursos_humanos} (dedicación total 34 h/sem). Semilla aleatoria 2026 sobre pool de 6 roles técnicos.}
+    \notatabla{Asignación aleatoria equilibrada 5/5 entre \autoruno\ y \autordos\ (semilla 2026); el tutor (\tutorproyecto) se excluye de esta tabla y se consigna únicamente en la Tabla~\ref{tab:recursos_humanos} (carga total 34 h/sem).}
 \end{table}
