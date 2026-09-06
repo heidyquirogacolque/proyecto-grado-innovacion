@@ -9,8 +9,8 @@ Desarrollar e implementar el SISTEMA WEB DE INSCRIPCIÓN PARA EL MÓDULO TECNOL�
 
 \begin{itemize}
     \item Diagnosticar las deficiencias operativas y los requerimientos funcionales del proceso de inscripción y matriculación del BTH de San Julián, mediante encuestas estructuradas a estudiantes postulantes y entrevistas semiestructuradas a funcionarios, durante el primer bimestre de 2026.
-    \item Diseñar la arquitectura del sistema, el modelo de base de datos relacional normalizado y la interfaz de usuario para los módulos críticos.
-    \item Desarrollar los módulos de la Versión 2.0 bajo arquitectura cliente-servidor (HTML5, CSS3, JavaScript, PHP y PostgreSQL 16 con control transaccional ACID y bloqueo pesimista \textit{row-level locking}).
+    \item Diseñar la arquitectura MVC del sistema, el modelo de base de datos relacional normalizado y la interfaz de la Vista para los tres módulos críticos: autoservicio de credenciales (validación C.I. + fecha de nacimiento, $<$2 min), matriculación documental auditada y asignación automatizada a cursos y paralelos por unidad educativa.
+    \item Desarrollar los módulos de la Versión 2.0 bajo el patrón MVC (Vista HTML5/CSS3/JS, Controlador PHP 8.2/Apache 2.4, Modelo PDO--PostgreSQL 16 ACID con bloqueo pesimista \textit{row-level locking} \texttt{FOR UPDATE}).
     \item Validar el funcionamiento operativo y el impacto socioeducativo del sistema mediante pruebas funcionales de caja negra, pruebas de concurrencia y estrés ($>$100 peticiones/min, latencia $<$1.2 s, 0 sobrecupos) y medición de satisfacción de usuarios.
     \item Evaluar el costo-beneficio y la sostenibilidad de la solución, contrastando la inversión total de 13556 Bs (100\% recursos propios) y el costo operativo de 190 Bs/mes frente al ahorro colectivo superior a 20000 Bs por gestión en pasajes, refrigerios y papelería, con costo marginal por postulante $<$0.50 Bs y recuperación en menos de una gestión.
 \end{itemize}

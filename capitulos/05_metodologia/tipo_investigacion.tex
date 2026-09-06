@@ -12,7 +12,7 @@ El diseño metodológico es pre-experimental con medición antes (gestión 2022 
 \begin{enumerate}
     \item \textbf{Fase 1 (Diagnóstico empírico):} Relevamiento de campo y análisis retrospectivo sobre las deficiencias de la plataforma preliminar de 2025 (crisis de credenciales, ruptura en la matriculación documental y asignación manual de paralelos).
     \item \textbf{Fase 2 (Diseño y modelado):} Estructuración visual de diagramas UML, modelado de la base de datos relacional y diseño de interfaces centradas en el usuario.
-    \item \textbf{Fase 3 (Desarrollo técnico):} Construcción modular de la plataforma web en su Versión 2.0 empleando HTML5, CSS3, JavaScript, PHP 8.x y el gestor PostgreSQL 16.
+    \item \textbf{Fase 3 (Desarrollo técnico):} Construcción modular de la plataforma web en su Versión 2.0 bajo patrón MVC empleando Vista en HTML5/CSS3/JavaScript, Controlador en PHP 8.2/Apache y Modelo PDO--PostgreSQL 16.4.
     \item \textbf{Fase 4 (Evaluación y validación técnica, socioeducativa y de sostenibilidad):} Ejecución de pruebas funcionales de caja negra, pruebas de concurrencia y estrés, contrastación de satisfacción (OE4) y evaluación de costo-beneficio y sostenibilidad económica (OE5: inversión de 13556 Bs frente a ahorro superior a 20000 Bs por gestión) con la comunidad educativa \parencite{hernandez2014}.
 \end{enumerate}
 
@@ -28,7 +28,7 @@ La Tabla~\ref{tab:operacionalizacion} traduce la hipótesis tecnológica en vari
         \toprule
         \textbf{Tipo} & \textbf{Variable} & \textbf{Definición operacional / Indicador} & \textbf{Unidad e instrumento} \\
         \midrule
-        Independiente & V2.0 Sistema Web MTP San Julián (HTML5/CSS3/JS/PHP 8.x/PostgreSQL 16.4 ACID) & Plataforma integral operativa (preinscripción, recovery C.I.+fecha nacimiento, matriculación auditada, asignación por colegio) & Binaria (0/1); checklist despliegue — Cap.~4 \\
+        Independiente & V2.0 Sistema Web MTP San Julián MVC (Vista HTML5/CSS3/JS, Controlador PHP 8.2/Apache, Modelo PDO--PostgreSQL 16.4 ACID) & Plataforma integral operativa (preinscripción, recovery C.I.+fecha nacimiento, matriculación auditada, asignación por colegio) & Binaria (0/1); checklist despliegue — Cap.~4 \\
         Dependiente 1 & Tiempo de gestión del trámite & Tiempo promedio preinscripción y recovery & Minutos (3 a 5 min web vs 1 a 3 días fila; recovery $<$2 min); logs Apache + benchmarking \\
         Dependiente 2 & Tasa de recuperación autónoma & Recuperaciones exitosas sin ventanilla / intentos & Porcentaje (\%); cuestionario Likert autonomía + caja negra C.I./fecha \\
         Dependiente 3 & Trazabilidad documental & Expedientes completos auditables en BD & Porcentaje (\%) 100\%; auditoría integridad PostgreSQL \\

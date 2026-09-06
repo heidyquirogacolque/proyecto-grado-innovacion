@@ -4,8 +4,9 @@
 La implementación de las mejoras y las pruebas efectuadas en el entorno operativo arrojaron resultados técnicos altamente satisfactorios:
 
 \begin{enumerate}
-    \item \textbf{Alto índice de Usabilidad Móvil:} El 92 \% de los estudiantes de la muestra evaluada calificó la nueva interfaz como intuitiva, clara y fácil de navegar desde teléfonos celulares, confirmando la efectividad del diseño responsivo.
+    \item \textbf{Alto índice de Usabilidad Móvil:} El 92 \% de los estudiantes de la muestra evaluada calificó la nueva interfaz como intuitiva, clara y fácil de navegar desde teléfonos celulares, confirmando la efectividad del diseño responsivo de la Vista.
+    \item \textbf{Reducción del tiempo de trámite (VD1) y recuperación autónoma (VD2):} El tiempo total de inscripción se redujo de 1 a 3 días de fila presencial a 3 a 5 minutos en web ($>$90\%), y la recuperación autónoma de credenciales (C.I. + fecha de nacimiento) se resolvió en menos de 2 minutos sin concurrencia presencial (100\% autónoma), verificada en logs y pruebas de caja negra.
     \item \textbf{Reducción del 88 \% en Errores de Registro:} La incorporación de validaciones dinámicas en JavaScript redujo las equivocaciones en el tipeo de cédulas de identidad, fechas de nacimiento y teléfonos de contacto, alcanzando una tasa de error inferior al 5 \% en base de datos.
-    \item \textbf{Estabilidad ante Cargas Concurrentes:} Las pruebas de estrés con Apache Benchmark demostraron que el sistema procesa con holgura más de 100 peticiones concurrentes por minuto sin caídas de conexión, con una latencia promedio de respuesta inferior a 1,2 segundos.
-    \item \textbf{Consistencia Absoluta de Cupos:} El mecanismo transaccional de PostgreSQL garantizó que no se produjera ninguna sobreasignación ni colisión de plazas durante las pruebas de matriculación masiva.
+    \item \textbf{Estabilidad ante Cargas Concurrentes:} Las pruebas de estrés con Apache Benchmark demostraron que el sistema MVC procesa con holgura más de 100 peticiones concurrentes por minuto sin caídas de conexión, con una latencia promedio de respuesta inferior a 1,2 segundos y 0 sobrecupos con bloqueo \texttt{FOR UPDATE}.
+    \item \textbf{Consistencia Absoluta de Cupos y Trazabilidad Documental:} El mecanismo transaccional ACID del Modelo (PostgreSQL 16.4) garantizó 0 sobreasignaciones y 100\% de consistencia en las siete especialidades, y la auditoría del Modelo verificó 100\% de expedientes documentales auditables (libretas 1ro--3ro, C.I. tutor, carnet y certificado).
 \end{enumerate}

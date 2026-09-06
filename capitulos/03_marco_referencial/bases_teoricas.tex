@@ -3,9 +3,9 @@
 
 El diseño e implementación del sistema web de inscripción se fundamenta en principios consolidados de las ciencias de la computación, la ingeniería de software y la gestión de información escolar:
 
-\subsection{Arquitectura Cliente-Servidor en Entornos Web}
+\subsection{Arquitectura Cliente-Servidor y Patrón MVC}
 
-De acuerdo con \textcite{tanenbaum2021}, la arquitectura cliente-servidor constituye el modelo estructural predominante en internet. En esta arquitectura, la capa cliente (el navegador web en computadores o teléfonos inteligentes) se encarga de la captura, validación reactiva y presentación de la interfaz gráfica, mientras que la capa servidora (servidor web Apache y lenguaje PHP) ejecuta la lógica del negocio, procesa las solicitudes transaccionales e interactúa con el motor de base de datos relacional. Esta separación de responsabilidades garantiza modularidad, portabilidad y un mínimo consumo de ancho de banda en redes móviles de áreas intermedias.
+De acuerdo con \textcite{tanenbaum2021}, la arquitectura cliente-servidor constituye el modelo estructural predominante en internet, donde el navegador (cliente) interactúa vía HTTP con el servidor Apache/PHP y la base de datos relacional. Sobre esta infraestructura, el proyecto adopta el patrón arquitectónico Modelo--Vista--Controlador (MVC) \parencite{pressman2020}, que desacopla responsabilidades: la \textbf{Vista} (HTML5/CSS3/JavaScript y plantillas PHP) gestiona la presentación y validación reactiva en cliente; el \textbf{Controlador} (PHP 8.2/Apache) centraliza el enrutamiento, sesiones y reglas de negocio (recovery C.I.+fecha, matrícula y paralelos); y el \textbf{Modelo} (clases de dominio PDO--PostgreSQL 16) encapsula la lógica de persistencia ACID. Esta separación garantiza modularidad, mantenibilidad y mínimo consumo de ancho de banda en redes móviles de áreas intermedias.
 
 \subsection{Ingeniería de Software Web y Usabilidad Centrada en el Usuario}
 
