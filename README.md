@@ -14,7 +14,9 @@ proyecto-grado-innovacion/
 ├── README.md                               # Guía general de uso y comandos de compilación (este archivo)
 ├── AGENTS.md                               # Directrices y normas para agentes de IA
 ├── ESTRUCTURA_CAPITULOS.md                 # Detalle temático de los 9 capítulos de Innovación Tecnológica
-├── compilar.sh                             # Script de compilación y limpieza (soporta --clean, --fast, etc.)
+├── compilar.sh                             # Script de compilación y limpieza para Linux/macOS (soporta --clean, --fast, etc.)
+├── compilar.ps1                            # Script de compilación y limpieza para Windows PowerShell 5.1/7+ (equivalente a compilar.sh)
+├── compilar.bat                            # Wrapper CMD para Windows que invoca compilar.ps1 (doble clic o cmd)
 ├── estilos/                                # Paquete y configuraciones de diseño de LaTeX
 │   ├── estilos.sty                         # Archivo de estilos (márgenes, fuentes, espaciados y paquetes)
 │   ├── configuracion.tex                   # Metadatos centralizados (título, autor(es), tutor, institución, modalidad)
@@ -88,13 +90,22 @@ proyecto-grado-innovacion/
 
 ## 📦 Requisitos Previos e Instalación
 
-Para compilar el proyecto en sistemas basados en Linux (Debian, Ubuntu, Linux Mint):
+### Linux (Debian, Ubuntu, Linux Mint)
 
 ```bash
 sudo apt-get update
 sudo apt-get install -y texlive-latex-base texlive-latex-recommended texlive-latex-extra \
                         texlive-bibtex-extra biber texlive-publishers texlive-lang-spanish
 ```
+
+### Windows 10/11 (TeX Live o MiKTeX + Python)
+
+1. **TeX Live 2026** (recomendado) desde https://tug.org/texlive/ → instala `pdflatex` y `biber` y agrega `C:\texlive\2026\bin\windows` al `PATH`. Verifica con `pdflatex --version` y `biber --version` en PowerShell.
+   - Alternativa: **MiKTeX** desde https://miktex.org/ (instalación completa, actualizar paquetes).
+2. **Python 3.x** desde https://www.python.org/ (marcar *Add to PATH*) para `scripts/verificar_tablas.py` (`--check-tablas`). Verifica con `python --version`.
+3. **PowerShell 5.1+** ya incluido en Windows 10/11. No requiere instalación. Si usas PowerShell 7+, también es compatible.
+
+> **Nota:** `compilar.ps1` requiere `ExecutionPolicy Bypass` solo para ese proceso (no modifica el sistema). `compilar.bat` lo aplica automáticamente.
 
 ---
 
@@ -103,6 +114,8 @@ sudo apt-get install -y texlive-latex-base texlive-latex-recommended texlive-lat
 A continuación se detallan los comandos disponibles en la terminal para compilar el documento y gestionar los archivos auxiliares.
 
 ### 1. Compilación Automatizada con Script (Recomendado)
+
+#### Linux / macOS (Bash)
 
 El proyecto incluye el script ejecutable `./compilar.sh` que gestiona todo el ciclo (`pdflatex` → `biber` → `pdflatex` → `pdflatex`):
 
@@ -121,6 +134,40 @@ El proyecto incluye el script ejecutable `./compilar.sh` que gestiona todo el ci
 
 # Solo limpiar archivos auxiliares sin compilar:
 ./compilar.sh --only-clean
+```
+
+#### Windows (PowerShell / CMD)
+
+Equivalente nativo `compilar.ps1` (PowerShell 5.1/7+) y wrapper `compilar.bat` (CMD/doble clic) — mismos ciclos y flags que `compilar.sh`:
+
+```powershell
+# Compilar el documento completo y conservar archivos auxiliares:
+powershell -ExecutionPolicy Bypass -File .\compilar.ps1
+# o simplemente (si la política lo permite):
+.\compilar.ps1
+# o vía CMD:
+compilar.bat
+.\compilar.bat --clean
+
+# Compilar el documento completo y eliminar archivos auxiliares al finalizar:
+powershell -ExecutionPolicy Bypass -File .\compilar.ps1 --clean
+compilar.bat --clean
+
+# Compilación rápida de 1 sola pasada (ideal durante redacción):
+powershell -ExecutionPolicy Bypass -File .\compilar.ps1 --fast
+compilar.bat --fast
+
+# Auditar la conformidad de las tablas con normas APA 7ma Edición y diagramación:
+powershell -ExecutionPolicy Bypass -File .\compilar.ps1 --check-tablas
+compilar.bat --check-tablas
+
+# Solo limpiar archivos auxiliares sin compilar:
+powershell -ExecutionPolicy Bypass -File .\compilar.ps1 --only-clean
+compilar.bat --only-clean
+
+# Ayuda:
+powershell -ExecutionPolicy Bypass -File .\compilar.ps1 --help
+compilar.bat --help
 ```
 
 ---

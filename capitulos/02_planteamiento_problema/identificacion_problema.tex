@@ -1,7 +1,7 @@
 \section{Identificación del problema}
 \label{sec:identificacion_problema}
 
-A partir de los hallazgos cualitativos y cuantitativos del diagnóstico (400 postulantes anuales, análisis 2022-2025 y relevamiento 2026 a 60 estudiantes y 5 funcionarios), se establece como \textbf{problema central} la \textit{ausencia de un sistema web integral en el Módulo Tecnológico Productivo San Julián BTH que garantice la recuperación autónoma de credenciales, la matriculación documental auditada y la asignación automatizada a cursos y paralelos por unidad educativa de procedencia}, lo que provoca pérdida de cupos vocacionales, expedientes truncos sin trazabilidad y desequilibrios horarios.
+A partir de los hallazgos cualitativos y cuantitativos del diagnóstico (400 postulantes anuales, análisis 2022-2025 y relevamiento 2026 a 60 estudiantes y 5 funcionarios), se establece como \textbf{problema central} la \textit{ausencia de un sistema web integral en el Módulo Tecnológico Productivo San Julián BTH que garantice la recuperación autónoma de credenciales, la matriculación documental auditada y la asignación automatizada a cursos y paralelos por unidad educativa de procedencia}, lo que provoca pérdida de cupos vocacionales, expedientes incompletos sin trazabilidad y desequilibrios horarios.
 
 Este problema central se descompone en tres causas raíces de naturaleza técnico-funcional —carencia de autoservicio de credenciales y ausencia de módulos administrativos para auditoría documental y para distribución por colegio de origen— cuyos efectos se manifiestan en concurrencia presencial masiva, frustración vocacional, sobrecarga de secretaría y conflictos de coordinación entre el módulo y las unidades educativas del distrito (ver Figura~\ref{fig:arbol_problemas}). Sus manifestaciones específicas son:
 
@@ -17,16 +17,8 @@ Si el problema no se resuelve, persisten las filas nocturnas a la intemperie con
     \centering
     \caption{Árbol de problemas: causas, problema central y efectos en el proceso de inscripción BTH.}
     \label{fig:arbol_problemas}
-    \begin{tabularx}{\textwidth}{L C R}
-        \toprule
-        \textbf{Causas raíces} & \textbf{Problema central} & \textbf{Efectos} \\
-        \midrule
-        1. Plataforma V1.0 sin autoservicio de credenciales (sin validación C.I. + fecha nacimiento) & \parbox[c]{0.32\textwidth}{\centering Ausencia de sistema web integral que garantice recovery autónomo, matriculación auditada y asignación por colegio} & 1. Concurrencia masiva para reseteo manual y pérdida de cupos vocacionales \\
-        \addlinespace
-        2. Inexistencia de módulo de matriculación documental en BD & & 2. Expedientes truncos, 0\% trazabilidad y sobrecarga de secretaría \\
-        \addlinespace
-        3. Asignación manual en planillas externas por colegio de origen & & 3. Desequilibrios por taller y cruces horarios con unidades educativas \\
-        \bottomrule
-    \end{tabularx}
-    \notafigura{Elaboración propia con base en el diagnóstico 2022-2026. La figura sintetiza la relación causal que fundamenta la Versión 2.0.}
+    \resizebox{0.98\textwidth}{!}{%
+        \input{imagenes/arbol_problemas}
+    }
+    \notafigura{Elaboración propia con base en el diagnóstico 2022-2026 (60 estudiantes y 5 funcionarios, $\sim$400 postulantes/año en 7 especialidades). La figura sintetiza la relación causal que fundamenta la Versión 2.0.}
 \end{figure}

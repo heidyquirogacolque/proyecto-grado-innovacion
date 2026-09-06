@@ -25,6 +25,15 @@ import os
 import glob
 import re
 
+# Compatibilidad Windows: forzar UTF-8 en stdout/stderr para evitar UnicodeEncodeError (cp1252/cp850)
+try:
+    if hasattr(sys.stdout, "reconfigure"):
+        sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+    if hasattr(sys.stderr, "reconfigure"):
+        sys.stderr.reconfigure(encoding="utf-8", errors="replace")
+except Exception:
+    pass
+
 # Códigos de color ANSI para la terminal
 COLOR_RESET = "\033[0m"
 COLOR_BOLD = "\033[1m"

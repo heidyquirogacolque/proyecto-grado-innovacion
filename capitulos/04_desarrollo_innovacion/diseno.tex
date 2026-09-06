@@ -13,6 +13,16 @@ La solución técnica se estructura bajo una arquitectura cliente-servidor desac
     \item \textbf{Capa de Persistencia (Base de Datos):} Sustentada en el gestor relacional PostgreSQL 16. Implementa un esquema relacional normalizado con control estricto de transacciones bajo propiedades ACID y bloqueos a nivel de fila (row-level locking), garantizando la consistencia absoluta de las vacantes sin colisiones ni sobrecupos.
 \end{itemize}
 
+\begin{figure}[htbp]
+    \centering
+    \caption{Arquitectura cliente-servidor en tres capas del sistema BTH Versión 2.0.}
+    \label{fig:arquitectura_tres_capas}
+    \resizebox{0.92\textwidth}{!}{%
+        \input{imagenes/arquitectura_tres_capas}
+    }
+    \notafigura{Elaboración propia con base en \textcite{tanenbaum2021} y Tabla~\ref{tab:especificaciones_tecnicas}. La arquitectura desacopla presentación (HTML5/CSS3/JS), lógica (PHP 8.2/Apache 2.4) y persistencia (PostgreSQL 16.4 ACID \texttt{FOR UPDATE}).}
+\end{figure}
+
 \subsection{Módulos funcionales del sistema}
 
 La plataforma integra los siguientes módulos especializados diseñados para dar respuesta directa a las problemáticas diagnosticadas:
@@ -26,6 +36,16 @@ La plataforma integra los siguientes módulos especializados diseñados para dar
     \item \textbf{Generador de Comprobantes Digitales Oficiales:} Emisión instantánea de fichas de preinscripción y matrícula en formato PDF descargable e imprimible, provistas de un código alfanumérico único de verificación institucional.
     \item \textbf{Panel de Control y Reportes para Directivos:} Interfaz administrativa que ofrece métricas en tiempo real sobre el estado de vacantes por carrera, porcentajes de matriculación documental completada y exportación de listas consolidadas por paralelo.
 \end{itemize}
+
+\begin{figure}[htbp]
+    \centering
+    \caption{Diagrama de paquetes y dependencias de los siete módulos funcionales del sistema.}
+    \label{fig:modulos_paquetes}
+    \resizebox{0.98\textwidth}{!}{%
+        \input{imagenes/modulos_paquetes}
+    }
+    \notafigura{Elaboración propia. M1 preinscripción articula con M2 control transaccional; M3 recuperación autónoma ($<$2 min) y M6 comprobantes PDF operan como soporte; M4 matriculación documental y M5 asignación por U.E. consolidan la gestión académica; M7 panel transversaliza métricas en tiempo real (ver flujo 5 fases Cap.~4.1.3).}
+\end{figure}
 
 \subsection{Flujo operativo del ciclo completo de matrícula}
 

@@ -1,0 +1,106 @@
+% ============================================================
+% Módulos Funcionales del Sistema — Cap. 4.1.2
+% 7 Módulos lógicos — Paquetes UML simplificado (solo lógica)
+% Proyecto BTH V2.0 — Sistema Web de Inscripción MTP San Julián
+% Formato: TikZ vectorial editable (APA 7)
+% Uso: \input{imagenes/modulos_paquetes} dentro de figure
+% ============================================================
+\begin{tikzpicture}[
+    modulo/.style={
+        rectangle, rounded corners=3.5pt,
+        draw=primary!75, fill=white,
+        text=darktext, align=center,
+        font=\scriptsize,
+        text width=3.42cm, minimum height=1.35cm,
+        inner sep=4pt
+    },
+    moduloDestacado/.style={
+        rectangle, rounded corners=3.5pt,
+        draw=primary, fill=primary,
+        text=white, align=center,
+        font=\scriptsize\bfseries,
+        text width=3.42cm, minimum height=1.35cm,
+        inner sep=4pt
+    },
+    moduloLight/.style={
+        rectangle, rounded corners=3.5pt,
+        draw=primary!55, fill=secondary!11,
+        text=darktext, align=center,
+        font=\scriptsize,
+        text width=3.42cm, minimum height=1.35cm,
+        inner sep=4pt
+    },
+    flecha/.style={
+        -{Stealth[length=2.6mm,width=2mm]},
+        thick, draw=primary!80
+    },
+    flechaDashed/.style={
+        -{Stealth[length=2.6mm,width=2mm]},
+        thick, draw=primary!55, dashed
+    },
+    etiqueta/.style={
+        font=\scriptsize\bfseries, text=primary, align=center
+    },
+    sistema/.style={
+        rectangle, rounded corners=7pt,
+        draw=primary!35, thick,
+        inner sep=6pt
+    }
+]
+
+% --- Contenedor Sistema ---
+\node[sistema, minimum width=13.2cm, minimum height=6.35cm] (sistema) at (0, 0.15) {};
+
+% Título sistema
+\node[etiqueta, fill=white, inner sep=2pt] at (0, 3.55) {SISTEMA WEB BTH V2.0 — MÓDULOS FUNCIONALES};
+
+% --- NIVEL SUPERIOR: Preinscripción (entrada) ---
+\node[moduloDestacado] (M1) at (0, 2.45) {\textbf{M1. Formulario}\\Dinámico y\\Preinscripción\\\footnotesize\normalfont\textit{7 especialidades}};
+
+% --- NIVEL MEDIO: Núcleo transaccional + Recovery ---
+\node[modulo] (M2) at (-4.15, 0.70) {\textbf{M2. Control}\\Transaccional\\de Vacantes\\\footnotesize\normalfont\textit{ACID row-level}};
+\node[moduloLight] (M3) at (0, 0.70) {\textbf{M3. Recuperación}\\Autónoma de\\Credenciales\\\footnotesize\normalfont\textit{C.I.+fecha <$2$ min}};
+\node[moduloLight] (M6) at (4.15, 0.70) {\textbf{M6. Generador}\\Comprobantes\\PDF\\\footnotesize\normalfont\textit{código verificación}};
+
+% --- NIVEL INFERIOR: Gestión académica ---
+\node[modulo] (M4) at (-4.15, -1.25) {\textbf{M4. Matriculación}\\Documental\\\footnotesize\normalfont\textit{libretas 1ro-3ro,}\\[-2pt]\footnotesize\normalfont\textit{C.I. tutor, carnet, cert.}};
+\node[modulo] (M5) at (0, -1.25) {\textbf{M5. Asignación}\\Cursos y Paralelos\\\footnotesize\normalfont\textit{por U.E. procedencia}\\[-2pt]\footnotesize\normalfont\textit{4to A / 4to B}};
+\node[modulo] (M7) at (4.15, -1.25) {\textbf{M7. Panel Control}\\y Reportes\\\footnotesize\normalfont\textit{vacantes, \% matrícula}};
+
+% --- Conexiones principales (flujo) ---
+% M1 -> M2 (reserva)
+\draw[flecha] (M1.south) -- (-2.05, 1.42) -- (M2.north);
+\node[font=\tiny, text=primary!80, fill=white, inner sep=1pt] at (-2.35, 1.65) {reserva};
+
+% M1 -> M6 (comprobante)
+\draw[flechaDashed] (M1.east) -- (4.85, 1.42) -- (M6.north);
+\node[font=\tiny, text=primary!65, fill=white, inner sep=1pt] at (3.15, 1.90) {PDF};
+
+% M1 -> M3 (soporte, recuperación)
+\draw[flechaDashed] (M1.south) -- (0, 1.42) -- (M3.north);
+
+% M2 -> M4 (matriculación tras reserva)
+\draw[flecha] (M2.south) -- (M4.north);
+
+% M2 -> M5 (asignación tras matrícula)
+\draw[flecha] (M2.south) -- (-1.55, -0.20) -- (M5.north);
+% M4 -> M5
+\draw[flecha] (M4.east) -- (M5.west);
+\node[font=\tiny, text=primary!80, fill=white, inner sep=1pt] at (-2.05, -0.85) {exp. ok};
+
+% M5 -> M7 y M6 -> M7 (reportes)
+\draw[flechaDashed] (M5.east) -- (M7.west);
+\draw[flechaDashed] (M6.south) -- (4.15, -0.05) -- (M7.north);
+
+% M2 -> M7 (vacantes tiempo real)
+\draw[flechaDashed] (M2.east) -- (2.10, -0.20) -- (4.15, -0.20) -- (M7.north west);
+
+% --- Leyenda inferior ---
+\node[font=\tiny\itshape, text=darktext!65, align=center] at (0, -2.85) {Flujo 5 fases Cap.~4.1.3: (1) Preinscripción → (2) Recovery → (3) Comprobante → (4) Matriculación → (5) Asignación \textbullet{} M7 transversal en tiempo real};
+\draw[primary!80, thick] ( -6.0, -2.55) -- (6.0, -2.55);
+
+% --- Indicadores pequeños ---
+\node[font=\tiny, text=primary!50, align=left] at (-6.15, 3.15) {\textbf{—} flujo};
+\node[font=\tiny, text=primary!50, align=left] at (-6.15, 2.85) {\textbf{- -} consulta};
+
+\end{tikzpicture}

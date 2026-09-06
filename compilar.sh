@@ -15,6 +15,27 @@ NC='\033[0m' # Sin color
 # Nombre del archivo principal sin extensión
 MAIN="main"
 
+# Detectar comando Python (compatibilidad Linux/macOS + Windows Git Bash)
+# Orden: python3 (Linux/macOS) > python (Windows) > py (Windows Launcher)
+# Nota: En Windows Git Bash, python3 puede ser un stub de Microsoft Store que falla;
+# por eso se verifica con --version en lugar de solo command -v.
+detectar_python() {
+    if python3 --version >/dev/null 2>&1; then
+        echo "python3"
+        return
+    fi
+    if python --version >/dev/null 2>&1; then
+        echo "python"
+        return
+    fi
+    if py -3 --version >/dev/null 2>&1; then
+        echo "py -3"
+        return
+    fi
+    echo ""
+}
+PYTHON_CMD=$(detectar_python)
+
 function limpiar_auxiliares() {
     echo -e "${YELLOW}Limpiando archivos auxiliares temporales...${NC}"
     find . -type f \( \
@@ -52,7 +73,13 @@ function compilar_rapido() {
 
 function auditar_tablas() {
     if [ -f "scripts/verificar_tablas.py" ]; then
-        python3 scripts/verificar_tablas.py
+        if [ -z "$PYTHON_CMD" ]; then
+            echo -e "${RED}Error: No se encontró Python 3 en el PATH (probado: python3, python, py).${NC}"
+            echo -e "${YELLOW}Instala Python desde https://www.python.org/ y agrega al PATH.${NC}"
+            return 1
+        fi
+        # shellcheck disable=SC2086
+        $PYTHON_CMD scripts/verificar_tablas.py
         return $?
     else
         echo -e "${RED}Error: No se encontró 'scripts/verificar_tablas.py'.${NC}"
@@ -64,11 +91,12 @@ function compilar_pdf() {
     # Eliminar PDF anterior para comprobar si se genera de nuevo
     rm -f "$MAIN.pdf"
 
-    # Verificación preventiva de tablas APA 7
-    if [ -f "scripts/verificar_tablas.py" ]; then
-        python3 scripts/verificar_tablas.py > /dev/null 2>&1
+    # Verificación preventiva de tablas APA 7 (no bloqueante)
+    if [ -f "scripts/verificar_tablas.py" ] && [ -n "$PYTHON_CMD" ]; then
+        # shellcheck disable=SC2086
+        $PYTHON_CMD scripts/verificar_tablas.py > /dev/null 2>&1
         if [ $? -ne 0 ]; then
-            echo -e "${YELLOW}Advertencia: Hay tablas con inconsistencias de estilo. Ejecuta './compilar.sh --check-tablas' para auditarlas.${NC}"
+            echo -e "${YELLOW}Advertencia: Hay tablas con inconsistencias de estilo. Ejecuta './compilar.sh --check-tablas' (o '.\compilar.ps1 --check-tablas' en Windows) para auditarlas.${NC}"
         fi
     fi
 

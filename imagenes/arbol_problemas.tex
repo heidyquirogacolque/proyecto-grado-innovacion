@@ -1,0 +1,88 @@
+% ============================================================
+% Árbol de Problemas — Causas, Problema Central y Efectos
+% Proyecto BTH Innovación Tecnológica — Capítulo 2
+% Formato: TikZ vectorial editable (APA 7)
+% Uso: \input{imagenes/arbol_problemas} dentro de figure
+% ============================================================
+\begin{tikzpicture}[
+    % --- Estilos base ---
+    causa/.style={
+        rectangle, rounded corners=3pt,
+        draw=primary!75, fill=lightgray,
+        text=darktext, align=center,
+        font=\scriptsize,
+        text width=4.2cm, minimum height=1.75cm,
+        inner sep=4pt
+    },
+    efecto/.style={
+        rectangle, rounded corners=3pt,
+        draw=primary!75, fill=secondary!13,
+        text=darktext, align=center,
+        font=\scriptsize,
+        text width=4.2cm, minimum height=1.75cm,
+        inner sep=4pt
+    },
+    problema/.style={
+        rectangle, rounded corners=5pt,
+        draw=primary, fill=primary,
+        text=white, align=center,
+        font=\small\bfseries,
+        text width=11.8cm, minimum height=2.05cm,
+        inner sep=6pt
+    },
+    flecha/.style={
+        -{Stealth[length=2.8mm,width=2.1mm]},
+        thick, draw=primary!85
+    },
+    etiqueta/.style={
+        font=\scriptsize\bfseries, text=primary, align=center
+    },
+    nota/.style={
+        font=\tiny\itshape, text=darktext!70, align=center
+    }
+]
+
+% --- EFECTOS (nivel superior) ---
+\node[efecto] (E1) at (-4.9, 3.6) {Concurrencia masiva\\para reseteo manual\\y \textbf{pérdida de cupos}\\ \textbf{vocacionales}};
+\node[efecto] (E2) at (0, 3.6) {Expedientes truncos,\\0\% trazabilidad y\\ \textbf{sobrecarga de}\\ \textbf{secretaría académica}};
+\node[efecto] (E3) at (4.9, 3.6) {Desequilibrios por\\taller, errores de\\transcripción y\\ \textbf{cruces horarios}\\MTP $\leftrightarrow$ U.E.};
+
+% Etiqueta EFECTOS
+\node[etiqueta] (labEfectos) at (0, 5.05) {EFECTOS \quad \normalfont\tiny\textit{(manifestaciones visibles)}};
+\draw[primary!40, thick] (-6.35,4.78) -- (6.35,4.78);
+
+% --- PROBLEMA CENTRAL (nivel medio) ---
+\node[problema] (P) at (0, 0.85) {Ausencia de un \textbf{sistema web integral} en el MTP San Julián BTH\\que garantice \textbf{recuperación autónoma de credenciales},\\ \textbf{matriculación documental auditada} y \textbf{asignación automatizada}\\ a cursos y paralelos por \textbf{unidad educativa de procedencia}};
+
+% Etiqueta PROBLEMA CENTRAL lateral
+\node[etiqueta, rotate=90, anchor=center, font=\scriptsize\bfseries, text=primary!90] at (-7.15, 0.85) {PROBLEMA CENTRAL};
+
+% --- CAUSAS RAÍCES (nivel inferior) ---
+\node[causa] (C1) at (-4.9, -1.95) {Plataforma V1.0 (2025)\\ \textbf{sin autoservicio}\\de credenciales\\(sin validación \textbf{C.I. +}\\ \textbf{fecha nacimiento})};
+\node[causa] (C2) at (0, -1.95) {Inexistencia de \textbf{módulo}\\ \textbf{de matriculación}\\ \textbf{documental} en BD\\(0\% trazabilidad)};
+\node[causa] (C3) at (4.9, -1.95) {Asignación \textbf{manual}\\en planillas externas\\por \textbf{colegio de origen}\\(U.E. de procedencia)};
+
+% Etiqueta CAUSAS
+\node[etiqueta] (labCausas) at (0, -3.55) {CAUSAS RAÍCES \quad \normalfont\tiny\textit{(origen técnico-funcional)}};
+\draw[primary!40, thick] (-6.35,-3.28) -- (6.35,-3.28);
+
+% --- FLECHAS: Causas → Problema Central ---
+\draw[flecha] (C1.north) -- (-2.8, -0.20);
+\draw[flecha] (C2.north) -- (0, -0.20);
+\draw[flecha] (C3.north) -- (2.8, -0.20);
+
+% --- FLECHAS: Problema Central → Efectos ---
+\draw[flecha] (-2.8, 1.92) -- (E1.south);
+\draw[flecha] (0, 1.92) -- (E2.south);
+\draw[flecha] (2.8, 1.92) -- (E3.south);
+
+% --- Contexto inferior (población/diagnóstico) ---
+\node[nota] at (0, -4.05) {Contexto: $\sim$400 postulantes/año $\cdot$ 7 especialidades $\cdot$ Diagnóstico 2022--2025 + relevamiento 1er bimestre 2026 (60 estudiantes + 5 funcionarios)};
+
+% --- Marco sutil opcional (desactivado, respeta APA) ---
+% \begin{scope}[on background layer]
+%   \node[fit=(E1)(E3)(labEfectos), draw=primary!18, rounded corners=6pt, inner sep=6pt] {};
+%   \node[fit=(C1)(C3)(labCausas), draw=primary!18, rounded corners=6pt, inner sep=6pt] {};
+% \end{scope}
+
+\end{tikzpicture}
