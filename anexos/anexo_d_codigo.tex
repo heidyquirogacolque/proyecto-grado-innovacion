@@ -1,0 +1,11 @@
+\seccionanexo{Anexo D: Código Fuente Selecto del Sistema MVC}
+
+Extractos representativos del patrón Modelo--Vista--Controlador (Vista HTML5/CSS3/JS, Controlador PHP 8.2/Apache, Modelo PDO--PostgreSQL 16.4). Código anonimizado, sin datos personales reales.
+
+\lstinputlisting[language=PHP, caption={Algoritmo transaccional de asignación de vacantes con control ACID \texttt{FOR UPDATE} (Controlador + Modelo).}, label={lst:reserva_cupo}]{codigo/reserva_cupo_transaccional.php}
+
+\lstinputlisting[language=PHP, caption={Módulo autónomo de recuperación de credenciales por C.I. y fecha de nacimiento ($<$2 min, auditoría anonimizada).}, label={lst:recovery_ci_fecha}]{codigo/recovery_ci_fecha.php}
+
+\lstinputlisting[language=PHP, caption={Modelo de dominio Postulante (PDO) — persistencia y asignación por unidad educativa.}, label={lst:modelo_postulante}]{codigo/modelo_postulante.php}
+
+\notatabla{Código completo disponible en repositorio del proyecto; extractos verificados en entorno local Apache 2.4 + PostgreSQL 16.4.}

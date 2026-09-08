@@ -1,0 +1,31 @@
+\seccionanexo{Anexo C: Esquema Relacional y Diccionario de Datos (PostgreSQL 16.4)}
+
+Estructura relacional normalizada bajo patrón MVC (Modelo PDO) con control ACID y bloqueo pesimista \texttt{FOR UPDATE} para la consistencia de cupos. Diagrama ER simplificado: \texttt{especialidad} 1---* \texttt{postulante} 1---* \texttt{matricula\_documental} / \texttt{asignacion\_paralelo} y \texttt{postulante} *---1 \texttt{auditoria\_credenciales} (log).
+
+\begin{itemize}
+    \item \textbf{Tabla especialidad:} Catálogo de las 7 carreras técnicas (id\_especialidad PK, nombre UNIQUE, cupos\_maximos, cupos\_disponibles CHECK $\geq$0, estado). Base para el control atómico de vacantes (ver Anexo D).
+    \item \textbf{Tabla postulante:} Padrón de aspirantes (id\_postulante PK, ci UNIQUE, nombres, apellidos, fecha\_nacimiento, telefono, unidad\_educativa\_origen, id\_especialidad\_fk FK, fecha\_registro, estado). Índice sobre ci para recovery C.I.+fecha.
+    \item \textbf{Tabla matricula\_documental:} Auditoría de requisitos físicos verificados por los tutores de curso (id\_matricula PK, id\_postulante\_fk FK, libretas\_secundaria\_ok BOOL, ci\_tutor\_ok BOOL, ci\_postulante\_ok BOOL, certificado\_nacimiento\_ok BOOL, fecha\_verificacion, funcionario\_auditor).
+    \item \textbf{Tabla asignacion\_paralelo:} Distribución académica (id\_asignacion PK, id\_postulante\_fk FK UNIQUE, curso, paralelo CHECK IN ('A','B'), gestion, unidad\_educativa\_origen, fecha\_asignacion).
+    \item \textbf{Tabla auditoria\_credenciales:} Trazabilidad SSPR (id\_log PK, ci, ip\_cliente, fecha\_hora, resultado\_validacion), anonimizada en reportes.
+\end{itemize}
+
+\begin{table}[htbp]
+    \centering
+    \caption{Diccionario de datos — restricciones principales.}
+    \label{tab:diccionario_datos}
+    \small
+    \begin{tabularx}{\textwidth}{L L L}
+        \toprule
+        \textbf{Tabla.Columna} & \textbf{Tipo / Restricción} & \textbf{Descripción} \\
+        \midrule
+        especialidad.cupos\_disponibles & INT CHECK $\geq$0 & Saldo atómico, decrementado con \texttt{FOR UPDATE} \\
+        postulante.ci & VARCHAR(15) UNIQUE NOT NULL & C.I. para recovery, índice hash \\
+        postulante.fecha\_nacimiento & DATE NOT NULL & Validación junto a C.I. \\
+        matricula\_documental.*\_ok & BOOLEAN DEFAULT false & Checklist documental auditado \\
+        asignacion\_paralelo.paralelo & CHAR(1) CHECK & Balanceo 4to A/B por U.E. \\
+        auditoria\_credenciales.ip\_cliente & INET & Log anonimizado *** \\
+        \bottomrule
+    \end{tabularx}
+    \notatabla{Esquema verificado en PostgreSQL 16.4; índices en ci y unidad\_educativa\_origen para asignación por colegio.}
+\end{table}
