@@ -7,7 +7,7 @@
 | **Preliminares** | `preliminares/caratula.tex` | Completo | `\imprimircaratulabth` con marco azul `\activarmarcobth{true}` | 2026-02-10 |
 | | `preliminares/dedicatoria.tex` | Completo | `\begin{estilodedicatoria}{Dedicatoria}` al pie | 2026-02-10 |
 | | `preliminares/agradecimiento.tex` | Completo | `\begin{estilodedicatoria}{Agradecimiento}` | 2026-02-10 |
-| | `preliminares/resumen.tex` | Completo | Trilingüe `Resumen`/`Abstract`/`Guaraní` + `\palabrasclave`/`\keywords`/`\simikuna` | 2026-02-10 |
+| | `preliminares/resumen.tex` | Completo | Trilingüe `Resumen`/`Abstract`/`Quechua` + `\palabrasclave`/`\keywords`/`\simikuna` | 2026-09-08 |
 | **Cap.1 Introducción** | `01_introduccion/contexto_general.tex` | Completo | 400 postulantes, 2022-2026, RM 0912/2023 `\parencite{ministerioeducacion2023}` | 2026-02-10 |
 | | `01_introduccion/motivacion_pertinencia.tex` | Completo | 3 brechas V1.0 + sujovich p.15 | 2026-02-10 |
 | | `01_introduccion/contribucion_esperada.tex` | Completo | V2.0 7 módulos, condicional `generaría` 20000 Bs | 2026-02-10 |

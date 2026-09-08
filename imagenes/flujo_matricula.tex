@@ -81,70 +81,70 @@
     }
 ]
 
-% --- Actores superiores (sutil) — espaciado ampliado ---
-\node[actor] at (-4.9, 5.90) {POSTULANTE};
-\node[actor] at (0, 5.90) {SISTEMA MVC};
-\node[actor] at (4.9, 5.90) {SECRETARÍA BTH};
-\draw[primary!18, thick] (-6.35, 5.68) -- (6.35, 5.68);
+% --- Actores superiores (sutil) — espaciado ampliado v4 ---
+\node[actor] at (-5.70, 6.70) {POSTULANTE};
+\node[actor] at (0, 6.70) {SISTEMA MVC};
+\node[actor] at (5.70, 6.70) {SECRETARÍA BTH};
+\draw[primary!18, thick] (-6.95, 6.48) -- (6.95, 6.48);
 
-% --- INICIO ---
-\node[terminator] (inicio) at (0, 5.20) {INICIO};
+% --- INICIO — gap +0.40cm ---
+\node[terminator] (inicio) at (0, 6.00) {INICIO};
 
-% --- FASE 1 — gap +0.35cm ---
-\node[fasePrimary] (f1) at (0, 4.15) {\textbf{Fase 1. Preinscripción y reserva de cupo}\\ \footnotesize\normalfont Formulario JS validado \textbullet{} Selección 7 especialidades \textbullet{} Reserva atómica \texttt{FOR UPDATE}};
+% --- FASE 1 — gap +0.65cm ---
+\node[fasePrimary] (f1) at (0, 4.75) {\textbf{Fase 1. Preinscripción y reserva de cupo}\\ \footnotesize\normalfont Formulario JS validado \textbullet{} Selección 7 especialidades \textbullet{} Reserva atómica \texttt{FOR UPDATE}};
 
 % Flecha inicio -> F1 (más aire)
 \draw[flecha] (inicio.south) -- (f1.north);
-\node[etiqueta, rotate=90] at (-5.45, 4.68) {móvil/PC};
+\node[etiqueta, rotate=90] at (-6.05, 5.38) {móvil/PC};
 
-% --- DECISIÓN Fase 2 — gap +0.30cm ---
-\node[decision] (dec2) at (0, 2.55) {¿Olvidó\\credencial?};
+% --- DECISIÓN Fase 2 — gap +0.60cm ---
+\node[decision] (dec2) at (0, 3.10) {¿Olvidó\\credencial?};
 
 \draw[flecha] (f1.south) -- (dec2.north);
 
-% Rama SI — Recuperación (más separación horizontal +0.65cm, ancho reducido para evitar solape)
-\node[faseBranch] (f2si) at (-4.90, 1.15) {\textbf{Fase 2. Recovery autónomo}\\ \footnotesize\normalfont M3 C.I. + fecha nacimiento <$2$ min};
+% Rama SI — Recuperación (más separación horizontal +1.45cm)
+\node[faseBranch] (f2si) at (-5.70, 1.35) {\textbf{Fase 2. Recovery autónomo}\\ \footnotesize\normalfont M3 C.I. + fecha nacimiento <$2$ min};
 
 % Rama NO (continúa)
-\node[faseBranchLight] (f2no) at (4.90, 1.15) {\textbf{Fase 2 (No)}: Continúa\\ \footnotesize\normalfont sin recovery};
+\node[faseBranchLight] (f2no) at (5.70, 1.35) {\textbf{Fase 2 (No)}: Continúa\\ \footnotesize\normalfont sin recovery};
 
-\draw[flecha] (dec2.west) -- ++(-0.75,0) |- (f2si.north);
-\node[etiqueta] at (-2.35, 2.05) {Sí};
-\draw[flecha] (dec2.east) -- ++(0.75,0) |- (f2no.north);
-\node[etiqueta] at (2.35, 2.05) {No};
+\draw[flecha] (dec2.west) -- ++(-0.90,0) |- (f2si.north);
+\node[etiqueta] at (-2.90, 2.35) {Sí};
+\draw[flecha] (dec2.east) -- ++(0.90,0) |- (f2no.north);
+\node[etiqueta] at (2.90, 2.35) {No};
 
-% Convergencia hacia Fase 3 — gap ampliado +0.35cm, codos ortogonales suavizados
-\coordinate (conv) at (0, -0.15);
-\draw[flechaDashed] (f2si.south) -- (-4.90, -0.15) -- (conv);
-\draw[flechaDashed] (f2no.south) -- (4.90, -0.15) -- (conv);
+% Convergencia hacia Fase 3 — gap ampliado +0.70cm, codos suavizados
+\coordinate (conv) at (0, -0.35);
+\draw[flechaDashed] (f2si.south) -- (-5.70, -0.35) -- (conv);
+\draw[flechaDashed] (f2no.south) -- (5.70, -0.35) -- (conv);
 
-% --- FASE 3 — gap +0.30cm ---
-\node[faseLight] (f3) at (0, -1.05) {\textbf{Fase 3. Emisión ficha preliminar}\\ \footnotesize\normalfont M6 Generador PDF \textbullet{} Código alfanumérico de verificación};
+% --- FASE 3 — gap +0.65cm ---
+\node[faseLight] (f3) at (0, -1.45) {\textbf{Fase 3. Emisión ficha preliminar}\\ \footnotesize\normalfont M6 Generador PDF \textbullet{} Código alfanumérico de verificación};
 
 \draw[flecha] (conv) -- (f3.north);
 
-% --- FASE 4 — gap +0.45cm ---
-\node[fase] (f4) at (0, -2.55) {\textbf{Fase 4. Matriculación documental formal}\\ \footnotesize\normalfont Entrega física + tildado M4: libretas 1ro-3ro, C.I. tutor, carnet, certificado};
+% --- FASE 4 — gap +0.80cm ---
+\node[fase] (f4) at (0, -3.20) {\textbf{Fase 4. Matriculación documental formal}\\ \footnotesize\normalfont Entrega física + tildado M4: libretas 1ro-3ro, C.I. tutor, carnet, certificado};
 
 \draw[flecha] (f3.south) -- (f4.north);
-\node[etiqueta, rotate=90] at (-5.45, -1.80) {gestión siguiente};
+\node[etiqueta, rotate=90] at (-6.05, -2.33) {gestión siguiente};
 
-% --- FASE 5 — gap +0.45cm ---
-\node[fasePrimary] (f5) at (0, -4.05) {\textbf{Fase 5. Asignación académica}\\ \footnotesize\normalfont M5 por U.E. procedencia → 4to A / 4to B \textbullet{} Listas oficiales + M7 reportes};
+% --- FASE 5 — gap +0.80cm ---
+\node[fasePrimary] (f5) at (0, -4.90) {\textbf{Fase 5. Asignación académica}\\ \footnotesize\normalfont M5 por U.E. procedencia → 4to A / 4to B \textbullet{} Listas oficiales + M7 reportes};
 
 \draw[flecha] (f4.south) -- (f5.north);
 
-% --- FIN — gap +0.40cm ---
-\node[terminator] (fin) at (0, -5.40) {FIN};
+% --- FIN — gap +0.75cm ---
+\node[terminator] (fin) at (0, -6.40) {FIN};
 
 \draw[flecha] (f5.south) -- (fin.north);
 
-% --- Línea lateral actor (vertical sutil, extendida) ---
-\draw[primary!15, line width=1.8pt] (-6.25, 5.30) -- (-6.25, -5.50);
-\draw[primary!15, line width=1.8pt] (6.25, 5.30) -- (6.25, -5.50);
+% --- Línea lateral actor (vertical sutil, extendida v4) ---
+\draw[primary!15, line width=1.8pt] (-6.85, 6.10) -- (-6.85, -6.50);
+\draw[primary!15, line width=1.8pt] (6.85, 6.10) -- (6.85, -6.50);
 
-% --- Notas inferiores — reubicadas por mayor altura ---
-\node[nota] at (0, -6.05) {Ciclo integral: cierre gestión previa (F1--F3) $\rightarrow$ inicio gestión siguiente (F4--F5) \textbullet{} Control ACID evita sobrecupos};
-\node[nota, text=darktext!50] at (0, -6.40) {Tiempo total: 3--5 min web vs. 1--3 días fila \textbullet{} Disponibilidad 24 h \textbullet{} Trazabilidad 100\%};
+% --- Notas inferiores — reubicadas por mayor altura v4 ---
+\node[nota] at (0, -7.05) {Ciclo integral: cierre gestión previa (F1--F3) $\rightarrow$ inicio gestión siguiente (F4--F5) \textbullet{} Control ACID evita sobrecupos};
+\node[nota, text=darktext!50] at (0, -7.40) {Tiempo total: 3--5 min web vs. 1--3 días fila \textbullet{} Disponibilidad 24 h \textbullet{} Trazabilidad 100\%};
 
 \end{tikzpicture}

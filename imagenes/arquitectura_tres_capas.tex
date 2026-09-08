@@ -60,75 +60,75 @@
     }
 ]
 
-% --- USUARIO (espaciado vertical ampliado) ---
-\node[font=\small, align=center] (usuario) at (0, 5.90) {\textbf{Usuario}};
-\node[font=\tiny, text=darktext!70, align=center] (usuarioDet) at (0, 5.50) {Postulante / Secretaría / Directivo};
-\node[detalle, font=\tiny\itshape, text=primary!70] at (0, 5.12) {$\sim$400 postulantes/año \textbullet{} 7 especialidades \textbullet{} móvil/PC};
+% --- USUARIO (espaciado vertical ampliado v3) ---
+\node[font=\small, align=center] (usuario) at (0, 6.70) {\textbf{Usuario}};
+\node[font=\tiny, text=darktext!70, align=center] (usuarioDet) at (0, 6.30) {Postulante / Secretaría / Directivo};
+\node[detalle, font=\tiny\itshape, text=primary!70] at (0, 5.92) {$\sim$400 postulantes/año \textbullet{} 7 especialidades \textbullet{} móvil/PC};
 
 % Flecha Usuario -> Vista (vertical centrada con más espacio)
-\draw[flecha] (usuario.south) -- (0, 4.10);
-\node[font=\tiny, fill=white, inner sep=1pt, text=primary!80] at (1.35, 4.55) {interactúa};
+\draw[flecha] (usuario.south) -- (0, 4.85);
+\node[font=\tiny, fill=white, inner sep=1pt, text=primary!80] at (1.55, 5.35) {interactúa};
 
-% --- VISTA (izquierda) — separación horizontal +1.15cm ---
-\node[vista] (vista) at (-5.50, 2.70) {
+% --- VISTA (izquierda) — separación horizontal +2.05cm (v3) ---
+\node[vista] (vista) at (-6.40, 3.10) {
     \textbf{VISTA}\\ \textit{(View)}\\
     \footnotesize\normalfont HTML5 \textbullet{} CSS3 \textbullet{} JS ES6\\
     \footnotesize\normalfont Plantillas PHP\\
     \scriptsize\textit{Formularios, PDF, Panel}
 };
 
-% --- CONTROLADOR (centro, destacado) ---
-\node[controlador] (controlador) at (0, 2.70) {
+% --- CONTROLADOR (centro, destacado) — y +0.40 (v3) ---
+\node[controlador] (controlador) at (0, 3.10) {
     \textbf{CONTROLADOR}\\ \textit{(Controller)}\\
     \footnotesize\normalfont PHP 8.2 / Apache 2.4\\
     \scriptsize Routing, sesiones,\\[-1pt]\scriptsize validación C.I.+fecha,\\[-1pt]\scriptsize reglas matrícula/paralelos
 };
 
-% --- MODELO (derecha) — separación horizontal +1.15cm ---
-\node[modelo] (modelo) at (5.50, 2.70) {
+% --- MODELO (derecha) — separación horizontal +2.05cm (v3) ---
+\node[modelo] (modelo) at (6.40, 3.10) {
     \textbf{MODELO}\\ \textit{(Model)}\\
     \footnotesize\normalfont Clases PHP + PDO\\
     \footnotesize\normalfont PostgreSQL 16.4\\
     \scriptsize\textit{ACID + FOR UPDATE}
 };
 
-% --- BASE DE DATOS (debajo de Modelo, más separación vertical) ---
-\node[bd] (bd) at (5.50, -0.45) {PostgreSQL\\16.4};
+% --- BASE DE DATOS (debajo de Modelo, más separación vertical v3) ---
+\node[bd] (bd) at (6.40, -0.70) {PostgreSQL\\16.4};
 
-% --- CONEXIONES MVC (ciclo ortogonal con rounded) ---
-% Vista -> Controlador (evento) — horizontal directa optimizada
+% --- CONEXIONES MVC (ciclo ortogonal con rounded, v3 más aire) ---
+% Vista -> Controlador (evento) — horizontal directa con gap +0.90cm
 \draw[flecha] (vista.east) -- (controlador.west);
-\node[font=\tiny, fill=white, inner sep=1pt, text=primary!80] at (-2.75, 3.05) {evento};
+\node[font=\tiny, fill=white, inner sep=1pt, text=primary!80] at (-3.20, 3.45) {evento};
 
-% Controlador -> Modelo (invoca)
+% Controlador -> Modelo (invoca) — gap +0.90cm
 \draw[flecha] (controlador.east) -- (modelo.west);
-\node[font=\tiny, fill=white, inner sep=1pt, text=primary!80] at (2.75, 3.05) {invoca};
+\node[font=\tiny, fill=white, inner sep=1pt, text=primary!80] at (3.20, 3.45) {invoca};
 
-% Controlador -> Vista (actualiza) — dashed ortogonal inferior con más espacio
-\draw[flechaDashed] ([xshift=-0.55cm]controlador.south) -- ++(0,-0.85) -| (vista.south);
-\node[font=\tiny, fill=white, inner sep=1pt, text=primary!60] at (-3.60, 1.45) {actualiza};
+% Controlador -> Vista (actualiza) — dashed ortogonal inferior con más espacio (y -1.15)
+\draw[flechaDashed] ([xshift=-0.65cm]controlador.south) -- ++(0,-1.15) -| (vista.south);
+\node[font=\tiny, fill=white, inner sep=1pt, text=primary!60] at (-4.30, 1.65) {actualiza};
 
-% Modelo -> Controlador (datos / estado) — dashed ortogonal inferior amplia separación
-\draw[flechaDashed] ([xshift=0.55cm]modelo.south) -- ++(0,-0.85) -| ([xshift=0.55cm]controlador.south);
-\node[font=\tiny, fill=white, inner sep=1pt, text=primary!60] at (3.25, 0.95) {estado};
+% Modelo -> Controlador (datos / estado) — dashed ortogonal inferior amplia separación (y -1.15)
+\draw[flechaDashed] ([xshift=0.65cm]modelo.south) -- ++(0,-1.15) -| ([xshift=0.65cm]controlador.south);
+\node[font=\tiny, fill=white, inner sep=1pt, text=primary!60] at (4.05, 1.15) {estado};
 
-% Modelo <-> BD — líneas separadas ortogonalmente
+% Modelo <-> BD — líneas separadas ortogonalmente con más aire
 \draw[flecha] (modelo.south) -- (bd.north);
-\node[font=\tiny, fill=white, inner sep=1pt, text=primary!80] at (6.65, 1.10) {PDO / SQL};
-\draw[flechaDashed] ([xshift=-0.55cm]bd.north) -- ++(0,0.65) -| ([xshift=-0.55cm]modelo.south);
-\node[font=\tiny, fill=white, inner sep=1pt, text=primary!60] at (4.35, 0.85) {ACID};
+\node[font=\tiny, fill=white, inner sep=1pt, text=primary!80] at (7.60, 1.20) {PDO / SQL};
+\draw[flechaDashed] ([xshift=-0.65cm]bd.north) -- ++(0,0.85) -| ([xshift=-0.65cm]modelo.south);
+\node[font=\tiny, fill=white, inner sep=1pt, text=primary!60] at (5.15, 1.05) {ACID};
 
 % Render Vista -> Usuario (dashed) — ortogonal superior con más espacio
-\draw[flechaDashed] ([xshift=0.70cm]vista.north) -- ++(0,0.75) -| ([xshift=-0.80cm]usuario.south);
-\node[font=\tiny, fill=white, inner sep=1pt, text=primary!60] at (-2.95, 4.15) {render};
+\draw[flechaDashed] ([xshift=0.70cm]vista.north) -- ++(0,1.00) -| ([xshift=-0.80cm]usuario.south);
+\node[font=\tiny, fill=white, inner sep=1pt, text=primary!60] at (-3.45, 4.95) {render};
 
-% --- Agrupación Servidor (padding ampliado) ---
+% --- Agrupación Servidor (padding ampliado v3) ---
 \begin{scope}[on background layer]
-    \node[draw=primary!28, rounded corners=7pt, inner sep=8pt, fit=(vista)(controlador)(modelo)(bd), label={[font=\tiny\itshape,text=primary!60]north:Servidor Apache 2.4 + PHP-PDO}] (servidor) {};
+    \node[draw=primary!28, rounded corners=7pt, inner sep=12pt, fit=(vista)(controlador)(modelo)(bd), label={[font=\tiny\itshape,text=primary!60]north:Servidor Apache 2.4 + PHP-PDO}] (servidor) {};
 \end{scope}
 
-% --- Nota inferior ---
-\node[nota] at (0, -1.65) {Flujo: Vista delega evento al Controlador → Controlador invoca Modelo → Modelo persiste/recupera vía PDO (ACID + \texttt{FOR UPDATE}) → Controlador actualiza Vista};
-\node[nota, font=\tiny, text=darktext!55] at (0, -2.05) {Validación OE4: $>$100 peticiones/min \textbullet{} latencia $<$1.2 s \textbullet{} 0 sobrecupos \textbullet{} $<$1.5 MB/trámite};
+% --- Nota inferior (reubicada v3) ---
+\node[nota] at (0, -2.20) {Flujo: Vista delega evento al Controlador → Controlador invoca Modelo → Modelo persiste/recupera vía PDO (ACID + \texttt{FOR UPDATE}) → Controlador actualiza Vista};
+\node[nota, font=\tiny, text=darktext!55] at (0, -2.60) {Validación OE4: $>$100 peticiones/min \textbullet{} latencia $<$1.2 s \textbullet{} 0 sobrecupos \textbullet{} $<$1.5 MB/trámite};
 
 \end{tikzpicture}
