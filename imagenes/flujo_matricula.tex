@@ -2,7 +2,7 @@
 % Flujo Operativo del Ciclo Completo de Matrícula — Cap. 4.1.3
 % 5 Fases correlativas (F1 Preinscripción → F5 Asignación)
 % Proyecto BTH V2.0 — MTP San Julián
-% Formato: TikZ flowchart vertical con decisión opcional Fase 2
+% Formato: TikZ flowchart vertical con decisión opcional Fase 2 — v2 espaciado ampliado
 % Uso: \input{imagenes/flujo_matricula} dentro de figure
 % ============================================================
 \begin{tikzpicture}[
@@ -30,6 +30,22 @@
         text width=9.8cm, minimum height=1.05cm,
         inner sep=4pt
     },
+    faseBranch/.style={
+        rectangle, rounded corners=4pt,
+        draw=primary!75, fill=white,
+        text=darktext, align=center,
+        font=\scriptsize,
+        text width=4.4cm, minimum height=1.15cm,
+        inner sep=4pt
+    },
+    faseBranchLight/.style={
+        rectangle, rounded corners=4pt,
+        draw=primary!55, fill=secondary!12,
+        text=darktext, align=center,
+        font=\scriptsize,
+        text width=4.4cm, minimum height=1.15cm,
+        inner sep=4pt
+    },
     decision/.style={
         diamond, aspect=2.4,
         draw=primary!80, fill=lightgray,
@@ -46,11 +62,13 @@
     },
     flecha/.style={
         -{Stealth[length=2.8mm,width=2.1mm]},
-        thick, draw=primary!85
+        thick, draw=primary!85,
+        rounded corners=2pt
     },
     flechaDashed/.style={
         -{Stealth[length=2.6mm,width=2mm]},
-        thick, draw=primary!55, dashed
+        thick, draw=primary!55, dashed,
+        rounded corners=2pt
     },
     etiqueta/.style={
         font=\tiny, text=primary!80, fill=white, inner sep=1pt
@@ -63,70 +81,70 @@
     }
 ]
 
-% --- Actores superiores (sutil) ---
-\node[actor] at (-4.6, 5.55) {POSTULANTE};
-\node[actor] at (0, 5.55) {SISTEMA MVC};
-\node[actor] at (4.6, 5.55) {SECRETARÍA BTH};
-\draw[primary!18, thick] (-6.15, 5.35) -- (6.15, 5.35);
+% --- Actores superiores (sutil) — espaciado ampliado ---
+\node[actor] at (-4.9, 5.90) {POSTULANTE};
+\node[actor] at (0, 5.90) {SISTEMA MVC};
+\node[actor] at (4.9, 5.90) {SECRETARÍA BTH};
+\draw[primary!18, thick] (-6.35, 5.68) -- (6.35, 5.68);
 
 % --- INICIO ---
-\node[terminator] (inicio) at (0, 4.85) {INICIO};
+\node[terminator] (inicio) at (0, 5.20) {INICIO};
 
-% --- FASE 1 ---
-\node[fasePrimary] (f1) at (0, 3.85) {\textbf{Fase 1. Preinscripción y reserva de cupo}\\ \footnotesize\normalfont Formulario JS validado \textbullet{} Selección 7 especialidades \textbullet{} Reserva atómica \texttt{FOR UPDATE}};
+% --- FASE 1 — gap +0.35cm ---
+\node[fasePrimary] (f1) at (0, 4.15) {\textbf{Fase 1. Preinscripción y reserva de cupo}\\ \footnotesize\normalfont Formulario JS validado \textbullet{} Selección 7 especialidades \textbullet{} Reserva atómica \texttt{FOR UPDATE}};
 
-% Flecha inicio -> F1
+% Flecha inicio -> F1 (más aire)
 \draw[flecha] (inicio.south) -- (f1.north);
-\node[etiqueta, rotate=90] at (-5.15, 4.35) {móvil/PC};
+\node[etiqueta, rotate=90] at (-5.45, 4.68) {móvil/PC};
 
-% --- DECISIÓN Fase 2 ---
-\node[decision] (dec2) at (0, 2.25) {¿Olvidó\\credencial?};
+% --- DECISIÓN Fase 2 — gap +0.30cm ---
+\node[decision] (dec2) at (0, 2.55) {¿Olvidó\\credencial?};
 
 \draw[flecha] (f1.south) -- (dec2.north);
 
-% Rama NO (continúa)
-\node[faseLight] (f2no) at (4.25, 1.05) {\textbf{Fase 2 (No)}: Continúa\\ \footnotesize\normalfont sin recovery};
+% Rama SI — Recuperación (más separación horizontal +0.65cm, ancho reducido para evitar solape)
+\node[faseBranch] (f2si) at (-4.90, 1.15) {\textbf{Fase 2. Recovery autónomo}\\ \footnotesize\normalfont M3 C.I. + fecha nacimiento <$2$ min};
 
-% Rama SI — Recuperación
-\node[fase] (f2si) at (-4.25, 1.05) {\textbf{Fase 2. Recovery autónomo}\\ \footnotesize\normalfont M3 C.I. + fecha nacimiento <$2$ min};
+% Rama NO (continúa)
+\node[faseBranchLight] (f2no) at (4.90, 1.15) {\textbf{Fase 2 (No)}: Continúa\\ \footnotesize\normalfont sin recovery};
 
 \draw[flecha] (dec2.west) -- ++(-0.75,0) |- (f2si.north);
-\node[etiqueta] at (-2.05, 1.95) {Sí};
+\node[etiqueta] at (-2.35, 2.05) {Sí};
 \draw[flecha] (dec2.east) -- ++(0.75,0) |- (f2no.north);
-\node[etiqueta] at (2.05, 1.95) {No};
+\node[etiqueta] at (2.35, 2.05) {No};
 
-% Convergencia hacia Fase 3
-\coordinate (conv) at (0, -0.05);
-\draw[flechaDashed] (f2si.south) -- (-4.25, -0.05) -- (conv);
-\draw[flechaDashed] (f2no.south) -- (4.25, -0.05) -- (conv);
+% Convergencia hacia Fase 3 — gap ampliado +0.35cm, codos ortogonales suavizados
+\coordinate (conv) at (0, -0.15);
+\draw[flechaDashed] (f2si.south) -- (-4.90, -0.15) -- (conv);
+\draw[flechaDashed] (f2no.south) -- (4.90, -0.15) -- (conv);
 
-% --- FASE 3 ---
-\node[faseLight] (f3) at (0, -0.85) {\textbf{Fase 3. Emisión ficha preliminar}\\ \footnotesize\normalfont M6 Generador PDF \textbullet{} Código alfanumérico de verificación};
+% --- FASE 3 — gap +0.30cm ---
+\node[faseLight] (f3) at (0, -1.05) {\textbf{Fase 3. Emisión ficha preliminar}\\ \footnotesize\normalfont M6 Generador PDF \textbullet{} Código alfanumérico de verificación};
 
 \draw[flecha] (conv) -- (f3.north);
 
-% --- FASE 4 ---
-\node[fase] (f4) at (0, -2.15) {\textbf{Fase 4. Matriculación documental formal}\\ \footnotesize\normalfont Entrega física + tildado M4: libretas 1ro-3ro, C.I. tutor, carnet, certificado};
+% --- FASE 4 — gap +0.45cm ---
+\node[fase] (f4) at (0, -2.55) {\textbf{Fase 4. Matriculación documental formal}\\ \footnotesize\normalfont Entrega física + tildado M4: libretas 1ro-3ro, C.I. tutor, carnet, certificado};
 
 \draw[flecha] (f3.south) -- (f4.north);
-\node[etiqueta, rotate=90] at (-5.15, -1.50) {gestión siguiente};
+\node[etiqueta, rotate=90] at (-5.45, -1.80) {gestión siguiente};
 
-% --- FASE 5 ---
-\node[fasePrimary] (f5) at (0, -3.45) {\textbf{Fase 5. Asignación académica}\\ \footnotesize\normalfont M5 por U.E. procedencia → 4to A / 4to B \textbullet{} Listas oficiales + M7 reportes};
+% --- FASE 5 — gap +0.45cm ---
+\node[fasePrimary] (f5) at (0, -4.05) {\textbf{Fase 5. Asignación académica}\\ \footnotesize\normalfont M5 por U.E. procedencia → 4to A / 4to B \textbullet{} Listas oficiales + M7 reportes};
 
 \draw[flecha] (f4.south) -- (f5.north);
 
-% --- FIN ---
-\node[terminator] (fin) at (0, -4.65) {FIN};
+% --- FIN — gap +0.40cm ---
+\node[terminator] (fin) at (0, -5.40) {FIN};
 
 \draw[flecha] (f5.south) -- (fin.north);
 
-% --- Línea lateral actor (vertical sutil) ---
-\draw[primary!15, line width=1.8pt] (-6.05, 4.95) -- (-6.05, -4.95);
-\draw[primary!15, line width=1.8pt] (6.05, 4.95) -- (6.05, -4.95);
+% --- Línea lateral actor (vertical sutil, extendida) ---
+\draw[primary!15, line width=1.8pt] (-6.25, 5.30) -- (-6.25, -5.50);
+\draw[primary!15, line width=1.8pt] (6.25, 5.30) -- (6.25, -5.50);
 
-% --- Notas inferiores ---
-\node[nota] at (0, -5.30) {Ciclo integral: cierre gestión previa (F1--F3) $\rightarrow$ inicio gestión siguiente (F4--F5) \textbullet{} Control ACID evita sobrecupos};
-\node[nota, text=darktext!50] at (0, -5.65) {Tiempo total: 3--5 min web vs. 1--3 días fila \textbullet{} Disponibilidad 24 h \textbullet{} Trazabilidad 100\%};
+% --- Notas inferiores — reubicadas por mayor altura ---
+\node[nota] at (0, -6.05) {Ciclo integral: cierre gestión previa (F1--F3) $\rightarrow$ inicio gestión siguiente (F4--F5) \textbullet{} Control ACID evita sobrecupos};
+\node[nota, text=darktext!50] at (0, -6.40) {Tiempo total: 3--5 min web vs. 1--3 días fila \textbullet{} Disponibilidad 24 h \textbullet{} Trazabilidad 100\%};
 
 \end{tikzpicture}
