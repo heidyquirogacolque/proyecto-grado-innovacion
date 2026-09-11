@@ -2,55 +2,58 @@
 % Arquitectura MVC Pura — Cap. 4.1.1
 % Proyecto BTH V2.0 — Sistema Web de Inscripción MTP San Julián
 % Patrón Modelo-Vista-Controlador (MVC) — Pressman 2020
-% Formato: TikZ vectorial editable (APA 7) — v2 espaciado ampliado
+% Formato: TikZ vectorial editable (APA 7) — v5 refinado limpio
 % Uso: \input{imagenes/arquitectura_tres_capas} dentro de figure
 % Nota: Mantiene nombre archivo por compatibilidad con label fig:arquitectura_mvc
+% v5: celdas uniformes 2.30cm, outer sep 3pt, BD 3.20cm, retornos desfasados
+%     1.55/1.85, etiquetas con halo 3pt, render despegado, fit 20pt
 % ============================================================
 \begin{tikzpicture}[
     vista/.style={
-        rectangle, rounded corners=5pt,
-        draw=primary!75, fill=secondary!13,
+        rectangle, rounded corners=6pt,
+        draw=primary!75, line width=0.7pt, fill=secondary!13,
         text=darktext, align=center,
         font=\scriptsize,
-        text width=5.2cm, minimum height=2.0cm,
-        inner sep=5pt
+        text width=5.0cm, minimum height=2.30cm,
+        inner sep=6pt, outer sep=3pt
     },
     controlador/.style={
-        rectangle, rounded corners=5pt,
-        draw=primary, fill=primary,
+        rectangle, rounded corners=6pt,
+        draw=primary, line width=0.85pt, fill=primary,
         text=white, align=center,
-        font=\scriptsize\bfseries,
-        text width=5.2cm, minimum height=2.0cm,
-        inner sep=5pt
+        font=\scriptsize,
+        text width=5.0cm, minimum height=2.30cm,
+        inner sep=6pt, outer sep=3pt
     },
     modelo/.style={
-        rectangle, rounded corners=5pt,
-        draw=primary!75, fill=lightgray,
+        rectangle, rounded corners=6pt,
+        draw=primary!75, line width=0.7pt, fill=lightgray,
         text=darktext, align=center,
         font=\scriptsize,
-        text width=5.2cm, minimum height=2.0cm,
-        inner sep=5pt
+        text width=5.0cm, minimum height=2.30cm,
+        inner sep=6pt, outer sep=3pt
     },
     bd/.style={
         cylinder, shape border rotate=90,
-        draw=primary!80, fill=primary!12,
+        draw=primary!80, line width=0.7pt, fill=primary!12,
         text=darktext, align=center,
         font=\scriptsize,
-        aspect=0.22, minimum height=1.25cm, minimum width=2.8cm,
-        inner sep=4pt
+        aspect=0.25, minimum height=1.45cm, minimum width=3.20cm,
+        inner sep=5pt, outer sep=2.5pt
     },
     flecha/.style={
-        -{Stealth[length=3mm,width=2.2mm]},
-        thick, draw=primary!85,
-        rounded corners=2pt
+        -{Stealth[length=3.2mm,width=2.4mm]},
+        line width=0.85pt, draw=primary!85,
+        rounded corners=4pt
     },
     flechaDashed/.style={
-        -{Stealth[length=2.6mm,width=2mm]},
-        thick, draw=primary!55, dashed,
-        rounded corners=2pt
+        -{Stealth[length=3.0mm,width=2.2mm]},
+        line width=0.70pt, draw=primary!55,
+        dash pattern=on 4.5pt off 3pt,
+        rounded corners=4pt
     },
     etiqueta/.style={
-        font=\scriptsize\bfseries, text=primary, align=center
+        font=\tiny\bfseries, text=primary, align=center
     },
     detalle/.style={
         font=\scriptsize, text=darktext, align=center
@@ -60,75 +63,75 @@
     }
 ]
 
-% --- USUARIO (espaciado vertical ampliado v3) ---
-\node[font=\small, align=center] (usuario) at (0, 6.70) {\textbf{Usuario}};
-\node[font=\tiny, text=darktext!70, align=center] (usuarioDet) at (0, 6.30) {Postulante / Secretaría / Directivo};
-\node[detalle, font=\tiny\itshape, text=primary!70] at (0, 5.92) {$\sim$400 postulantes/año \textbullet{} 7 especialidades \textbullet{} móvil/PC};
+% --- USUARIO (cabecera superior con respiro extra v5) ---
+\node[font=\small, align=center, outer sep=2pt] (usuario) at (0, 7.45) {\textbf{Usuario}};
+\node[font=\tiny, text=darktext!70, align=center, outer sep=2pt] (usuarioDet) at (0, 7.05) {Postulante / Secretaría / Directivo};
+\node[detalle, font=\tiny\itshape, text=primary!70, outer sep=2pt] at (0, 6.65) {$\sim$400 postulantes/año \textbullet{} 7 especialidades \textbullet{} móvil/PC};
 
-% Flecha Usuario -> Vista (vertical centrada con más espacio)
-\draw[flecha] (usuario.south) -- (0, 4.85);
-\node[font=\tiny, fill=white, inner sep=1pt, text=primary!80] at (1.55, 5.35) {interactúa};
+% Flecha Usuario -> Vista (vertical con holgura v5)
+\draw[flecha] (usuario.south) -- (0, 5.30);
+\node[font=\tiny, fill=white, rounded corners=2pt, inner sep=3pt, outer sep=1pt, text=primary!80, draw=white] at (1.70, 5.95) {interactúa};
 
-% --- VISTA (izquierda) — separación horizontal +2.05cm (v3) ---
-\node[vista] (vista) at (-6.40, 3.10) {
+% --- VISTA (izquierda) — gap 1.90cm, altura uniforme 2.30cm ---
+\node[vista] (vista) at (-6.80, 3.30) {
     \textbf{VISTA}\\ \textit{(View)}\\
     \footnotesize\normalfont HTML5 \textbullet{} CSS3 \textbullet{} JS ES6\\
     \footnotesize\normalfont Plantillas PHP\\
     \scriptsize\textit{Formularios, PDF, Panel}
 };
 
-% --- CONTROLADOR (centro, destacado) — y +0.40 (v3) ---
-\node[controlador] (controlador) at (0, 3.10) {
+% --- CONTROLADOR (centro, destacado, texto cuerpo en normalfont para igualar peso) ---
+\node[controlador] (controlador) at (0, 3.30) {
     \textbf{CONTROLADOR}\\ \textit{(Controller)}\\
     \footnotesize\normalfont PHP 8.2 / Apache 2.4\\
-    \scriptsize Routing, sesiones,\\[-1pt]\scriptsize validación C.I.+fecha,\\[-1pt]\scriptsize reglas matrícula/paralelos
+    \scriptsize\normalfont Routing, sesiones,\\[-1pt]\scriptsize\normalfont validación C.I.+fecha,\\[-1pt]\scriptsize\normalfont reglas matrícula/paralelos
 };
 
-% --- MODELO (derecha) — separación horizontal +2.05cm (v3) ---
-\node[modelo] (modelo) at (6.40, 3.10) {
+% --- MODELO (derecha) ---
+\node[modelo] (modelo) at (6.80, 3.30) {
     \textbf{MODELO}\\ \textit{(Model)}\\
     \footnotesize\normalfont Clases PHP + PDO\\
     \footnotesize\normalfont PostgreSQL 16.4\\
     \scriptsize\textit{ACID + FOR UPDATE}
 };
 
-% --- BASE DE DATOS (debajo de Modelo, más separación vertical v3) ---
-\node[bd] (bd) at (6.40, -0.70) {PostgreSQL\\16.4};
+% --- BASE DE DATOS (debajo de Modelo, más separación vertical v5) ---
+\node[bd] (bd) at (6.80, -1.10) {PostgreSQL\\16.4};
 
-% --- CONEXIONES MVC (ciclo ortogonal con rounded, v3 más aire) ---
-% Vista -> Controlador (evento) — horizontal directa con gap +0.90cm
+% --- CONEXIONES MVC (ortogonales desfasadas para evitar superposición) ---
+% Vista -> Controlador (evento) — recta horizontal gap 1.90cm
 \draw[flecha] (vista.east) -- (controlador.west);
-\node[font=\tiny, fill=white, inner sep=1pt, text=primary!80] at (-3.20, 3.45) {evento};
+\node[font=\tiny, fill=white, rounded corners=2pt, inner sep=3pt, outer sep=1pt, text=primary!80, draw=white] at (-3.40, 3.70) {evento};
 
-% Controlador -> Modelo (invoca) — gap +0.90cm
+% Controlador -> Modelo (invoca)
 \draw[flecha] (controlador.east) -- (modelo.west);
-\node[font=\tiny, fill=white, inner sep=1pt, text=primary!80] at (3.20, 3.45) {invoca};
+\node[font=\tiny, fill=white, rounded corners=2pt, inner sep=3pt, outer sep=1pt, text=primary!80, draw=white] at (3.40, 3.70) {invoca};
 
-% Controlador -> Vista (actualiza) — dashed ortogonal inferior con más espacio (y -1.15)
-\draw[flechaDashed] ([xshift=-0.65cm]controlador.south) -- ++(0,-1.15) -| (vista.south);
-\node[font=\tiny, fill=white, inner sep=1pt, text=primary!60] at (-4.30, 1.65) {actualiza};
+% Controlador -> Vista (actualiza) — descenso 1.55cm, cota superior
+\draw[flechaDashed] ([xshift=-0.85cm]controlador.south) -- ++(0,-1.55) -| (vista.south);
+\node[font=\tiny, fill=white, rounded corners=2pt, inner sep=3pt, outer sep=1pt, text=primary!60, draw=white] at (-4.35, 1.60) {actualiza};
 
-% Modelo -> Controlador (datos / estado) — dashed ortogonal inferior amplia separación (y -1.15)
-\draw[flechaDashed] ([xshift=0.65cm]modelo.south) -- ++(0,-1.15) -| ([xshift=0.65cm]controlador.south);
-\node[font=\tiny, fill=white, inner sep=1pt, text=primary!60] at (4.05, 1.15) {estado};
+% Modelo -> Controlador (estado) — descenso 1.85cm desfasado 0.30cm para no solaparse
+\draw[flechaDashed] ([xshift=0.85cm]modelo.south) -- ++(0,-1.85) -| ([xshift=0.85cm]controlador.south);
+\node[font=\tiny, fill=white, rounded corners=2pt, inner sep=3pt, outer sep=1pt, text=primary!60, draw=white] at (4.55, 0.95) {estado};
 
-% Modelo <-> BD — líneas separadas ortogonalmente con más aire
-\draw[flecha] (modelo.south) -- (bd.north);
-\node[font=\tiny, fill=white, inner sep=1pt, text=primary!80] at (7.60, 1.20) {PDO / SQL};
-\draw[flechaDashed] ([xshift=-0.65cm]bd.north) -- ++(0,0.85) -| ([xshift=-0.65cm]modelo.south);
-\node[font=\tiny, fill=white, inner sep=1pt, text=primary!60] at (5.15, 1.05) {ACID};
+% Modelo <-> BD — offsets separados 1.0cm, etiquetas dentro del fit
+\draw[flecha] ([xshift=0.35cm]modelo.south) -- ([xshift=0.35cm]bd.north);
+\node[font=\tiny, fill=white, rounded corners=2pt, inner sep=3pt, outer sep=1pt, text=primary!80, draw=white] at (7.95, 1.10) {PDO / SQL};
+\draw[flechaDashed] ([xshift=-0.65cm]bd.north) -- ++(0,0.95) -| ([xshift=-0.65cm]modelo.south);
+\node[font=\tiny, fill=white, rounded corners=2pt, inner sep=3pt, outer sep=1pt, text=primary!60, draw=white] at (5.35, 1.00) {ACID};
 
-% Render Vista -> Usuario (dashed) — ortogonal superior con más espacio
-\draw[flechaDashed] ([xshift=0.70cm]vista.north) -- ++(0,1.00) -| ([xshift=-0.80cm]usuario.south);
-\node[font=\tiny, fill=white, inner sep=1pt, text=primary!60] at (-3.45, 4.95) {render};
+% Render Vista -> Usuario (dashed) — codo despegado x=1.05 para no cruzar flecha central
+\draw[flechaDashed] ([xshift=1.05cm]vista.north) -- ++(0,1.20) -| ([xshift=-0.90cm]usuario.south);
+\node[font=\tiny, fill=white, rounded corners=2pt, inner sep=3pt, outer sep=1pt, text=primary!60, draw=white] at (-3.85, 5.35) {render};
 
-% --- Agrupación Servidor (padding ampliado v3) ---
+% --- Agrupación Servidor (padding 20pt v5, fill sutil) ---
 \begin{scope}[on background layer]
-    \node[draw=primary!28, rounded corners=7pt, inner sep=12pt, fit=(vista)(controlador)(modelo)(bd), label={[font=\tiny\itshape,text=primary!60]north:Servidor Apache 2.4 + PHP-PDO}] (servidor) {};
+    \node[draw=primary!22, fill=primary!3, line width=0.6pt, rounded corners=8pt, inner sep=20pt, fit=(vista)(controlador)(modelo)(bd), label={[font=\tiny\itshape,text=primary!55]north:Servidor Apache 2.4 + PHP-PDO}] (servidor) {};
 \end{scope}
 
-% --- Nota inferior (reubicada v3) ---
-\node[nota] at (0, -2.20) {Flujo: Vista delega evento al Controlador → Controlador invoca Modelo → Modelo persiste/recupera vía PDO (ACID + \texttt{FOR UPDATE}) → Controlador actualiza Vista};
-\node[nota, font=\tiny, text=darktext!55] at (0, -2.60) {Validación OE4: $>$100 peticiones/min \textbullet{} latencia $<$1.2 s \textbullet{} 0 sobrecupos \textbullet{} $<$1.5 MB/trámite};
+% --- Notas inferiores (reubicadas v5, centradas, con ancho controlado) ---
+\node[nota, text width=15cm] at (0, -2.75) {Flujo: Vista delega evento al Controlador → Controlador invoca Modelo → Modelo persiste/recupera vía PDO (ACID + \texttt{FOR UPDATE}) → Controlador actualiza Vista};
+\node[nota, font=\tiny, text=darktext!55, text width=15cm] at (0, -3.15) {Validación OE4: $>$100 peticiones/min \textbullet{} latencia $<$1.2 s \textbullet{} 0 sobrecupos \textbullet{} $<$1.5 MB/trámite};
 
 \end{tikzpicture}

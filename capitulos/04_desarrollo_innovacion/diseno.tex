@@ -18,7 +18,7 @@ La solución técnica se estructura bajo el patrón arquitectónico \textbf{Mode
     \caption{Arquitectura Modelo--Vista--Controlador (MVC) del sistema BTH Versión 2.0.}
     \label{fig:arquitectura_mvc}
     \label{fig:arquitectura_tres_capas}
-    \resizebox{0.92\textwidth}{!}{%
+    \resizebox{0.96\textwidth}{!}{%
         \input{imagenes/arquitectura_tres_capas}
     }
     \notafigura{Elaboración propia con base en \textcite{pressman2020} y Tabla~\ref{tab:especificaciones_tecnicas}. La Vista delega eventos al Controlador; el Controlador invoca al Modelo vía PDO; el Modelo persiste en PostgreSQL 16.4 con transacciones ACID y bloqueo pesimista \texttt{FOR UPDATE}.}
