@@ -107,7 +107,7 @@ capitulos/
 ### 1.3 Contribución esperada
 
 - **¿Qué tipo de solución se propone?** (producto físico, app, sistema, servicio): Sistema Web integral — SISTEMA WEB DE INSCRIPCIÓN MTP SAN JULIÁN BTH — VERSIÓN 2.0 — plataforma web cliente-servidor 3 capas (Frontend HTML5 CSS3 JS, Backend PHP 8.x Apache, BD PostgreSQL 16 ACID row-level locking) con 7 módulos: preinscripción con control atómico vacantes, autoservicio credenciales, matriculación documental, asignación cursos/paralelos por unidad educativa, comprobantes PDF con código verificación, panel reportes
-- **¿Qué mejora concreta genera respecto a la situación actual?:** Reduce tiempo total trámite de 1-3 días fila física a 3-5 minutos web (-90%); recuperación credenciales <2 min autónoma vs horas/días fila ventanilla; 100% trazabilidad documental vs expedientes incompletos; 0 cruces horarios vs planillas manuales con errores; disponibilidad 24h vs 8h ventanilla (+200%); erradica pernoctaciones (-100%); errores formulario 35%→<5% (-88%); ahorro >20.000 Bs/año familias (pasajes 3 Bs/tramo) y >1500 hojas papel; 100% consistencia cupos ACID >100 peticiones/min <1,2s latencia
+- **¿Qué mejora concreta genera respecto a la situación actual?:** Reduce tiempo total trámite de 1-3 días fila física a 3-5 minutos web (-90%); recuperación credenciales <2 min autónoma vs horas/días fila ventanilla; 100% trazabilidad documental vs expedientes incompletos; 0 cruces horarios vs planillas manuales con errores; disponibilidad 24h vs 8h ventanilla (+200%); erradica pernoctaciones (-100%); errores formulario 35%→<5% (-88%); ahorro >20.000 Bs/año familias (pasajes 5 Bs/tramo) y >1500 hojas papel; 100% consistencia cupos ACID >100 peticiones/min <1,2s latencia
 - **¿La innovación es incremental (mejora algo existente) o disruptiva (algo nuevo)?:** Incremental — optimización Versión 2.0 sobre Versión preliminar 2025 — integra 3 vacíos críticos (recovery, matriculación documental, paralelos) y añade integralidad cliente-servidor ACID; con alcance disruptivo en gestión integral BTH distrital
 
 > **Nutre:** `capitulos/01_introduccion/main.tex` → `contexto_general.tex`, `motivacion_pertinencia.tex`, `contribucion_esperada.tex`
@@ -156,7 +156,7 @@ capitulos/
 ### 2.5 Justificación
 
 - **Justificación técnica** — ¿qué tecnología o conocimiento se aplica y por qué es adecuado?: Stack abierto HTML5/CSS3 responsivo + JS validación reactiva + PHP 8.x Apache + PostgreSQL 16 ACID row-level locking; garantiza independencia licencias propietarias, bajo consumo ancho de banda (<1,5 MB/trámite, operable 3G/4G rural), control transaccional estricto, portabilidad móvil/PC
-- **Justificación económica** — ¿qué ahorro, ingreso o reducción de costo genera?: Ahorro colectivo >20.000 Bs por gestión en pasajes locales (3 Bs por tramo), refrigerios, fotocopias, transporte y pernocte; costo marginal por postulante <0,50 Bs; inversión total 13.556 Bs asumida 100% recursos propios sin endeudamiento
+- **Justificación económica** — ¿qué ahorro, ingreso o reducción de costo genera?: Ahorro colectivo >20.000 Bs por gestión en pasajes locales (5 Bs por tramo), refrigerios, fotocopias, transporte y pernocte; costo marginal por postulante <0,50 Bs; inversión total 13.556 Bs asumida 100% recursos propios sin endeudamiento
   - **Fuente del dato económico:** Evaluación comparativa 60 postulantes/5 funcionarios, análisis impacto sostenibilidad 4.4.3; cálculo Tabla 4.5/4.6
 - **Justificación social** — ¿qué beneficio humano o comunitario produce?: Erradica filas nocturnas intemperie y condiciones degradantes, restituye dignidad/tranquilidad familias, garantiza acceso transparente/equitativo educación técnica, democratiza cupos vocacionales, fomenta gobernanza digital institucional
 - **Número de beneficiarios directos:** ~400 postulantes anuales + 60 muestra evaluada (y 5 funcionarios validadores) — distrito San Julián
@@ -324,17 +324,17 @@ capitulos/
    - Cantidad: — 
    - Costo unitario (Bs): 0
    - Proveedor / Origen: Descarga libre
-6. **Material 6:** Material escritorio — Cuadernos campo, archivadores, bolígrafos y papel bond (100 hojas) — Cuaderno 18 Bs x2, Lapiceros 1 Bs x5, Transporte 3 Bs x9, Archivador 4 Bs x2, Hojas 1 Bs x100
+6. **Material 6:** Material escritorio — Cuadernos campo, archivadores, bolígrafos y papel bond (100 hojas) — Cuaderno 18 Bs x2, Lapiceros 1 Bs x5, Transporte 5 Bs x9, Archivador 4 Bs x2, Hojas 1 Bs x100
    - Cantidad: 1 lote
    - Costo unitario (Bs): ver desglose
    - Proveedor / Origen: Librería local San Julián
 
 #### Recursos financieros
 
-- **Presupuesto total estimado (Bs):** 13556
+- **Presupuesto total estimado (Bs):** 13574
 - **Fuente de financiamiento principal:** Recursos propios — aportes directos de las estudiantes autoras (Heidy Quiroga Colque y Sharon Liz Quino)
 - **Monto financiado externamente (Bs):** 0 (0,0%)
-- **Monto financiado con recursos propios (Bs):** 13556 (100,0%) — Subvención institucional MTP 0; crédito bancario 0
+- **Monto financiado con recursos propios (Bs):** 13574 (100,0%) — Subvención institucional MTP 0; crédito bancario 0
 
 ### 4.4 Cálculo de costos
 
@@ -362,8 +362,8 @@ capitulos/
    - Costo total (Bs): 5
 6. **Ítem 6:** Transporte local visitas técnicas
    - Cantidad: 9
-   - Costo unitario (Bs): 3
-   - Costo total (Bs): 27
+   - Costo unitario (Bs): 5
+   - Costo total (Bs): 45
 7. **Ítem 7:** Archivador documentos
    - Cantidad: 2
    - Costo unitario (Bs): 4
@@ -376,7 +376,7 @@ capitulos/
    - Cantidad: 1
    - Costo unitario (Bs): 2100
    - Costo total (Bs): 2100
-- **Total inversión (Bs):** 13556
+- **Total inversión (Bs):** 13574
 
 #### Costo de operación mensual (fijos)
 
@@ -386,15 +386,15 @@ capitulos/
 
 #### Costos variables (por unidad producida o ciclo)
 
-1. **Ítem 1:** Transporte local y papelería respaldo administrativo por ciclo inscripción — Costo por ciclo (Bs): 100
+1. **Ítem 1:** Transporte local y papelería respaldo administrativo por ciclo inscripción — Costo por ciclo (Bs): 118
 2. **Ítem 2:** No aplica (software sin insumos por unidad)
    - Costo por unidad/ciclo (Bs): 0
-- **Total variable/unidad (Bs):** 100 por ciclo
+- **Total variable/unidad (Bs):** 118 por ciclo
 
 #### Indicadores financieros
 
 - **Precio de venta o valor del servicio por unidad (Bs):** No aplica — innovación software público sin fines comerciales MTP San Julián (rentabilidad medida en retorno social/eficiencia institucional)
-- **Punto de equilibrio estimado** (unidades o meses): No aplica comercial; equilibrio en ahorro social >20.000 Bs/año vs 13.556 inversión → recuperación en <1 gestión
+- **Punto de equilibrio estimado** (unidades o meses): No aplica comercial; equilibrio en ahorro social >20.000 Bs/año vs 13.574 inversión → recuperación en <1 gestión
 - **Retorno de inversión estimado** (meses): Costo marginal por postulante <0,50 Bs; sostenibilidad plena con ahorro colectivo >20.000 Bs/año
 
 > **Nutre:** `capitulos/04_desarrollo_innovacion/main.tex` → `diseno.tex`, `planificacion.tex`, `recursos.tex`, `calculo_costos.tex`; tablas referenciadas: `tablas/cronograma_ejemplo.tex`, `tablas/costos_ejemplo.tex`, `tablas/especificaciones_tecnicas_ejemplo.tex`
@@ -505,7 +505,7 @@ capitulos/
 - **Tecnológico:** Precedente modernización BTH región, dotación herramienta propia desarrollada por estudiantes Sistemas Informáticos MTP San Julián, digitalización trámite
   - Dato de respaldo: Sistema integral 7 módulos operativos, ACID, PDF verificación
   - Fuente: Panel control directivos + pruebas sistema
-- **Económico:** Ahorro colectivo directo >20.000 Bs por período inscripción al suprimir pasajes transporte público (3 Bs/tramo) y fotocopias innecesarias; costo marginal <0,50 Bs/postulante
+- **Económico:** Ahorro colectivo directo >20.000 Bs por período inscripción al suprimir pasajes transporte público (5 Bs/tramo) y fotocopias innecesarias; costo marginal <0,50 Bs/postulante
   - Dato de respaldo: >20.000 Bs/año familias + 190 Bs fijos/mes vs 13.556 inversión
   - Fuente: Análisis impacto sostenibilidad 4.4.3
 - **Ambiental:** Digitalización trámite y comprobantes digitales → ahorro >1500 hojas papel bond físico y cartuchos tóner por ciclo escolar

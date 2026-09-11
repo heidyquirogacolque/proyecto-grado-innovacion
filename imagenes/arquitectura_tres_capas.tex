@@ -7,6 +7,8 @@
 % Nota: Mantiene nombre archivo por compatibilidad con label fig:arquitectura_mvc
 % v5: celdas uniformes 2.30cm, outer sep 3pt, BD 3.20cm, retornos desfasados
 %     1.55/1.85, etiquetas con halo 3pt, render despegado, fit 20pt
+% v6: fuente en líneas incrementada \tiny→\scriptsize (+40%), halo 3.5pt, posiciones afinadas
+% v7: fuente en flechas incrementada \scriptsize→\footnotesize (+20%), negrita uniforme, inner sep 4pt
 % ============================================================
 \begin{tikzpicture}[
     vista/.style={
@@ -53,13 +55,13 @@
         rounded corners=4pt
     },
     etiqueta/.style={
-        font=\tiny\bfseries, text=primary, align=center
+        font=\scriptsize\bfseries, text=primary, align=center
     },
     detalle/.style={
-        font=\scriptsize, text=darktext, align=center
+        font=\footnotesize, text=darktext, align=center
     },
     nota/.style={
-        font=\tiny\itshape, text=darktext!65, align=center
+        font=\scriptsize\itshape, text=darktext!65, align=center
     }
 ]
 
@@ -68,9 +70,9 @@
 \node[font=\tiny, text=darktext!70, align=center, outer sep=2pt] (usuarioDet) at (0, 7.05) {Postulante / Secretaría / Directivo};
 \node[detalle, font=\tiny\itshape, text=primary!70, outer sep=2pt] at (0, 6.65) {$\sim$400 postulantes/año \textbullet{} 7 especialidades \textbullet{} móvil/PC};
 
-% Flecha Usuario -> Vista (vertical con holgura v5)
+% Flecha Usuario -> Vista (vertical con holgura v5) — fuente incrementada v6
 \draw[flecha] (usuario.south) -- (0, 5.30);
-\node[font=\tiny, fill=white, rounded corners=2pt, inner sep=3pt, outer sep=1pt, text=primary!80, draw=white] at (1.70, 5.95) {interactúa};
+\node[font=\footnotesize\bfseries, fill=white, rounded corners=2pt, inner sep=4pt, outer sep=1pt, text=primary!80, draw=white] at (1.70, 5.95) {interactúa};
 
 % --- VISTA (izquierda) — gap 1.90cm, altura uniforme 2.30cm ---
 \node[vista] (vista) at (-6.80, 3.30) {
@@ -99,31 +101,31 @@
 \node[bd] (bd) at (6.80, -1.10) {PostgreSQL\\16.4};
 
 % --- CONEXIONES MVC (ortogonales desfasadas para evitar superposición) ---
-% Vista -> Controlador (evento) — recta horizontal gap 1.90cm
+% Vista -> Controlador (evento) — recta horizontal gap 1.90cm — fuente incrementada v6
 \draw[flecha] (vista.east) -- (controlador.west);
-\node[font=\tiny, fill=white, rounded corners=2pt, inner sep=3pt, outer sep=1pt, text=primary!80, draw=white] at (-3.40, 3.70) {evento};
+\node[font=\footnotesize\bfseries, fill=white, rounded corners=2pt, inner sep=4pt, outer sep=1pt, text=primary!80, draw=white] at (-3.45, 3.75) {evento};
 
-% Controlador -> Modelo (invoca)
+% Controlador -> Modelo (invoca) — fuente incrementada v6
 \draw[flecha] (controlador.east) -- (modelo.west);
-\node[font=\tiny, fill=white, rounded corners=2pt, inner sep=3pt, outer sep=1pt, text=primary!80, draw=white] at (3.40, 3.70) {invoca};
+\node[font=\footnotesize\bfseries, fill=white, rounded corners=2pt, inner sep=4pt, outer sep=1pt, text=primary!80, draw=white] at (3.45, 3.75) {invoca};
 
-% Controlador -> Vista (actualiza) — descenso 1.55cm, cota superior
+% Controlador -> Vista (actualiza) — descenso 1.55cm, cota superior — fuente incrementada v6
 \draw[flechaDashed] ([xshift=-0.85cm]controlador.south) -- ++(0,-1.55) -| (vista.south);
-\node[font=\tiny, fill=white, rounded corners=2pt, inner sep=3pt, outer sep=1pt, text=primary!60, draw=white] at (-4.35, 1.60) {actualiza};
+\node[font=\footnotesize\bfseries, fill=white, rounded corners=2pt, inner sep=4pt, outer sep=1pt, text=primary!60, draw=white] at (-4.35, 1.60) {actualiza};
 
-% Modelo -> Controlador (estado) — descenso 1.85cm desfasado 0.30cm para no solaparse
+% Modelo -> Controlador (estado) — descenso 1.85cm desfasado 0.30cm — fuente incrementada v6
 \draw[flechaDashed] ([xshift=0.85cm]modelo.south) -- ++(0,-1.85) -| ([xshift=0.85cm]controlador.south);
-\node[font=\tiny, fill=white, rounded corners=2pt, inner sep=3pt, outer sep=1pt, text=primary!60, draw=white] at (4.55, 0.95) {estado};
+\node[font=\footnotesize\bfseries, fill=white, rounded corners=2pt, inner sep=4pt, outer sep=1pt, text=primary!60, draw=white] at (4.65, 0.85) {estado};
 
-% Modelo <-> BD — offsets separados 1.0cm, etiquetas dentro del fit
+% Modelo <-> BD — offsets separados 1.0cm, etiquetas dentro del fit — fuente incrementada v6
 \draw[flecha] ([xshift=0.35cm]modelo.south) -- ([xshift=0.35cm]bd.north);
-\node[font=\tiny, fill=white, rounded corners=2pt, inner sep=3pt, outer sep=1pt, text=primary!80, draw=white] at (7.95, 1.10) {PDO / SQL};
+\node[font=\footnotesize\bfseries, fill=white, rounded corners=2pt, inner sep=4pt, outer sep=1pt, text=primary!80, draw=white] at (7.95, 1.10) {PDO / SQL};
 \draw[flechaDashed] ([xshift=-0.65cm]bd.north) -- ++(0,0.95) -| ([xshift=-0.65cm]modelo.south);
-\node[font=\tiny, fill=white, rounded corners=2pt, inner sep=3pt, outer sep=1pt, text=primary!60, draw=white] at (5.35, 1.00) {ACID};
+\node[font=\footnotesize\bfseries, fill=white, rounded corners=2pt, inner sep=4pt, outer sep=1pt, text=primary!60, draw=white] at (5.35, 1.00) {ACID};
 
-% Render Vista -> Usuario (dashed) — codo despegado x=1.05 para no cruzar flecha central
+% Render Vista -> Usuario (dashed) — codo despegado x=1.05 — fuente incrementada v6
 \draw[flechaDashed] ([xshift=1.05cm]vista.north) -- ++(0,1.20) -| ([xshift=-0.90cm]usuario.south);
-\node[font=\tiny, fill=white, rounded corners=2pt, inner sep=3pt, outer sep=1pt, text=primary!60, draw=white] at (-3.85, 5.35) {render};
+\node[font=\footnotesize\bfseries, fill=white, rounded corners=2pt, inner sep=4pt, outer sep=1pt, text=primary!60, draw=white] at (-3.85, 5.35) {render};
 
 % --- Agrupación Servidor (padding 20pt v5, fill sutil) ---
 \begin{scope}[on background layer]
