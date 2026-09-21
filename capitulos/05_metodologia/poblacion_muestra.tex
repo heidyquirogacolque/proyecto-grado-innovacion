@@ -3,9 +3,11 @@
 
 \subsection{Población y muestra humana}
 
-La población humana del estudio comprende a la totalidad de estudiantes del nivel secundario procedentes de las diversas unidades educativas del distrito municipal de San Julián que aspiran a cursar el Bachillerato Técnico Humanístico en el MÓDULO TECNOLÓGICO PRODUCTIVO SAN JULIÁN, estimada en aproximadamente 400 postulantes anuales distribuidos en las siete especialidades técnicas habilitadas (Construcción Civil, Contaduría General, Electrónica, Gastronomía, Mecánica Automotriz, Sistemas Informáticos y Textiles y Confecciones). De manera complementaria, la población integra al plantel de funcionarios del MTP conformado por 1 Director, 1 responsable de Secretaría Académica y 35 docentes (total 37 funcionarios), entre los cuales los Tutores de Curso asumen la custodia documental y la conformación de paralelos por unidad educativa de procedencia.
+La población son los estudiantes de secundaria del distrito de San Julián que postulan al Bachillerato Técnico Humanístico en el MÓDULO TECNOLÓGICO PRODUCTIVO SAN JULIÁN: cerca de 400 jóvenes por año, repartidos en siete especialidades (Construcción Civil, Contaduría General, Electrónica, Gastronomía, Mecánica Automotriz, Sistemas Informáticos y Textiles y Confecciones).
 
-Dadas las características del contexto y la accesibilidad de los participantes en los periodos de prueba, se aplicó un muestreo no probabilístico por conveniencia intencional. La muestra humana final estuvo conformada por:
+Además forman parte de la población los 37 funcionarios del MTP —1 Director, 1 responsable de Secretaría Académica y 35 docentes—, entre quienes los Tutores de Curso custodian los documentos y arman los paralelos según el colegio de procedencia.
+
+Por la accesibilidad de los participantes durante las pruebas se usó un muestreo no probabilístico por conveniencia. La muestra final incluyó:
 
 \begin{itemize}
     \item 60 estudiantes postulantes, seleccionados con criterio de representatividad entre las distintas unidades educativas de procedencia y opciones vocacionales, quienes participaron en la evaluación diagnóstica y en las pruebas de usabilidad de la nueva interfaz y del autoservicio de credenciales.
@@ -14,4 +16,4 @@ Dadas las características del contexto y la accesibilidad de los participantes 
 
 \subsection{Unidades experimentales de prueba técnica}
 
-Independientemente de los sujetos humanos, las unidades experimentales de prueba técnica corresponden a los ciclos operativos y réplicas de laboratorio del sistema V2.0 sometidos a ensayo controlado. Se ejecutaron réplicas de carga y auditoría transaccional sobre las siete especialidades: 5 corridas con Apache Benchmark 2.4.58 a $>$100 peticiones concurrentes por minuto, con latencia objetivo $<$1.2 s, y auditoría continua de logs del motor PostgreSQL 16.4 bajo bloqueo pesimista \texttt{FOR UPDATE}, verificando 0 sobrecupos y 100\% de consistencia de cupos en base de datos.
+Además de las personas, las unidades de prueba fueron los propios ciclos del sistema V2.0. Se hicieron 5 corridas de carga sobre las siete especialidades con Apache Benchmark 2.4.58 a más de 100 peticiones por minuto, latencia menor a 1.2 s y auditoría de logs de PostgreSQL 16.4 con bloqueo \texttt{FOR UPDATE}, comprobando 0 sobrecupos y 100 \% de consistencia.
