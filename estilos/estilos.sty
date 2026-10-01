@@ -185,6 +185,7 @@
 % ============================================================
 \RequirePackage{enumitem}
 \setlist{noitemsep, topsep=3pt, leftmargin=1.5em}
+\RequirePackage{ragged2e}
 
 % ============================================================
 % 11. BIBLIOGRAFÍA APA 7ma EDICIÓN (BibLaTeX + Biber)
@@ -282,8 +283,8 @@
 % ============================================================
 % 14. ENTORNO PARA DEDICATORIAS Y AGRADECIMIENTOS
 % ============================================================
-% Alinea el título y el contenido a la parte inferior en una misma hoja,
-% sin separación excesiva entre ellos y con registro automático en el TOC.
+% Bloque inferior derecho de ~5 líneas, justificado (ambos márgenes rectos),
+% cursiva, sin borde ni cuadro, con registro automático en el TOC.
 \NewDocumentEnvironment{estilodedicatoria}{ o g }{%
     \clearpage
     \thispagestyle{plain}%
@@ -297,17 +298,19 @@
         }{}%
     }%
     \vspace*{\fill}%
-    \begin{raggedleft}%
+    \noindent\hfill\begin{minipage}{0.60\textwidth}%
+    \justifying
+    \sloppy
+    \itshape
     \IfValueTF{#1}{%
-        {\normalfont\Large\bfseries #1\par}%
+        {\normalfont\Large\bfseries #1\par}\vspace{0.5em}%
     }{%
         \IfValueTF{#2}{%
-            {\normalfont\Large\bfseries #2\par}%
+            {\normalfont\Large\bfseries #2\par}\vspace{0.5em}%
         }{}%
     }%
-    \itshape
 }{%
-    \par\end{raggedleft}%
+    \par\end{minipage}%
     \clearpage
 }
 
