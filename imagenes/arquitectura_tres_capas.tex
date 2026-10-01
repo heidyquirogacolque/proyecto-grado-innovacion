@@ -76,25 +76,25 @@
 
 % --- VISTA (izquierda) — gap 1.90cm, altura uniforme 2.30cm ---
 \node[vista] (vista) at (-6.80, 3.30) {
-    \textbf{VISTA}\\ \textit{(View)}\\
-    \footnotesize\normalfont HTML5 \textbullet{} CSS3 \textbullet{} JS ES6\\
-    \footnotesize\normalfont Plantillas PHP\\
-    \scriptsize\textit{Formularios, PDF, Panel}
+    \textbf{VISTA}\\ \textit{(lo que se ve)}\\
+    \footnotesize\normalfont HTML5 \textbullet{} CSS3 \textbullet{} JS\\
+    \footnotesize\normalfont Formularios\\
+    \scriptsize\textit{y comprobantes}
 };
 
-% --- CONTROLADOR (centro, destacado, texto cuerpo en normalfont para igualar peso) ---
+% --- CONTROLADOR (centro, destacado) ---
 \node[controlador] (controlador) at (0, 3.30) {
-    \textbf{CONTROLADOR}\\ \textit{(Controller)}\\
+    \textbf{CONTROLADOR}\\ \textit{(organiza)}\\
     \footnotesize\normalfont PHP 8.2 / Apache 2.4\\
-    \scriptsize\normalfont Routing, sesiones,\\[-1pt]\scriptsize\normalfont validación C.I.+fecha,\\[-1pt]\scriptsize\normalfont reglas matrícula/paralelos
+    \scriptsize\normalfont Revisa carnet+fecha,\\[-1pt]\scriptsize\normalfont reglas de matrícula\\[-1pt]\scriptsize\normalfont y paralelos
 };
 
 % --- MODELO (derecha) ---
 \node[modelo] (modelo) at (6.80, 3.30) {
-    \textbf{MODELO}\\ \textit{(Model)}\\
-    \footnotesize\normalfont Clases PHP + PDO\\
+    \textbf{MODELO}\\ \textit{(guarda datos)}\\
+    \footnotesize\normalfont PHP + Base de datos\\
     \footnotesize\normalfont PostgreSQL 16.4\\
-    \scriptsize\textit{ACID + FOR UPDATE}
+    \scriptsize\textit{Guardado seguro}
 };
 
 % --- BASE DE DATOS (debajo de Modelo, más separación vertical v5) ---
@@ -109,19 +109,19 @@
 \draw[flecha] (controlador.east) -- (modelo.west);
 \node[font=\footnotesize\bfseries, fill=white, rounded corners=2pt, inner sep=4pt, outer sep=1pt, text=primary!80, draw=white] at (3.45, 3.75) {invoca};
 
-% Controlador -> Vista (actualiza) — descenso 1.55cm, cota superior — fuente incrementada v6
+% Controlador -> Vista (muestra) — descenso 1.55cm
 \draw[flechaDashed] ([xshift=-0.85cm]controlador.south) -- ++(0,-1.55) -| (vista.south);
-\node[font=\footnotesize\bfseries, fill=white, rounded corners=2pt, inner sep=4pt, outer sep=1pt, text=primary!60, draw=white] at (-4.35, 1.60) {actualiza};
+\node[font=\footnotesize\bfseries, fill=white, rounded corners=2pt, inner sep=4pt, outer sep=1pt, text=primary!60, draw=white] at (-4.35, 1.60) {muestra};
 
-% Modelo -> Controlador (estado) — descenso 1.85cm desfasado 0.30cm — fuente incrementada v6
+% Modelo -> Controlador (respuesta) — descenso 1.85cm desfasado 0.30cm
 \draw[flechaDashed] ([xshift=0.85cm]modelo.south) -- ++(0,-1.85) -| ([xshift=0.85cm]controlador.south);
-\node[font=\footnotesize\bfseries, fill=white, rounded corners=2pt, inner sep=4pt, outer sep=1pt, text=primary!60, draw=white] at (4.65, 0.85) {estado};
+\node[font=\footnotesize\bfseries, fill=white, rounded corners=2pt, inner sep=4pt, outer sep=1pt, text=primary!60, draw=white] at (4.65, 0.85) {respuesta};
 
-% Modelo <-> BD — offsets separados 1.0cm, etiquetas dentro del fit — fuente incrementada v6
+% Modelo <-> BD — offsets separados 1.0cm
 \draw[flecha] ([xshift=0.35cm]modelo.south) -- ([xshift=0.35cm]bd.north);
-\node[font=\footnotesize\bfseries, fill=white, rounded corners=2pt, inner sep=4pt, outer sep=1pt, text=primary!80, draw=white] at (7.95, 1.10) {PDO / SQL};
+\node[font=\footnotesize\bfseries, fill=white, rounded corners=2pt, inner sep=4pt, outer sep=1pt, text=primary!80, draw=white] at (7.95, 1.10) {guarda};
 \draw[flechaDashed] ([xshift=-0.65cm]bd.north) -- ++(0,0.95) -| ([xshift=-0.65cm]modelo.south);
-\node[font=\footnotesize\bfseries, fill=white, rounded corners=2pt, inner sep=4pt, outer sep=1pt, text=primary!60, draw=white] at (5.35, 1.00) {ACID};
+\node[font=\footnotesize\bfseries, fill=white, rounded corners=2pt, inner sep=4pt, outer sep=1pt, text=primary!60, draw=white] at (5.35, 1.00) {seguro};
 
 % Render Vista -> Usuario (dashed) — codo despegado x=1.05 — fuente incrementada v6
 \draw[flechaDashed] ([xshift=1.05cm]vista.north) -- ++(0,1.20) -| ([xshift=-0.90cm]usuario.south);
@@ -132,8 +132,8 @@
     \node[draw=primary!22, fill=primary!3, line width=0.6pt, rounded corners=8pt, inner sep=20pt, fit=(vista)(controlador)(modelo)(bd), label={[font=\tiny\itshape,text=primary!55]north:Servidor Apache 2.4 + PHP-PDO}] (servidor) {};
 \end{scope}
 
-% --- Notas inferiores (reubicadas v5, centradas, con ancho controlado) ---
-\node[nota, text width=15cm] at (0, -2.75) {Flujo: Vista delega evento al Controlador → Controlador invoca Modelo → Modelo persiste/recupera vía PDO (ACID + \texttt{FOR UPDATE}) → Controlador actualiza Vista};
-\node[nota, font=\tiny, text=darktext!55, text width=15cm] at (0, -3.15) {Validación OE4: $>$100 peticiones/min \textbullet{} latencia $<$1.2 s \textbullet{} 0 sobrecupos \textbullet{} $<$1.5 MB/trámite};
+% --- Notas inferiores (lenguaje sencillo) ---
+\node[nota, text width=15cm] at (0, -2.75) {Cómo funciona: la pantalla envía los datos al organizador → el organizador los guarda en la base de datos de forma segura → luego muestra el resultado en pantalla};
+\node[nota, font=\tiny, text=darktext!55, text width=15cm] at (0, -3.15) {Pruebas: más de 100 personas a la vez \textbullet{} respuesta en menos de 1.2 s \textbullet{} sin cupos duplicados \textbullet{} menos de 1.5 MB por trámite};
 
 \end{tikzpicture}

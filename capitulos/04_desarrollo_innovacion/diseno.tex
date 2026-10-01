@@ -1,83 +1,77 @@
 \section{Diseño del producto o servicio}
 \label{sec:diseno}
 
-El SISTEMA WEB DE INSCRIPCIÓN PARA EL MÓDULO TECNOLÓGICO PRODUCTIVO SAN JULIÁN BTH --- VERSIÓN 2.0 cubre todo el ciclo de inscripción del MÓDULO. A diferencia de la versión de 2025, que solo permitía una preinscripción, esta plataforma une en un solo lugar la reserva del cupo al cierre de la gestión previa, la confirmación de la matrícula y la organización de cursos y paralelos al inicio de la siguiente gestión.
+Mi sistema es el SISTEMA WEB DE INSCRIPCIÓN PARA EL MÓDULO TECNOLÓGICO PRODUCTIVO SAN JULIÁN BTH --- VERSIÓN 2.0 y cubre todo el ciclo de inscripción del Módulo. A diferencia de la versión de 2025, que solo permitía una preinscripción, mi plataforma une en un solo lugar la reserva del cupo al cierre de la gestión previa, la confirmación de la matrícula y la organización de cursos y paralelos al inicio de la siguiente gestión.
 
-\subsection{Arquitectura MVC del sistema}
+\subsection{Arquitectura del sistema}
 
-La solución técnica se estructura bajo el patrón arquitectónico \textbf{Modelo--Vista--Controlador (MVC)}, que desacopla la presentación, la lógica de control y la gestión de datos para garantizar mantenibilidad, escalabilidad y separación de responsabilidades:
+Mi sistema está organizado en tres partes que trabajan juntas (Modelo--Vista--Controlador). Esta forma me permitió mantener el trabajo ordenado y que cada parte cumpla su función:
 
 \begin{itemize}
-    \item \textbf{Vista (View):} Capa de presentación desarrollada con estándares abiertos HTML5, hojas de estilo CSS3 con diseño adaptable y scripts de validación reactiva en JavaScript. Se renderiza en el navegador del usuario (computador o teléfono móvil) y gestiona la interfaz de formularios, comprobantes PDF y paneles de consulta, verificando formatos de carnet y datos obligatorios en tiempo real antes de delegar al Controlador.
-    \item \textbf{Controlador (Controller):} Capa de control implementada en PHP 8.2 sobre servidor web Apache 2.4. Centraliza el enrutamiento de peticiones, el control de sesiones, la validación de identidad para el restablecimiento de claves (C.I. + fecha de nacimiento), las reglas de matriculación documental y la lógica de asignación a cursos y paralelos. Actúa como intermediario exclusivo entre la Vista y el Modelo.
-    \item \textbf{Modelo (Model):} Capa de dominio y persistencia sustentada en clases de dominio PHP con acceso a datos vía PDO y el gestor relacional PostgreSQL 16.4. Implementa el esquema relacional normalizado, las entidades de negocio y el control estricto de transacciones bajo propiedades ACID con bloqueos a nivel de fila (\texttt{FOR UPDATE} — \textit{row-level locking}), garantizando la consistencia absoluta de las vacantes sin colisiones ni sobrecupos.
+    \item \textbf{Vista:} Es lo que se ve en pantalla y está hecha con HTML5, CSS3 y JavaScript. Funciona en el celular o la computadora, muestra los formularios, los comprobantes en PDF y los paneles de consulta, y revisa al momento si el carnet o algún dato obligatorio está bien escrito antes de enviar la información.
+    \item \textbf{Controlador:} Es la parte que organiza el trabajo y está hecha con PHP 8.2 sobre Apache 2.4. Recibe las solicitudes, controla las sesiones, verifica la identidad para recuperar la contraseña (carnet + fecha de nacimiento), aplica las reglas de la matrícula y distribuye a los estudiantes en cursos y paralelos. Conecta la Vista con el Modelo.
+    \item \textbf{Modelo:} Es donde se guardan los datos y está hecho con PHP y la base de datos PostgreSQL 16.4. Allí guardo las tablas, cuido que la información no se duplique y aseguro que los cupos no se ocupen dos veces aunque muchos entren al mismo tiempo.
 \end{itemize}
 
 \begin{figure}[htbp]
     \centering
-    \caption{Arquitectura Modelo--Vista--Controlador (MVC) del sistema BTH Versión 2.0.}
+    \caption{Organización del sistema en tres partes (Modelo--Vista--Controlador) — Versión 2.0.}
     \label{fig:arquitectura_mvc}
     \label{fig:arquitectura_tres_capas}
     \resizebox{0.96\textwidth}{!}{%
         \input{imagenes/arquitectura_tres_capas}
     }
-    \notafigura{Elaboración propia con base en \textcite{pressman2020} y Tabla~\ref{tab:especificaciones_tecnicas}. La Vista delega eventos al Controlador; el Controlador invoca al Modelo vía PDO; el Modelo persiste en PostgreSQL 16.4 con transacciones ACID y bloqueo pesimista \texttt{FOR UPDATE}.}
+    \notafigura{Elaboración propia con base en \textcite{pressman2020}. La pantalla envía los datos al organizador, el organizador los guarda en la base de datos de forma segura evitando que dos estudiantes ocupen el mismo cupo y luego muestra el resultado en pantalla.}
 \end{figure}
 
-\subsection{Módulos funcionales del sistema}
+\subsection{Módulos funcionales de mi sistema}
 
-La plataforma integra los siguientes módulos especializados diseñados para dar respuesta directa a las problemáticas diagnosticadas:
+Mi plataforma está formada por siete partes que responden a los problemas que encontré en mi diagnóstico:
 
 \begin{itemize}
-    \item \textbf{Módulo de Formulario Dinámico y Preinscripción:} Interfaz intuitiva y liviana que permite al postulante seleccionar su carrera de interés entre las siete especialidades técnicas habilitadas (Construcción Civil, Contaduría General, Electrónica, Gastronomía, Mecánica Automotriz, Sistemas Informáticos y Textiles y Confecciones) e ingresar sus datos personales y de contacto sin recargas innecesarias de página.
-    \item \textbf{Módulo de Control Transaccional de Vacantes:} Mecanismo automatizado que consulta y reserva cupos en tiempo real en la base de datos PostgreSQL, impidiendo la duplicidad de registros y asegurando que ninguna plaza sea asignada por encima del límite físico de cada taller.
-    \item \textbf{Módulo Autónomo de Recuperación de Credenciales:} Servicio de autoservicio (Self-Service Password Reset) que permite al estudiante recuperar su usuario o restablecer su contraseña de manera autónoma e inmediata mediante la validación de datos personales inequívocos (número de C.I. y fecha de nacimiento), erradicando las filas presenciales y evitando la pérdida del cupo vocacional.
-    \item \textbf{Módulo Administrativo de Matriculación Documental:} Herramienta administrativa para la gestión lectiva siguiente que permite a la secretaría del BTH registrar, cotejar y auditar en el sistema la presentación física de los requisitos obligatorios: libretas de calificaciones de 1ro a 3ro de secundaria, cédula de identidad de los tutores, fotocopia de carnet de identidad y certificado de nacimiento, completando el expediente digital formal.
-    \item \textbf{Módulo de Asignación a Cursos y Paralelos por Unidad Educativa:} Funcionalidad que distribuye y matricula automáticamente a los postulantes aceptados en cursos y paralelos específicos (tales como 4to A o 4to B) en función de la unidad educativa de procedencia a la que pertenecen, garantizando la articulación horaria y el equilibrio numérico en cada aula y taller.
-    \item \textbf{Generador de Comprobantes Digitales Oficiales:} Emisión instantánea de fichas de preinscripción y matrícula en formato PDF descargable e imprimible, provistas de un código alfanumérico único de verificación institucional.
-    \item \textbf{Panel de Control y Reportes para Directivos:} Interfaz administrativa que ofrece métricas en tiempo real sobre el estado de vacantes por carrera, porcentajes de matriculación documental completada y exportación de listas consolidadas por paralelo.
+    \item \textbf{Formulario y preinscripción:} Pantalla sencilla donde el postulante elige su carrera entre las siete especialidades (Construcción Civil, Contaduría General, Electrónica, Gastronomía, Mecánica Automotriz, Sistemas Informáticos y Textiles y Confecciones) y escribe sus datos personales sin que la página se recargue de forma innecesaria.
+    \item \textbf{Control de cupos:} Parte que revisa y reserva los cupos al momento en la base de datos, evitando que se dupliquen registros y que un taller reciba más estudiantes de los que puede atender.
+    \item \textbf{Recuperación de contraseña:} Opción que permite al estudiante recuperar solo su contraseña con su número de carnet y fecha de nacimiento, sin tener que hacer fila y sin perder su cupo.
+    \item \textbf{Matriculación de documentos:} Espacio para que la secretaría registre y revise en el sistema los papeles que se entregan en físico: libretas de 1ro a 3ro, cédula de los tutores, fotocopia de carnet y certificado de nacimiento, completando así el expediente digital.
+    \item \textbf{Distribución por colegio en cursos y paralelos:} Función que ubica automáticamente a los estudiantes en su curso y paralelo (por ejemplo 4to A o 4to B) según el colegio del que vienen, cuidando que los horarios coincidan y que los cursos queden equilibrados.
+    \item \textbf{Comprobantes en PDF:} Genera al momento la ficha de preinscripción y de matrícula en PDF para descargar e imprimir, con un código único para verificar que es válida.
+    \item \textbf{Panel de control:} Pantalla para la dirección donde se ven los cupos disponibles por carrera, el avance de la matriculación y las listas finales por paralelo.
 \end{itemize}
 
 \begin{figure}[htbp]
     \centering
-    \caption{Diagrama de paquetes y dependencias de los siete módulos funcionales del sistema.}
+    \caption{Los siete módulos de mi sistema y cómo se conectan entre sí.}
     \label{fig:modulos_paquetes}
     \resizebox{0.98\textwidth}{!}{%
         \input{imagenes/modulos_paquetes}
     }
-    \notafigura{Elaboración propia. M1 preinscripción articula con M2 control transaccional; M3 recuperación autónoma ($<$2 min) y M6 comprobantes PDF operan como soporte; M4 matriculación documental y M5 asignación por U.E. consolidan la gestión académica; M7 panel transversaliza métricas en tiempo real (ver flujo 5 fases Cap.~4.1.3).}
+    \notafigura{Elaboración propia. M1 es la preinscripción y se conecta con M2 que cuida los cupos; M3 ayuda a recuperar la contraseña en menos de 2 minutos y M6 entrega los comprobantes en PDF; M4 registra los documentos y M5 distribuye a los estudiantes por colegio; M7 muestra los datos generales en el panel de control (ver los 5 pasos en la Figura~\ref{fig:flujo_matricula}).}
 \end{figure}
 
-\subsection{Flujo operativo del ciclo completo de matrícula}
+\subsection{Cómo funciona mi sistema paso a paso}
 
-La operación del sistema se articula en cinco fases correlativas:
+Mi sistema trabaja en cinco pasos seguidos:
 
 \begin{enumerate}
-    \item \textbf{Fase 1 (Preinscripción y reserva de cupo):} El postulante ingresa desde cualquier dispositivo móvil o PC, completa el formulario validado en cliente y reserva su vacante en la especialidad elegida durante el cierre de la gestión previa.
-    \item \textbf{Fase 2 (Soporte y recuperación autónoma):} En caso de olvido de credenciales, el usuario accede al módulo de recuperación, valida su identidad y restablece su acceso al instante sin acudir a ventanillas físicas.
-    \item \textbf{Fase 3 (Emisión de ficha preliminar):} El sistema genera y descarga el comprobante digital oficial de preinscripción con el que el estudiante acredita su cupo reservado.
-    \item \textbf{Fase 4 (Matriculación documental formal):} Al inicio de la gestión escolar siguiente, el estudiante presenta sus documentos físicos en secretaría, donde el personal verifica y tilda en la plataforma las libretas de 1ro a 3ro de secundaria, cédula de tutores, carnet y certificado de nacimiento.
-    \item \textbf{Fase 5 (Asignación académica en cursos y paralelos):} El sistema agrupa a los estudiantes en sus paralelos correspondientes según su colegio de origen, consolidando las listas de clase oficiales del BTH.
+    \item \textbf{Paso 1 — Preinscripción y reserva de cupo:} El postulante entra desde su celular o computadora, llena el formulario y reserva su cupo en la carrera que eligió al cierre de la gestión anterior.
+    \item \textbf{Paso 2 — Recuperación de contraseña:} Si olvidó su contraseña, entra a la opción de recuperación, escribe su carnet y fecha de nacimiento y recupera su acceso al momento sin ir a ventanilla.
+    \item \textbf{Paso 3 — Comprobante preliminar:} El sistema genera y permite descargar el comprobante de preinscripción con el que el estudiante asegura su cupo reservado.
+    \item \textbf{Paso 4 — Entrega y revisión de documentos:} Al inicio de la siguiente gestión, el estudiante lleva sus papeles a secretaría y allí se marcan como entregados en el sistema las libretas de 1ro a 3ro, la cédula de los tutores, el carnet y el certificado de nacimiento.
+    \item \textbf{Paso 5 — Ubicación en cursos y paralelos:} El sistema ubica a los estudiantes en su paralelo según el colegio del que vienen y deja listas las listas oficiales del BTH.
 \end{enumerate}
 
 \begin{figure}[htbp]
     \centering
-    \caption{Flujo operativo del ciclo completo de matrícula (5 fases correlativas).}
+    \caption{Pasos del ciclo completo de matrícula (5 pasos seguidos).}
     \label{fig:flujo_matricula}
     \resizebox{0.88\textwidth}{!}{%
         \input{imagenes/flujo_matricula}
     }
-    \notafigura{Elaboración propia. Fase 1 reserva atómica MVC (Vista→Controlador→Modelo) al cierre de la gestión previa; Fase 2 opcional de recuperación autónoma ($<$2 min, C.I.+fecha nacimiento); Fase 3 emisión PDF con código de verificación; Fase 4 matriculación documental auditada al 100\% en gestión siguiente; Fase 5 asignación automática por U.E. de procedencia (ver Tabla~\ref{tab:especificaciones_tecnicas}).}
+    \notafigura{Elaboración propia. Paso 1 reserva el cupo al final de la gestión anterior; Paso 2 recupera la contraseña con carnet y fecha de nacimiento si se olvidó; Paso 3 entrega el comprobante en PDF con código de verificación; Paso 4 registra los documentos al inicio de la siguiente gestión; Paso 5 ubica a cada estudiante en su curso según el colegio del que viene.}
 \end{figure}
 
-\subsection{Especificaciones técnicas del software}
+\subsection{Para qué sirve y cómo cuido la calidad}
 
-En la Tabla~\ref{tab:especificaciones_tecnicas} se resumen los parámetros técnicos, tecnologías aplicadas y requerimientos de entorno que sustentan la plataforma.
+Mi sistema sirve para evitar las filas de noche a la intemperie, permitir inscribirse sin ir al Módulo y dar a todos la misma oportunidad de alcanzar el cupo en la carrera que eligieron, con un control claro de las vacantes.
 
-\input{tablas/especificaciones_tecnicas_ejemplo.tex}
-
-\subsection{Utilidad institucional y estándares de calidad}
-
-La utilidad es concreta: evita que las familias tengan que hacer filas de noche a la intemperie, permite inscribirse sin ir al Módulo y da a todos la misma oportunidad de alcanzar el cupo en la especialidad que eligieron, con un control visible de las vacantes.
-
-En calidad de software (ISO/IEC 25010 y directrices W3C) se priorizó que la navegación sea simple aun para quien usa poco el celular, que los datos estén protegidos con contraseñas cifradas y transacciones ACID, y que el consumo sea bajo —menos de 1.5 MB por trámite— para que funcione incluso con señal intermitente en las comunidades.
+Para que funcione bien, cuidé que la navegación sea sencilla aun para quien usa poco el celular, que los datos estén protegidos con contraseñas seguras y que el consumo sea bajo —menos de 1.5 MB por trámite— para que funcione incluso con señal baja en las comunidades.

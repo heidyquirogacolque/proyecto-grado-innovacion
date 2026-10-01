@@ -5,7 +5,7 @@ El sistema se apoya en ideas ya probadas de informática, ingeniería de softwar
 
 \subsection{Arquitectura Cliente-Servidor y Patrón MVC}
 
-De acuerdo con \textcite{tanenbaum2021}, la arquitectura cliente-servidor constituye el modelo estructural predominante en internet, donde el navegador (cliente) interactúa vía HTTP con el servidor Apache/PHP y la base de datos relacional. Sobre esta infraestructura, el proyecto adopta el patrón arquitectónico Modelo--Vista--Controlador (MVC) \parencite{pressman2020}, que desacopla responsabilidades: la \textbf{Vista} (HTML5/CSS3/JavaScript y plantillas PHP) gestiona la presentación y validación reactiva en cliente; el \textbf{Controlador} (PHP 8.2/Apache) centraliza el enrutamiento, sesiones y reglas de negocio (recovery C.I.+fecha, matrícula y paralelos); y el \textbf{Modelo} (clases de dominio PDO--PostgreSQL 16) encapsula la lógica de persistencia ACID. Esta separación garantiza modularidad, mantenibilidad y mínimo consumo de ancho de banda en redes móviles de áreas intermedias.
+De acuerdo con \textcite{tanenbaum2021}, en internet el modelo cliente-servidor es el más usado: el navegador (cliente) pide los datos y el servidor (Apache/PHP con base de datos) responde. Sobre esta base, el proyecto usa el patrón Modelo--Vista--Controlador (MVC) \parencite{pressman2020}, que separa el trabajo en tres partes: la \textbf{Vista} (lo que se ve en pantalla con HTML5, CSS3 y JavaScript) muestra los formularios y avisa si falta un dato; el \textbf{Controlador} (PHP 8.2/Apache) recibe las solicitudes y aplica las reglas del sistema (recuperar contraseña con carnet y fecha, registrar papeles y distribuir por colegio); y el \textbf{Modelo} (PostgreSQL 16) guarda los datos de forma segura. Esta separación mantiene el sistema ordenado, fácil de mantener y con bajo consumo de datos en el celular, incluso con señal baja.
 
 \subsection{Ingeniería de Software Web y Usabilidad Centrada en el Usuario}
 
@@ -19,6 +19,6 @@ La protección de los datos y el control de acceso siguen los principios de \tex
 
 En la práctica escolar, inscribirse no termina al reservar el cupo. Hace falta comprobar los papeles que pide la norma. Por eso el sistema incluye un módulo donde se anotan y revisan las libretas, las cédulas y los certificados que el estudiante presenta en físico, de modo que los expedientes dejan de estar dispersos y quedan registrados de forma ordenada y rastreable.
 
-\subsection{Modelado Orientado a Objetos y Persistencia Transaccional ACID en PostgreSQL}
+\subsection{Modelado Orientado a Objetos y Guarda Segura de Datos}
 
-Según \textcite{sommerville2020}, usar UML permite dibujar con claridad las clases y el flujo del sistema antes de programar. La guarda segura de los cupos se logra con PostgreSQL \parencite{postgresql2025}, que cumple las propiedades ACID (Atomicidad, Consistencia, Aislamiento y Durabilidad) y evita que dos postulantes ocupen el mismo lugar o que una asignación quede a medias.
+Según \textcite{sommerville2020}, usar UML permite dibujar de forma clara las partes del sistema antes de programar. El guardado seguro de los cupos se logra con PostgreSQL \parencite{postgresql2025}, que cuida que los datos no se dupliquen ni se pierdan aunque muchos estudiantes entren al mismo tiempo, y evita que dos postulantes ocupen el mismo lugar o que una asignación quede a medias.

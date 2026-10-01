@@ -56,18 +56,18 @@
 % Título sistema
 \node[etiqueta, fill=white, inner sep=2pt] at (0, 4.15) {SISTEMA WEB BTH V2.0 — MÓDULOS FUNCIONALES};
 
-% --- NIVEL SUPERIOR: Preinscripción (entrada) — separación vertical +0.55cm ---
-\node[moduloDestacado] (M1) at (0, 3.05) {\textbf{M1. Formulario}\\Dinámico y\\Preinscripción\\\footnotesize\normalfont\textit{7 especialidades}};
+% --- NIVEL SUPERIOR: Preinscripción (entrada) ---
+\node[moduloDestacado] (M1) at (0, 3.05) {\textbf{M1. Formulario}\\de Preinscripción\\\footnotesize\normalfont\textit{7 carreras}};
 
-% --- NIVEL MEDIO: Núcleo transaccional + Recovery — separación horizontal +0.90cm ---
-\node[modulo] (M2) at (-5.05, 0.90) {\textbf{M2. Control}\\Transaccional\\de Vacantes\\\footnotesize\normalfont\textit{ACID row-level}};
-\node[moduloLight] (M3) at (0, 0.90) {\textbf{M3. Recuperación}\\Autónoma de\\Credenciales\\\footnotesize\normalfont\textit{C.I.+fecha <$2$ min}};
-\node[moduloLight] (M6) at (5.05, 0.90) {\textbf{M6. Generador}\\Comprobantes\\PDF\\\footnotesize\normalfont\textit{código verificación}};
+% --- NIVEL MEDIO: Núcleo + Recovery ---
+\node[modulo] (M2) at (-5.05, 0.90) {\textbf{M2. Control}\\de Cupos\\\footnotesize\normalfont\textit{sin duplicar}};
+\node[moduloLight] (M3) at (0, 0.90) {\textbf{M3. Recuperar}\\Contraseña\\\footnotesize\normalfont\textit{carnet+fecha}};
+\node[moduloLight] (M6) at (5.05, 0.90) {\textbf{M6. Comprobantes}\\en PDF\\\footnotesize\normalfont\textit{código único}};
 
-% --- NIVEL INFERIOR: Gestión académica — separación vertical +0.60cm y horizontal +0.90cm ---
-\node[modulo] (M4) at (-5.05, -1.70) {\textbf{M4. Matriculación}\\Documental\\\footnotesize\normalfont\textit{libretas 1ro-3ro,}\\[-2pt]\footnotesize\normalfont\textit{C.I. tutor, carnet, cert.}};
-\node[modulo] (M5) at (0, -1.70) {\textbf{M5. Asignación}\\Cursos y Paralelos\\\footnotesize\normalfont\textit{por U.E. procedencia}\\[-2pt]\footnotesize\normalfont\textit{4to A / 4to B}};
-\node[modulo] (M7) at (5.05, -1.70) {\textbf{M7. Panel Control}\\y Reportes\\\footnotesize\normalfont\textit{vacantes, \% matrícula}};
+% --- NIVEL INFERIOR: Gestión académica ---
+\node[modulo] (M4) at (-5.05, -1.70) {\textbf{M4. Registro}\\de Documentos\\\footnotesize\normalfont\textit{libretas, carnet,}\\[-2pt]\footnotesize\normalfont\textit{certificado}};
+\node[modulo] (M5) at (0, -1.70) {\textbf{M5. Distribución}\\por Colegio\\\footnotesize\normalfont\textit{según colegio}\\[-2pt]\footnotesize\normalfont\textit{4to A / 4to B}};
+\node[modulo] (M7) at (5.05, -1.70) {\textbf{M7. Panel}\\de Control\\\footnotesize\normalfont\textit{cupos y listas}};
 
 % --- Conexiones principales (flujo ortogonal optimizado — rounded, ajustado a nuevo espaciado v2) ---
 % M1 -> M2 (reserva) — flujo sólido, codo ortogonal separado (salida izquierda)
@@ -78,10 +78,10 @@
 \draw[flecha] ([xshift=0.35cm]M1.south) -- ++(0,-0.38) -| (M6.north);
 \node[font=\tiny, text=primary!80, fill=white, inner sep=1pt] at (3.40, 1.92) {PDF};
 
-% M1 -> M3 (soporte, recuperación) — consulta dashed vertical directa
+% M1 -> M3 (soporte, recuperación) — consulta dashed
 \draw[flechaDashed] (M1.south) -- (M3.north);
 
-% M2 -> M4 (matriculación tras reserva) — vertical corta (ligeramente desplazada a izquierda)
+% M2 -> M4 (registro tras reserva) — vertical corta
 \draw[flecha] ([xshift=-0.20cm]M2.south) -- ([xshift=-0.20cm]M4.north);
 
 % M2 -> M5 (asignación tras matrícula) — ortogonal media separada y=-0.25 (salida desplazada)
@@ -97,8 +97,8 @@
 % M2 -> M7 (vacantes tiempo real) — perímetro inferior y=-0.55 para no cruzar L5 (y=-0.25)
 \draw[flechaDashed] (M2.east) -- ++(0.60,0) |- (5.05,-0.55) -- (M7.north);
 
-% --- Leyenda inferior (reubicada por mayor altura v2) ---
-\node[font=\tiny\itshape, text=darktext!65, align=center] at (0, -3.45) {Flujo 5 fases Cap.~4.1.3: (1) Preinscripción → (2) Recovery → (3) Comprobante → (4) Matriculación → (5) Asignación \textbullet{} M7 transversal en tiempo real};
+% --- Leyenda inferior (lenguaje sencillo) ---
+\node[font=\tiny\itshape, text=darktext!65, align=center] at (0, -3.45) {Pasos del sistema: (1) Preinscripción → (2) Recuperar contraseña → (3) Comprobante → (4) Documentos → (5) Distribución por colegio};
 \draw[primary!80, thick] (-6.85, -3.15) -- (6.85, -3.15);
 
 % --- Indicadores pequeños (ajustados a nuevo ancho v2) ---
