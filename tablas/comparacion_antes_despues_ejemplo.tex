@@ -1,20 +1,28 @@
 \begin{table}[htbp]
     \centering
-    \caption{Comparación de indicadores antes y después de la innovación tecnológica.}
+    \caption{Comparación antes y después de la innovación.}
     \label{tab:comparacion_antes_despues}
-    \begin{tabularx}{\textwidth}{L L L L}
+    \renewcommand{\arraystretch}{1.50}
+    \begin{tabularx}{\textwidth}{>{\hsize=1.05\hsize}L >{\hsize=1.05\hsize}L >{\hsize=1.10\hsize}L >{\hsize=0.80\hsize}C}
         \toprule
-        \textbf{Indicador de Desempeño} & \textbf{Antes (Presencial / 2025)} & \textbf{Después (Versión 2.0)} & \textbf{Variación} \\
+        \textbf{Lo que se midió} & \textbf{Antes (presencial)} & \textbf{Después (sistema web)} & \textbf{Cambio} \\
         \midrule
-        Recuperación de credenciales & Fila presencial en secretaría (pérdida de cupo vocacional) & Autoservicio digital $<$ 2 min autónomo (C.I. y fecha de nacimiento) & --- \\
-        Matriculación documental & Archivo manual físico sin registro sistematizado & Auditoría digital en BD de libretas y certificados & 100 \% trazabilidad \\
-        Asignación a cursos y paralelos & Planillas empíricas con cruces de horario distrital & Distribución automática por colegio de procedencia & 0 cruces \\
-        Control de vacantes por taller & Manual / Riesgo de sobrecupo & Asignación atómica ACID con bloqueo de fila en PostgreSQL & 100 \% seguro \\
-        Errores en formulario de registro & 35 \% de datos inconsistentes & Validaciones reactivas en JavaScript en cliente ($<$ 5 \%) & $-$88 \% \\
-        Tiempo total del trámite & 1 a 3 días en fila física & 3 a 5 minutos en plataforma web & $-$90 \% \\
-        Disponibilidad de atención & 8 horas/día en ventanilla & 24 horas continuas en línea & $+$200 \% \\
-        Aglomeración física de familias & Pernoctes y filas a la intemperie & Supresión total de filas presenciales & $-$100 \% \\
+        Recuperación de contraseña & Fila en secretaría (se perdía el cupo) & Autoservicio en menos de 2 min, sin ayuda (carnet y fecha de nacimiento) & Sin filas \\
+        \addlinespace
+        Papeles de matrícula & Papeles sueltos sin registro en sistema & Registro ordenado de libretas y certificados & Todos en orden \\
+        \addlinespace
+        Reparto en cursos y paralelos & Listas a mano con choques de horario & Reparto automático por colegio & 0 choques \\
+        \addlinespace
+        Cuidado de los cupos & A mano, con riesgo de duplicar & Cupos cuidados sin duplicar en el sistema & 100 \% sin duplicar \\
+        \addlinespace
+        Errores al escribir & 35 \% de datos mal escritos & Revisión automática al escribir (menos de 5 \%) & $-$88 \% \\
+        \addlinespace
+        Tiempo del trámite & 1 a 3 días en fila & 3 a 5 minutos en la página & $-$90 \% \\
+        \addlinespace
+        Horario de atención & 8 horas al día en ventanilla & 24 horas en línea & $+$200 \% \\
+        \addlinespace
+        Filas de familias & Filas de noche a la intemperie & Sin filas presenciales & $-$100 \% \\
         \bottomrule
     \end{tabularx}
-    \notatabla{Datos obtenidos de la evaluación comparativa realizada con 60 postulantes y 5 funcionarios.}
+    \notatabla{Datos de la comparación hecha con 60 postulantes y 5 funcionarios.}
 \end{table}

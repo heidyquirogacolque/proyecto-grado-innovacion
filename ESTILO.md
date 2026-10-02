@@ -6,7 +6,7 @@
 
 * **Registro formal impersonal** en tercera persona (`se desarrolló`, `se implementó`, `se diagnosticó`), sin `yo/nosotros`. Objetividad científica, precisión léxica, oraciones breves.
 * **Voz activa impersonal** con `se` + verbo. Evitar coloquialismos y anglicismos innecesarios (usar `autoservicio` no `self-service` salvo término definido).
-* **Citas APA 7:** Parentética `\parencite{clave}` → *(Sujovich & Biocca, 2024)* para apoyo; narrativa `\textcite{clave}` → *Sujovich y Biocca (2024)* cuando el autor es sujeto. Nunca citas en Conclusiones.
+* **Citas APA 7:** Parentética `\parencite{clave}` → *(UNESCO, 2024)* para apoyo; narrativa `\textcite{clave}` → *León-Velarde et al. (2024)* cuando el autor es sujeto. Nunca citas en Conclusiones.
 
 ## Tiempos Verbales por Capítulo
 
@@ -14,7 +14,7 @@
 |---|---|---|
 | **1 Introducción** | **Presente** para contexto vigente + **futuro / condicional propositivo** para contribución | Presente: *El MTP San Julián centraliza la formación BTH...* Futuro: *La plataforma generaría un ahorro superior a 20000 Bs...* `contribucion_esperada.tex:6` condicional `generaría/restituiría` distingue expectativa de evidencia. |
 | **2 Planteamiento del Problema** | **Presente** diagnóstico + **infinitivo** objetivos + presente justificación | Presente: *El diagnóstico combinó análisis 2022-2025...* Infinitivo: *Diagnosticar... Diseñar... Desarrollar... Validar... Evaluar* `objetivos.tex:11-15`. |
-| **3 Marco Referencial** | **Pretérito** antecedentes + **presente** bases teóricas y normativo vigente | Pretérito: *UDB (2018) analizó...* Presente: *La arquitectura cliente-servidor constituye...* `\textcite{tanenbaum2021}` `bases_teoricas.tex:8`. Normativa: *La CPE consagra...* `\parencite{cpe2009}`. |
+| **3 Marco Referencial** | **Pretérito** antecedentes + **presente** bases teóricas y normativo vigente | Pretérito: *León-Velarde et al. (2024) analizaron...* Presente: *La arquitectura cliente-servidor constituye...* `\textcite{tanenbaum2021}` `bases_teoricas.tex:8`. Normativa: *La CPE consagra...* `\parencite{cpe2009}`. |
 | **4 Desarrollo Innovación** | **Pretérito descriptivo** procesos ejecutados + **presente** especificaciones/costos | Pretérito: *Se desarrolló bajo arquitectura 3 capas...* Presente: *El sistema consume <1.5 MB...* `diseno.tex:52`. Costos presente: *Los costos fijos ascienden a 190.00 Bs...* `calculo_costos.tex:12`. |
 | **5 Metodología** | **Pretérito descriptivo** | *Se aplicó muestreo por conveniencia a 60 estudiantes... Se ejecutaron 5 corridas Apache Benchmark...* `tecnicas_instrumentos.tex:9`. |
 | **6 Estrategia de Mejora** | **Presente + futuro propositivo** | Presente: *Se diseña estrategia en 3 horizontes...* Futuro: *Se proyecta migración a VPS...* `proyeccion_escalamiento.tex:12`. |
@@ -34,9 +34,9 @@
 
 * **BibLaTeX:** `style=apa` `backend=biber` `csquotes` `estilos/estilos.sty:191-197`.
 * **Parentética:** `\parencite{hernandez2014}` → *(Hernández Sampieri et al., 2014)* para marco metodológico `diagnostico.tex:6`.
-* **Narrativa:** `\textcite{sujovich2024}` → *Sujovich y Biocca (2024)* como sujeto `antecedentes.tex:10`.
+* **Narrativa:** `\textcite{leonvelarde2024}` → *León-Velarde et al. (2024)* como sujeto `antecedentes.tex:8`.
 * **Múltiples:** `\parencite{marcotte2018,w3schools2025}` `marco_conceptual.tex:11`.
-* **Referencias:** `bibliografia/referencias.bib` 16 entradas verificadas (`@book` 7, `@online` 6, `@article` 1, `@misc` 1, `@techreport` 1), claves sin espacios, mayúsculas protegidas `{PHP}` `{PostgreSQL}`.
+* **Referencias:** `bibliografia/referencias.bib` 17 entradas activas verificadas (`@book` 10, `@online` 5, `@article` 1, `@techreport` 1), claves sin espacios, mayúsculas protegidas `{PHP}` `{PostgreSQL}` `{ASP.NET}`.
 * **Impresión:** `main.tex:39` `\printbibliography[heading=bibintoc, title={Bibliografía}]` con `\configurarseccionfinal` `empty`.
 
 ## Listas y Formato

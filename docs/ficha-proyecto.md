@@ -102,7 +102,7 @@ capitulos/
 
 - **¿Qué evento, experiencia o necesidad personal originó la idea?:** Experiencia directa de filas nocturnas a intemperie 2022-2024, frustración vocacional por olvido de contraseña en plataforma 2025 (pérdida de cupos en carreras demandadas), sobrecarga docente/administrativa en recepción manual de carpetas (libretas 1ro-3ro, cédulas, certificados) y elaboración manual de listas de paralelos con desequilibrios y cruces horarios
 - **¿Por qué esta solución es relevante ahora?** (política pública, tendencia, normativa): Necesidad de modernizar gestión BTH, completar ciclo preinscripción-matriculación-distribución; responde al Reglamento de Graduación BTH RM 0912/2023 que exige proyectos que resuelvan problemáticas institucionales con competencias técnicas; valida la innovación como transformación práctica institucional mediante actualización tecnológica
-  - **Fuente o referencia de la pertinencia:** Resolución Ministerial RM 0912/2023 Ministerio de Educación del Estado Plurinacional de Bolivia (2023); Sujovich y Biocca (2024) p.15: «la innovación educativa constituye una transformación práctica de las estructuras institucionales mediante la actualización tecnológica»
+  - **Fuente o referencia de la pertinencia:** Resolución Ministerial RM 0912/2023 Ministerio de Educación del Estado Plurinacional de Bolivia (2023); UNESCO (2024): la transformación digital educativa requiere coordinación, capacidad y cultura institucional; UNESCO (2023): la tecnología debe gestionarse con el estudiante en el centro
 
 ### 1.3 Contribución esperada
 
@@ -172,19 +172,19 @@ capitulos/
 ### 3.1 Antecedentes del proyecto
 
 1. **Antecedente 1**
-   - Título: Sistema mecanizado para la inscripción de asignaturas y pagos por internet
-   - Autor(es): Universidad Don Bosco
-   - Año: 2018
-   - Institución / País: Universidad Don Bosco — San Salvador, El Salvador
-   - Resultado o aporte clave: Transición ventanilla manual → sistema web centralizado reduce >80% tiempos espera y erradica errores asignación vacantes, incrementa satisfacción y transparencia
-   - Fuente: Universidad Don Bosco (2018)
-2. **Antecedente 2**
-   - Título: La innovación educativa y la transformación práctica de las estructuras institucionales mediante la actualización tecnológica
-   - Autor(es): Sujovich, D. y Biocca, M.
+   - Título: Diseño de una aplicación web ASP.NET para la gestión de matrícula y registro de notas de estudiantes en una universidad nacional
+   - Autor(es): León-Velarde, C. G.; Solano Rosembertt, G. V.; Lureña Silva, C. L.; Rivera Quispe, E. M.; Muro Egoavil, R. G.
    - Año: 2024
-   - Institución / País: Revista Iberoamericana de Educación y Tecnología, 12(1), 14-29
-   - Resultado o aporte clave: Innovación trasciende reforma curricular, exige actualización práctica estructuras servicio; frustraciones usuarios derivan de falta autoservicio intuitivo y heterogeneidad competencias — recomiendan interfaces guiadas y canales autónomos resolución accesos
-   - Fuente: Sujovich y Biocca (2024)
+   - Institución / País: Universidad Nacional Federico Villarreal — Lima, Perú / Revista Aula Virtual, 5(12) — SciELO (DOI 10.5281/zenodo.11302371)
+   - Resultado o aporte clave: Transición matrícula manual → sistema web centralizado; la matrícula manual generaba largos tiempos de espera (56.67% insatisfacción, 80% pedía mejorar); la automatización mejoró eficacia y eficiencia con 85% de aceptación
+   - Fuente: León-Velarde et al. (2024) https://ve.scielo.org/scielo.php?pid=S2665-03982024000202021&script=sci_arttext
+2. **Antecedente 2**
+   - Título: Global Education Monitoring Report 2023: Technology in education + Six pillars for the digital transformation of education
+   - Autor(es): UNESCO
+   - Año: 2023 y 2024
+   - Institución / País: UNESCO — París, Francia
+   - Resultado o aporte clave: Transformar exige fortalecer gestión y gobernanza con tecnología centrada en el estudiante, con coordinación, capacidad y cultura institucional; recomiendan interfaces simples y opciones autónomas de acceso
+   - Fuente: UNESCO (2023) https://www.unesco.org/gem-report/en/technology ; UNESCO (2024) https://unesdoc.unesco.org/ark:/48223/pf0000391299
 3. **Antecedente 3**
    - Título: Fase Presencial Tradicional (2022–2024) y Fase Digital Preliminar (2025) del MTP San Julián
    - Autor(es): MÓDULO TECNOLÓGICO PRODUCTIVO SAN JULIÁN (diagnóstico institucional propio)
@@ -196,30 +196,30 @@ capitulos/
 ### 3.2 Bases teóricas
 
 - **Teoría o modelo directamente aplicado a la solución:** Arquitectura Cliente-Servidor en Entornos Web
-  - **Autor y año:** Tanenbaum y Wetherall (2021)
-  - **Fuente bibliográfica completa:** Tanenbaum, A. S., & Wetherall, D. J. (2021). Redes de computadoras (6.a ed.). Pearson Educación.
-- **Segunda base teórica** (si aplica): Ingeniería de Software Web y Usabilidad Centrada en el Usuario — Pressman y Maxim (2020) — WebE: principios disciplinados para apps seguras/escalables/mantenibles; diseño centrado usuario, formularios limpios, feedback reactivo
-  - **Fuente:** Pressman, R. S., & Maxim, B. R. (2020). Ingeniería del software: Un enfoque práctico (9.a ed.). McGraw-Hill Interamericana.
-- **Tercera base teórica:** Seguridad Informática, Autenticación y Recuperación de Credenciales — Stallings (2021) confidencialidad/integridad/disponibilidad, contraseñas cifradas hash, Self-Service Password Reset con C.I. + fecha nacimiento
-  - **Fuente:** Stallings, W. (2021). Fundamentos de seguridad en redes (5.a ed.). Pearson Educación.
+  - **Autor y año:** Tanenbaum, Feamster y Wetherall (2021)
+  - **Fuente bibliográfica completa:** Tanenbaum, A. S., Feamster, N., & Wetherall, D. J. (2021). Redes de computadoras (6.a ed.). Pearson Educación.
+- **Segunda base teórica** (si aplica): Ingeniería de Software Web y Usabilidad Centrada en el Usuario — Pressman y Maxim (2021) — WebE: principios disciplinados para apps seguras/escalables/mantenibles; diseño centrado usuario, formularios limpios, feedback reactivo
+  - **Fuente:** Pressman, R. S., & Maxim, B. R. (2021). Ingeniería del software: Un enfoque práctico (9.a ed.). McGraw-Hill Interamericana.
+- **Tercera base teórica:** Seguridad Informática, Autenticación y Recuperación de Credenciales — Stallings (2004) confidencialidad/integridad/disponibilidad, contraseñas cifradas hash, Self-Service Password Reset con C.I. + fecha nacimiento
+  - **Fuente:** Stallings, W. (2004). Fundamentos de seguridad en redes (2.a ed.). Pearson Educación.
 - **Cuarta base teórica:** Sistemas de Información y Gestión Documental Escolar — ciclo integral registro académico, auditoría requisitos legales (libretas, cédulas, certificados) → registros relacionales auditables
-- **Quinta base teórica:** Modelado Orientado a Objetos y Persistencia Transaccional ACID en PostgreSQL — Sommerville (2020) UML + PostgreSQL Global Development Group (2025) ACID Atomicidad/Consistencia/Aislamiento/Durabilidad, bloqueo fila
-  - **Fuente:** Sommerville, I. (2020). Ingeniería de software (10.a ed.). Pearson; PostgreSQL Global Development Group (2025). PostgreSQL 16.0 Documentation. https://www.postgresql.org/docs/
+- **Quinta base teórica:** Modelado Orientado a Objetos y Persistencia Transaccional ACID en PostgreSQL — Sommerville (2016) UML + PostgreSQL Global Development Group (2024) ACID Atomicidad/Consistencia/Aislamiento/Durabilidad, bloqueo fila
+  - **Fuente:** Sommerville, I. (2016). Ingeniería de software (10.a ed.). Pearson; PostgreSQL Global Development Group (2024). PostgreSQL 16.4 Documentation. https://www.postgresql.org/docs/16/
 - **Disciplina(s) científica(s) o técnica(s) base del proyecto:** Ciencias de la computación, Ingeniería de software, Gestión de información escolar, Redes de computadoras, Seguridad informática, Sistemas Web
 - **Principio técnico o ley física/química aplicada** (si corresponde): Principio ACID y bloqueo pesimista row-level locking (FOR UPDATE) para control concurrencia cupos; diseño responsivo con media queries
-  - **Fuente:** PostgreSQL Docs 2025; Marcotte (2018) Responsive Web Design
+  - **Fuente:** PostgreSQL Docs 2024; Marcotte (2014) Responsive Web Design
 
 ### 3.3 Marco conceptual y normativo
 
 1. **Concepto 1:** Sistemas Web
    - Definición operativa: Aplicaciones cliente-servidor ejecutadas sobre navegadores mediante HTTP/HTTPS que procesan información centralizada para automatizar trámites y flujos de trabajo
-   - Fuente: Pressman & Maxim (2020)
+   - Fuente: Pressman & Maxim (2021)
 2. **Concepto 2:** HTML5
    - Definición operativa: Estándar de lenguaje de marcado semántico que estructura vistas, campos y elementos interactivos de formularios
    - Fuente: MDN Web Docs (2025) https://developer.mozilla.org/es/docs/Web/HTML
 3. **Concepto 3:** CSS3 y Diseño Responsivo
    - Definición operativa: Especificación de diseño adaptable que utiliza media queries para ajustar disposición gráfica a cualquier resolución móvil/escritorio
-   - Fuente: Marcotte (2018); W3Schools (2025) https://www.w3schools.com/css/css_rwd_intro.asp
+   - Fuente: Marcotte (2014); W3Schools (2025) https://www.w3schools.com/css/css_rwd_intro.asp
 4. **Concepto 4:** JavaScript
    - Definición operativa: Lenguaje interpretado lado cliente responsable de reactividad dinámica y validación previa datos en navegador
    - Fuente: Mozilla Foundation (2025) https://developer.mozilla.org/es/docs/Web/JavaScript
@@ -231,7 +231,7 @@ capitulos/
    - Fuente: PostgreSQL Global Development Group (2025)
 7. **Concepto 7:** Autoservicio de Credenciales
    - Definición operativa: Funcionalidad que permite al usuario restaurar acceso mediante comprobación segura datos personales (C.I., fecha nacimiento) sin atención manual ventanilla
-   - Fuente: Teoría Self-Service Password Reset — Stallings (2021)
+   - Fuente: Teoría Self-Service Password Reset — Stallings (2004)
 8. **Concepto 8:** Bachillerato Técnico Humanístico (BTH)
    - Definición operativa: Modelo formativo educación secundaria comunitaria productiva Bolivia que otorga doble titulación Bachiller Humanístico + Técnico Medio en especialidad vocacional
    - Fuente: Ley 070 (2010); RM 0912/2023
@@ -242,7 +242,7 @@ capitulos/
    - Definición operativa: Preinscripción al cierre gestión previa reserva vacante; matriculación documental al inicio gestión siguiente con libretas 1ro-3ro, cédula tutores, carnet, certificado nacimiento; Unidad procedencia = colegio humanístico origen que determina horarios; Curso/Paralelo = grado (4to) y sección (A/B) según capacidad áulica
 
 - **Norma o ley boliviana aplicable:** Constitución Política del Estado Art.77-78 (educación función suprema, universal/productiva/gratuita) — Estado Plurinacional de Bolivia (2009); Ley N°070 Avelino Siñani-Elizardo Pérez (2010) formaliza BTH y Modelo Sociocomunitario Productivo
-- **Norma técnica o estándar internacional aplicable:** ISO/IEC 25010 calidad software; W3C directrices; Responsive Web Design (Marcotte 2018); ACID PostgreSQL
+- **Norma técnica o estándar internacional aplicable:** ISO/IEC 25010 calidad software; W3C directrices; Responsive Web Design (Marcotte 2014); ACID PostgreSQL
 - **Reglamento institucional relevante:** Resolución Ministerial RM 0912/2023 Reglamento de Graduación BTH — legitima proyectos Innovación Tecnológica para resolver necesidades instituciones/comunidades (Ministerio de Educación 2023)
 
 > **Nutre:** `capitulos/03_marco_referencial/main.tex` → `antecedentes.tex`, `bases_teoricas.tex`, `marco_conceptual.tex`

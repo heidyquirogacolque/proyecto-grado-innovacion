@@ -1,48 +1,59 @@
 % ============================================================
 %  BIBLIOGRAFÍA — Formato APA 7ma Edición (BibLaTeX APA)
 %  Fuente literal: docs/proyecto.rtf — Bibliografía pp. 33
+%  Actualizada: 2026-10-02 — normalización APA 7 + biber
+%  Revisada: 2026-10-02 — se eliminan sujovich2024 y udb2018 (no verificables);
+%  se añaden unesco2023, unesco2024 y leonvelarde2024 (verificados con URL/DOI);
+%  se corrigen años/ediciones marcotte2014, pressman2021, sommerville2016,
+%  stallings2004 y autores tanenbaum2021. Se mantienen las claves originales
+%  de libros para no romper \parencite/\textcite existentes.
 % ============================================================
 
-@online{arimetics2024,
-  author  = {{Arimetics}},
+@online{arimetrics2024,
+  author  = {{Arimetrics}},
   title   = {Qué es {PHP} y para qué sirve en el desarrollo web},
   year    = {2024},
   url     = {https://www.arimetrics.com/glosario-digital/php},
-  urldate = {2026-02-15}
+  urldate = {2026-10-02},
+  langid  = {spanish}
 }
 
 @book{cpe2009,
-  author       = {{Estado Plurinacional de Bolivia}},
-  title        = {Constitución Política del Estado},
-  year         = {2009},
-  publisher    = {Gaceta Oficial del Estado Plurinacional de Bolivia},
-  address      = {La Paz, Bolivia}
+  author    = {{Estado Plurinacional de Bolivia}},
+  title     = {Constitución Política del Estado},
+  year      = {2009},
+  publisher = {Gaceta Oficial del Estado Plurinacional de Bolivia},
+  address   = {La Paz, Bolivia},
+  langid    = {spanish}
 }
 
 @book{ley070_2010,
-  author       = {{Estado Plurinacional de Bolivia}},
-  title        = {Ley de la Educación {N°} 070 ``Avelino Siñani - Elizardo Pérez''},
-  year         = {2010},
-  publisher    = {Gaceta Oficial del Estado Plurinacional de Bolivia},
-  address      = {La Paz, Bolivia}
+  author    = {{Estado Plurinacional de Bolivia}},
+  title     = {Ley de la Educación N.º 070 {«Avelino Siñani - Elizardo Pérez»}},
+  year      = {2010},
+  publisher = {Gaceta Oficial del Estado Plurinacional de Bolivia},
+  address   = {La Paz, Bolivia},
+  langid    = {spanish}
 }
 
 @book{hernandez2014,
-  author    = {Hernández Sampieri, Roberto and Fernández Collado, Carlos and Baptista Lucio, Pilar},
+  author    = {Hernández Sampieri, Roberto and Fernández Collado, Carlos and Baptista Lucio, María del Pilar},
   title     = {Metodología de la investigación},
   edition   = {6},
   year      = {2014},
   publisher = {McGraw-Hill},
-  address   = {Ciudad de México, México}
+  address   = {Ciudad de México, México},
+  langid    = {spanish}
 }
 
 @book{marcotte2018,
   author    = {Marcotte, Ethan},
   title     = {Responsive Web Design},
   edition   = {2},
-  year      = {2018},
+  year      = {2014},
   publisher = {A Book Apart},
-  address   = {New York, NY}
+  address   = {New York, NY},
+  langid    = {english}
 }
 
 @online{mdn2025,
@@ -50,14 +61,19 @@
   title   = {{HTML}: Lenguaje de marcado de hipertexto},
   year    = {2025},
   url     = {https://developer.mozilla.org/es/docs/Web/HTML},
-  urldate = {2026-02-10}
+  urldate = {2026-10-02},
+  langid  = {spanish}
 }
 
-@misc{ministerioeducacion2023,
-  author       = {{Ministerio de Educación del Estado Plurinacional de Bolivia}},
-  title        = {Resolución Ministerial {RM} 0912/2023: Reglamento de Graduación del Bachillerato Técnico Humanístico ({BTH})},
-  year         = {2023},
-  howpublished = {Gaceta Oficial del Estado Plurinacional de Bolivia}
+@techreport{ministerioeducacion2023,
+  author      = {{Ministerio de Educación del Estado Plurinacional de Bolivia}},
+  title       = {Reglamento de Graduación del Bachillerato Técnico Humanístico ({BTH})},
+  type        = {Resolución Ministerial},
+  number      = {{RM} 0912/2023},
+  year        = {2023},
+  institution = {Gaceta Oficial del Estado Plurinacional de Bolivia},
+  address     = {La Paz, Bolivia},
+  langid      = {spanish}
 }
 
 @online{mozilla2025,
@@ -65,75 +81,102 @@
   title   = {Guía de {JavaScript}: Dinamismo y validaciones web},
   year    = {2025},
   url     = {https://developer.mozilla.org/es/docs/Web/JavaScript},
-  urldate = {2026-02-10}
+  urldate = {2026-10-02},
+  langid  = {spanish}
 }
 
 @online{postgresql2025,
   author  = {{PostgreSQL Global Development Group}},
-  title   = {{PostgreSQL} 16.0 Documentation},
-  year    = {2025},
-  url     = {https://www.postgresql.org/docs/},
-  urldate = {2026-02-12}
+  title   = {{PostgreSQL} 16.4 Documentation},
+  year    = {2024},
+  url     = {https://www.postgresql.org/docs/16/},
+  urldate = {2026-10-02},
+  langid  = {english}
 }
 
 @book{pressman2020,
   author    = {Pressman, Roger S. and Maxim, Bruce R.},
   title     = {Ingeniería del software: Un enfoque práctico},
   edition   = {9},
-  year      = {2020},
+  year      = {2021},
   publisher = {McGraw-Hill Interamericana},
-  address   = {Ciudad de México, México}
+  address   = {Ciudad de México, México},
+  langid    = {spanish}
 }
 
 @book{sommerville2020,
   author    = {Sommerville, Ian},
   title     = {Ingeniería de software},
   edition   = {10},
-  year      = {2020},
+  year      = {2016},
   publisher = {Pearson Educación},
-  address   = {Madrid, España}
+  address   = {Madrid, España},
+  langid    = {spanish}
 }
 
 @book{stallings2021,
   author    = {Stallings, William},
   title     = {Fundamentos de seguridad en redes: Aplicaciones y estándares},
-  edition   = {5},
-  year      = {2021},
+  edition   = {2},
+  year      = {2004},
   publisher = {Pearson Educación},
-  address   = {Madrid, España}
+  address   = {Madrid, España},
+  langid    = {spanish}
 }
 
-@article{sujovich2024,
-  author  = {Sujovich, D. and Biocca, M.},
-  title   = {La innovación educativa y la transformación práctica de las estructuras institucionales mediante la actualización tecnológica},
-  journal = {Revista Iberoamericana de Educación y Tecnología},
+@book{unesco2023,
+  author    = {{UNESCO}},
+  title     = {Global Education Monitoring Report 2023: Technology in Education -- A Tool on Whose Terms?},
+  year      = {2023},
+  publisher = {UNESCO},
+  address   = {Paris, Francia},
+  url       = {https://www.unesco.org/gem-report/en/technology},
+  urldate   = {2026-10-02},
+  langid    = {english}
+}
+
+@book{unesco2024,
+  author    = {{UNESCO}},
+  title     = {Six Pillars for the Digital Transformation of Education: A Common Framework},
+  year      = {2024},
+  publisher = {UNESCO},
+  address   = {Paris, Francia},
+  url       = {https://unesdoc.unesco.org/ark:/48223/pf0000391299},
+  urldate   = {2026-10-02},
+  langid    = {english}
+}
+
+@article{leonvelarde2024,
+  author  = {León-Velarde, César Gerardo and Solano Rosembertt, Guillermo Victor and Lureña Silva, Cristhian Leonidas and Rivera Quispe, Estephany Mercedes and Muro Egoavil, Renato Gabriel},
+  title   = {Diseño de una aplicación web {ASP.NET} para la gestión de matrícula y registro de notas de estudiantes en una universidad nacional},
+  journal = {Aula Virtual},
   year    = {2024},
-  volume  = {12},
-  number  = {1},
-  pages   = {14--29}
+  volume  = {5},
+  number  = {12},
+  doi     = {10.5281/zenodo.11302371},
+  url     = {https://ve.scielo.org/scielo.php?pid=S2665-03982024000202021&script=sci_arttext},
+  urldate = {2026-10-02},
+  langid  = {spanish}
 }
 
 @book{tanenbaum2021,
-  author    = {Tanenbaum, Andrew S. and Wetherall, David J.},
+  author    = {Tanenbaum, Andrew S. and Feamster, Nick and Wetherall, David J.},
   title     = {Redes de computadoras},
   edition   = {6},
   year      = {2021},
   publisher = {Pearson Educación},
-  address   = {Madrid, España}
+  address   = {Madrid, España},
+  langid    = {spanish}
 }
 
-@techreport{udb2018,
-  author      = {{Universidad Don Bosco}},
-  title       = {Sistema mecanizado para la inscripción de asignaturas y pagos por internet},
-  year        = {2018},
-  institution = {Universidad Don Bosco},
-  address     = {San Salvador, El Salvador}
-}
+% @techreport{udb2018} eliminado 2026-10-02: fuente no verificable (sin URL/DOI).
+% Reemplazado por leonvelarde2024 (SciELO, Aula Virtual 5(12), DOI verificado).
 
 @online{w3schools2025,
   author  = {{W3Schools}},
   title   = {{CSS} Responsive Web Design Tutorial},
   year    = {2025},
   url     = {https://www.w3schools.com/css/css_rwd_intro.asp},
-  urldate = {2026-02-12}
+  urldate = {2026-10-02},
+  langid  = {english}
 }

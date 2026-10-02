@@ -9,14 +9,14 @@
 | | `preliminares/agradecimiento.tex` | Completo | `\begin{estilodedicatoria}{Agradecimiento}` | 2026-02-10 |
 | | `preliminares/resumen.tex` | Completo | Trilingüe `Resumen`/`Abstract`/`Quechua` + `\palabrasclave`/`\keywords`/`\simikuna` | 2026-09-08 |
 | **Cap.1 Introducción** | `01_introduccion/contexto_general.tex` | Completo | 400 postulantes, 2022-2026, RM 0912/2023 `\parencite{ministerioeducacion2023}` | 2026-02-10 |
-| | `01_introduccion/motivacion_pertinencia.tex` | Completo | 3 brechas V1.0 + sujovich p.15 | 2026-02-10 |
+| | `01_introduccion/motivacion_pertinencia.tex` | Completo | 3 brechas V1.0 + UNESCO 2023/2024 | 2026-02-10 |
 | | `01_introduccion/contribucion_esperada.tex` | Completo | V2.0 7 módulos, condicional `generaría` 20000 Bs | 2026-02-10 |
 | **Cap.2 Planteamiento** | `02_planteamiento_problema/diagnostico.tex` | Completo | 400/60+5, 0% trazabilidad 2025, `Tabla~\ref{tab:brechas_diagnostico}` | 2026-02-10 |
 | | `02_planteamiento_problema/identificacion_problema.tex` | Completo | Problema central + árbol `Figura~\ref{fig:arbol_problemas}` booktabs | 2026-02-10 |
 | | `02_planteamiento_problema/formulacion_problema.tex` | Completo | Pregunta principal gestión 2026 + 3 específicas | 2026-02-10 |
 | | `02_planteamiento_problema/objetivos.tex` | Completo | OG + 5 OE SMART + hipótesis VI→VD | 2026-02-10 |
 | | `02_planteamiento_problema/justificacion.tex` | Completo | 3 dimensiones técnica/social/económica | 2026-02-10 |
-| **Cap.3 Marco Referencial** | `03_marco_referencial/antecedentes.tex` | Completo | 3 niveles (UDB/Sujovich/MTP San Julián) | 2026-02-10 |
+| **Cap.3 Marco Referencial** | `03_marco_referencial/antecedentes.tex` | Completo | 3 niveles (León-Velarde/SciELO + UNESCO 2023-2024 + MTP San Julián) | 2026-02-10 |
 | | `03_marco_referencial/bases_teoricas.tex` | Completo | 5 teorías cliente-servidor, WebE, Stallings, ACID | 2026-02-10 |
 | | `03_marco_referencial/marco_conceptual.tex` | Completo | 10 conceptos + CPE/Ley070/RM0912 | 2026-02-10 |
 | **Cap.4 Desarrollo** | `04_desarrollo_innovacion/diseno.tex` | Completo | 3 capas, 7 módulos, flujo 5 fases, `tab:especificaciones_tecnicas` con 1.5 MB y >100 req | 2026-02-12 |

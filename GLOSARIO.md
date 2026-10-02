@@ -21,7 +21,7 @@
 | **HTML5** | Lenguaje de marcado semántico para formularios. | `HTML5` (mayúsculas + dígito) | `\parencite{mdn2025}` |
 | **CSS3 / Diseño Responsivo** | Hojas de estilo con media queries para adaptación móvil/PC. | `CSS3` | `\parencite{marcotte2018}` |
 | **JavaScript** | Lenguaje cliente para validación reactiva. | `JavaScript` | `\parencite{mozilla2025}` |
-| **PHP** | Lenguaje backend para lógica de negocio y transacciones. | `PHP` / `PHP 8.2` | `\parencite{arimetics2024}` |
+| **PHP** | Lenguaje backend para lógica de negocio y transacciones. | `PHP` / `PHP 8.2` | `\parencite{arimetrics2024}` |
 | **PostgreSQL** | Motor relacional open source ACID con bloqueo fila `FOR UPDATE`. | `PostgreSQL 16.4` | `\parencite{postgresql2025}` |
 | **ACID / Row-level locking** | Atomicidad, Consistencia, Aislamiento, Durabilidad; bloqueo pesimista fila. | `ACID` mayúsculas, `row-level locking` inglés cursiva | Cap.4, Cap.5, glosario técnico |
 | **API REST** | Interfaz RESTful HTTP/JSON para interoperabilidad (futuro WhatsApp). | `API REST` | No usado en V2.0, reservado proyección |
