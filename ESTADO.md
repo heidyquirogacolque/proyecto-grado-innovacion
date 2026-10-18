@@ -36,7 +36,7 @@
 | **Cap.9 Conclusiones** | `09_conclusiones_recomendaciones/conclusiones.tex` | Completo | 8 viñetas OE1-5 + hipótesis demostrada + Tablas \ref | 2026-02-12 |
 | | `09_conclusiones_recomendaciones/recomendaciones.tex` | Completo | 8 viñetas (4 técnicas + 4 institucionales) + tablero semestral | 2026-02-12 |
 | **Bibliografía** | `bibliografia/referencias.bib` | Completo | 16 entradas APA7 `biber` 100% citadas | 2026-02-10 |
-| **Anexos** | `anexos/index.tex` + `anexo_a_canvas.tex`/`anexo_b_fichas_tecnicas.tex`/`anexo_c_codigo_fuente.tex` | En progreso | Canvas/fichas/código por completar con contenido específico V2.0 | 2026-02-10 |
+| **Anexos** | `anexos/index.tex` + `anexo_a_canvas.tex`/`anexo_b_validacion.tex`/`anexo_c_evidencias.tex`/`anexo_d_diagnostico.tex` | Completo | 4 anexos A–D: instrumentos (A), validación (B), evidencias técnicas (C), diagnóstico OE1 (D); eliminados ex-C/D/F y huérfanos | 2026-10-18 |
 | **Tablas** | `tablas/` 16 archivos | Completo | 16/16 Correctas `verificar_tablas.py` (brechas, cronograma, especificaciones 1.5, costos 100.0, plan mejora 5 cols) | 2026-02-12 |
 | **Estilos** | `estilos/configuracion.tex` + `estilos.sty` + `caratula.sty` | Completo | Macros centralizadas, `\configurarseccionfinal` duplicado main.tex:38/42 | 2026-02-12 |
 
