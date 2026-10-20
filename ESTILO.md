@@ -25,7 +25,7 @@
 ## Normas Numéricas y Símbolos (SI/ISO 80000-1)
 
 * **Punto decimal:** `12.50` `0.50` `1.5` `1.2` — **nunca coma** `12,50`.
-* **Miles:** 4 dígitos sin separador `13556 Bs` `400 postulantes`; 5+ dígitos continuo o espacio `20000 Bs` (actual unificado) o `25 000.00`.
+* **Miles:** 4 dígitos sin separador `13574 Bs` `400 postulantes`; 5+ dígitos continuo o espacio `20000 Bs` (actual unificado) o `25 000.00`.
 * **Espacio no separable:** `190.00~Bs`, `100~Bs/ciclo`, `>100~peticiones/min` (usar `~` en LaTeX).
 * **Porcentajes:** `92\%` `100\%` `\geq90\%` con `\%`.
 * **Tablas APA7:** `\notatabla{...}` pie tabla con punto decimal.

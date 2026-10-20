@@ -22,7 +22,7 @@
 | **Cap.4 Desarrollo** | `04_desarrollo_innovacion/diseno.tex` | Completo | 3 capas, 7 módulos, flujo 5 fases, `tab:especificaciones_tecnicas` con 1.5 MB y >100 req | 2026-02-12 |
 | | `04_desarrollo_innovacion/planificacion.tex` | Completo | 10 fases Feb-Nov + Gantt `fig:gantt` booktabs `\small` | 2026-02-12 |
 | | `04_desarrollo_innovacion/recursos.tex` | Completo | 2 tablas humanas (`tab:recursos_humanos` 34 h/sem + `tab:recursos_humanos_roles` aleatoria 3 filas) | 2026-02-12 |
-| | `04_desarrollo_innovacion/calculo_costos.tex` | Completo | Inversión 13556 + fijos `tab:costos_fijos` 190 + variables `tab:costos_variables` 100 + impacto 0.50/20000 | 2026-02-12 |
+| | `04_desarrollo_innovacion/calculo_costos.tex` | Completo | Inversión 13574 + fijos `tab:costos_fijos` 190 + variables `tab:costos_variables` 118 + impacto 0.50/20000 | 2026-02-12 |
 | **Cap.5 Metodología** | `05_metodologia/tipo_investigacion.tex` | Completo | Mixto, aplicada, descriptivo-propositivo-evaluativo, pre-experimental, `tab:operacionalizacion` VI+7 VD | 2026-02-12 |
 | | `05_metodologia/poblacion_muestra.tex` | Completo | Humana 400→60+5 + técnica 7 carreras 5 corridas | 2026-02-12 |
 | | `05_metodologia/tecnicas_instrumentos.tex` | Completo | Likert piloto 5 + Apache Benchmark 2.4.58 | 2026-02-12 |

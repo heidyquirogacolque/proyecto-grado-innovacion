@@ -15,7 +15,7 @@
 | **Escalamiento tecnológico** | Réplica del software a otros MTP (Cuatro Cañadas, San Ramón, San Javier, Guarayos) sin licencias, vía VPS + SSL. | `escalamiento` | Cap.6 `proyeccion_escalamiento.tex` |
 | **Plan de mejora continua** | Acciones corto (0-6 meses <2 min), mediano (6-18 meses pre-auditoría QR) y largo (18+ meses SIGA) con matriz SMART. | `Plan de Mejora Continua` | Cap.6 `plan_mejora.tex` + `tablas/plan_mejora_ejemplo.tex` |
 | **Modelo Canvas** | Lienzo de 9 bloques para modelo de negocio/proyecto (Anexo A). | `Modelo Canvas` | `anexos/anexo_a_canvas.tex` `\seccionanexo{Anexo A: Modelo Canvas}` |
-| **Estudio de costos** | Análisis inversión 13556 Bs + fijos 190 Bs/mes + variables 100 Bs/ciclo + costo marginal <0.50. | `cálculo de costos` | Cap.4 `calculo_costos.tex` + `tablas/costos_*` |
+| **Estudio de costos** | Análisis inversión 13574 Bs + fijos 190 Bs/mes + variables 118 Bs/ciclo + costo marginal <0.50. | `cálculo de costos` | Cap.4 `calculo_costos.tex` + `tablas/costos_*` |
 | **Sistema Web** | Aplicación cliente-servidor HTTP/HTTPS que automatiza trámites centralizados. | `Sistema Web` mayúscula inicial | Cap.3 `marco_conceptual.tex` `\parencite{pressman2020}` |
 | **Arquitectura MVC** | Patrón Modelo-Vista-Controlador: Vista (HTML5/CSS3/JS), Controlador (PHP 8.2/Apache 2.4), Modelo (PDO-PostgreSQL 16.4 ACID `FOR UPDATE`). | `arquitectura MVC` o `Modelo--Vista--Controlador` | Cap.4 `diseno.tex:6-14`, bases `pressman2020`/`tanenbaum2021` |
 | **HTML5** | Lenguaje de marcado semántico para formularios. | `HTML5` (mayúsculas + dígito) | `\parencite{mdn2025}` |

@@ -21,7 +21,7 @@ Este archivo define la estructura, reglas y flujos de trabajo del proyecto para 
   2. Diseñar la arquitectura del sistema, el modelo de base de datos relacional normalizado y la interfaz de usuario para los tres módulos críticos: autoservicio de credenciales (validación C.I. + fecha de nacimiento, criterio de diseño: resolución objetivo $<$2 min), matriculación documental auditada y distribución automatizada a cursos y paralelos por unidad educativa.
   3. Desarrollar los módulos de la Versión 2.0 bajo arquitectura cliente-servidor (HTML5, CSS3, JavaScript, PHP y PostgreSQL 16 con control transaccional ACID y bloqueo pesimista row-level locking), con validaciones reactivas y comprobantes PDF con código de verificación.
   4. Validar el funcionamiento operativo y el impacto socioeducativo del sistema mediante pruebas funcionales de caja negra, pruebas de concurrencia y estrés ($>$100 peticiones/min, latencia $<$1.2 s, 0 sobrecupos) y medición de satisfacción de usuarios (encuesta Likert a 60 estudiantes; meta: usabilidad $\geq$90\% y tasa de errores $<$5\%).
-  5. Evaluar el costo-beneficio y la sostenibilidad de la solución, contrastando la inversión total de 13556 Bs (100\% recursos propios) y el costo operativo de 190 Bs/mes frente al ahorro colectivo superior a 20000 Bs por gestión en pasajes, refrigerios y papelería, con costo marginal por postulante $<$0.50 Bs y recuperación en menos de una gestión.
+  5. Evaluar el costo-beneficio y la sostenibilidad de la solución, contrastando la inversión total de 13574 Bs (100\% recursos propios) y el costo operativo de 190 Bs/mes frente al ahorro colectivo superior a 20000 Bs por gestión en pasajes, refrigerios y papelería, con costo marginal por postulante $<$0.50 Bs y recuperación en menos de una gestión.
 * **Tema / Dominio Técnico:** Desarrollo de software web — Sistema de inscripción escolar — Arquitectura cliente-servidor 3 capas (HTML5/CSS3/JS, PHP 8.2/Apache 2.4, PostgreSQL 16.4 ACID row-level locking), Self-Service Password Reset (C.I.+fecha nacimiento), gestión documental y distribución por unidad educativa
 * **Normativa:** Cumple con el Reglamento de Graduación del Bachillerato Técnico Humanístico (BTH) en Bolivia (Resolución Ministerial RM 0912/2023, ver [docs/REGLAMENTO_BTH__RM_0912_2023.pdf](docs/REGLAMENTO_BTH__RM_0912_2023.pdf)).
 * **Modalidad Implementada:** **Innovación Tecnológica** estructurada en 9 capítulos dentro del directorio `capitulos/`.
@@ -87,9 +87,9 @@ proyecto-grado-innovacion/
 │   ├── estructura_organizacional_ejemplo.tex # Asignación roles y carga horaria 34 h/sem
 │   ├── recursos_humanos_roles.tex          # Distribución rol-encargado-tarea aleatoria (Cap.4)
 │   ├── inversiones_ejemplo.tex             # Inventario recursos materiales y tecnológicos
-│   ├── costos_produccion_ejemplo.tex       # Presupuesto inversión 13556 Bs
-│   ├── costos_fijos_ejemplo.tex            # Costos fijos 190.00 Bs/mes (4 ítems)
-│   ├── costos_variables_ejemplo.tex        # Costos variables 100.00 Bs/ciclo (4 ítems)
+│   ├── costos_produccion_ejemplo.tex       # Presupuesto inversión 13574 Bs
+│   ├── costos_fijos_ejemplo.tex            # Costos fijos 190.00 Bs/mes (2 ítems)
+│   ├── costos_variables_ejemplo.tex        # Costos variables 118.00 Bs/ciclo (4 ítems)
 │   ├── costos_ejemplo.tex                  # Financiamiento 100.0%
 │   ├── cronograma_ejemplo.tex              # Cronograma 10 fases Feb-Nov 2026
 │   ├── especificaciones_tecnicas_ejemplo.tex # Especificaciones 3 capas + validación OE4

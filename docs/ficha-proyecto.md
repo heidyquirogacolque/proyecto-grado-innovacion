@@ -107,7 +107,7 @@ capitulos/
 ### 1.3 Contribución esperada
 
 - **¿Qué tipo de solución se propone?** (producto físico, app, sistema, servicio): Sistema Web integral — SISTEMA WEB DE INSCRIPCIÓN MTP SAN JULIÁN BTH — VERSIÓN 2.0 — plataforma web cliente-servidor 3 capas (Frontend HTML5 CSS3 JS, Backend PHP 8.x Apache, BD PostgreSQL 16 ACID row-level locking) con 7 módulos: preinscripción con control atómico vacantes, autoservicio credenciales, matriculación documental, asignación cursos/paralelos por unidad educativa, comprobantes PDF con código verificación, panel reportes
-- **¿Qué mejora concreta genera respecto a la situación actual?:** Reduce tiempo total trámite de 1-3 días fila física a 3-5 minutos web (-90%); recuperación credenciales <2 min autónoma vs horas/días fila ventanilla; 100% trazabilidad documental vs expedientes incompletos; 0 cruces horarios vs planillas manuales con errores; disponibilidad 24h vs 8h ventanilla (+200%); erradica pernoctaciones (-100%); errores formulario 35%→<5% (-88%); ahorro >20.000 Bs/año familias (pasajes 5 Bs/tramo) y >1500 hojas papel; 100% consistencia cupos ACID >100 peticiones/min <1,2s latencia
+- **¿Qué mejora concreta genera respecto a la situación actual?:** Reduce tiempo total trámite de 1-3 días fila física a 3-5 minutos web (-90%); recuperación credenciales <2 min autónoma vs horas/días fila ventanilla; 100% trazabilidad documental vs expedientes incompletos; 0 cruces horarios vs planillas manuales con errores; disponibilidad 24h vs 8h ventanilla (+200%); erradica pernoctaciones (-100%); errores formulario 35%→<5% (-86%); ahorro >20.000 Bs/año familias (pasajes 5 Bs/tramo) y >1500 hojas papel; 100% consistencia cupos ACID >100 peticiones/min <1.2s latencia
 - **¿La innovación es incremental (mejora algo existente) o disruptiva (algo nuevo)?:** Incremental — optimización Versión 2.0 sobre Versión preliminar 2025 — integra 3 vacíos críticos (recovery, matriculación documental, paralelos) y añade integralidad cliente-servidor ACID; con alcance disruptivo en gestión integral BTH distrital
 
 > **Nutre:** `capitulos/01_introduccion/main.tex` → `contexto_general.tex`, `motivacion_pertinencia.tex`, `contribucion_esperada.tex`
@@ -156,7 +156,7 @@ capitulos/
 ### 2.5 Justificación
 
 - **Justificación técnica** — ¿qué tecnología o conocimiento se aplica y por qué es adecuado?: Stack abierto HTML5/CSS3 responsivo + JS validación reactiva + PHP 8.x Apache + PostgreSQL 16 ACID row-level locking; garantiza independencia licencias propietarias, bajo consumo ancho de banda (<1,5 MB/trámite, operable 3G/4G rural), control transaccional estricto, portabilidad móvil/PC
-- **Justificación económica** — ¿qué ahorro, ingreso o reducción de costo genera?: Ahorro colectivo >20.000 Bs por gestión en pasajes locales (5 Bs por tramo), refrigerios, fotocopias, transporte y pernocte; costo marginal por postulante <0,50 Bs; inversión total 13.556 Bs asumida 100% recursos propios sin endeudamiento
+- **Justificación económica** — ¿qué ahorro, ingreso o reducción de costo genera?: Ahorro colectivo >20.000 Bs por gestión en pasajes locales (5 Bs por tramo), refrigerios, fotocopias, transporte y pernocte; costo marginal por postulante <0.50 Bs; inversión total 13.574 Bs asumida 100% recursos propios sin endeudamiento
   - **Fuente del dato económico:** Evaluación comparativa 60 postulantes/5 funcionarios, análisis impacto sostenibilidad 4.4.3; cálculo Tabla 4.5/4.6
 - **Justificación social** — ¿qué beneficio humano o comunitario produce?: Erradica filas nocturnas intemperie y condiciones degradantes, restituye dignidad/tranquilidad familias, garantiza acceso transparente/equitativo educación técnica, democratiza cupos vocacionales, fomenta gobernanza digital institucional
 - **Número de beneficiarios directos:** ~400 postulantes anuales + 60 muestra evaluada (y 5 funcionarios validadores) — distrito San Julián
@@ -264,7 +264,7 @@ capitulos/
 - **Utilidad / valor agregado para los beneficiarios:** Erradica filas nocturnas intemperie, descentraliza atención, democratiza cupos vocacionales, transparencia BTH, trazabilidad 100%, 0 cruces horarios, ahorro >20.000 Bs y 1500 hojas, disponibilidad 24h
 - **¿Qué lo diferencia de soluciones existentes?:** Respecto a V1 2025 incompleta: añade recovery autónomo, matriculación documental auditada, paralelos automatizados, control ACID atómico, comprobantes verificación, reportes tiempo real — integralidad ciclo completo vs captura parcial
 - **Estándar de calidad que cumple o busca cumplir:** ISO/IEC 25010 (usabilidad, fiabilidad/seguridad, eficiencia), W3C, ACID PostgreSQL
-- **Criterios de control de calidad aplicados:** Alta usabilidad navegación intuitiva heterogénea, fiabilidad contraseñas cifradas + ACID, eficiencia <1,5 MB datos móviles, pruebas concurrencia >100 pet/min <1,2s latencia, validaciones JS tasa error <5%
+- **Criterios de control de calidad aplicados:** Alta usabilidad navegación intuitiva heterogénea, fiabilidad contraseñas cifradas + ACID, eficiencia <1,5 MB datos móviles, pruebas concurrencia >100 pet/min <1.2s latencia, validaciones JS tasa error <5%
 - **Diagrama, esquema técnico o plano del diseño (APA 7):** Arquitectura modular 3 capas + Flujo operativo 5 fases + Tabla 4.1 Especificaciones técnicas
   - **Archivo de imagen sugerido en `imagenes/`:** [DATO PENDIENTE — no hay PNG exportado en rtf; diagrama puede generarse con pgfgantt o tabularx para Gantt Figura 4.1]
   - **Nota explicativa / Fuente (macro `\notafigura`):** Elaboración propia con base en el diseño modular — Especificaciones verificadas en entorno operativo BTH San Julián
@@ -395,7 +395,7 @@ capitulos/
 
 - **Precio de venta o valor del servicio por unidad (Bs):** No aplica — innovación software público sin fines comerciales MTP San Julián (rentabilidad medida en retorno social/eficiencia institucional)
 - **Punto de equilibrio estimado** (unidades o meses): No aplica comercial; equilibrio en ahorro social >20.000 Bs/año vs 13.574 inversión → recuperación en <1 gestión
-- **Retorno de inversión estimado** (meses): Costo marginal por postulante <0,50 Bs; sostenibilidad plena con ahorro colectivo >20.000 Bs/año
+- **Retorno de inversión estimado** (meses): Costo marginal por postulante <0.50 Bs; sostenibilidad plena con ahorro colectivo >20.000 Bs/año
 
 > **Nutre:** `capitulos/04_desarrollo_innovacion/main.tex` → `diseno.tex`, `planificacion.tex`, `recursos.tex`, `calculo_costos.tex`; tablas referenciadas: `tablas/cronograma_ejemplo.tex`, `tablas/costos_ejemplo.tex`, `tablas/especificaciones_tecnicas_ejemplo.tex`
 
@@ -411,7 +411,7 @@ capitulos/
 - **Diseño metodológico:** No experimental, transversal y propositivo, articulado en 4 fases canónicas método científico: Fase1 Diagnóstico empírico, Fase2 Diseño/modelado UML, Fase3 Desarrollo técnico V2.0, Fase4 Evaluación/validación pruebas caja negra
 - **Variable Independiente (VI — solución técnica o prototipo):** Sistema Web de Inscripción MTP San Julián BTH — Versión 2.0 (arquitectura HTML5 CSS3 JS PHP 8.x PostgreSQL 16 ACID)
 - **Variable(s) Dependiente(s) (VD — efectos medibles y de impacto):** 1) Tiempo gestión trámite (días→minutos), 2) Tasa recuperación autónoma credenciales (<2 min), 3) % expedientes documentales trazables (100%), 4) Consistencia cupos sin sobrecupo (100% ACID), 5) Satisfacción usabilidad móvil (92%), 6) Errores registro (<5%), 7) Ahorro económico familiar (>20.000 Bs)
-- **Indicadores y unidades de medida principales:** Minutos/registro (3-5 min), % satisfacción (92%), % errores (35%→<5%), horas disponibilidad (8h→24h, +200%), Bs ahorro (20.000/año), segundos latencia (<1,2s), peticiones/min (>100), % trazabilidad (100%)
+- **Indicadores y unidades de medida principales:** Minutos/registro (3-5 min), % satisfacción (92%), % errores (35%→<5%), horas disponibilidad (8h→24h, +200%), Bs ahorro (20.000/año), segundos latencia (<1.2s), peticiones/min (>100), % trazabilidad (100%)
 - **Justificación breve del tipo elegido:** Integra percepciones cualitativas y métricas objetivas operativas; aplicada porque no busca teoría abstracta sino solución sistemática práctica BTH con metodologías ingeniería web
 - **Autor de referencia metodológica:** Hernández Sampieri, Fernández Collado & Baptista Lucio (2014) — «la recolección de datos ocurre en los ambientes naturales y cotidianos de los participantes» (p.397)
 
@@ -439,7 +439,7 @@ capitulos/
    - Cantidad de aplicaciones: 5 entrevistas
 3. **Técnica 3:** Pruebas técnicas y benchmarking de software (Medición técnica / Ensayo de campo)
    - Instrumento: Pruebas caja negra flujos validación identidad autoservicio contraseñas; pruebas integridad referencial PostgreSQL registro documentos; análisis auditoría transaccional logs Apache y motor relacional; Apache Benchmark para pruebas estrés
-   - Precisión / Tolerancia / Calibración del instrumento: Control ACID PostgreSQL 16 + row-level locking FOR UPDATE; latencia <1,2s; >100 peticiones/min sin caídas
+   - Precisión / Tolerancia / Calibración del instrumento: Control ACID PostgreSQL 16 + row-level locking FOR UPDATE; latencia <1.2s; >100 peticiones/min sin caídas
    - Objetivo: Verificar flujos validación, integridad referencial, consistencia cupos, estabilidad concurrente
    - Aplicada a: Sistema web V2.0 en entorno producción/pruebas
    - Cantidad de aplicaciones / repeticiones: Pruebas concurrencia masiva (7 carreras), auditoría logs continua
@@ -484,12 +484,12 @@ capitulos/
    - Dato cuantitativo o cualitativo: 92% calificó interfaz intuitiva/clara/fácil navegar desde celulares
    - Método de medición: Encuesta Likert 5 puntos a 60 estudiantes muestra evaluada
    - Fuente / Evidencia: Cuestionario satisfacción usabilidad — validación diseño responsivo
-2. **Resultado 2:** Reducción 88% Errores Registro
-   - Dato cuantitativo o cualitativo: 35% datos inconsistentes → <5% tasa error BD (-88%) mediante validaciones dinámicas JS cédulas, fechas nacimiento, teléfonos
+2. **Resultado 2:** Reducción 86% Errores Registro
+   - Dato cuantitativo o cualitativo: 35% datos inconsistentes → <5% tasa error BD (-86%) mediante validaciones dinámicas JS cédulas, fechas nacimiento, teléfonos
    - Método de medición: Validaciones JS cliente + auditoría BD
    - Fuente / Evidencia: Pruebas técnicas registro + BD PostgreSQL
 3. **Resultado 3:** Estabilidad ante Cargas Concurrentes
-   - Dato cuantitativo o cualitativo: >100 peticiones concurrentes/min sin caídas, latencia promedio <1,2s
+   - Dato cuantitativo o cualitativo: >100 peticiones concurrentes/min sin caídas, latencia promedio <1.2s
    - Método de medición: Pruebas estrés Apache Benchmark
    - Fuente / Evidencia: Logs Apache + PostgreSQL
 4. **Resultado 4:** Consistencia Absoluta Cupos
@@ -505,8 +505,8 @@ capitulos/
 - **Tecnológico:** Precedente modernización BTH región, dotación herramienta propia desarrollada por estudiantes Sistemas Informáticos MTP San Julián, digitalización trámite
   - Dato de respaldo: Sistema integral 7 módulos operativos, ACID, PDF verificación
   - Fuente: Panel control directivos + pruebas sistema
-- **Económico:** Ahorro colectivo directo >20.000 Bs por período inscripción al suprimir pasajes transporte público (5 Bs/tramo) y fotocopias innecesarias; costo marginal <0,50 Bs/postulante
-  - Dato de respaldo: >20.000 Bs/año familias + 190 Bs fijos/mes vs 13.556 inversión
+- **Económico:** Ahorro colectivo directo >20.000 Bs por período inscripción al suprimir pasajes transporte público (5 Bs/tramo) y fotocopias innecesarias; costo marginal <0.50 Bs/postulante
+  - Dato de respaldo: >20.000 Bs/año familias + 190 Bs fijos/mes vs 13.574 inversión
   - Fuente: Análisis impacto sostenibilidad 4.4.3
 - **Ambiental:** Digitalización trámite y comprobantes digitales → ahorro >1500 hojas papel bond físico y cartuchos tóner por ciclo escolar
   - Dato de respaldo: 1500 hojas/ciclo
@@ -533,7 +533,7 @@ capitulos/
 5. **Indicador 5:** Errores en formulario registro
    - Antes de la innovación: 35% datos inconsistentes
    - Después de la innovación: Validaciones reactivas JS en cliente (<5%)
-   - Variación (%): -88%
+   - Variación (%): -86%
 6. **Indicador 6:** Tiempo total del trámite
    - Antes de la innovación: 1 a 3 días en fila física
    - Después de la innovación: 3 a 5 minutos en plataforma web
@@ -578,13 +578,13 @@ capitulos/
 - **¿Se cumplió el objetivo específico 2?:** Sí — Diseño arquitectura 3 capas, modelos BD relacionales normalizados, interfaces centradas usuario (UML, UI/UX)
 - **¿Se cumplió el objetivo específico 3?:** Sí — Desarrollo 7 módulos V2.0 con stack abierto (Tabla 4.1) y control ACID
 - **¿Se cumplió el objetivo específico 4?:** Sí — Evaluación pruebas funcionales/caja negra, estrés Apache Benchmark >100 pet/min, satisfacción 92%, consistencia 100%
-- **Hallazgo más importante del proyecto** (una frase factual): Validación ACID PostgreSQL 16 con FOR UPDATE garantiza 0 sobrecupos y <1,2s latencia sosteniendo 100% vacantes 7 carreras, mientras autoservicio <2 min erradica filas vocacionales
-- **¿La viabilidad financiera se confirmó?** (Sí/No + dato): Sí — Inversión 13.556 Bs 100% recursos propios vs ahorro >20.000 Bs/año familias + costo marginal <0,50 Bs/postulante + 1500 hojas ahorro; sostenibilidad <1 gestión
+- **Hallazgo más importante del proyecto** (una frase factual): Validación ACID PostgreSQL 16 con FOR UPDATE garantiza 0 sobrecupos y <1.2s latencia sosteniendo 100% vacantes 7 carreras, mientras autoservicio <2 min erradica filas vocacionales
+- **¿La viabilidad financiera se confirmó?** (Sí/No + dato): Sí — Inversión 13.574 Bs 100% recursos propios vs ahorro >20.000 Bs/año familias + costo marginal <0.50 Bs/postulante + 1500 hojas ahorro; sostenibilidad <1 gestión
 - **Principal limitación encontrada durante la ejecución:** Dependencia conectividad rural intermitente (<1,5 MB/trámite optimizado) y necesidad alfabetización digital heterogénea postulantes rurales (mitigado con tutorial FAQ)
 
 ### 9.2 Insumos para recomendaciones
 
-- **¿Qué debería monitorearse post-implementación?** (indicador + frecuencia): Tiempo resolución credenciales (<2 min) + % trazabilidad documental (100%) + latencia concurrencia (<1,2s) + saldo cupos ACID diario durante semanas matrícula activa; monitoreo continuo logs
+- **¿Qué debería monitorearse post-implementación?** (indicador + frecuencia): Tiempo resolución credenciales (<2 min) + % trazabilidad documental (100%) + latencia concurrencia (<1.2s) + saldo cupos ACID diario durante semanas matrícula activa; monitoreo continuo logs
 - **¿A qué nueva población o contexto se recomienda ampliar las pruebas?:** Municipios vecinos Santa Cruz (Cuatro Cañadas, San Ramón, San Javier, Guarayos) y otras unidades educativas técnico-humanísticas BTH departamentales con matrícula compartida
 - **¿Qué fases de la estrategia de mejora se recomienda priorizar?:** Corto plazo (0-6m) tutorial/FAQ y alertas recovery + Mediano (6-18m) pre-auditoría documental QR (100% carnetización)
 - **Recomendación técnica para futuros proyectos similares:** Implementar OPcache PHP + índices especializados PostgreSQL (C.I., código especialidad) + rutinas pg_dump diarias cifradas local+externo + actualizaciones seguridad PHP/BD anti-SQLi/DoS + validaciones JS cliente robustas

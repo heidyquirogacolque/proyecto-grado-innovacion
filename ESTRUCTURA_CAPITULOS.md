@@ -41,7 +41,7 @@ Todos los archivos fuente de los capítulos se encuentran en el directorio `capi
   * `diseno.tex`: Diseño técnico del producto/servicio, arquitectura 3 capas y especificaciones técnicas (`tablas/especificaciones_tecnicas_ejemplo.tex` 1.5 MB, >100 req/min).
   * `planificacion.tex`: Planificación y cronograma de 10 fases Feb-Nov 2026 (`tablas/cronograma_ejemplo.tex` + Gantt `fig:gantt` booktabs).
   * `recursos.tex`: Recursos humanos (2 tablas: `estructura_organizacional_ejemplo.tex` 34 h/sem + `recursos_humanos_roles.tex` Rol/Encargado/Tarea aleatoria 3 filas), materiales (`inversiones_ejemplo.tex`) y financieros (`costos_ejemplo.tex`).
-  * `calculo_costos.tex`: Cálculo de costos de inversión (`costos_produccion_ejemplo.tex` 13556 Bs), operativos fijos (`costos_fijos_ejemplo.tex` 190 Bs/mes 4 ítems) y variables (`costos_variables_ejemplo.tex` 100 Bs/ciclo 4 ítems) + sostenibilidad (0.50/20000).
+  * `calculo_costos.tex`: Cálculo de costos de inversión (`costos_produccion_ejemplo.tex` 13574 Bs), operativos fijos (`costos_fijos_ejemplo.tex` 190 Bs/mes 2 ítems) y variables (`costos_variables_ejemplo.tex` 118 Bs/ciclo 4 ítems) + sostenibilidad (0.50/20000).
 
 ### Capítulo 5: Metodología (`capitulos/05_metodologia/`)
 * **Archivo de ensamble:** `capitulos/05_metodologia/main.tex`

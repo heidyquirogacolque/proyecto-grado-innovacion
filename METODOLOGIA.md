@@ -33,8 +33,8 @@
 * Trazabilidad: `100%` expedientes auditables (%)
 * Consistencia cupos: `100%` sin colisiones, `>100 req/min` (peticiones/min)
 * Satisfacción: `92%` (≥90%) Likert 60 (%)
-* Errores registro: `35% → <5%` (-88%) (%)
-* Ahorro: `>20000 Bs/año` vs inversión `13556 Bs` + `190 Bs/mes` + `<0.50 Bs` marginal (Bs) — `analisis_datos.tex:10` costo-beneficio
+* Errores registro: `35% → <5%` (-86%) (%)
+* Ahorro: `>20000 Bs/año` vs inversión `13574 Bs` + `190 Bs/mes` + `<0.50 Bs` marginal (Bs) — `analisis_datos.tex:10` costo-beneficio
 * Disponibilidad: `8h → 24h (+200%)`, consumo `<1.5 MB` (horas, MB)
 
 **Procedimiento análisis** `capitulos/05_metodologia/analisis_datos.tex:7-10`: **Descriptiva** (frecuencias Likert) + **Comparativo Antes vs Después** + **Auditoría logs/Integridad ACID** + **Costo-beneficio**; **criterio validación hipótesis:** `latencia <1.2 s en ≥95% peticiones, 0 colisiones, trazabilidad 100%, usabilidad ≥90%, errores <5%` `analisis_datos.tex:12`; sin prueba inferencial por conveniencia.

@@ -1,16 +1,16 @@
 \section{Diseño del producto o servicio}
 \label{sec:diseno}
 
-Mi sistema es el SISTEMA WEB DE INSCRIPCIÓN PARA EL MÓDULO TECNOLÓGICO PRODUCTIVO SAN JULIÁN BTH --- VERSIÓN 2.0 y cubre todo el ciclo de inscripción del Módulo (OE2 y OE3). A diferencia de la versión de 2025, que solo permitía una preinscripción, mi plataforma une en un solo lugar la reserva del cupo al cierre de la gestión previa, la confirmación de la matrícula y la organización de cursos y paralelos al inicio de la siguiente gestión.
+El sistema es el SISTEMA WEB DE INSCRIPCIÓN PARA EL MÓDULO TECNOLÓGICO PRODUCTIVO SAN JULIÁN BTH --- VERSIÓN 2.0 y cubre todo el ciclo de inscripción del Módulo (OE2 y OE3). A diferencia de la versión de 2025, que solo permitía una preinscripción, la plataforma reúne en un solo lugar la reserva del cupo al cierre de la gestión previa, la confirmación de la matrícula y la organización de cursos y paralelos al inicio de la siguiente gestión.
 
 \subsection{Arquitectura del sistema}
 
-Mi sistema está organizado en tres partes que trabajan juntas (Modelo--Vista--Controlador). Esta forma me permitió mantener el trabajo ordenado y que cada parte cumpla su función:
+El sistema se organiza en tres partes que trabajan juntas (Modelo--Vista--Controlador). Esta forma permitió mantener el trabajo ordenado y que cada parte cumpla su función:
 
 \begin{itemize}
     \item \textbf{Vista:} Es lo que se ve en pantalla y está hecha con HTML5, CSS3 y JavaScript. Funciona en el celular o la computadora, muestra los formularios, los comprobantes en PDF y los paneles de consulta, y revisa al momento si el carnet o algún dato obligatorio está bien escrito antes de enviar la información.
     \item \textbf{Controlador:} Es la parte que organiza el trabajo y está hecha con PHP 8.2 sobre Apache 2.4. Recibe las solicitudes, controla las sesiones, verifica la identidad para recuperar la contraseña (carnet + fecha de nacimiento), aplica las reglas de la matrícula y distribuye a los estudiantes en cursos y paralelos. Conecta la Vista con el Modelo.
-    \item \textbf{Modelo:} Es donde se guardan los datos y está hecho con PHP y la base de datos PostgreSQL 16.4. Allí guardo las tablas, cuido que la información no se duplique y aseguro que los cupos no se ocupen dos veces aunque muchos entren al mismo tiempo.
+    \item \textbf{Modelo:} Es donde se guardan los datos y está hecho con PHP y la base de datos PostgreSQL 16.4. Allí se ubican las tablas, se controla que la información no se duplique y se asegura que los cupos no se ocupen dos veces aunque muchos entren al mismo tiempo.
 \end{itemize}
 
 \begin{figure}[htbp]
@@ -24,9 +24,9 @@ Mi sistema está organizado en tres partes que trabajan juntas (Modelo--Vista--C
     \notafigura{Elaboración propia con base en \textcite{pressman2020}. La pantalla envía los datos al organizador, el organizador los guarda en la base de datos de forma segura evitando que dos estudiantes ocupen el mismo cupo y luego muestra el resultado en pantalla.}
 \end{figure}
 
-\subsection{Módulos funcionales de mi sistema}
+\subsection{Módulos funcionales del sistema}
 
-Mi plataforma está formada por siete partes que responden a los problemas que encontré en mi diagnóstico y desarrollan lo pedido en el OE3:
+La plataforma está conformada por siete partes que responden a los problemas encontrados en el diagnóstico y desarrollan lo pedido en el OE3:
 
 \begin{itemize}
     \item \textbf{Formulario y preinscripción:} Pantalla sencilla donde el postulante elige su carrera entre las siete especialidades (Construcción Civil, Contaduría General, Electrónica, Gastronomía, Mecánica Automotriz, Sistemas Informáticos y Textiles y Confecciones) y escribe sus datos personales sin que la página se recargue de forma innecesaria.
@@ -40,7 +40,7 @@ Mi plataforma está formada por siete partes que responden a los problemas que e
 
 \begin{figure}[htbp]
     \centering
-    \caption{Los siete módulos de mi sistema y cómo se conectan entre sí.}
+    \caption{Los siete módulos del sistema y cómo se conectan entre sí.}
     \label{fig:modulos_paquetes}
     \resizebox{0.98\textwidth}{!}{%
         \input{imagenes/modulos_paquetes}
@@ -48,9 +48,9 @@ Mi plataforma está formada por siete partes que responden a los problemas que e
     \notafigura{Elaboración propia. M1 es la preinscripción y se conecta con M2 que cuida los cupos; M3 ayuda a recuperar la contraseña en menos de 2 minutos y M6 entrega los comprobantes en PDF; M4 registra los documentos y M5 distribuye a los estudiantes por colegio; M7 muestra los datos generales en el panel de control (ver los 5 pasos en la Figura~\ref{fig:flujo_matricula}).}
 \end{figure}
 
-\subsection{Cómo funciona mi sistema paso a paso}
+\subsection{Cómo funciona el sistema paso a paso}
 
-Mi sistema trabaja en cinco pasos seguidos:
+El sistema trabaja en cinco pasos seguidos:
 
 \begin{enumerate}
     \item \textbf{Paso 1 — Preinscripción y reserva de cupo:} El postulante entra desde su celular o computadora, llena el formulario y reserva su cupo en la carrera que eligió al cierre de la gestión anterior.
@@ -70,8 +70,8 @@ Mi sistema trabaja en cinco pasos seguidos:
     \notafigura{Elaboración propia. Paso 1 reserva el cupo al final de la gestión anterior; Paso 2 recupera la contraseña con carnet y fecha de nacimiento si se olvidó; Paso 3 entrega el comprobante en PDF con código de verificación; Paso 4 registra los documentos al inicio de la siguiente gestión; Paso 5 ubica a cada estudiante en su curso según el colegio del que viene.}
 \end{figure}
 
-\subsection{Para qué sirve y cómo cuido la calidad}
+\subsection{Para qué sirve y cómo se cuida la calidad}
 
-Mi sistema sirve para evitar las filas de noche a la intemperie, permitir inscribirse sin ir al Módulo y dar a todos la misma oportunidad de alcanzar el cupo en la carrera que eligieron, con un control claro de las vacantes.
+El sistema sirve para evitar las filas de noche a la intemperie, permitir inscribirse sin ir al Módulo y dar a todos la misma oportunidad de alcanzar el cupo en la carrera que eligieron, con un control claro de las vacantes.
 
-Para que funcione bien, cuidé que la navegación sea sencilla aun para quien usa poco el celular, que los datos estén protegidos con contraseñas seguras y que el consumo sea bajo —menos de 1.5 MB por trámite— para que funcione incluso con señal baja en las comunidades.
+Para que funcione bien, se cuidó que la navegación fuera sencilla aun para quien usa poco el celular, que los datos estén protegidos con contraseñas seguras y que el consumo sea bajo —menos de 1.5 MB por trámite— para que funcione incluso con señal baja en las comunidades.
