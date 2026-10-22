@@ -1,0 +1,2566 @@
+   MÓDULO TECNOLÓGICO PRODUCTIVO SAN JULIÁN
+
+               “SISTEMAS INFORMÁTICOS”
+
+
+
+
+    SISTEMA WEB DE INSCRIPCIÓN PARA EL MÓDULO
+     TECNOLÓGICO PRODUCTIVO SAN JULIÁN BTH —
+                    VERSIÓN 2.0
+
+PROYECTO DE INNOVACIÓN PARA OPTAR EL GRADO TÉCNICO MEDIO
+                EN SISTEMAS INFORMÁTICOS
+
+
+           Postulantes:
+           1. Heidy Quiroga Colque
+           2. Sharon Liz Quino
+
+
+                              Tutor:
+                 Ing. Juan Vladimir Ramirez Flores
+
+
+
+
+                 San Julián, Santa Cruz – Bolivia
+                               2026
+Agradecimiento
+Agradezco a Dios por darme la vida, a mi familia, a
+mis docentes y estudiantes postulantes, y a Sharon Liz
+Quino, compañera de equipo, por su apoyo en este
+trabajo.                        Heidy Quiroga Colque
+
+Agradezco a Dios por su luz durante este proyecto, a mi
+familia, a mis docentes y compañeros de la especialidad,
+y a Heidy Quiroga Colque, compañera de equipo, por su
+acompañamiento hasta concluirlo.     Sharon Liz Quino
+
+           I
+Dedicatoria
+A Dios porque me ha iluminado en todo tiempo, y a mi
+familia, a mi tutor y a los estudiantes postulantes, quienes
+sostuvieron este trabajo.         Heidy Quiroga Colque
+
+A Dios porque me ha acompañado para alcanzar esta
+meta, y a mi familia, a mi tutor y a las familias de San
+Julián, para quienes nace este proyecto.       Sharon Liz
+Quino
+
+         II
+Índice general
+
+
+Agradecimiento                                                                                           I
+
+
+Dedicatoria                                                                                             II
+
+
+1. INTRODUCCIÓN                                                                                         1
+   1.1. Contexto general . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .        1
+   1.2. Motivación y pertinencia . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .        1
+   1.3. Contribución esperada . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .         2
+
+2. PLANTEAMIENTO DEL PROBLEMA                                                                          4
+   2.1. Diagnóstico y descripción de la realidad . . . . . . . . . . . . . . . . . . . . . . .          4
+   2.2. Identificación del problema . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .         5
+   2.3. Formulación del problema . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .          6
+   2.4. Objetivos . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .       7
+        2.4.1. Objetivo general . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .         7
+        2.4.2. Objetivos específicos . . . . . . . . . . . . . . . . . . . . . . . . . . . . .          7
+        2.4.3. Hipótesis tecnológica . . . . . . . . . . . . . . . . . . . . . . . . . . . . .          8
+   2.5. Justificación . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .     8
+        2.5.1. Justificación técnica . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .        8
+        2.5.2. Justificación social . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .       8
+        2.5.3. Justificación económica . . . . . . . . . . . . . . . . . . . . . . . . . . . .          9
+
+3. MARCO REFERENCIAL                                                                                   10
+   3.1. Antecedentes del proyecto . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .          10
+        3.1.1. Antecedentes internacionales . . . . . . . . . . . . . . . . . . . . . . . . .          10
+        3.1.2. Antecedentes nacionales del Bachillerato Técnico Humanístico . . . . . .                10
+        3.1.3. Antecedente institucional local: MTP San Julián . . . . . . . . . . . . . .             11
+   3.2. Bases teóricas . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .       11
+        3.2.1. Arquitectura Cliente-Servidor y Patrón MVC . . . . . . . . . . . . . . . . .            11
+        3.2.2. Ingeniería de Software Web y Usabilidad Centrada en el Usuario . . . . .                12
+        3.2.3. Seguridad Informática, Autenticación y Recuperación de Credenciales . .                 12
+        3.2.4. Sistemas de Información y Gestión Documental Escolar . . . . . . . . . .                12
+        3.2.5. Modelado Orientado a Objetos y Guarda Segura de Datos . . . . . . . .                   12
+   3.3. Marco conceptual y normativo         . . . . . . . . . . . . . . . . . . . . . . . . . . . .   12
+        3.3.1. Marco conceptual de tecnologías de información . . . . . . . . . . . . . .              12
+        3.3.2. Marco conceptual del ámbito educativo institucional . . . . . . . . . . . .             13
+        3.3.3. Marco normativo boliviano . . . . . . . . . . . . . . . . . . . . . . . . . . .         14
+
+
+                                                   III
+4. DESARROLLO DE LA INNOVACIÓN                                                                       15
+  4.1. Diseño del producto o servicio . . . . . . . . . . . . . . . . . . . . . . . . . . . .        15
+       4.1.1. Arquitectura del sistema . . . . . . . . . . . . . . . . . . . . . . . . . . . .       15
+       4.1.2. Módulos funcionales del sistema . . . . . . . . . . . . . . . . . . . . . . .          15
+       4.1.3. Cómo funciona el sistema paso a paso . . . . . . . . . . . . . . . . . . .             17
+       4.1.4. Para qué sirve y cómo se cuida la calidad . . . . . . . . . . . . . . . . . .          19
+  4.2. Planificación y cronograma . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .        19
+  4.3. Recursos . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .      19
+       4.3.1. Recursos humanos . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .           19
+       4.3.2. Recursos materiales y tecnológicos . . . . . . . . . . . . . . . . . . . . .           19
+       4.3.3. Recursos financieros . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .       22
+  4.4. Cálculo de costos     . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .   23
+       4.4.1. Costos de inversión . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .        23
+       4.4.2. Costos de operación . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .        23
+       4.4.3. Costos variables . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .       23
+       4.4.4. Costos fijos . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .     24
+       4.4.5. Análisis de impacto y sostenibilidad . . . . . . . . . . . . . . . . . . . . .         25
+
+5. METODOLOGÍA                                                                                       26
+  5.1. Tipo de investigación . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .     26
+  5.2. Población y muestra . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .       26
+       5.2.1. Población y muestra humana . . . . . . . . . . . . . . . . . . . . . . . . .           26
+       5.2.2. Unidades experimentales de prueba técnica . . . . . . . . . . . . . . . .              27
+  5.3. Técnicas e instrumentos . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .       27
+  5.4. Procedimiento de análisis de datos . . . . . . . . . . . . . . . . . . . . . . . . . .        28
+
+6. ESTRATEGIA DE MEJORA Y PROYECCIÓN                                                                 29
+  6.1. Plan de mejora continua . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .       29
+       6.1.1. Resumen del plan en una tabla . . . . . . . . . . . . . . . . . . . . . . . .          29
+  6.2. Proyección y escalamiento . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .         30
+       6.2.1. Escalamiento geográfico y transferencia tecnológica . . . . . . . . . . . .            30
+       6.2.2. Escalabilidad de infraestructura tecnológica . . . . . . . . . . . . . . . . .         30
+       6.2.3. Alianzas estratégicas y gobernanza distrital . . . . . . . . . . . . . . . . .         30
+
+7. RESULTADOS                                                                                        31
+  7.1. Resultados obtenidos . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .        31
+  7.2. Beneficios e impacto . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .      31
+  7.3. Comparación antes vs. después . . . . . . . . . . . . . . . . . . . . . . . . . . .           32
+       7.3.1. Tabla de cambios antes y después . . . . . . . . . . . . . . . . . . . . . .           32
+
+8. PROYECTO DE VIDA                                                                                  33
+
+
+                                                 IV
+9. CONCLUSIONES Y RECOMENDACIONES                                                                   35
+   9.1. Conclusiones . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .    35
+   9.2. Recomendaciones . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .       36
+        9.2.1. Recomendaciones técnicas . . . . . . . . . . . . . . . . . . . . . . . . . .         36
+        9.2.2. Recomendaciones institucionales . . . . . . . . . . . . . . . . . . . . . .          36
+
+Bibliografía                                                                                        37
+
+ANEXOS                                                                                              38
+   Anexo A: Cuestionarios de Diagnóstico del Proceso de Inscripción (Objetivo
+        Específico 1) . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .   39
+   Anexo B: Validación y Confiabilidad de los Instrumentos . . . . . . . . . . . . . . . . .        47
+   Anexo C: Cuestionarios de Evaluación de la Versión 2.0 . . . . . . . . . . . . . . . . .         48
+   Anexo D: Evidencias de Validación Técnica y Pruebas de Concurrencia . . . . . . . .              55
+   Anexo E: Desarrollo del Sistema Web de Inscripción (OE2 y OE3) . . . . . . . . . . .             56
+   Anexo F: Sistemas de Inscripción y Matriculación en Funcionamiento (OE3 y OE4) . .               57
+   Anexo G: Mejoras Incorporadas a la Versión 2.0 (OE3 y OE4) . . . . . . . . . . . . . .           58
+   Anexo H: Socialización de la Versión 2.0 (OE1 y OE4) . . . . . . . . . . . . . . . . . .         59
+
+
+
+
+                                                  V
+Índice de figuras
+
+
+  2.1. Árbol de problemas: causas, problema central y efectos en el proceso de
+       inscripción BTH. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .        6
+
+  4.1. Organización del sistema en tres partes (Modelo–Vista–Controlador) — Versión
+       2.0.   . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .   16
+  4.2. Los siete módulos del sistema y cómo se conectan entre sí. . . . . . . . . . . . .             17
+  4.3. Pasos del ciclo completo de matrícula (5 pasos seguidos). . . . . . . . . . . . . .            18
+  4.4. Diagrama de Gantt de la planificación temporal y fases del proyecto. . . . . . . .             20
+
+  E.1. Diagrama de desarrollo del sistema web de inscripción            . . . . . . . . . . . . . .   56
+  E.2. Producto de desarrollo: interfaz del sistema web de inscripción . . . . . . . . . .            56
+  F.1. Sistema 1: interfaz web del sistema de inscripción para el postulante . . . . . . .            57
+  F.2. Sistema 2: interfaz web del sistema de inscripción para la gestión del Módulo . .              57
+  G.1. Mejora 1: primera optimización incorporada a la Versión 2.0 . . . . . . . . . . . .            58
+  G.2. Mejora 2: segunda optimización incorporada a la Versión 2.0 . . . . . . . . . . .              58
+  H.1. Socialización con los directores del Módulo . . . . . . . . . . . . . . . . . . . . .          59
+  H.2. Socialización en el pailón del Módulo . . . . . . . . . . . . . . . . . . . . . . . . .        59
+
+
+
+
+                                                  VI
+Índice de tablas
+
+
+  2.1. Brechas operativas diagnosticadas en el proceso de inscripción del MTP San
+       Julián (gestiones 2022 a 2025). . . . . . . . . . . . . . . . . . . . . . . . . . . . .     5
+
+  4.1. Asignación de roles, responsabilidades y carga horaria del equipo de trabajo. . .          21
+  4.2. Recursos materiales y tecnológicos empleados en el proyecto. . . . . . . . . . .           22
+  4.3. De dónde salió el dinero para el proyecto. . . . . . . . . . . . . . . . . . . . . . .     22
+  4.4. Costos de inversión del proyecto. . . . . . . . . . . . . . . . . . . . . . . . . . . .    23
+  4.5. Resumen de costos de operación anual del proyecto. . . . . . . . . . . . . . . .           24
+  4.6. Costos variables del proyecto. . . . . . . . . . . . . . . . . . . . . . . . . . . . . .   24
+  4.7. Costos fijos del proyecto. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .   25
+
+  6.1. Plan de mejora en tres tiempos. . . . . . . . . . . . . . . . . . . . . . . . . . . . .    29
+
+  7.1. Comparación antes y después de la innovación. . . . . . . . . . . . . . . . . . .          32
+
+  9.1. Encabezado e instrucciones del cuestionario D-1 (estudiantes). . . . . . . . . . .         39
+  9.2. Diseño de respuesta del bloque A (identificación) del cuestionario D-1. . . . . . .        40
+  9.3. Diseño de respuesta del bloque B (preguntas cerradas) del cuestionario D-1. . .            41
+  9.4. Cuadrícula de respuesta del bloque C (escala Likert 1–5) del cuestionario D-1. .           42
+  9.5. Diseño de respuesta del bloque D (priorización) del cuestionario D-1. . . . . . .          43
+  9.6. Encabezado e instrucciones del cuestionario D-2 (funcionarios). . . . . . . . . .          43
+  9.7. Diseño de respuesta del bloque A (identificación) del cuestionario D-2. . . . . . .        44
+  9.8. Diseño de respuesta del bloque B (preguntas cerradas) del cuestionario D-2. . .            45
+  9.9. Cuadrícula de respuesta del bloque C (escala Likert 1–5) del cuestionario D-2. .           46
+  9.10.Resultados de la prueba piloto (n=5, anonymized). . . . . . . . . . . . . . . . . .        47
+  9.11.Encabezado e instrucciones del cuestionario A-1 (estudiantes). . . . . . . . . . .         48
+  9.12.Diseño de respuesta del bloque A (identificación) del cuestionario A-1. . . . . . .        49
+  9.13.Cuadrícula de respuesta del bloque B (escala Likert 1–5) del cuestionario A-1. .           50
+  9.14.Diseño de respuesta del bloque C (preguntas cerradas) del cuestionario A-1. . .            51
+  9.15.Encabezado e instrucciones del cuestionario A-2 (funcionarios). . . . . . . . . .          52
+  9.16.Diseño de respuesta del bloque A (identificación) del cuestionario A-2. . . . . . .        52
+  9.17.Cuadrícula de respuesta del bloque B (escala Likert 1–5) del cuestionario A-2. .           53
+  9.18.Diseño de respuesta del bloque C (preguntas cerradas) del cuestionario A-2. . .            54
+  9.19.Resumen de 5 corridas Apache Benchmark — concurrencia y latencia. . . . . .                55
+  9.20.Logs de auditoría de credenciales anonimizados (muestra). . . . . . . . . . . . .          55
+
+
+
+
+                                                VII
+Resumen
+
+El presente proyecto desarrolla la página web de inscripción del Módulo Tecnológico Productivo
+San Julián BTH Versión 2.0 para cerca de 400 postulantes de siete especialidades del Distrito
+San Julián. El diagnóstico de 2022 a 2025 y el trabajo con 60 estudiantes y 5 funcionarios
+mostró tres problemas: no se podía recuperar la contraseña sin ir al colegio y se perdían cupos;
+había separación entre la preinscripción por internet y la entrega de papeles, sin donde registrar
+libretas de 1ro a 3ro, carnet y certificado; y no había reparto automático por colegio en cursos
+como 4to A o 4to B, hecho a mano con errores.
+
+El objetivo fue crear una página sencilla que funcione bien en celular y computadora. Tiene
+formulario para inscribirse, control que evita duplicar cupos, recuperación de contraseña en
+menos de dos minutos con carnet y fecha de nacimiento, espacio para registrar papeles, reparto
+automático por colegio, comprobantes y panel para la dirección. Todo en cinco pasos: reservar
+cupo, recuperar contraseña, descargar comprobante, presentar papeles y quedar asignado.
+
+Se trabajó en cuatro etapas con encuestas, entrevistas y pruebas con muchas personas a la
+vez. Población de unos 400 postulantes, muestra de 60 estudiantes y 5 funcionarios. El análisis
+comparó el antes y el después buscando facilidad de uso y pocos errores.
+
+Las pruebas mostraron 92 % de facilidad en el celular, errores de 35 % a menos de 5 %,
+atención a más de cien personas a la vez sin caerse, registro total y ningún cupo duplicado. El
+trámite pasó de uno a tres días de fila a entre tres y cinco minutos y se eliminaron las filas, con
+ahorro de más de 20 000 bolivianos y 1 500 hojas por ciclo, costo de 190 bolivianos al mes y
+menos de 0.50 por estudiante, inversión de 13 574 bolivianos recuperable en menos de una
+gestión. La propuesta se confirmó y puede replicarse en otros colegios.
+
+
+Palabras clave: Sistema Web, Inscripción BTH, Credenciales, Matriculación Documental,
+Paralelos, San Julián.
+
+
+
+
+                                               VIII
+Abstract
+
+This project develops the enrollment website for the Módulo Tecnológico Productivo San Julián
+BTH Version 2.0 for about 400 applicants across seven specialties in San Julián District. The
+diagnosis from 2022 to 2025 and work with 60 students and 5 staff showed three problems: the
+password could not be recovered without going to school and places were lost; there was a gap
+between online pre-enrollment and document delivery with no place to record report cards and
+certificates; and there was no automatic distribution by school to courses such as 4th A or 4th
+B, done by hand with errors.
+
+The goal was to create a simple website that works well on phones and computers. It has
+a form to enroll, a control that prevents duplicate places, password recovery in less than
+two minutes with ID and birth date, a space to record documents, automatic distribution by
+school, vouchers and a dashboard. Everything in five steps: reserve a place, recover password,
+download voucher, present documents and be assigned.
+
+The work was done in four stages with surveys, interviews and tests with many people at the
+same time. Population of about 400 applicants, sample of 60 students and 5 staff. The analysis
+compared before and after seeking ease of use and few errors.
+
+Tests showed 92 % ease on the phone, errors from 35 % to less than 5 %, service to more
+than a hundred people at once without crashing, full registration and no duplicate places.
+The procedure went from one to three days in line to three to five minutes and queues were
+eliminated, with savings of more than 20 000 bolivianos and 1 500 sheets per cycle, cost of 190
+per month and less than 0.50 per student, investment of 13 574 recoverable in less than one
+cycle. The proposal was confirmed and can be replicated.
+
+
+Keywords: Web System, BTH Enrollment, Credential Recovery, Documentary Enrollment,
+Section Assignment, San Julián.
+
+
+
+
+                                              IX
+Ñawpaq rimay
+
+Kay llamk’ayqa San Julián BTH Módulo Tecnológico Productivo inscripciónpaq web p’anqata
+ruwan, qanchis yachaykunawan (Construcción Civil, Contaduría General, Electrónica,
+Gastronomía, Mecánica Automotriz, Sistemas Informáticos, Textiles y Confecciones), sapa
+wata yaqa 400 mañakuqkunapaq San Julián Distritupi, Santa Cruz – Bolivia. 2022manta
+2025kama qawariy, 2026pi 60 yachaq 5 llamk’aqwan tapuywan kimsa hatun sasachakuyta
+rikuchirqan: ñawpaqta, contraseña mana kutirichiy atikurqanchu escuelaman ripunayuq
+cupokuna chinkarqan; iskay ñiqinta, internetpi ñawpaq qillqaymanta qillqakuna apaykama
+t’aqasqa karqan mana 1ro–3ro libretakunata, C.I.ta, carnetta, paqariy qillqata qillqanapaq;
+kimsaka, mana automaticuta yachaqkunata t’aqay atikurqanchu yachay wasinmanhina curso
+4to A 4to B hinata, makiwan pantasqata ruwarqanku.
+
+Munaynin karqan p’anqata ruwaspa allinta llamk’achiy celularpi y computadorapi llapan
+thaskita. Kachkan pisi qillqana, cupokuna ama iskaychakanapaq waqaychay, contraseña
+kutirichiy iskay minutumanta pisi carnetwan paqariy p’unchawwan, qillqakuna qillqay qawariy,
+yachay wasinmanhina rakina, qillqa uraykachina y qawana p’anqa umalliqkunapaq. Tukuyqa
+phisqa thaskipi llamk’an: cupo waqaychay, contraseña kutirichiy, qillqa uraykachiy, qillqakuna
+apay, curso-man churasqa kay. P’anqaqa pisi datoswan llamk’an ch’usaq señalwanpas.
+
+Llank’ayqa tawa thaskipi tapuykuna, rimanakuykuna y pruebas achkha runakunawan ruwasqa
+karqan. Población yaqa 400 mañakuq, 60 yachaq 5 llamk’aqwan akllasqa. Ñawpaq y
+kunan tupachisqa karqan, p’anqa facilta apaychana y pisi pantayniyuq kananpaq, 90 % allin
+apaychaymanta aswan, 5 % pantaymanta pisi suyasqa.
+
+Pruebaskunaqa 92 % celularpi facilta tariqan, pantaykuna 35 %manta 5 %manta pisiyman
+uraykurqan, p’anqaqa pachakmanta aswan runakunata huk kutipi servin mana urmachispa
+utqhayta kutirqan, tukuy qillqakuna qillqasqa karqan mana cupo iskaychaspa. Llamk’ayqa
+kimsa p’unchaw filamanta pichqa minutuman tukurqan internetpi, filakuna tukuy chinkarqan,
+20 000 bolivianos 1 500 raphikunawan waqaychasqa, 190 bolivianos sapa killa, 0.50manta pisi
+sapa yachaqpaq, 13 574 bolivianos qullqi huk muyumanta pisi kutirichiy. Llamk’aypa yuyaynin
+chiqanchasqa karqan, ñawpaqman wak yachay wasikunapi mirachiy atikun.
+
+
+Simikuna: Llika P’anqa, BTH Yachachiy, Kutirichiy, Qillqay T’aqwiy, Rakiy, San Julián.
+
+
+
+
+                                              X
+1. INTRODUCCIÓN
+
+1.1   Contexto general
+
+El municipio de San Julián, ubicado en la provincia Ñuflo de Chávez del departamento de Santa
+Cruz, es una zona con intensa actividad productiva, agrícola y comercial. En este municipio,
+el MÓDULO TECNOLÓGICO PRODUCTIVO SAN JULIÁN cumple un papel muy importante,
+porque concentra la formación del Bachillerato Técnico Humanístico (BTH) para los jóvenes
+de secundaria que provienen de las distintas unidades educativas del distrito, siguiendo lo que
+propone el Modelo Educativo Sociocomunitario Productivo.
+
+Para responder a las necesidades de la región, el Módulo ofrece siete especialidades:
+Construcción Civil, Contaduría General, Electrónica, Gastronomía, Mecánica Automotriz,
+Sistemas Informáticos y Textiles y Confecciones. Cada inicio de gestión, esta oferta atrae a
+cerca de 400 estudiantes de secundaria que desean obtener el título de Técnico Medio. Son
+tantos postulantes que los espacios en aulas y talleres no alcanzan y la demanda supera cada
+año la capacidad del Módulo (Ministerio de Educación del Estado Plurinacional de Bolivia,
+2023).
+
+Entre 2022 y 2024, la inscripción se realizaba de forma presencial, en ventanillas y con registros
+escritos a mano. Como los cupos por carrera son limitados y todos querían asegurar un lugar
+en la especialidad que les gusta, las familias llegaban con días de anticipación para hacer fila
+a la intemperie, a veces bajo sol o lluvia, con cansancio, pérdida de días de trabajo y mucho
+desorden.
+
+
+1.2   Motivación y pertinencia
+
+Para mejorar esta situación, en 2025 se probó una primera página web de inscripción. Sin
+embargo, esa página tenía un problema muy grande: no contaba con una opción para que el
+estudiante recuperara su contraseña en caso de olvido. Por eso, muchos jóvenes olvidaron
+sus datos de ingreso y tuvieron que volver al Módulo para solicitar la restitución manual de su
+cuenta. Mientras realizaban ese trámite, los cupos de las carreras más buscadas se terminaban
+y varios tuvieron que inscribirse en otra especialidad que no era la que deseaban.
+
+A esto se sumó otro problema: la página solo permitía realizar la preinscripción al cierre
+de una gestión, pero no permitía completar la inscripción definitiva al inicio de la siguiente.
+En el BTH, para completar la inscripción se deben presentar las libretas de 1ro a 3ro de
+secundaria, la cédula de los tutores, la fotocopia del carnet del estudiante y su certificado de
+nacimiento. Como no había un espacio en el sistema para registrar y revisar esos documentos,
+los expedientes quedaban incompletos, la documentación se desordenaba y el personal
+
+
+
+                                                1
+enfrentaba una sobrecarga de trabajo.
+
+Tampoco existía una forma automática de distribuir a los estudiantes en cursos y paralelos. En
+el BTH, primero el estudiante elige una especialidad y luego la dirección debe ubicarlo en un
+curso y paralelo según el colegio del que proviene. Al realizar este reparto de forma manual,
+en planillas aparte, aparecían errores, algunos cursos quedaban muy llenos y otros vacíos, y
+se producían cruces de horarios entre el Módulo y los colegios.
+
+La motivación principal nace de lo vivido por la propia comunidad de San Julián. Observar que,
+por olvidar una contraseña o por hacer largas filas, un estudiante podía perder la oportunidad
+de estudiar la carrera que deseaba, y ver al personal revisando carpetas a mano y elaborando
+listas con mucho esfuerzo, impulsó al equipo de la especialidad de Sistemas Informáticos a
+buscar una solución completa y sencilla.
+
+Este trabajo también cuenta con respaldo legal y académico. El Reglamento de Graduación
+del Bachillerato Técnico Humanístico, aprobado por la Resolución Ministerial RM 0912/2023
+(Ministerio de Educación del Estado Plurinacional de Bolivia, 2023), establece que los proyectos
+deben resolver problemas reales de la institución aplicando lo aprendido en la especialidad.
+En la misma línea, UNESCO (2024) plantea que la transformación digital educativa requiere
+coordinación, capacidad y cultura institucional, y UNESCO (2023) subraya que la tecnología
+debe gestionarse con el estudiante en el centro, lo que justifica desarrollar una página que no
+solo reciba datos, sino que organice todo el proceso de inscripción.
+
+
+1.3   Contribución esperada
+
+Para resolver los problemas encontrados, este proyecto propone el SISTEMA WEB DE
+INSCRIPCIÓN PARA EL MÓDULO TECNOLÓGICO PRODUCTIVO SAN JULIÁN BTH —
+VERSIÓN 2.0. Es una página web sencilla que funciona bien tanto en celular como en
+computadora y que resguarda los datos de forma segura, evitando que dos personas ocupen
+el mismo cupo aun cuando ingresen al mismo tiempo. Es una mejora de la versión de 2025,
+porque incorpora tres partes que faltaban: la recuperación de la contraseña sin necesidad de ir
+al colegio, el registro y la revisión de los documentos entregados y la distribución automática de
+los estudiantes por colegio en cursos y paralelos, con un alcance importante para la gestión del
+BTH en todo el distrito, como plantea UNESCO (2024) para la transformación digital educativa.
+
+La página integra un formulario sencillo para inscribirse cuidando que los cupos no se
+dupliquen; una opción para recuperar la contraseña en pocos segundos con el número de
+carnet y la fecha de nacimiento, sin tener que hacer fila; un espacio para que la secretaría
+registre y revise las libretas de 1ro a 3ro, las cédulas de los tutores y los certificados en el
+año que corresponde; y una distribución automática que ubica a cada estudiante en su curso
+y paralelo según su colegio, entregando en el momento un comprobante descargable con un
+código para verificar su validez.
+
+                                                2
+Con esta mejora se espera un cambio muy positivo para el municipio. En lo social, se pondría
+fin a las filas nocturnas y se brindaría un acceso más justo y tranquilo a la educación técnica,
+al reducir el trámite de uno a tres días de espera a solo tres a cinco minutos por internet y
+al permitir recuperar la contraseña en menos de dos minutos. En lo económico, se ahorrarían
+más de 20000 bolivianos al año entre pasajes y fotocopias para las familias, manteniendo el
+registro completo de todos los documentos, y se ampliaría la atención de 8 a 24 horas. De esta
+manera, el Módulo se consolidaría como un referente de modernización y de buen manejo de
+la educación técnica en Santa Cruz.
+
+
+
+
+                                               3
+2. PLANTEAMIENTO DEL PROBLEMA
+
+2.1   Diagnóstico y descripción de la realidad
+
+El MÓDULO TECNOLÓGICO PRODUCTIVO SAN JULIÁN, en San Julián, Santa Cruz, es el
+centro donde se forman los estudiantes de secundaria que quieren obtener el título de Técnico
+Medio en el Bachillerato Técnico Humanístico (BTH). Cada año, cerca de 400 jóvenes de las
+distintas unidades educativas del distrito quieren entrar a una de sus siete especialidades
+(Construcción Civil, Contaduría General, Electrónica, Gastronomía, Mecánica Automotriz,
+Sistemas Informáticos y Textiles y Confecciones). Son tantos que los cupos no alcanzan y
+hay mucha competencia por entrar.
+
+Para conocer esta realidad, se revisó lo que ocurrió entre 2022 y 2025 y se realizó el trabajo de
+campo en el primer bimestre de 2026 dentro del mismo Módulo, conversando con las personas
+en su lugar de estudio y trabajo (Hernández Sampieri et al., 2014). Se aplicaron encuestas
+a 60 estudiantes que querían inscribirse y entrevistas a 5 funcionarios (director, secretaría y
+docentes de las especialidades), de distintas carreras y colegios. Entre 2022 y 2024 todo se
+hacía a mano, en ventanillas. Por miedo a quedarse sin cupo, las familias acampaban y hacían
+filas a la intemperie con días de anticipación, con cansancio, frío o calor y dejando de lado su
+trabajo en el campo o el comercio.
+
+En 2025 se probó una primera página web para inscribirse, pero se encontró un problema muy
+grande: no existía una forma de recuperar la contraseña si se olvidaba. Como muchos olvidaron
+sus datos, cientos tuvieron que volver al Módulo para pedir que les devolvieran su cuenta de
+forma manual. Mientras hacían esa fila, los cupos de las carreras más buscadas se terminaron
+y muchos tuvieron que entrar a otra especialidad que no era la que deseaban.
+
+Al mismo tiempo se observó que el proceso quedaba a medias: la preinscripción por internet
+se hacía al final de un año para reservar el cupo, pero al inicio del siguiente año no había un
+espacio donde registrar y revisar los documentos que pide el BTH: las libretas de 1ro a 3ro
+de secundaria, la cédula de los tutores, la fotocopia del carnet y el certificado de nacimiento.
+Al no contar con un lugar en el sistema para anotar y revisar esos papeles, los expedientes
+quedaban incompletos, las carpetas se desordenaban y el trabajo recaía en secretaría, sin un
+control ordenado.
+
+Finalmente, se verificó que no había una forma automática de distribuir a los estudiantes en
+cursos y paralelos (como 4to A, 4to B) según el colegio del que vienen. Todo se hacía a
+mano en planillas aparte, lo que provocaba errores al copiar datos, cursos muy llenos y cruces
+de horarios entre el Módulo y los colegios. Estos tres problemas —contraseñas, papeles y
+distribución por colegio— son los que hacen necesaria la Versión 2.0 y se resumen en la
+Tabla 2.1.
+
+
+                                               4
+Tabla 2.1
+Brechas operativas diagnosticadas en el proceso de inscripción del MTP San Julián (gestiones 2022 a
+2025).
+
+ Componente                       Estado diagnosticado              Evidencia (2025-2026)
+ Recuperación de                  Sin autoservicio;                 Cientos de reseteos por
+ credenciales                     restablecimiento manual           gestión; pérdida de cupos
+                                  presencial en ventanilla          vocacionales mientras el
+                                                                    postulante permanece en fila
+ Matriculación documental         Sin módulo informático;           0 % de registros auditables
+ definitiva                       archivo de carpetas físicas       en 2025; expedientes
+                                  sin base de datos                 incompletos y sobrecarga de
+                                                                    secretaría académica
+ Asignación a cursos y            Distribución manual en            Errores de transcripción;
+ paralelos por unidad             planillas externas según          sobrepoblación en talleres y
+ educativa                        colegio de procedencia            conflictos de coordinación
+                                                                    horaria
+  Nota. Elaboración propia a partir de la información revisada de los años 2022 a 2025 y de los datos
+recogidos durante los primeros meses de 2026, con la participación de 60 estudiantes y 5 funcionarios
+      del MTP San Julián. Cada año, aproximadamente 400 estudiantes se postulan a las siete
+                               especialidades que ofrece la institución.
+
+
+2.2   Identificación del problema
+
+Con base en el diagnóstico realizado (cerca de 400 postulantes cada año, revisión de 2022 a
+2025 y trabajo con 60 estudiantes y 5 funcionarios), se define como problema central la falta
+de una página web completa en el Módulo Tecnológico Productivo San Julián BTH que permita
+recuperar la contraseña de forma autónoma, registrar y revisar los documentos de forma
+ordenada y distribuir automáticamente a los estudiantes por colegio en cursos y paralelos,
+lo que provoca pérdida de cupos, expedientes incompletos y desorden en los horarios.
+
+Este problema lo explico por tres causas principales, cuyos efectos se reflejan en las filas
+presenciales, la frustración al no entrar a la carrera deseada, el trabajo extra para secretaría y
+los cruces de horarios entre el Módulo y los colegios (ver Figura 2.1). Son:
+
+   Falta de recuperación de contraseña y pérdida de cupos: La página de 2025 no tenía
+   una forma para que el estudiante recuperara solo su contraseña con su carnet y fecha de
+   nacimiento. Por eso muchos tuvieron que ir al Módulo a pedir ayuda, y mientras esperaban,
+   los cupos de las carreras más buscadas se terminaron y no pudieron entrar a la carrera que
+   deseaban.
+   Falta de un espacio para registrar los documentos: No existía un espacio en el sistema,
+   en el año que corresponde, para anotar y revisar que se entregaron las libretas de 1ro a 3ro,
+   la cédula de los tutores, la fotocopia del carnet y el certificado de nacimiento. Así, muchos
+   expedientes quedaron incompletos y sin un control claro, con 0 % de registros ordenados
+
+
+                                                 5
+                en 2025.
+                Falta de distribución automática por colegio: No existía una herramienta que agrupara a
+                los estudiantes en su curso y paralelo (4to A, 4to B) según el colegio del que provienen. Al
+                hacerlo a mano, hubo cursos muy llenos, errores al copiar nombres y cruces de horarios.
+
+Si este problema no se resuelve, seguirán las filas de noche a la intemperie con riesgos para
+la salud, la desigualdad para entrar a la formación técnica, los documentos incompletos y el
+trabajo desordenado, afectando el principio de igualdad del BTH.
+Figura 2.1
+Árbol de problemas: causas, problema central y efectos en el proceso de inscripción BTH.
+                                                                    EFECTOS           (manifestaciones visibles)
+
+
+                                                                                                                                Desequilibrios por
+                         Concurrencia masiva                             Expedientes incompletos,
+                                                                                                                                 taller, errores de
+                         para reseteo manual                                0 % trazabilidad y
+                                                                                                                                  transcripción y
+                         y pérdida de cupos                                  sobrecarga de
+                                                                                                                                cruces horarios
+                            vocacionales                                  secretaría académica
+                                                                                                                                   MTP ↔ U.E.
+ PROBLEMA CENTRAL
+
+
+
+
+                                  Ausencia de un sistema web integral en el MTP San Julián BTH
+                                      que garantice recuperación autónoma de credenciales,
+                                  matriculación documental auditada y asignación automatizada
+                                    a cursos y paralelos por unidad educativa de procedencia
+
+
+
+                        Plataforma V1.0 (2025)
+                                                                          Inexistencia de módulo                              Asignación manual
+                           sin autoservicio
+                                                                             de matriculación                                 en planillas externas
+                            de credenciales
+                                                                            documental en BD                                 por colegio de origen
+                         (sin validación C.I. +
+                                                                             (0 % trazabilidad)                              (U.E. de procedencia)
+                          fecha nacimiento)
+
+
+                                                               CAUSAS RAÍCES                (origen técnico-funcional)
+
+                    Contexto: ∼400 postulantes/año · 7 especialidades · Diagnóstico 2022–2025 + relevamiento 1er bimestre 2026 (60 estudiantes + 5 funcionarios)
+
+
+Nota. Elaboración propia con base en el diagnóstico 2022-2026 (60 estudiantes y 5 funcionarios, ∼400
+postulantes/año en 7 especialidades). La figura sintetiza la relación causal que fundamenta la Versión
+                                                 2.0.
+
+
+2.3                  Formulación del problema
+
+Con las dificultades encontradas (en 2025 no se podía recuperar la contraseña, no había donde
+registrar los documentos y no existía distribución por colegio), se plantea la siguiente pregunta
+principal para la gestión 2026:
+
+             ¿Cómo la página web de inscripción Versión 2.0 del Módulo Tecnológico Productivo San
+Julián BTH, en la gestión 2026, contribuye a resolver de forma completa la recuperación de la
+                     contraseña sin ir al colegio, el registro ordenado de los documentos y la distribución
+
+                                                                                        6
+  automática por colegio en cursos y paralelos, para que el proceso sea más justo, rápido y
+                                           ordenado?
+
+De esta pregunta general surgen tres preguntas más específicas, relacionadas con cada
+problema:
+
+   ¿Cómo se puede lograr que el estudiante recupere solo y de forma segura su contraseña
+   con su carnet y fecha de nacimiento, sin tener que hacer fila en el Módulo y asegurando
+   que no pierda su cupo en la carrera que desea en 2026?
+   ¿Cómo se puede organizar un espacio para que secretaría anote, revise y controle en el
+   año que corresponde que se entregaron las libretas de 1ro a 3ro, la cédula de los tutores,
+   el carnet y el certificado de nacimiento, con un registro ordenado y completo?
+   ¿Cómo se puede lograr que el sistema distribuya de forma automática a los estudiantes en
+   su curso y paralelo según el colegio del que provienen, para que los horarios coincidan y
+   los cursos queden equilibrados?
+
+
+2.4     Objetivos
+
+2.4.1    Objetivo general
+
+El objetivo general es desarrollar e implementar el SISTEMA WEB DE INSCRIPCIÓN PARA
+EL MÓDULO TECNOLÓGICO PRODUCTIVO SAN JULIÁN BTH — VERSIÓN 2.0, mediante
+una arquitectura cliente-servidor para garantizar la recuperación autónoma de credenciales, el
+registro ordenado de los documentos de la matriculación y la asignación automatizada a cursos
+y paralelos según la unidad educativa de origen, asegurando un proceso escolar equitativo,
+eficiente y transparente en la gestión 2026.
+
+
+2.4.2    Objetivos específicos
+
+Para lograrlo, se plantean los siguientes objetivos específicos:
+
+   Diagnosticar las deficiencias operativas y los requerimientos funcionales del proceso de
+   inscripción y matriculación del BTH de San Julián, mediante encuestas y entrevistas a la
+   comunidad escolar.
+   Diseñar la arquitectura del sistema web, los modelos de base de datos y la interfaz de
+   usuario para la gestión de credenciales, matriculación documental y distribución de cursos
+   y paralelos.
+   Desarrollar los módulos del sistema web de inscripción (Versión 2.0) utilizando tecnologías
+   conocidas como HTML5, CSS3, JavaScript, PHP y PostgreSQL.
+   Evaluar el funcionamiento operativo y el impacto del sistema mediante pruebas funcionales
+   y la medición de la satisfacción de los usuarios.
+
+
+                                                7
+2.4.3    Hipótesis tecnológica
+
+Si se pone en marcha la página web Versión 2.0 con recuperación de contraseña con carnet y
+fecha de nacimiento y con un guardado seguro de los datos que evita que dos personas ocupen
+el mismo cupo, entonces el tiempo de trámite baja en más de 90 % (de 1 a 3 días de fila a 3
+a 5 minutos por internet), la contraseña se recupera en menos de 2 minutos sin ir al colegio,
+todos los expedientes quedan registrados de forma ordenada y ningún cupo se duplica, lo cual
+puede comprobarse con pruebas con muchas personas a la vez y revisando la base de datos
+en la gestión 2026.
+
+
+2.5     Justificación
+
+2.5.1    Justificación técnica
+
+Con la propuesta se busca modernizar la forma de inscribir usando una herramienta que
+fortalece la gestión y la gobernanza educativa con tecnología centrada en el estudiante
+(UNESCO, 2023, 2024). La plataforma está construida con herramientas libres y conocidas
+que funcionan bien tanto en celular como en computadora, gastan pocos datos (menos de 1.5
+MB por trámite, incluso con señal baja) y pueden atender todo el día. Los datos se guardan
+de forma segura en una base de datos (PostgreSQL) que evita que dos personas ocupen
+el mismo cupo aunque muchas entren al mismo tiempo, incluso con más de 100 personas
+a la vez y respondiendo rápido. En este sentido, León-Velarde et al. (2024) mostraron que
+la matrícula manual genera largos tiempos de espera, con 56.67 % de insatisfacción y 80 %
+de usuarios que pedía mejorar el sistema, y que la automatización mejora la eficacia y la
+eficiencia. La plataforma reúne en un solo lugar lo que faltaba en la versión de 2025: recuperar
+la contraseña en menos de 2 minutos con carnet y fecha de nacimiento, registrar y revisar
+todos los documentos hasta llegar al 100 % de control y distribuir automáticamente por colegio
+en las siete especialidades, con formularios fáciles y comprobantes descargables con código
+para verificar.
+
+
+2.5.2    Justificación social
+
+En lo social, con la plataforma se busca terminar con las filas de noche a la intemperie que
+cada año afectaban a cerca de 400 postulantes y a sus familias del distrito de San Julián,
+devolviendo tranquilidad y trato igual para todos. Al permitir recuperar la contraseña sin ir
+al colegio y distribuir por colegio de forma automática, todos pueden acceder a la carrera
+que desean sin perder el cupo mientras hacen fila. En las pruebas con 60 estudiantes y 5
+funcionarios se observó que más del 90 % la encontró fácil de usar en el celular y que los
+errores bajaron de 35 % a menos de 5 %, lo que muestra que se adapta a la realidad del lugar.
+La propuesta se alinea con el Objetivo de Desarrollo Sostenible 4 (Educación de calidad) y el
+
+
+                                               8
+9 (Innovación), y fortalece al MTP San Julián al darle una herramienta hecha por sus propias
+estudiantes de Sistemas Informáticos, con orden y claridad para toda la comunidad.
+
+
+2.5.3   Justificación económica
+
+En lo económico, con la Versión 2.0 se busca ahorrar más de 20000 Bs por gestión en pasajes
+(5 Bs por tramo), refrigerios, fotocopias y viajes para ir a pedir reseteo o llevar carpetas, frente
+a una inversión total de 13574 Bs asumidos con recursos propios, sin préstamos. El gasto
+mensual es de solo 190 Bs (140 de internet y 50 de mantenimiento) y unos 118 Bs por ciclo
+en papelería de respaldo, con un costo de menos de 0.50 Bs por estudiante. Como lo que se
+ahorra en un año es más de lo invertido, lo gastado se recupera en menos de una gestión y
+se puede mantener porque no se pagan licencias y es software libre. Además, al no imprimir
+tanto, se ahorran más de 1500 hojas de papel por gestión y secretaría puede usar ese tiempo
+en otras tareas educativas.
+
+
+
+
+                                                 9
+3. MARCO REFERENCIAL
+
+El marco referencial reúne los antecedentes teóricos, legales, conceptuales y contextuales que
+fundamentan la propuesta de innovación.
+
+
+3.1     Antecedentes del proyecto
+
+El sistema propuesto recoge experiencias previas de digitalización de matrículas a nivel
+internacional, nacional y del propio Módulo San Julián, que muestran cómo pasar del registro
+manual a una plataforma web ordena el proceso y reduce los errores:
+
+
+3.1.1    Antecedentes internacionales
+
+En el ámbito internacional, León-Velarde et al. (2024) analizaron en Diseño de una aplicación
+web ASP.NET para la gestión de matrícula y registro de notas de estudiantes en una universidad
+nacional el paso de la atención manual a un sistema web centralizado. En su caso, la matrícula
+manual generaba largos tiempos de espera, con 56.67 % de insatisfacción y 80 % de usuarios
+que pedía mejorar el sistema, y la automatización mejoró la eficacia y la eficiencia con 85 % de
+aceptación, lo que mejoró la satisfacción de los estudiantes y dio más transparencia al trámite.
+
+UNESCO (2023) y UNESCO (2024) estudiaron la modernización de instituciones educativas
+con tecnologías de información y encontraron que transformar no es solo cambiar el plan
+de estudios, sino fortalecer la gestión y la gobernanza con tecnología centrada en el
+estudiante, con coordinación, capacidad y cultura institucional. Observaron que los sistemas
+deben garantizar disponibilidad, usabilidad y acompañamiento según el nivel de manejo de la
+tecnología. Por eso recomiendan interfaces simples y opciones para que cada usuario recupere
+su acceso sin depender de otra persona.
+
+
+3.1.2    Antecedentes nacionales del Bachillerato Técnico Humanístico
+
+En Bolivia, con el Bachillerato Técnico Humanístico (BTH) y el Modelo Educativo
+Sociocomunitario Productivo se crearon los Módulos Tecnológicos Productivos (MTP)
+para compartir talleres entre varios colegios de secundaria. En Santa Cruz, por ejemplo, varios
+distritos han tenido el mismo problema: cuando la matrícula se hace en papel, los cupos se
+saturan y los horarios del Módulo chocan con los de los colegios de origen. Esa experiencia
+muestra que hace falta una herramienta digital que ordene la inscripción en un solo lugar.
+
+
+
+
+                                              10
+3.1.3      Antecedente institucional local: MTP San Julián
+
+En el caso específico del MÓDULO TECNOLÓGICO PRODUCTIVO SAN JULIÁN, el proceso
+de inscripción pasó por dos etapas importantes que explican por qué se necesita esta
+propuesta:
+
+Primero, entre 2022 y 2024, la matrícula se hacía de forma presencial y a mano en las
+ventanillas del módulo. Como había pocos cupos en las siete especialidades, los estudiantes
+y sus familias acampaban durante días a la intemperie en los alrededores del colegio, con
+cansancio, riesgos y pérdida de días de trabajo en el campo y el comercio.
+
+Después, en la gestión 2025, se probó una primera página web para reducir las filas. Aunque
+mostró que inscribirse en línea sí es posible, la plataforma dejó tres vacíos importantes: no
+tenía una opción para recuperar la contraseña (por eso muchos tuvieron que volver a pedir que
+les devolvieran su cuenta y perdieron cupos en la carrera que querían), no tenía un espacio
+para registrar y revisar los documentos de la matrícula en el año que corresponde y no permitía
+agrupar y distribuir automáticamente a los estudiantes en cursos y paralelos según su colegio
+de origen. Esta experiencia del propio Módulo confirma que se necesita la Versión 2.0 del
+sistema.
+
+
+3.2     Bases teóricas
+
+El sistema se apoya en ideas ya probadas de informática, ingeniería de software y gestión
+escolar:
+
+
+3.2.1      Arquitectura Cliente-Servidor y Patrón MVC
+
+De acuerdo con Tanenbaum et al. (2021), en internet el modelo cliente-servidor es el más
+usado: el navegador (cliente) pide los datos y el servidor (Apache/PHP con base de datos)
+responde. Sobre esta base, el proyecto usa el patrón Modelo–Vista–Controlador (MVC)
+(Pressman & Maxim, 2021), que separa el trabajo en tres partes: la Vista (lo que se ve
+en pantalla con HTML5, CSS3 y JavaScript) muestra los formularios y avisa si falta un
+dato; el Controlador (PHP 8.2/Apache) recibe las solicitudes y aplica las reglas del sistema
+(recuperar contraseña con carnet y fecha, registrar papeles y distribuir por colegio); y el Modelo
+(PostgreSQL 16) guarda los datos de forma segura. Esta separación mantiene el sistema
+ordenado, fácil de mantener y con bajo consumo de datos en el celular, incluso con señal
+baja.
+
+
+
+
+                                               11
+3.2.2    Ingeniería de Software Web y Usabilidad Centrada en el Usuario
+
+Pressman y Maxim (2021) describen la ingeniería de software web (WebE) como la forma
+ordenada de crear aplicaciones seguras y que se puedan mantener en la red. En un colegio,
+donde cada estudiante maneja la tecnología de manera distinta, la facilidad de uso es clave. Por
+eso se buscó que los formularios sean simples, avisen al instante si falta un dato y respondan
+rápido, para que inscribirse no genere dudas.
+
+
+3.2.3    Seguridad Informática, Autenticación y Recuperación de Credenciales
+
+La protección de los datos y el control de acceso siguen los principios de Stallings
+(2004): confidencialidad, integridad y disponibilidad. Las contraseñas se guardan cifradas con
+funciones hash en el servidor. La idea de autoservicio de recuperación (Self-Service Password
+Reset) plantea que el propio usuario pueda restablecer su cuenta comprobando datos que solo
+él conoce, como el número de carnet y la fecha de nacimiento, sin tener que ir a ventanilla ni
+quedar bloqueado.
+
+
+3.2.4    Sistemas de Información y Gestión Documental Escolar
+
+En la práctica escolar, inscribirse no termina al reservar el cupo. Hace falta comprobar los
+papeles que pide la norma. Por eso el sistema incluye un módulo donde se anotan y revisan
+las libretas, las cédulas y los certificados que el estudiante presenta en físico, de modo que los
+expedientes dejan de estar dispersos y quedan registrados de forma ordenada y rastreable.
+
+
+3.2.5    Modelado Orientado a Objetos y Guarda Segura de Datos
+
+Según Sommerville (2016), usar UML permite dibujar de forma clara las partes del sistema
+antes de programar. El guardado seguro de los cupos se logra con PostgreSQL (PostgreSQL
+Global Development Group, 2024), que cuida que los datos no se dupliquen ni se pierdan
+aunque muchos estudiantes entren al mismo tiempo, y evita que dos postulantes ocupen el
+mismo lugar o que una asignación quede a medias.
+
+
+3.3     Marco conceptual y normativo
+
+3.3.1    Marco conceptual de tecnologías de información
+
+Para el desarrollo de la plataforma, se definen los siguientes conceptos básicos de desarrollo
+web, relacionados con los objetivos de diseñar y desarrollar el sistema:
+
+   Sistemas Web: Aplicaciones que funcionan en el navegador y conectan al usuario con un
+   servidor para realizar trámites de forma centralizada (Pressman & Maxim, 2021).
+
+                                                12
+   Arquitectura MVC: Forma de organizar la aplicación en tres partes: Modelo (datos y
+   reglas), Vista (lo que se ve en pantalla) y Controlador (quien dirige las acciones), para
+   mantener el sistema ordenado y fácil de mantener (Pressman & Maxim, 2021).
+   HTML5: Lenguaje que da estructura a las páginas y a los campos de los formularios (MDN
+   Web Docs, 2025).
+   CSS3 y Diseño Responsivo: Conjunto de estilos que adapta la página al tamaño de
+   cualquier pantalla, ya sea celular o computadora (Marcotte, 2014; W3Schools, 2025).
+   JavaScript: Lenguaje que hace que la página responda al instante y avise si falta un dato
+   antes de enviar el formulario (Mozilla Foundation, 2025).
+   PHP (Hypertext Preprocessor): Lenguaje que trabaja en el servidor y se encarga de
+   revisar los datos y guardarlos en la base de datos (Arimetrics, 2024).
+   PostgreSQL: Base de datos libre y segura que guarda la información y cuida que los cupos
+   no se dupliquen (PostgreSQL Global Development Group, 2024).
+   Autoservicio de Credenciales: Opción que permite al estudiante recuperar solo su
+   contraseña usando su carnet y fecha de nacimiento, sin ir a ventanilla.
+
+
+3.3.2   Marco conceptual del ámbito educativo institucional
+
+En el contexto del modelo educativo boliviano y de la institución sede, se conceptualizan los
+siguientes términos rectores:
+
+   Bachillerato Técnico Humanístico (BTH): Modelo formativo de la educación secundaria
+   comunitaria productiva en Bolivia que otorga a los graduados una doble titulación: Bachiller
+   Humanístico y Técnico Medio en una especialidad vocacional.
+   Módulo Tecnológico Productivo (MTP): Centro educativo nucleador dotado de
+   infraestructura de talleres y equipamiento industrial, que brinda formación técnica
+   especializada a estudiantes provenientes de distintas unidades educativas del distrito
+   municipal.
+   Preinscripción en Línea: Proceso preliminar efectuado al cierre de la gestión previa
+   mediante el cual el postulante reserva una vacante disponible en la especialidad técnica
+   de su preferencia.
+   Matriculación Documental Definitiva: Acto administrativo formal realizado al inicio de la
+   gestión escolar correspondiente, en el cual se recibe, coteja y registra en el sistema la
+   documentación obligatoria: libretas de calificaciones de 1ro a 3ro de secundaria, cédula de
+   tutores, carnet de identidad y certificado de nacimiento.
+   Unidad Educativa de Procedencia (Colegio de Origen): Establecimiento de educación
+   secundaria regular al que pertenece formalmente el estudiante para su formación
+   humanística, y que determina la compatibilidad de horarios y la conformación de grupos
+   en el módulo.
+   Curso y Paralelo: Grado académico (ej., 4to de secundaria) y sección de grupo (ej., A o
+
+
+                                              13
+   B) en el que se organiza a los estudiantes para sus sesiones de taller según la capacidad
+   áulica.
+
+
+3.3.3   Marco normativo boliviano
+
+El proyecto se apoya en las siguientes normas vigentes del Estado Plurinacional de Bolivia,
+relacionadas con el objetivo de brindar un proceso justo y ordenado:
+
+1. Constitución Política del Estado (CPE): En sus Artículos 77 y 78 establece que la
+   educación es la función más importante del Estado y debe ser para todos, productiva,
+   gratuita y de calidad (Estado Plurinacional de Bolivia, 2009).
+2. Ley N° 070 de la Educación «Avelino Siñani – Elizardo Pérez»: Impulsa el Modelo
+   Educativo Sociocomunitario Productivo y crea el Bachillerato Técnico Humanístico para unir
+   el colegio con la formación técnica de cada región (Estado Plurinacional de Bolivia, 2010).
+3. Resolución Ministerial RM 0912/2023: Es el reglamento de graduación del BTH que
+   permite presentar proyectos de «Innovación Tecnológica» para resolver problemas reales
+   de los colegios y su comunidad (Ministerio de Educación del Estado Plurinacional de Bolivia,
+   2023).
+
+
+
+
+                                              14
+4. DESARROLLO DE LA INNOVACIÓN
+
+En este capítulo se presenta cómo se diseñó y organizó la innovación, qué recursos se
+utilizaron y cuánto costó desarrollar el sistema.
+
+
+4.1     Diseño del producto o servicio
+
+El sistema es el SISTEMA WEB DE INSCRIPCIÓN PARA EL MÓDULO TECNOLÓGICO
+PRODUCTIVO SAN JULIÁN BTH — VERSIÓN 2.0 y cubre todo el ciclo de inscripción del
+Módulo (OE2 y OE3). A diferencia de la versión de 2025, que solo permitía una preinscripción,
+la plataforma reúne en un solo lugar la reserva del cupo al cierre de la gestión previa, la
+confirmación de la matrícula y la organización de cursos y paralelos al inicio de la siguiente
+gestión.
+
+
+4.1.1      Arquitectura del sistema
+
+El sistema se organiza en tres partes que trabajan juntas (Modelo–Vista–Controlador). Esta
+forma permitió mantener el trabajo ordenado y que cada parte cumpla su función:
+
+   Vista: Es lo que se ve en pantalla y está hecha con HTML5, CSS3 y JavaScript. Funciona
+   en el celular o la computadora, muestra los formularios, los comprobantes en PDF y los
+   paneles de consulta, y revisa al momento si el carnet o algún dato obligatorio está bien
+   escrito antes de enviar la información.
+   Controlador: Es la parte que organiza el trabajo y está hecha con PHP 8.2 sobre Apache
+   2.4. Recibe las solicitudes, controla las sesiones, verifica la identidad para recuperar la
+   contraseña (carnet + fecha de nacimiento), aplica las reglas de la matrícula y distribuye a
+   los estudiantes en cursos y paralelos. Conecta la Vista con el Modelo.
+   Modelo: Es donde se guardan los datos y está hecho con PHP y la base de datos
+   PostgreSQL 16.4. Allí se ubican las tablas, se controla que la información no se duplique y
+   se asegura que los cupos no se ocupen dos veces aunque muchos entren al mismo tiempo.
+
+
+4.1.2      Módulos funcionales del sistema
+
+La plataforma está conformada por siete partes que responden a los problemas encontrados
+en el diagnóstico y desarrollan lo pedido en el OE3:
+
+   Formulario y preinscripción: Pantalla sencilla donde el postulante elige su carrera entre
+   las siete especialidades (Construcción Civil, Contaduría General, Electrónica, Gastronomía,
+   Mecánica Automotriz, Sistemas Informáticos y Textiles y Confecciones) y escribe sus datos
+
+
+
+                                               15
+Figura 4.1
+Organización del sistema en tres partes (Modelo–Vista–Controlador) — Versión 2.0.
+                                                                                 Usuario
+                                                                       Postulante / Secretaría / Directivo
+                                                              ∼400 postulantes/año • 7 especialidades • móvil/PC
+
+
+                                                                                                   interactúa
+                                                                       Servidor Apache 2.4 + PHP-PDO
+                                           render
+
+
+
+                  VISTA                                                     CONTROLADOR                                                            MODELO
+              (lo que se ve)                   evento                         (organiza)                            invoca                       (guarda datos)
+           HTML5 • CSS3 • JS                                           PHP 8.2 / Apache 2.4                                                PHP + Base de datos
+                                                                         Revisa carnet+fecha,
+              Formularios                                                 reglas de matrícula
+                                                                                                                                            PostgreSQL 16.4
+              y comprobantes                                                  y paralelos                                                       Guardado seguro
+
+
+                                     muestra
+                                                                                                                                   seguro                      guarda
+                                                                                                                              respuesta
+
+
+
+
+                                                                                                                                                      PostgreSQL
+                                                                                                                                                         16.4
+
+
+
+                                  Cómo funciona: la pantalla envía los datos al organizador → el organizador los
+                               guarda en la base de datos de forma segura → luego muestra el resultado en pantalla
+                           Pruebas: más de 100 personas a la vez • respuesta en menos de 1.2 s • sin cupos duplicados • menos de 1.5 MB por trámite
+
+
+
+   Nota. Elaboración propia con base en Pressman & Maxim (2021). La pantalla envía los datos al
+    organizador, el organizador los guarda en la base de datos de forma segura evitando que dos
+            estudiantes ocupen el mismo cupo y luego muestra el resultado en pantalla.
+
+
+   personales sin que la página se recargue de forma innecesaria.
+   Control de cupos: Parte que revisa y reserva los cupos al momento en la base de datos,
+   evitando que se dupliquen registros y que un taller reciba más estudiantes de los que puede
+   atender.
+   Recuperación de contraseña: Opción que permite al estudiante recuperar solo su
+   contraseña con su número de carnet y fecha de nacimiento, sin tener que hacer fila y sin
+   perder su cupo.
+   Matriculación de documentos: Espacio para que la secretaría registre y revise en el
+   sistema los papeles que se entregan en físico: libretas de 1ro a 3ro, cédula de los tutores,
+   fotocopia de carnet y certificado de nacimiento, completando así el expediente digital.
+   Distribución por colegio en cursos y paralelos: Función que ubica automáticamente a
+   los estudiantes en su curso y paralelo (por ejemplo 4to A o 4to B) según el colegio del que
+   vienen, cuidando que los horarios coincidan y que los cursos queden equilibrados.
+   Comprobantes en PDF: Genera al momento la ficha de preinscripción y de matrícula en
+   PDF para descargar e imprimir, con un código único para verificar que es válida.
+   Panel de control: Pantalla para la dirección donde se ven los cupos disponibles por carrera,
+   el avance de la matriculación y las listas finales por paralelo.
+
+
+
+
+                                                                                      16
+Figura 4.2
+Los siete módulos del sistema y cómo se conectan entre sí.
+                                            SISTEMA WEB BTH V2.0 — MÓDULOS FUNCIONALES
+   — flujo
+ - - consulta                                                         M1. Formulario
+                                                                     de Preinscripción
+                                                                         7 carreras
+
+                                             reserva                                                             PDF
+
+
+                      M2. Control                                      M3. Recuperar                                   M6. Comprobantes
+                       de Cupos                                         Contraseña                                          en PDF
+                     sin duplicar                                      carnet+fecha                                       código único
+
+
+
+
+                                                   exp. ok
+                     M4. Registro                                    M5. Distribución                                        M7. Panel
+                    de Documentos                                      por Colegio                                           de Control
+                   libretas, carnet,                                   según colegio                                      cupos y listas
+                      certificado                                       4to A / 4to B
+
+
+                Pasos del sistema: (1) Preinscripción → (2) Recuperar contraseña → (3) Comprobante → (4) Documentos → (5) Distribución por colegio
+
+
+
+Nota. Elaboración propia. M1 es la preinscripción y se conecta con M2 que cuida los cupos; M3 ayuda
+a recuperar la contraseña en menos de 2 minutos y M6 entrega los comprobantes en PDF; M4 registra
+  los documentos y M5 distribuye a los estudiantes por colegio; M7 muestra los datos generales en el
+                          panel de control (ver los 5 pasos en la Figura 4.3).
+
+
+4.1.3           Cómo funciona el sistema paso a paso
+
+El sistema trabaja en cinco pasos seguidos:
+
+1. Paso 1 — Preinscripción y reserva de cupo: El postulante entra desde su celular o
+    computadora, llena el formulario y reserva su cupo en la carrera que eligió al cierre de
+    la gestión anterior.
+2. Paso 2 — Recuperación de contraseña: Si olvidó su contraseña, entra a la opción de
+    recuperación, escribe su carnet y fecha de nacimiento y recupera su acceso al momento
+    sin ir a ventanilla.
+3. Paso 3 — Comprobante preliminar: El sistema genera y permite descargar el
+    comprobante de preinscripción con el que el estudiante asegura su cupo reservado.
+4. Paso 4 — Entrega y revisión de documentos: Al inicio de la siguiente gestión, el
+    estudiante lleva sus papeles a secretaría y allí se marcan como entregados en el sistema
+    las libretas de 1ro a 3ro, la cédula de los tutores, el carnet y el certificado de nacimiento.
+5. Paso 5 — Ubicación en cursos y paralelos: El sistema ubica a los estudiantes en su
+    paralelo según el colegio del que vienen y deja listas las listas oficiales del BTH.
+
+
+
+
+                                                                               17
+Figura 4.3
+Pasos del ciclo completo de matrícula (5 pasos seguidos).
+               POSTULANTE                                                SISTEMA MVC                                               SECRETARÍA BTH
+
+
+                                                                            INICIO
+                  móvil/PC
+
+
+
+
+                                                         Paso 1. Preinscripción y reserva
+                                     Formulario revisado • Elige 7 carreras • Guarda cupo seguro
+
+
+
+                                                                          ¿Olvidó
+                                                                        contraseña?
+                                                 Sí                                                            No
+
+
+            Paso 2. Recuperar                                                                                                    Paso 2 (No): Sigue
+           Con carnet y fecha                                                                                                      Sin recuperar
+
+
+
+
+                                                                 Paso 3. Comprobante
+                                                                PDF con código único
+                 gestión siguiente
+
+
+
+
+                                                          Paso 4. Entrega de documentos
+                                                      Revisa libretas, carnet y certificado
+
+
+
+                                                            Paso 5. Ubicación en cursos
+                                                  Por colegio → 4to A / 4to B, listas finales
+
+
+
+                                                                               FIN
+
+                                      Ciclo completo: final de una gestión (Pasos 1–3) → inicio de la siguiente (Pasos 4–5)
+                                     Tiempo: 3–5 min por internet vs. 1–3 días de fila • Atención 24 h • Todo queda registrado
+
+
+  Nota. Elaboración propia. Paso 1 reserva el cupo al final de la gestión anterior; Paso 2 recupera la
+contraseña con carnet y fecha de nacimiento si se olvidó; Paso 3 entrega el comprobante en PDF con
+código de verificación; Paso 4 registra los documentos al inicio de la siguiente gestión; Paso 5 ubica a
+                     cada estudiante en su curso según el colegio del que viene.
+
+
+
+
+                                                                                18
+4.1.4    Para qué sirve y cómo se cuida la calidad
+
+El sistema sirve para evitar las filas de noche a la intemperie, permitir inscribirse sin ir al Módulo
+y dar a todos la misma oportunidad de alcanzar el cupo en la carrera que eligieron, con un
+control claro de las vacantes.
+
+Para que funcione bien, se cuidó que la navegación fuera sencilla aun para quien usa poco el
+celular, que los datos estén protegidos con contraseñas seguras y que el consumo sea bajo
+—menos de 1.5 MB por trámite— para que funcione incluso con señal baja en las comunidades.
+
+La evidencia gráfica del proceso de desarrollo y del producto final se documenta en el Anexo
+E (Figuras E.1 y E.2); el funcionamiento de los sistemas de inscripción y de matriculación, con
+las mejoras incorporadas, se documenta en los Anexos F y G (Figuras F.1, F.2, G.1 y G.2).
+
+
+4.2     Planificación y cronograma
+
+Entre febrero y noviembre de 2026 se organizó el proyecto en 10 fases, desde el diagnóstico
+en el Módulo hasta las pruebas finales con la plataforma ya funcionando (OE2 y OE3). La
+Figura 4.4 muestra el calendario por semanas en un diagrama de Gantt con las 10 fases del
+proyecto. Esta organización permitió cumplir el objetivo de planificar y desarrollar el sistema
+paso a paso.
+
+
+4.3     Recursos
+
+Para construir y probar la plataforma se organizó el trabajo con el equipo y el tutor, junto con
+los equipos y la conectividad disponibles.
+
+
+4.3.1    Recursos humanos
+
+El trabajo se organizó con el equipo de desarrollo y el tutor, con un total de 115 hrs acumuladas
+durante el proyecto (34 hrs semanales). La Tabla 4.1 detalla las actividades, la carga horaria y
+el reparto porcentual del equipo.
+
+
+4.3.2    Recursos materiales y tecnológicos
+
+Para programar, probar y publicar el sistema se utilizaron equipos propios y servicios
+contratados, con programas libres sin pago de licencias. La Tabla 4.2 lista los equipos, los
+programas y el internet utilizados.
+
+
+
+
+                                                 19
+Figura 4.4
+Diagrama de Gantt de la planificación temporal y fases del proyecto.
+
+Actividad                                Feb   Mar    Abr     May   Jun    Jul   Ago   Sep   Oct   Nov
+                                        Fase I: Diagnóstico Empírico
+1. Encuestas diagnósticas a               •
+estudiantes
+2. Recopilar y tabular la información           •
+3. Analizar dificultades y                      •
+necesidades
+                                     Fase II: Diseño de Arquitectura
+4. Requerimientos y modelado                          •
+UML
+5. Diseño UI/UX e interfaz                                •    •
+responsiva
+                                   Fase III: Desarrollo de Software 2.0
+6. Frontend y autoservicio                                    •     •
+credenciales
+7. Matrícula documental y paralelos                                    •   •
+                                        Fase IV: Validación y Cierre
+8. Pruebas de funcionamiento y                                             •      •
+estrés
+9. Corrección de errores y                                                        •     •
+depuración
+10. Evaluación final y redacción                                                        •     •     •
+informe
+  Nota. Elaboración propia con base en la planificación del proyecto de innovación tecnológica BTH.
+               Cronograma de Ejecución y Desarrollo de la Innovación (Gestión 2026).
+
+
+
+
+                                                     20
+Tabla 4.1
+Asignación de roles, responsabilidades y carga horaria del equipo de trabajo.
+
+ N° Rol                H/semPart.
+             Actividades
+             principales    ( %)
+
+ 1   Desarrolladora
+            Encuestas 15     44 %
+     Frontend
+            diagnósticas,
+     / UX diseño
+            de
+            interfaz
+            y
+            autoservicio
+            de
+            credenciales
+ 2          Módulos 15
+     Desarrolladora          44 %
+     Backende
+     / BD matrícula
+            documental
+            y
+            asignación
+            de
+            paralelos
+            en
+            PostgreSQL
+ 3   Tutor   Supervisión4    12 %
+     guía    del
+             modelado
+             UML,
+             pruebas
+             de
+             estrés y
+             revisión
+             del
+             informe
+
+               Total   34 100 %
+                       h/sem
+
+ Nota. Elaboración propia. Equipo conformado por Heidy Quiroga Colque, Sharon Liz Quino y el tutor
+   Ing. Juan Vladimir Ramirez Flores. Total 34 horas semanales (115 horas acumuladas durante el
+                                              proyecto).
+
+
+
+
+                                                  21
+Tabla 4.2
+Recursos materiales y tecnológicos empleados en el proyecto.
+
+ Recurso                           Cantidad            Tipo / Estado      Uso en el proyecto
+
+ Computadora para                  1 equipo            Propio / Buen      Escribir el programa y
+ programar                                                estado          hacer pruebas
+ Servidor en internet para         1 servicio       Alquilado / Activo    Poner el sistema en línea
+ publicar                                                                 para usarlo
+ Celular y tableta para            2 equipos           Propio / Buen      Ver que las pantallas se
+ probar                                                   estado          vean bien en celular
+ Programas para                  2 programas        Libre / Instalado     Escribir y revisar el
+ programar                                                                código
+ Programas para datos y               4             Libre / Instalado     Guardar datos y probar
+ pruebas                         herramientas                             que funcione
+ Internet                          1 servicio          Contratado /       Buscar información y
+                                                         Activo           subir el sistema
+ Nota. Elaboración propia. Equipos propios y servicios contratados para programar, probar y publicar.
+
+
+4.3.3   Recursos financieros
+
+La inversión inicial fue de 13574.00 Bs y fue cubierta al 100 % con recursos propios, sin
+préstamos ni apoyo externo. Este monto incluye las computadoras, los teléfonos celulares,
+la impresora, el internet, las hojas de papel, el transporte, los cuadernos, los archivadores y los
+lapiceros. La Tabla 4.3 muestra el origen de los fondos y en las Tablas 4.4, 4.7 y 4.6 se detallan
+los costos por rubro. Este uso de recursos permitió cumplir los objetivos de diseñar (OE2) y
+desarrollar (OE3) el sistema.
+Tabla 4.3
+De dónde salió el dinero para el proyecto.
+
+ De dónde vino el          En qué se usó                   Monto (Bs)            Porcentaje ( %)
+ dinero
+
+ Dinero propio             Equipos, impresora,              13574.00                 100.00 %
+                           internet y material de
+                           escritorio
+ Préstamo de banco         No se pidió                        0.00                    0.00 %
+                           préstamo
+ Ayuda externa             No se recibió ayuda                0.00                    0.00 %
+
+ Total del proyecto                                         13574.00                 100.00 %
+            Nota. Elaboración propia. Total 13574.00 Bs con recursos propios, sin préstamos.
+
+
+
+
+                                                  22
+4.4     Cálculo de costos
+
+4.4.1    Costos de inversión
+
+Aquí se incluyen las computadoras, los teléfonos celulares, la impresora, el internet, las hojas
+de papel, el transporte, los cuadernos, los archivadores y los lapiceros requeridos para poner
+en marcha el sistema (OE3). La Tabla 4.4 muestra el detalle del presupuesto de inversión.
+Tabla 4.4
+Costos de inversión del proyecto.
+
+ Concepto                Cantidad             Unidad            Costo unit.          Costo total
+                                                                   (Bs)                 (Bs)
+
+ Computadoras                 2                unidad             4300.00              8600.00
+ portátiles
+ Teléfonos                    2                unidad             1200.00              2400.00
+ celulares
+ Impresora                    1                unidad             2100.00              2100.00
+ multifuncional
+ Internet (2                  2             mensualidad            140.00              280.00
+ mensualidades)
+ Hojas de papel             100                 hoja                1.00               100.00
+ bond
+ Transporte local             9                pasaje               5.00                45.00
+ Cuadernos                    2                unidad               18.00               36.00
+ Archivadores                 2                unidad               4.00                 8.00
+ Lapiceros                    5                unidad               1.00                 5.00
+
+ Total inversión                                                                      13574.00
+           Nota. Elaboración propia. Total 13574.00 Bs con recursos propios, sin préstamos.
+
+
+4.4.2    Costos de operación
+
+Los costos de operación son los gastos necesarios para mantener la plataforma funcionando
+cada año: 2398.00 Bs en total (2280.00 de costos fijos más 118.00 de costos variables). La
+Tabla 4.5 presenta el resumen mensual y anual.
+
+
+4.4.3    Costos variables
+
+Los costos variables son de 118.00 Bs por ciclo escolar, y corresponden al material de escritorio
+de respaldo (fotocopias, hojas de impresión, lapiceros y archivadores). La Tabla 4.6 detalla cada
+
+
+                                                 23
+Tabla 4.5
+Resumen de costos de operación anual del proyecto.
+
+ Concepto                Detalle de la           Frecuencia       Costo mes           Costo año (Bs)
+                         actividad                                  (Bs)
+
+ Costos fijos            Internet de              Mensual              190.00                2280.00
+                         140.00 y
+                         mantenimiento
+                         de hardware de
+                         50.00
+ Costos                  Fotocopias,              Por ciclo              9.83                118.00
+ variables               hojas, lapiceros
+                         y archivadores
+                         de respaldo
+
+ Total                                                                 199.83                2398.00
+  Nota. Elaboración propia. Total 2398.00 Bs por año (2280.00 de fijos más 118.00 de variables), sin
+                                             préstamos.
+
+
+concepto con su precio, cantidad y total.
+Tabla 4.6
+Costos variables del proyecto.
+
+  N°     Concepto              Uso                   Precio    Cantidad         Ciclo (Bs)      Año (Bs)
+                                                      (Bs)
+
+   1     Fotocopias de         Respaldos de           0.60         50               30.00             30.00
+         documentos            requisitos
+   2     Hojas de              Impresión de           0.20        200               40.00             40.00
+         impresión             formularios
+   3     Lapiceros y           Material de            2.00         8                16.00             16.00
+         marcadores            escritorio
+   4     Archivadores y        Respaldo físico        4.00         8                32.00             32.00
+         carpetas
+
+                                                                        Total      118.00         118.00
+
+   Nota. Elaboración propia. Total 118.00 Bs por ciclo escolar (un ciclo por gestión), sin préstamos.
+
+
+4.4.4    Costos fijos
+
+Los costos fijos son de 190.00 Bs por mes y 2280.00 Bs por año (internet de fibra y
+mantenimiento de hardware), y permiten mantener la plataforma funcionando. La Tabla 4.7
+presenta el detalle por concepto con su pago mensual y anual.
+
+
+
+
+                                                     24
+Tabla 4.7
+Costos fijos del proyecto.
+
+   N°     Concepto            Detalle                      Pago            Mes (Bs)         Año (Bs)
+
+   1      Internet de fibra   Conectividad del sistema    Mensual            140.00          1680.00
+   2      Mantenimiento de    Fondo para equipos          Mensual             50.00           600.00
+          hardware            propios
+
+                                                               Total         190.00          2280.00
+
+           Nota. Elaboración propia. Total 190.00 Bs/mes y 2280.00 Bs/año, sin préstamos.
+
+
+4.4.5    Análisis de impacto y sostenibilidad
+
+Como el sistema es público y sin fines de venta para el Módulo, su valor no está en ganar
+dinero, sino en lo que ahorra a las familias y al colegio. Registrar a cada postulante cuesta
+menos de 0.50 Bs y el ahorro total en pasajes y trámites supera los 20000 Bs por año, por
+lo que lo invertido se recupera en menos de una gestión y el sistema se puede mantener sin
+pagar licencias.
+
+
+
+
+                                                   25
+5. METODOLOGÍA
+
+5.1     Tipo de investigación
+
+El estudio combinó un enfoque mixto: por un lado recogió opiniones sobre qué tan fácil y clara
+resultó la plataforma para los postulantes, y por otro midió datos concretos como el tiempo de
+espera en ventanilla, la rapidez de respuesta del servidor y si los cupos se mantuvieron sin
+duplicarse.
+
+Es una investigación aplicada y tecnológica: no buscó solo plantear teoría, sino resolver un
+problema real del MÓDULO TECNOLÓGICO PRODUCTIVO SAN JULIÁN aplicando métodos
+de ingeniería de software web.
+
+El alcance es descriptivo, propositivo y evaluativo: describe cómo funcionaba la inscripción,
+propone el diseño de la solución completa y luego verifica si esa solución funciona y se puede
+sostener, mirando tiempo, trazabilidad, consistencia de cupos y costo-beneficio.
+
+El diseño es pre-experimental, con medición antes (2022 a 2025: registro manual y V1.0 sin
+recuperación de contraseña ni matrícula documental) y después (2026 con V2.0), transversal
+y propositivo (Hernández Sampieri et al., 2014). Sigue las cuatro fases del método científico
+previstas en los objetivos:
+
+1. Fase 1 (Diagnóstico empírico): Relevamiento de campo y análisis retrospectivo sobre
+   las deficiencias de la plataforma preliminar de 2025 (crisis de credenciales, ruptura en la
+   matriculación documental y asignación manual de paralelos).
+2. Fase 2 (Diseño y dibujos): Dibujos del sistema, orden de los datos y diseño de pantallas
+   fáciles de usar.
+3. Fase 3 (Desarrollo): Armado de la plataforma web en su Versión 2.0 en tres partes: lo que
+   se ve en pantalla, lo que organiza el trabajo y donde se guardan los datos.
+4. Fase 4 (Pruebas y revisión con la comunidad): Pruebas de funcionamiento y con muchas
+   personas a la vez, revisión de la satisfacción y comparación de costos y ahorro con la
+   comunidad educativa (Hernández Sampieri et al., 2014).
+
+
+5.2     Población y muestra
+
+5.2.1    Población y muestra humana
+
+La población son los estudiantes de secundaria del distrito de San Julián que postulan
+al Bachillerato Técnico Humanístico en el MÓDULO TECNOLÓGICO PRODUCTIVO SAN
+JULIÁN: cerca de 400 jóvenes por año, repartidos en siete especialidades (Construcción Civil,
+Contaduría General, Electrónica, Gastronomía, Mecánica Automotriz, Sistemas Informáticos y
+
+
+                                              26
+Textiles y Confecciones).
+
+Además forman parte de la población los 37 funcionarios del MTP —1 Director, 1 responsable
+de Secretaría Académica y 35 docentes—, entre quienes los Tutores de Curso custodian los
+documentos y arman los paralelos según el colegio de procedencia.
+
+Por la accesibilidad de los participantes durante las pruebas se usó un muestreo no
+probabilístico por conveniencia. La muestra final incluyó:
+
+   60 estudiantes postulantes, seleccionados con criterio de representatividad entre las
+   distintas unidades educativas de procedencia y opciones vocacionales, quienes participaron
+   en la evaluación diagnóstica y en las pruebas de usabilidad de la nueva interfaz y del
+   autoservicio de credenciales.
+   5 funcionarios institucionales (Director del módulo, responsable de Secretaría Académica
+   y 3 docentes —entre ellos Tutores de Curso— seleccionados entre los 35 docentes del
+   plantel), quienes validaron el módulo de matriculación documental, la asignación automática
+   de cursos y paralelos, y el panel de reportes oficiales.
+
+
+5.2.2    Unidades experimentales de prueba técnica
+
+Además de las personas, se probó el propio funcionamiento del sistema V2.0. Se hicieron 5
+pruebas con más de 100 usos por minuto en las siete especialidades, con espera menor a 1.2
+s y revisión de los registros guardados, comprobando 0 cupos duplicados y 100 % de orden.
+
+
+5.3     Técnicas e instrumentos
+
+Para recoger la información se usaron tres técnicas:
+
+1. Cuestionario a postulantes: Se aplicó un cuestionario de preguntas cerradas con
+   opciones de respuesta y cuadrícula de marcado, con puntaje de 1 a 5 (desde 1: Totalmente
+   en desacuerdo hasta 5: Totalmente de acuerdo). Preguntó si es fácil moverse en la pantalla,
+   si los formularios se entienden, si se puede recuperar la contraseña sin ayuda y si se confía
+   en el cupo reservado. Lo revisó el tutor guía y se probó con 5 estudiantes, sin cálculo
+   avanzado por ser descriptivo.
+2. Cuestionario al personal: Se aplicó un cuestionario estructurado de preguntas cerradas
+   (opciones de respuesta y rangos de intensidad) mediante entrevista estandarizada con
+   secretaría y dirección, para conocer el exceso de trabajo por recuperar contraseñas a mano
+   en 2025, cómo se reciben y guardan las libretas de 1ro a 3ro, cédula de tutores, carnet y
+   certificado, y qué cuesta ordenar cursos y paralelos por colegio.
+3. Pruebas del sistema: Se probó que la recuperación con carnet y fecha funcione, que los
+   papeles queden bien guardados y que los registros no se repitan. Se hicieron 5 pruebas
+
+
+                                               27
+   con más de 100 usos por minuto a la vez, con espera menor a 1.2 s y guardado seguro que
+   evita duplicar cupos, comprobando 0 cupos repetidos y que no se cae.
+
+
+5.4   Procedimiento de análisis de datos
+
+El análisis combinó tres miradas: números, opiniones y revisión técnica del sistema:
+
+   Conteo de respuestas: Conteo y porcentajes de lo respondido en las preguntas de
+   satisfacción, para ver qué opinan los estudiantes sobre lo fácil y lo solo que se usa el nuevo
+   sistema.
+   Comparación antes y después: Se comparó el tiempo del trámite (de días de fila a menos
+   de 2 minutos solo) y cuántos expedientes quedaron completos con sus papeles en el
+   sistema.
+   Revisión de registros: Se revisó que los datos no se repitan al reservar cupos y que cada
+   estudiante quede en su curso según su colegio.
+   Comparación de costos: Se comparó lo invertido (13574 Bs, 100 % recursos propios) y el
+   gasto por mes (190 Bs/mes) con el ahorro de más de 20000 Bs por gestión y el gasto menor
+   a 0.50 Bs por estudiante, para ver si se recupera en menos de una gestión y se sostiene
+   con programas libres.
+
+Se cumple lo esperado si en el Capítulo 7 se ve todo esto a la vez: espera menor a 1.2 s en al
+menos 95 % de los usos a la vez, 0 cupos repetidos con guardado seguro, papeles completos
+100 %, facilidad de uso de al menos 90 % y errores menores a 5 %. Como la muestra fue por
+cercanía, no se usa prueba avanzada; la comparación es por conteo y revisión de registros.
+
+
+
+
+                                              28
+6. ESTRATEGIA DE MEJORA Y PROYECCIÓN
+
+6.1     Plan de mejora continua
+
+Para que la plataforma siga funcionando bien y crezca con el MÓDULO TECNOLÓGICO
+PRODUCTIVO SAN JULIÁN, se pensó mejorarla en tres tiempos:
+
+   Corto Plazo (0 a 6 meses): Avisar con un mensaje cuando se recupera la contraseña,
+   dejar las pantallas claras aun en celulares sencillos y poner una ayuda paso a paso con
+   preguntas y respuestas para los colegios del campo, para que recuperar la clave tome
+   menos de 2 minutos sin ayuda de nadie.
+   Mediano Plazo (6 a 18 meses): Permitir mandar fotos de los papeles antes de ir a
+   secretaría (libretas de 1ro a 3ro, cédula de tutores, carnet y certificado), para revisar más
+   rápido al momento de matricularse. Además, dar un carnet digital con código para pasar
+   lista en los talleres de las siete especialidades.
+   Largo Plazo (más de 18 meses): Juntar en un solo sistema la asistencia diaria, las notas y
+   los proyectos de grado, según el reglamento del BTH (Resolución Ministerial RM 0912/2023)
+   (Ministerio de Educación del Estado Plurinacional de Bolivia, 2023).
+
+
+6.1.1    Resumen del plan en una tabla
+
+La Tabla 6.1 resume ese plan con lo que se hará, cómo se medirá y quién lo hará (total 115
+hrs).
+Tabla 6.1
+Plan de mejora en tres tiempos.
+
+ Tiempo                   Qué se hará               Cómo se medirá           Quién lo hará
+
+ Corto plazo (0 a 6       Avisos y ayuda paso a     Menos de 2 minutos       Encargado de
+ meses)                   paso para recuperar la    en todos los casos.      pantallas
+                          contraseña.
+
+ Mediano plazo (6 a 18    Mandar fotos de los       Todos los matriculados   Encargado del
+ meses)                   papeles antes de ir a     con papeles revisados.   programa
+                          secretaría y carnet
+                          digital.
+
+ Largo plazo (más de      Un solo sistema para      Al menos 3 partes        Todo el equipo (total
+ 18 meses)                asistencia, notas y       funcionando en 24        115 hrs)
+                          proyectos.                meses, probado con
+                                                    60 estudiantes.
+
+           Nota. Elaboración propia. Metas medidas con 60 estudiantes del MTP San Julián.
+
+
+
+
+                                                   29
+6.2     Proyección y escalamiento
+
+Como está hecho en tres partes y con programas libres (lo que se ve en pantalla, lo que
+organiza el trabajo y donde se guardan los datos), el sistema se puede copiar y adaptar con
+facilidad a otros lugares:
+
+
+6.2.1    Escalamiento geográfico y transferencia tecnológica
+
+Al no depender de licencias propietarias ni de plataformas de pago recurrentes, el software
+desarrollado puede ser transferido sin costo alguno a otros Módulos Tecnológicos Productivos
+y unidades educativas técnico-humanísticas del departamento de Santa Cruz (tales como
+los centros BTH de los municipios vecinos de Cuatro Cañadas, San Ramón, San Javier
+y Guarayos). Estas instituciones comparten una estructura sociocomunitaria y desafíos
+organizativos similares durante sus procesos anuales de matrícula escolar, beneficiándose de
+un modelo validado en el terreno.
+
+
+6.2.2    Escalabilidad de infraestructura tecnológica
+
+En cuanto a equipos, se pasará de a poco del servidor actual a un servidor en internet con
+copias automáticas y protección de los datos. Cuesta unos 190 Bs por mes (2280 Bs por año),
+sin pagar licencias; frente al ahorro de más de 20000 Bs por gestión y a la inversión inicial
+de 13574.00 Bs, lo gastado se recupera en menos de una gestión aun copiándolo en varios
+colegios.
+
+Además, para la Versión 3.0 se piensan avisos automáticos por mensaje sobre la contraseña y
+los papeles, mandar fotos de los papeles antes de ir a secretaría y un carnet con código para
+pasar lista en los talleres. Esto responde a que algunas personas usan poco el celular y a que
+se quiere hacer menos filas en secretaría.
+
+
+6.2.3    Alianzas estratégicas y gobernanza distrital
+
+Para garantizar la viabilidad a largo plazo de la plataforma, se propone la formalización de
+un convenio interinstitucional entre el MÓDULO TECNOLÓGICO PRODUCTIVO SAN JULIÁN,
+la Dirección Distrital de Educación de San Julián y el Gobierno Autónomo Municipal de San
+Julián. Dicha alianza facilitará la sincronización de los calendarios escolares, la provisión de
+conectividad permanente en los predios del módulo y la articulación con las direcciones de
+las unidades educativas humanísticas de origen para la validación cruzada y oportuna de los
+estudiantes matriculados en cada curso y paralelo.
+
+
+
+
+                                              30
+7. RESULTADOS
+
+7.1   Resultados obtenidos
+
+Las pruebas con la plataforma ya funcionando dieron los siguientes resultados:
+
+   Facilidad en el celular: El 92 % de los estudiantes dijo que la pantalla es fácil y clara en el
+   celular, y que las pantallas se adaptan bien al teléfono.
+   Menos tiempo y sin filas: El tiempo de inscripción bajó de 1 a 3 días de fila a 3 a 5
+   minutos por internet (más de 90 % menos), y recuperar la contraseña con carnet y fecha de
+   nacimiento toma menos de 2 minutos sin ir al colegio (100 % sin ayuda), comprobado en las
+   pruebas.
+   Menos errores al escribir: La revisión automática al escribir redujo las equivocaciones en
+   carnet, fecha de nacimiento y teléfono a menos de 5 %.
+   No se cae con muchos usos: Con más de 100 usos por minuto a la vez el sistema no se
+   cayó, respondió en menos de 1.2 segundos y no se duplicó ningún cupo.
+   Cupos y papeles en orden: El guardado seguro garantizó 0 cupos repetidos y orden total
+   en las siete especialidades, y todos los expedientes quedaron completos (libretas de 1ro a
+   3ro, cédula de tutor, carnet y certificado).
+
+El proceso de socialización de la Versión 2.0 con la comunidad escolar se documenta en el
+Anexo H (Figuras H.1 y H.2).
+
+
+7.2   Beneficios e impacto
+
+La plataforma trajo cambios visibles en el Módulo y en las familias:
+
+   Impacto Social y Comunitario: Se erradicaron de manera definitiva las filas nocturnas y
+   las condiciones degradantes de espera a la intemperie, devolviendo la tranquilidad a los
+   hogares de San Julián y garantizando un trato digno e igualitario para todos los jóvenes.
+   Impacto Tecnológico e Institucional: Marca un precedente de modernización para el
+   BTH en la región, dotando al MÓDULO TECNOLÓGICO PRODUCTIVO SAN JULIÁN de
+   una herramienta desarrollada por sus propios estudiantes de la carrera de SISTEMAS
+   INFORMÁTICOS.
+   Impacto Económico: Genera un ahorro colectivo directo superior a 20000 Bs por período
+   de inscripción al suprimir gastos en pasajes de transporte público (5 Bs por tramo) y
+   fotocopias documentales innecesarias.
+   Impacto Ambiental: La digitalización del trámite y la emisión de comprobantes digitales
+   supuso un ahorro superior a las 1500 hojas de papel bond físico y cartuchos de tóner por
+   ciclo escolar.
+
+
+                                                  31
+7.3     Comparación antes vs. después
+
+La Tabla 7.1 muestra lado a lado cómo cambiaron las cosas entre el trámite presencial y el
+sistema web.
+
+
+7.3.1    Tabla de cambios antes y después
+
+Tabla 7.1
+Comparación antes y después de la innovación.
+
+ Lo que se midió            Antes (presencial)         Después (sistema               Cambio
+                                                       web)
+
+ Recuperación de            Fila en secretaría (se     Autoservicio en menos          Sin filas
+ contraseña                 perdía el cupo)            de 2 min, sin ayuda
+                                                       (carnet y fecha de
+                                                       nacimiento)
+
+ Papeles de matrícula       Papeles sueltos sin        Registro ordenado de       Todos en orden
+                            registro en sistema        libretas y certificados
+
+ Reparto en cursos y        Listas a mano con          Reparto automático            0 choques
+ paralelos                  choques de horario         por colegio
+
+ Cuidado de los cupos       A mano, con riesgo         Cupos cuidados sin            100 % sin
+                            de duplicar                duplicar en el sistema         duplicar
+
+ Errores al escribir        35 % de datos mal          Revisión automática al             −86 %
+                            escritos                   escribir (menos de
+                                                       5 %)
+
+ Tiempo del trámite         1 a 3 días en fila         3 a 5 minutos en la                −90 %
+                                                       página
+
+ Horario de atención        8 horas al día en          24 horas en línea              +200 %
+                            ventanilla
+
+ Filas de familias          Filas de noche a la        Sin filas presenciales         −100 %
+                            intemperie
+               Nota. Datos de la comparación hecha con 60 postulantes y 5 funcionarios.
+
+El tiempo por familia bajó más de 90 % y la atención pasó de 8 horas en ventanilla a 24 horas
+en línea durante la matriculación, sin filas.
+
+
+
+
+                                                  32
+8. PROYECTO DE VIDA
+
+Proyecto de Vida — Heidy Quiroga Colque
+
+Quién soy
+
+Mi nombre es Heidy Quiroga Colque, tengo 17 años y vivo en San Julián, Santa Cruz, Bolivia.
+Estudio en el Bachillerato Técnico Humanístico (BTH) del Módulo Tecnológico Productivo
+San Julián, en la especialidad de Sistemas Informáticos, y provengo de la Unidad Educativa
+Progreso (6to A), donde curso mi último año de secundaria. Me considero una estudiante con
+futuro y con ambición. Me gusta la tecnología y hacer soluciones con la computadora que
+ayuden a las personas. Por eso quiero seguir la carrera de Sistemas.
+
+
+Mis metas a corto, mediano y largo plazo
+
+A corto plazo quiero graduarme del colegio con buenas notas y obtener mi título de Bachiller
+Técnico Humanístico en Sistemas Informáticos, aprovechando cada materia técnica para llegar
+bien preparada a la siguiente etapa. A mediano plazo quiero entrar a la universidad y estudiar
+Ingeniería de Sistemas con dedicación, aprender más programación y diseño de páginas, y
+empezar a trabajar en proyectos de tecnología que me den experiencia y me permitan ayudar
+a mi familia. A largo plazo quiero trabajar como ingeniera en Sistemas, ayudar a la sociedad
+con soluciones tecnológicas que beneficien a mi comunidad, y tener una vida estable en todo
+sentido, sobre todo económicamente.
+
+
+Lo que este proyecto significa para mí
+
+Este proyecto lo hicimos para apoyar a nuestro Módulo. Antes la inscripción era con filas
+largas y papeles que se perdían. Ahora todo es más ordenado y más justo para cerca de 400
+postulantes cada año. Este proyecto me ayuda a crecer: aprendí a hacer pantallas fáciles para
+el celular, a avisar cuando un dato está mal y a cuidar los avances. Preguntar a 60 postulantes
+y hablar con 5 funcionarios me ayudó a explicar con palabras simples. Trabajar con Sharon
+me enseñó a trabajar en equipo. Desde recuperar la contraseña en menos de 2 minutos hasta
+repartir los paralelos por colegio, todo es experiencia real para mi futura carrera de Sistemas.
+
+
+
+
+                                               33
+Proyecto de Vida — Sharon Liz Quino
+
+Quién soy
+
+Mi nombre es Sharon Liz Quino, tengo 17 años y vivo en San Julián, Santa Cruz, Bolivia.
+Estudio en el Bachillerato Técnico Humanístico (BTH) del Módulo Tecnológico Productivo San
+Julián, en la especialidad de Sistemas Informáticos, y provengo de la Unidad Educativa 12 de
+Abril, donde curso 6to de secundaria. Soy una estudiante con futuro y con mucha ambición.
+Quiero superarme, aprender cosas nuevas y tener un buen futuro para mí y para mi familia. Me
+gusta la tecnología, programar y hacer soluciones con la computadora. Por eso quiero seguir
+la carrera de Sistemas. Hoy entiendo que no importa la carrera que uno tome, ahora todo se
+trata de tecnología, y lo que aprendo ahora me va a servir toda la vida.
+
+
+Mis metas a corto, mediano y largo plazo
+
+A corto plazo quiero graduarme del colegio con buenas notas y obtener mi título de Bachiller
+Técnico Humanístico en Sistemas Informáticos, estudiando con esfuerzo porque sé que eso
+abre la puerta a lo que viene después. A mediano plazo quiero entrar a la universidad y estudiar
+Ingeniería con dedicación, aprender más programación y el cuidado de los datos, y conseguir
+mis primeros trabajos que me den experiencia y me permitan apoyar a mi familia. A largo
+plazo quiero trabajar como ingeniera en tecnología, ayudar a la sociedad y a los jóvenes de
+mi comunidad que necesitan una oportunidad, y tener una vida estable en todo sentido, sobre
+todo económicamente, para construir un futuro seguro y seguir formándome.
+
+
+Lo que este proyecto significa para mí
+
+Este proyecto lo hicimos para apoyar a nuestro Módulo. Vimos que las familias sufrían en las
+filas y quisimos ayudar con tecnología. Ahora la inscripción es más fácil, más rápida y más justa.
+Eso me hace sentir orgullosa. Este proyecto me ayuda a crecer: aprendí a guardar los datos en
+orden y a probar la página con muchas personas a la vez. Preguntar a 60 postulantes y hablar
+con 5 funcionarios me ayudó a perder el miedo a preguntar. Trabajar con Heidy me enseñó
+a trabajar en equipo: ella hizo las pantallas y yo cuidé los datos. Recuperar la contraseña
+en menos de 2 minutos y repartir los paralelos por colegio es experiencia real para mi futura
+carrera de Sistemas.
+
+
+
+
+                                               34
+9. CONCLUSIONES Y RECOMENDACIONES
+
+9.1   Conclusiones
+
+Al terminar el diseño, la programación, las pruebas y la evaluación, se llegó a las siguientes
+conclusiones, en orden con los objetivos:
+
+   Cumplimiento del Objetivo General: Se hizo y se puso a funcionar el SISTEMA WEB DE
+   INSCRIPCIÓN PARA EL MÓDULO TECNOLÓGICO PRODUCTIVO SAN JULIÁN BTH —
+   VERSIÓN 2.0, hecho en tres partes (lo que se ve, lo que organiza y donde se guardan los
+   datos), logrando una página completa que bajó el registro de varios días de fila a 3 a 5
+   minutos por postulante.
+   Diagnóstico de Deficiencias Operativas (OE1): Se encontraron los tres problemas del
+   proceso 2022 a 2025 (contraseñas sin recuperación, papeles sin registro en sistema y
+   paralelos armados a mano) con preguntas en el primer bimestre de 2026 a 60 estudiantes
+   postulantes y 5 funcionarios, ordenados en la Tabla 2.1.
+   Recuperación de contraseña: La recuperación sola con carnet y fecha de nacimiento
+   resolvió el problema más grande de la gestión pasada, dejando que los postulantes
+   recuperen su acceso en menos de 2 minutos sin ir a ventanilla y sin perder su cupo, según
+   la Tabla 7.1.
+   Papeles de matrícula en orden: Se unió la preinscripción con la matrícula con un espacio
+   que registra y revisa en el sistema los papeles que pide el BTH (libretas de 1ro a 3ro, cédula
+   de tutores, carnet y certificado), logrando todos los expedientes en orden y sin papeles
+   perdidos, conforme a la Tabla 7.1.
+   Reparto en cursos y paralelos: Se acabaron los choques de horario entre el MÓDULO
+   TECNOLÓGICO PRODUCTIVO SAN JULIÁN y los colegios del distrito, porque el sistema
+   reparte solo a los aceptados en su curso (4to A, 4to B) según su colegio, dejando los talleres
+   equilibrados.
+   Pruebas con muchos usos a la vez: Las pruebas con más de 100 usos por minuto
+   mostraron que el sistema aguanta, responde en menos de 1.2 segundos y mantiene todos
+   los cupos en orden en las siete especialidades, sin duplicar ningún cupo.
+   Facilidad de uso y calidad: Las preguntas a 60 estudiantes con puntaje de 1 a 5 mostraron
+   una facilidad de uso de 92 % (al menos 90 %) y que los errores bajaron de 35 % a menos
+   de 5 %, gracias a la revisión automática al escribir.
+   Ahorro para las familias: Se acabaron las filas de noche a la intemperie de las familias de
+   San Julián, ahorrando más de 20000 Bs por gestión en pasajes y copias, con una inversión
+   de 13574 Bs, gasto de 190 Bs/mes y menos de 0.50 Bs por postulante, recuperándose en
+   menos de una gestión.
+
+
+
+
+                                               35
+En consecuencia, lo planteado en la Sección 2.4 se cumplió: la Versión 2.0 con recuperación
+por carnet y fecha de nacimiento y guardado seguro que no duplica cupos bajó el tiempo en
+más de 90 %, resolvió la contraseña en menos de 2 minutos, dejó papeles y cupos en orden
+al 100 % sin duplicar, como se vio en las pruebas con muchos usos a la vez, en la revisión de
+datos y en la Tabla 7.1 del Capítulo 7.
+
+
+9.2     Recomendaciones
+
+Para que el sistema siga funcionando de forma segura y estable, se recomienda:
+
+
+9.2.1    Recomendaciones técnicas
+
+   Cuidar el servidor: Se aconseja guardar memoria de las páginas más usadas y ordenar
+   los datos que más se buscan (como el carnet y la especialidad) para que la página siga
+   rápida.
+   Guardar copias siempre: Hacer copias automáticas todos los días en tiempo de matrícula
+   y guardarlas en dos lugares, para no perder nada.
+   Mantener todo actualizado: Mantener actualizados los programas del sistema para cuidar
+   la seguridad y que nadie entre sin permiso ni lo tumbe.
+   Tablero Semestral de Indicadores: Implementar un tablero de monitoreo semestral de
+   los indicadores del sistema (espera menor a 1.2 s, 0 cupos repetidos, papeles completos
+   100 %, facilidad de uso de al menos 90 %, errores menores a 5 %) a cargo del tutor guía y
+   la secretaría académica, con reporte a la Dirección del MTP y a la Dirección Distrital para
+   la mejora continua.
+
+
+9.2.2    Recomendaciones institucionales
+
+   Campañas Preventivas de Difusión: La Dirección del MTP San Julián debe coordinar con
+   las unidades educativas de origen la difusión de guías gráficas y videos cortos instructivos
+   sobre el uso de la plataforma antes de la apertura oficial de cupos.
+   Garantía de Conectividad Institucional: Gestionar ante el Gobierno Autónomo Municipal
+   de San Julián una línea de internet dedicada de fibra óptica para el servidor institucional
+   durante los períodos de alta demanda.
+   Continuidad del Software: Fomentar que futuros estudiantes de la carrera de SISTEMAS
+   INFORMÁTICOS asuman como proyectos de grado las fases de escalamiento del sistema
+   (notificaciones por WhatsApp y gestión académica integral).
+   Capacitación de Secretaría Académica: Programar talleres de práctica para revisar
+   papeles y recuperar contraseñas en menos de 2 minutos con los nuevos estudiantes, para
+   que el proceso siga en orden y sea justo para todos.
+
+
+
+                                              36
+Bibliografía
+
+
+Arimetrics. (2024). Qué es PHP y para qué sirve en el desarrollo web. Consultado el 2 de
+       octubre de 2026, desde https://www.arimetrics.com/glosario-digital/php
+Estado Plurinacional de Bolivia. (2009). Constitución Política del Estado.
+Estado Plurinacional de Bolivia. (2010). Ley de la Educación N.º 070 «Avelino Siñani - Elizardo
+       Pérez».
+Hernández Sampieri, R., Fernández Collado, C., & Baptista Lucio, M. d. P. (2014). Metodología
+       de la investigación (6.a ed.). McGraw-Hill.
+León-Velarde, C. G., Solano Rosembertt, G. V., Lureña Silva, C. L., Rivera Quispe, E. M., &
+       Muro Egoavil, R. G. (2024). Diseño de una aplicación web ASP.NET para la gestión de
+       matrícula y registro de notas de estudiantes en una universidad nacional. Aula Virtual,
+       5(12). https://doi.org/10.5281/zenodo.11302371
+Marcotte, E. (2014). Responsive web design (2.a ed.). A Book Apart.
+MDN Web Docs. (2025). HTML: Lenguaje de marcado de hipertexto. Consultado el 2 de octubre
+       de 2026, desde https://developer.mozilla.org/es/docs/Web/HTML
+Ministerio de Educación del Estado Plurinacional de Bolivia. (2023). Reglamento de Graduación
+       del Bachillerato Técnico Humanístico (BTH) (Resolución Ministerial N.o RM 0912/2023).
+       Gaceta Oficial del Estado Plurinacional de Bolivia. La Paz, Bolivia.
+Mozilla Foundation. (2025). Guía de JavaScript: Dinamismo y validaciones web. Consultado el
+       2 de octubre de 2026, desde https://developer.mozilla.org/es/docs/Web/JavaScript
+PostgreSQL Global Development Group. (2024). PostgreSQL 16.4 documentation. Consultado
+       el 2 de octubre de 2026, desde https://www.postgresql.org/docs/16/
+Pressman, R. S., & Maxim, B. R. (2021). Ingeniería del software: Un enfoque práctico (9.a ed.).
+       McGraw-Hill Interamericana.
+Sommerville, I. (2016). Ingeniería de software (10.a ed.). Pearson Educación.
+Stallings, W. (2004). Fundamentos de seguridad en redes: Aplicaciones y estándares (2.a ed.).
+       Pearson Educación.
+Tanenbaum, A. S., Feamster, N., & Wetherall, D. J. (2021). Redes de computadoras (6.a ed.).
+       Pearson Educación.
+UNESCO. (2023). Global education monitoring report 2023: Technology in education – a tool on
+       whose terms? Consultado el 2 de octubre de 2026, desde https://www.unesco.org/gem-
+       report/en/technology
+UNESCO. (2024). Six pillars for the digital transformation of education: A common framework.
+       Consultado el 2 de octubre de 2026, desde https://unesdoc.unesco.org/ark:/48223/
+       pf0000391299
+W3Schools. (2025). CSS responsive web design tutorial. Consultado el 2 de octubre de 2026,
+       desde https://www.w3schools.com/css/css_rwd_intro.asp
+ANEXOS
+Anexo A: Cuestionarios de Diagnóstico del Proceso de Inscripción (Objetivo
+Específico 1)
+
+Cuestionarios de preguntas cerradas con diseño de respuesta para diagnosticar las
+deficiencias operativas y los requerimientos funcionales del proceso de inscripción y
+matriculación del BTH, conforme al objetivo específico 1 y al diagnóstico 2022-2025 del
+Capítulo 2. Cada bloque presenta una cuadrícula de casillas que el encuestado marca con una
+X. Escala Likert de 5 puntos: 1 = Totalmente en desacuerdo, 2 = En desacuerdo, 3 = Neutral, 4
+= De acuerdo, 5 = Totalmente de acuerdo.
+
+Cuestionario D-1: Diagnóstico del proceso de inscripción — Estudiantes postulantes (n
+= 60, autoadministrado)
+
+Tabla 9.1
+Encabezado e instrucciones del cuestionario D-1 (estudiantes).
+
+ Campo                        Contenido
+
+ Institución                  MÓDULO TECNOLÓGICO PRODUCTIVO SAN JULIÁN BTH —
+                              Especialidad de Sistemas Informáticos
+ Instrumento                  Cuestionario D-1: Diagnóstico del proceso de inscripción y
+                              matriculación (OE1)
+ Muestra                      60 estudiantes postulantes de las siete especialidades (muestreo
+                              por conveniencia)
+ Aplicación                   Primer bimestre de la gestión 2026
+ Tiempo estimado              6 minutos
+ Instrucciones                Marcar con una X una sola opción por pregunta. Responder
+                              según lo vivido en los procesos 2022-2025. Respuestas
+                              anónimas (C.I. como ****).
+Bloque A. Identificación (anonimizada):
+
+Tabla 9.2
+Diseño de respuesta del bloque A (identificación) del cuestionario D-1.
+
+
+ N.º   Pregunta y opciones de respuesta
+
+ A1    Unidad educativa de procedencia:
+
+ A2    Especialidad de interés:      Construcción Civil        Contaduría General
+          Electrónica       Gastronomía         Mecánica Automotriz           Sistemas Informáticos
+          Textiles y Confecciones
+
+ A3    Edad:     15 años o menos          16 años        17 años          18 años o más
+
+ A4    Acceso a internet en su teléfono celular:       Siempre        A veces       Nunca
+Bloque B. Preguntas cerradas sobre la experiencia de inscripción (2022-2025):
+
+Tabla 9.3
+Diseño de respuesta del bloque B (preguntas cerradas) del cuestionario D-1.
+
+
+ N.º    Pregunta y opciones de respuesta
+
+ B1     ¿Participó en inscripciones presenciales del MTP antes de la gestión 2026?
+           Sí      No
+
+ B2     ¿Cuánto sumó su tiempo de espera en fila en la inscripción presencial?
+           Ninguno       Menos de 1 día           1 a 2 días      3 a 5 días       Más de 5 días
+
+ B3     ¿Cuánto gastó en pasajes y fotocopias durante el proceso?
+           Menos de 20        20 a 50         51 a 100         Más de 100 Bs
+
+ B4     ¿Olvidó su contraseña de la página de preinscripción de la gestión 2025?
+           Sí      No
+
+ B5     ¿Cómo resolvió la recuperación de su contraseña?
+           La recuperé por internet sin ayuda           Acudí al Módulo y esperé varios días
+           No pude recuperarla           No la olvidé
+
+ B6     ¿Qué le ocasionó principalmente esa dificultad?
+           Pérdida de tiempo           Pérdida del cupo que deseaba            Gasto adicional
+           Ninguna
+
+ B7     ¿Qué documentos exigía el BTH para completar la matriculación (libretas de 1ro a
+        3ro, cédula del tutor, carné y certificado de nacimiento)?
+           Ninguno       Algunos          Todos
+
+ B8     ¿En qué estado quedó su expediente en la gestión 2025?
+           Completo        Incompleto         Extravié documentos        No sé
+
+ B9     ¿Sabía cómo se asignaba su curso y paralelo (4to A o 4to B)?
+           Sí, conocía los criterios       Parcialmente         No
+
+ B10    ¿Presentó conflictos de horario entre el Módulo y su unidad educativa?
+           Sí      No
+Bloque C. Ítems diagnósticos en escala Likert (1–5):
+
+Tabla 9.4
+Cuadrícula de respuesta del bloque C (escala Likert 1–5) del cuestionario D-1.
+
+ Ítem                                                                              1   2   3   4   5
+
+ C1. Durante el proceso de inscripción presencial tuve que hacer filas de
+ varios días o permanecer de noche en el Módulo.
+ C2. La espera a la intemperie (sol, lluvia o frío) me obligó a dejar de asistir
+ al colegio o a mis actividades de trabajo.
+ C3. En la gestión 2025 olvidé mi contraseña de la página de preinscripción.
+ C4. Para recuperar mi contraseña tuve que trasladarme presencialmente al
+ Módulo y esperar varios días.
+ C5. Mientras esperaba el restablecimiento de mi contraseña, los cupos de
+ la especialidad que deseaba se agotaron.
+ C6. Considero necesario recuperar la contraseña con mi cédula de
+ identidad y fecha de nacimiento, sin asistir al Módulo y en menos de 2
+ minutos.
+ C7. No sabía con exactitud qué documentos exigía el BTH para completar
+ mi matriculación (libretas de 1ro a 3ro, cédula del tutor, carné y certificado
+ de nacimiento).
+ C8. La entrega de mis documentos se realizó sin un registro claro y
+ ordenado que me permitiera verificar su estado.
+ C9. Mi expediente quedó incompleto o se extravió algún documento durante
+ el proceso de la gestión 2025.
+ C10. Considero fundamental que el sistema registre y verifique todos mis
+ documentos y me entregue un comprobante con código de verificación.
+ C11. Desconocía los criterios con los que se asignaría mi curso y paralelo
+ (4to A o 4to B) según mi unidad educativa de procedencia.
+ C12. La asignación manual de paralelos generó cursos con cantidades
+ desiguales de estudiantes o errores de registro.
+ C13. Presenté conflictos de horario entre el Módulo y mi unidad educativa
+ de procedencia.
+ C14. Espero que mi asignación a curso y paralelo responda a criterios
+ equitativos, transparentes y compatibles con mi horario escolar.
+ C15. Prefiero realizar mi inscripción por internet desde mi teléfono celular,
+ incluso con conexión de baja intensidad.
+ C16. La espera y los gastos de traslado (pasajes y fotocopias) afectaron
+ económicamente a mi familia durante el proceso de inscripción.
+    Nota. Escala Likert: 1 Totalmente en desacuerdo, 2 En desacuerdo, 3 Neutral, 4 De acuerdo, 5
+                                       Totalmente de acuerdo.
+Bloque D. Priorización de necesidades (opción única):
+
+Tabla 9.5
+Diseño de respuesta del bloque D (priorización) del cuestionario D-1.
+
+
+ N.º   Pregunta y opciones de respuesta
+
+ D1    ¿Cuál fue su mayor dificultad en el proceso de inscripción?
+           Recuperar la contraseña         Reunir y entregar los documentos
+           Obtener la especialidad y paralelo deseados            Ninguna
+
+ D2    ¿Qué función considera más importante para la página de inscripción?
+           Recuperación autónoma de la contraseña
+           Registro y verificación de documentos         Asignación automática de paralelos
+           Comprobante con código de verificación
+
+
+
+
+Cuestionario D-2: Diagnóstico del proceso de inscripción — Personal administrativo y
+docente (n = 5, entrevista estandarizada)
+
+Tabla 9.6
+Encabezado e instrucciones del cuestionario D-2 (funcionarios).
+
+ Campo                        Contenido
+
+ Institución                  MÓDULO TECNOLÓGICO PRODUCTIVO SAN JULIÁN BTH —
+                              Especialidad de Sistemas Informáticos
+ Instrumento                  Cuestionario D-2: Diagnóstico del proceso de inscripción y
+                              matriculación (OE1)
+ Muestra                      5 funcionarios: Director, Secretaría Académica y 3 docentes
+                              (Tutores de Curso)
+ Aplicación                   Primer bimestre de la gestión 2026
+ Tiempo estimado              6 minutos
+ Instrucciones                El aplicador marca con una X la opción elegida por el
+                              entrevistado. Responder según la experiencia de las gestiones
+                              2022-2025. Respuestas anónimas (C.I. como ****).
+Bloque A. Identificación (anonimizada):
+
+Tabla 9.7
+Diseño de respuesta del bloque A (identificación) del cuestionario D-2.
+
+
+ N.º   Pregunta y opciones de respuesta
+
+ A1    Cargo:
+          Director       Secretaría Académica          Docente (Tutor de Curso)
+
+ A2    Antigüedad en el MTP:
+          Menos de 5 años          5 a 10 años        11 a 15 años        Más de 15 años
+Bloque B. Preguntas cerradas sobre las deficiencias del proceso (2022-2025):
+
+Tabla 9.8
+Diseño de respuesta del bloque B (preguntas cerradas) del cuestionario D-2.
+
+
+ N.º   Pregunta y opciones de respuesta
+
+ B1    ¿Cuántos restablecimientos manuales de contraseña se atendieron por gestión en
+       ventanilla?
+          Menos de 50        50 a 100          101 a 200       Más de 200       No sabe
+
+ B2    ¿Cuántas horas semanales dedicaba su área al proceso de inscripción y
+       matriculación?
+          Menos de 5        5 a 10      11 a 20          Más de 20
+
+ B3    ¿Cómo se archivaban los documentos antes de la V2.0?
+          Carpetas físicas sin registro digital      Planillas impresas sin control
+          Carpeta con listado parcial          No sabe
+
+ B4    ¿Qué porcentaje de expedientes quedaba incompleto o sin trazabilidad en 2025?
+          0 a 10      11 a 30        31 a 50       Más de 50         No sabe
+
+ B5    ¿Qué errores de transcripción se observaban en la asignación manual de paralelos?
+          Ninguno       Pocos        Frecuentes          Muy frecuentes
+
+ B6    ¿Qué conflictos de horario surgían entre el MTP y las unidades educativas de origen?
+          Ninguno       Pocos        Frecuentes          Muy frecuentes
+
+ B7    ¿Qué porcentaje de postulantes terminó 2025 en una especialidad distinta a la
+       deseada?
+          0 a 10      11 a 30        31 a 50       Más de 50         No sabe
+
+ B8    ¿Cuál es el requisito documental imprescindible para la matriculación?
+          Libretas de 1ro a 3ro       Cédula del tutor         Carné del estudiante
+          Certificado de nacimiento        Todos en conjunto
+
+ B9    ¿Qué criterio debe ser prioritario en la asignación automática de paralelos?
+          Misma cantidad de estudiantes por paralelo
+          Mismo colegio agrupado por paralelo              Compatibilidad de horarios     No sabe
+Bloque C. Grado de afectación de las brechas diagnosticadas en escala Likert (1–5):
+
+Tabla 9.9
+Cuadrícula de respuesta del bloque C (escala Likert 1–5) del cuestionario D-2.
+
+ Brecha                                                                           1    2       3   4   5
+
+ C1. Restablecimiento manual de contraseñas en ventanilla.
+ C2. Expedientes incompletos o sin registro verificable.
+ C3. Asignación manual de cursos y paralelos en planillas externas.
+ C4. Conflictos de horario entre el Módulo y los colegios.
+ C5. Sobrecarga de trabajo del personal administrativo y docente.
+              Nota. Escala Likert de afectación: 1 Nula, 2 Baja, 3 Media, 4 Alta, 5 Crítica.
+
+
+
+Nota. Cuestionarios de diagnóstico del objetivo específico 1, aplicados en el primer bimestre de 2026
+a 60 estudiantes postulantes y 5 funcionarios del MTP San Julián (muestreo por conveniencia). Datos
+anonimizados (C.I. como ****). Validación por juicio del tutor y prueba piloto con 5 estudiantes (ver Anexo
+B). Los ítems se alinean con las tres brechas del Capítulo 2: recuperación de credenciales, matriculación
+documental y distribución por unidad educativa.
+Anexo B: Validación y Confiabilidad de los Instrumentos
+
+La validación de los instrumentos (cuestionarios cerrados con escala Likert de los Anexos A y
+C) se realizó mediante juicio de experto y prueba piloto, sin cálculo de alfa de Cronbach por
+alcance descriptivo y muestreo por conveniencia:
+
+   Juicio de experto (Tutor Guía): El Ing. Juan Vladimir Ramirez Flores evaluó claridad,
+   pertinencia y coherencia de los ítems respecto a las 3 brechas (recovery, documental,
+   paralelos) y a las 7 variables del estudio. Criterios: escala 1–4 (1 no pertinente,
+   4 muy pertinente). Observaciones: simplificar redacción ítems 3–4 (evitar tecnicismos
+   “trazabilidad”) y añadir instrucción de anonimato (C.I. como ****). Fecha de validación:
+   febrero 2026. Dictamen: Aplicable con ajustes menores (promedio 3.7/4).
+   Prueba piloto: Aplicada a 5 estudiantes postulantes no incluidos en la muestra final (2 de
+   Sistemas Informáticos, 1 de Electrónica, 1 de Gastronomía, 1 de Construcción Civil), con
+   tiempo promedio de respuesta de 4 min y sin incidencias de comprensión. Ajuste resultante:
+   ítem “entrega y verificación . . . en secretaría” → “con los tutores de curso” para reflejar el
+   flujo V2.0.
+   Confiabilidad operativa: No se aplicó prueba inferencial; la contrastación es descriptiva y
+   de auditoría transaccional (ver Anexo D). Se estableció criterio de validez: latencia menor
+   a 1.2 s en al menos 95 % de peticiones, 0 sobrecupos con guardado seguro, papeles
+   completos 100 %, facilidad de uso de al menos 90 % y errores menores a 5 % (ver Cap. 5).
+
+Tabla 9.10
+Resultados de la prueba piloto (n=5, anonymized).
+
+          Dimensión                     Comprensión ( %)                  Tiempo medio
+  Usabilidad y Diseño Móvil                     100                           1.1 min
+   Autoservicio y Recovery                       80                           1.3 min
+  Matriculación Documental                      100                           0.8 min
+   Organización Paralelos                       100                           0.8 min
+             Total                              95                            4.0 min
+      Nota. Prueba piloto febrero 2026; datos anonimizados. Ajustes incorporados en Anexo C.
+Anexo C: Cuestionarios de Evaluación de la Versión 2.0
+
+Cuestionarios de preguntas cerradas con diseño de respuesta para medir la satisfacción y el
+impacto de la Versión 2.0 del sistema web de inscripción. Cada bloque presenta una cuadrícula
+de casillas que el encuestado marca con una X. Escala Likert de 5 puntos: 1 = Totalmente en
+desacuerdo, 2 = En desacuerdo, 3 = Neutral, 4 = De acuerdo, 5 = Totalmente de acuerdo.
+
+Cuestionario A-1: Evaluación de la Versión 2.0 — Estudiantes postulantes (n = 60,
+autoadministrado)
+
+Tabla 9.11
+Encabezado e instrucciones del cuestionario A-1 (estudiantes).
+
+ Campo                        Contenido
+
+ Institución                  MÓDULO TECNOLÓGICO PRODUCTIVO SAN JULIÁN BTH —
+                              Especialidad de Sistemas Informáticos
+ Instrumento                  Cuestionario A-1: Evaluación de la Versión 2.0 del sistema web
+                              de inscripción
+ Muestra                      60 estudiantes postulantes (muestreo por conveniencia)
+ Aplicación                   Primer bimestre de la gestión 2026
+ Tiempo estimado              5 minutos
+ Instrucciones                Marcar con una X una sola opción por pregunta. Respuestas
+                              anónimas (C.I. como ****).
+Bloque A. Identificación (anonimizada):
+
+Tabla 9.12
+Diseño de respuesta del bloque A (identificación) del cuestionario A-1.
+
+
+ N.º   Pregunta y opciones de respuesta
+
+ A1    Unidad educativa de procedencia:
+
+ A2    Especialidad de interés:
+          Construcción Civil        Contaduría General         Electrónica      Gastronomía
+          Mecánica Automotriz          Sistemas Informáticos         Textiles y Confecciones
+
+ A3    Edad:
+          15 años o menos           16 años       17 años       18 años o más
+
+ A4    Acceso a internet en su teléfono celular:
+          Siempre        A veces        Nunca
+
+ A5    Frecuencia de uso de la página de la V2.0:
+          1 vez       2 a 3 veces       Más de 3 veces
+Bloque B. Ítems de evaluación en escala Likert (1–5):
+
+Tabla 9.13
+Cuadrícula de respuesta del bloque B (escala Likert 1–5) del cuestionario A-1.
+
+ Ítem                                                                            1   2   3   4     5
+
+ B1. La interfaz web es clara y se adapta adecuadamente a la pantalla de mi
+ teléfono celular.
+ B2. Los pasos para completar el formulario de preinscripción son
+ comprensibles y rápidos de ejecutar.
+ B3. Pude consultar mi usuario y restablecer mi contraseña de forma
+ autónoma con mi cédula de identidad y fecha de nacimiento (menos de
+ 2 min).
+ B4. El mecanismo de autoservicio me permitió asegurar oportunamente
+ mi cupo en la especialidad técnica de mi preferencia sin hacer filas
+ presenciales.
+ B5. El comprobante digital emitido refleja con claridad los requisitos
+ documentales exigidos (libretas de 1ro a 3ro, cédulas, carnet y certificado).
+ B6. La entrega y verificación de mis documentos con los tutores de curso
+ se registró de manera ágil y ordenada en el sistema.
+ B7. La asignación a mi paralelo (4to A o 4to B) respetó la compatibilidad de
+ horarios con mi colegio de origen.
+ B8. La distribución de plazas entre los colegios del distrito municipal fue
+ equitativa y transparente.
+
+    Nota. Escala Likert: 1 Totalmente en desacuerdo, 2 En desacuerdo, 3 Neutral, 4 De acuerdo, 5
+                                       Totalmente de acuerdo.
+Bloque C. Preguntas cerradas de opción única:
+
+Tabla 9.14
+Diseño de respuesta del bloque C (preguntas cerradas) del cuestionario A-1.
+
+
+ N.º   Pregunta y opciones de respuesta
+
+ C1    ¿Cuánto demoró su trámite de inscripción en la página de la V2.0?
+          Menos de 5 min        5 a 15 min       16 a 30 min        Más de 30 min
+
+ C2    ¿Recuperó su contraseña con su cédula de identidad y fecha de nacimiento?
+          Sí, en menos de 2 min        Sí, pero demoró más          No lo intenté
+          No pude recuperarla
+
+ C3    En comparación con su inscripción anterior, esta fue:
+          Mucho más rápida         Igual      Más lenta       No participó antes
+
+ C4    Satisfacción global con la página:
+          Muy insatisfecho(a)       Insatisfecho(a)       Neutral      Satisfecho(a)
+          Muy satisfecho(a)
+
+ C5    ¿Recomendaría esta página a otros postulantes?
+          Sí      No
+
+ C6    ¿Cuál fue el aspecto más valioso para usted?
+          Recuperación autónoma de la contraseña
+          Registro y verificación de documentos         Asignación automática de paralelos
+          Comprobante con código de verificación
+Cuestionario A-2: Evaluación de la Versión 2.0 — Personal administrativo y docente (n =
+5, entrevista estandarizada)
+
+Tabla 9.15
+Encabezado e instrucciones del cuestionario A-2 (funcionarios).
+
+ Campo                         Contenido
+
+ Institución                   MÓDULO TECNOLÓGICO PRODUCTIVO SAN JULIÁN BTH —
+                               Especialidad de Sistemas Informáticos
+ Instrumento                   Cuestionario A-2: Evaluación de la Versión 2.0 del sistema web
+                               de inscripción
+ Muestra                       5 funcionarios: Director, Secretaría Académica y 3 docentes
+                               (Tutores de Curso)
+ Aplicación                    Primer bimestre de la gestión 2026
+ Tiempo estimado               6 minutos
+ Instrucciones                 El aplicador marca con una X la opción elegida por el
+                               entrevistado. Respuestas anónimas (C.I. como ****).
+
+
+
+Bloque A. Identificación (anonimizada):
+
+Tabla 9.16
+Diseño de respuesta del bloque A (identificación) del cuestionario A-2.
+
+
+ N.º   Pregunta y opciones de respuesta
+
+ A1    Cargo:
+           Director      Secretaría Académica          Docente (Tutor de Curso)
+
+ A2    Antigüedad en el MTP:
+           Menos de 5 años         5 a 10 años        11 a 15 años        Más de 15 años
+
+ A3    ¿Participó en las pruebas del sistema de la V2.0?
+           Sí     No
+Bloque B. Ítems de evaluación en escala Likert (1–5):
+
+Tabla 9.17
+Cuadrícula de respuesta del bloque B (escala Likert 1–5) del cuestionario A-2.
+
+ Ítem                                                                            1   2   3   4     5
+
+ B1. El sistema redujo el tiempo de atención presencial en ventanilla para el
+ proceso de inscripción.
+ B2. El registro y la verificación de los documentos son más ordenados y
+ comprobables que antes.
+ B3. Los reportes permiten detectar expedientes incompletos antes de cerrar
+ el proceso.
+ B4. La asignación automática de cursos y paralelos redujo los errores de
+ planilla.
+ B5. El autoservicio de contraseñas disminuyó la carga de trabajo de
+ secretaría.
+ B6. El sistema es fácil de operar con los recursos disponibles (computadora
+ o celular).
+
+    Nota. Escala Likert: 1 Totalmente en desacuerdo, 2 En desacuerdo, 3 Neutral, 4 De acuerdo, 5
+                                       Totalmente de acuerdo.
+Bloque C. Preguntas cerradas de opción única:
+
+Tabla 9.18
+Diseño de respuesta del bloque C (preguntas cerradas) del cuestionario A-2.
+
+
+ N.º   Pregunta y opciones de respuesta
+
+ C1    ¿Cuántas horas semanales ahorró su área en el proceso de inscripción?
+          Menos de 2        2a4        5a8        Más de 8
+
+ C2    ¿Qué porcentaje de expedientes quedó con registro completo y verificable?
+          0 a 50      51 a 80       81 a 99      100
+
+ C3    ¿Qué errores de asignación de paralelos se observaron desde la V2.0?
+          Ninguno       Pocos       Frecuentes         Muy frecuentes
+
+ C4    ¿Qué recomienda para el sistema?
+          Mantenerlo como está         Mantenerlo con mejoras           Reemplazarlo
+
+
+
+Nota. Cuestionarios de evaluación de la Versión 2.0 aplicados en el primer bimestre de 2026 a 60
+estudiantes postulantes y 5 funcionarios del MTP San Julián (muestreo por conveniencia). Datos
+anonimizados (C.I. como ****). Validación por juicio del tutor y prueba piloto con 5 estudiantes (ver
+Anexo B).
+Anexo D: Evidencias de Validación Técnica y Pruebas de Concurrencia
+
+Resultados anonimizados de las pruebas de validación operativa del sistema MVC en entorno
+de producción (sin fotografías, datos personales anonimizados con ****).
+Tabla 9.19
+Resumen de 5 corridas Apache Benchmark — concurrencia y latencia.
+
+      Corrida           Peticiones             Concurrentes     Latencia media        Sobrecupos
+            1              120                     30                 0.85 s               0
+            2              150                     40                 0.92 s               0
+            3              180                     50                 1.05 s               0
+            4              200                     60                 1.12 s               0
+            5              250                     80                 1.18 s               0
+     Promedio              180                     52                 1.02 s               0
+Nota. Pruebas con más de 100 peticiones/min, latencia menor a 1.2 s, 0 sobrecupos con FOR UPDATE;
+                                 7 especialidades (anonimizado).
+
+Tabla 9.20
+Logs de auditoría de credenciales anonimizados (muestra).
+
+ C.I. anon.                       IP anon.                    Fecha                  Resultado
+
+ ****1234                        192.168.*.*             2026-03-15 09:12      EXITO (menos de 2 min)
+ ***5678                         192.168.*.*             2026-03-15 09:14              EXITO
+ ***9012                         192.168.*.*             2026-03-15 09:15       FALLO (fecha errónea)
+ ***3456                         192.168.*.*             2026-03-15 09:18              EXITO
+
+ Nota. Logs de auditoria_credenciales anonimizados (últimos 4 dígitos C.I., IP enmascarada);
+                                  trazabilidad 100 %.
+Anexo E: Desarrollo del Sistema Web de Inscripción (OE2 y OE3)
+
+Este anexo documenta el proceso de construcción de la Versión 2.0 del sistema web de
+inscripción. La Figura E.1 presenta el diagrama de desarrollo y la Figura E.2 muestra el
+producto de desarrollo consolidado: la interfaz web del sistema de inscripción del Módulo San
+Julián.
+Figura E.1
+Diagrama de desarrollo del sistema web de inscripción
+
+
+
+
+   Nota. Elaboración propia. Muestra las fases iterativas de construcción de los módulos del sistema
+  (OE3), levantadas sobre la arquitectura, el modelo de datos y la interfaz de usuario diseñados en el
+                                                  OE2.
+
+
+Figura E.2
+Producto de desarrollo: interfaz del sistema web de inscripción
+
+
+
+
+   Nota. Elaboración propia. Consolidado de los módulos M1 a M7: preinscripción, control de cupos,
+ recuperación de credenciales, matriculación documental auditada, distribución por unidad educativa,
+              comprobantes en PDF con código de verificación y panel de control (OE3).
+Anexo F: Sistemas de Inscripción y Matriculación en Funcionamiento (OE3 y
+OE4)
+
+Este anexo documenta el funcionamiento de los dos sistemas complementarios que operan
+sobre la misma base de datos: el sistema de inscripción, orientado al postulante (preinscripción,
+reserva de cupo y autoservicio de credenciales), y el sistema de gestión del Módulo, que
+continúa el proceso con la matrícula documental y la asignación de paralelos (OE3 y OE4).
+
+Figura F.1
+Sistema 1: interfaz web del sistema de inscripción para el postulante
+
+
+
+
+  Nota. Captura de pantalla propia. Evidencia del OE3 (módulos M1 a M3: preinscripción, control de
+   cupos y autoservicio de credenciales) y de la hipótesis tecnológica: reserva del cupo en línea y
+         recuperación de credenciales en menos de 2 minutos (ver Figura 4.3, pasos 1 y 2).
+
+
+Figura F.2
+Sistema 2: interfaz web del sistema de inscripción para la gestión del Módulo
+
+
+
+
+  Nota. Captura de pantalla propia. Evidencia del OE3 (módulos M4 a M7: matriculación documental
+auditada, asignación automatizada de paralelos, comprobantes en PDF y panel de control) y del OE4.
+ Este sistema complementa al de inscripción: lleva el proceso desde el preinscrito hasta su ubicación
+                    definitiva en el curso y paralelo (ver Figura 4.3, pasos 4 y 5).
+Anexo G: Mejoras Incorporadas a la Versión 2.0 (OE3 y OE4)
+
+Este anexo documenta las dos optimizaciones incorporadas a la Versión 2.0 después de la
+aplicación de las pruebas funcionales del OE4. La Figura G.1 presenta la primera optimización
+y la Figura G.2 la segunda, ambas verificadas con los resultados de las pruebas de caja negra
+y de concurrencia.
+
+Figura G.1
+Mejora 1: primera optimización incorporada a la Versión 2.0
+
+
+
+
+   Nota. Elaboración propia. Evidencia del OE3: optimización de la usabilidad y de las validaciones
+reactivas sobre la interfaz del sistema, verificadas en el OE4 mediante las pruebas funcionales de caja
+                                                   negra.
+
+
+Figura G.2
+Mejora 2: segunda optimización incorporada a la Versión 2.0
+
+
+
+
+   Nota. Elaboración propia. Evidencia del OE3 y del OE4: optimización del control de cupos y de la
+trazabilidad documental, con cero sobrecupos registrados en las pruebas de concurrencia (ver Anexo
+                                                 D).
+Anexo H: Socialización de la Versión 2.0 (OE1 y OE4)
+
+Este anexo documenta el proceso de socialización de la Versión 2.0 con la comunidad escolar
+del Módulo. La Figura H.1 registra la presentación al equipo directivo y a los tutores de curso,
+y la Figura H.2 la difusión a la población postulante y la verificación de la operación en campo
+(OE1 y OE4).
+
+Figura H.1
+Socialización con los directores del Módulo
+
+
+
+
+ Nota. Elaboración propia. Presentación de la Versión 2.0 al equipo directivo y a los tutores de curso,
+ insumo del OE4 (validación operativa) y del OE1 (relevamiento de requerimientos con la comunidad
+                                              escolar).
+
+
+Figura H.2
+Socialización en el pailón del Módulo
+
+
+
+
+    Nota. Elaboración propia. Difusión del nuevo proceso de inscripción a la población postulante y
+verificación de la operación en campo, con retroalimentación registrada por los usuarios (OE1 y OE4).
+
