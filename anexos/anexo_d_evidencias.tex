@@ -1,4 +1,4 @@
-\seccionanexo{Anexo C: Evidencias de Validación Técnica y Pruebas de Concurrencia}
+\seccionanexo{Anexo D: Evidencias de Validación Técnica y Pruebas de Concurrencia}
 
 Resultados anonimizados de las pruebas de validación operativa del sistema MVC en entorno de producción (sin fotografías, datos personales anonimizados con ****).
 
@@ -40,14 +40,3 @@ Resultados anonimizados de las pruebas de validación operativa del sistema MVC 
     \end{tabularx}
     \notatabla{Logs de \texttt{auditoria\_credenciales} anonimizados (últimos 4 dígitos C.I., IP enmascarada); trazabilidad 100\%.}
 \end{table}
-
-\begin{lstlisting}[language=SQL, caption={Verificación de consistencia de cupos (PostgreSQL), anonimizada.}, label={lst:verificacion_cupos}]
--- Verificación post-pruebas: saldo de cupos por especialidad (anonimizado)
-SELECT nombre AS especialidad,
-       cupos_maximos,
-       cupos_disponibles,
-       (cupos_maximos - cupos_disponibles) AS matriculados
-FROM especialidad
-ORDER BY nombre;
--- Resultado: 7 filas, cupos_disponibles >=0, 0 filas con sobrecupo
-\end{lstlisting}
