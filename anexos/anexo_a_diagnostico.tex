@@ -6,7 +6,7 @@ Cuestionarios de preguntas cerradas con diseño de respuesta para diagnosticar l
 
 \noindent\textbf{Cuestionario D-1: Diagnóstico del proceso de inscripción --- Estudiantes postulantes (n = 60, autoadministrado)}
 
-\begin{table}[htbp]
+\begin{table}[H]
     \centering
     \caption{Encabezado e instrucciones del cuestionario D-1 (estudiantes).}
     \label{tab:d1_encabezado}
@@ -24,54 +24,83 @@ Cuestionarios de preguntas cerradas con diseño de respuesta para diagnosticar l
     \end{tabularx}
 \end{table}
 
+\Needspace{7cm}
 \noindent\textbf{Bloque A. Identificación (anonimizada):}
 
-\begin{table}[htbp]
+\begin{table}[H]
     \centering
     \caption{Diseño de respuesta del bloque A (identificación) del cuestionario D-1.}
     \label{tab:d1_identificacion}
+    \renewcommand{\arraystretch}{1.60}
     \begin{tabularx}{\textwidth}{c L}
         \toprule
         \textbf{N.º} & \textbf{Pregunta y opciones de respuesta} \\
         \midrule
         A1 & Unidad educativa de procedencia: \rule[-2pt]{4.5cm}{0.4pt} \\
-        A2 & Especialidad de interés: \casilla{} Construcción Civil \quad \casilla{} Contaduría General \quad \casilla{} Electrónica \quad \casilla{} Gastronomía \quad \casilla{} Mecánica Automotriz \quad \casilla{} Sistemas Informáticos \quad \casilla{} Textiles y Confecciones \\
-        A3 & Edad: \casilla{} 15 años o menos \quad \casilla{} 16 años \quad \casilla{} 17 años \quad \casilla{} 18 años o más \\
-        A4 & Acceso a internet en su teléfono celular: \casilla{} Siempre \quad \casilla{} A veces \quad \casilla{} Nunca \\
+        \addlinespace
+        A2 & Especialidad de interés: \mbox{\casilla{} Construcción Civil}\quad \mbox{\casilla{} Contaduría General}\quad \mbox{\casilla{} Electrónica}\quad \mbox{\casilla{} Gastronomía}\quad \mbox{\casilla{} Mecánica Automotriz}\quad \mbox{\casilla{} Sistemas Informáticos}\quad \mbox{\casilla{} Textiles y Confecciones} \\
+        \addlinespace
+        A3 & Edad: \mbox{\casilla{} 15 años o menos}\quad \mbox{\casilla{} 16 años}\quad \mbox{\casilla{} 17 años}\quad \mbox{\casilla{} 18 años o más} \\
+        \addlinespace
+        A4 & Acceso a internet en su teléfono celular: \mbox{\casilla{} Siempre}\quad \mbox{\casilla{} A veces}\quad \mbox{\casilla{} Nunca} \\
         \bottomrule
     \end{tabularx}
 \end{table}
 
+\Needspace{15cm}
 \noindent\textbf{Bloque B. Preguntas cerradas sobre la experiencia de inscripción (2022-2025):}
 
-\begin{table}[htbp]
+\begin{table}[H]
     \centering
     \caption{Diseño de respuesta del bloque B (preguntas cerradas) del cuestionario D-1.}
     \label{tab:d1_cerradas}
-    \begin{tabularx}{\textwidth}{c L L}
+    \renewcommand{\arraystretch}{1.60}
+    \begin{tabularx}{\textwidth}{c L}
         \toprule
-        \textbf{N.º} & \textbf{Pregunta} & \textbf{Opciones de respuesta} \\
+        \textbf{N.º} & \textbf{Pregunta y opciones de respuesta} \\
         \midrule
-        B1 & ¿Participó en inscripciones presenciales del MTP antes de la gestión 2026? & \casilla{} Sí \quad \casilla{} No \\
-        B2 & ¿Cuánto sumó su tiempo de espera en fila en la inscripción presencial? & \casilla{} Ninguno \quad \casilla{} Menos de 1 día \quad \casilla{} 1 a 2 días \quad \casilla{} 3 a 5 días \quad \casilla{} Más de 5 días \\
-        B3 & ¿Cuánto gastó en pasajes y fotocopias durante el proceso? & \casilla{} Menos de 20 \quad \casilla{} 20 a 50 \quad \casilla{} 51 a 100 \quad \casilla{} Más de 100 Bs \\
-        B4 & ¿Olvidó su contraseña de la página de preinscripción de la gestión 2025? & \casilla{} Sí \quad \casilla{} No \\
-        B5 & ¿Cómo resolvió la recuperación de su contraseña? & \casilla{} La recuperé por internet sin ayuda \quad \casilla{} Acudí al Módulo y esperé varios días \quad \casilla{} No pude recuperarla \quad \casilla{} No la olvidé \\
-        B6 & ¿Qué le ocasionó principalmente esa dificultad? & \casilla{} Pérdida de tiempo \quad \casilla{} Pérdida del cupo que deseaba \quad \casilla{} Gasto adicional \quad \casilla{} Ninguna \\
-        B7 & ¿Qué documentos exigía el BTH para completar la matriculación? & \casilla{} Ninguno \quad \casilla{} Algunos \quad \casilla{} Todos (libretas de 1ro a 3ro, cédula del tutor, carné y certificado de nacimiento) \\
-        B8 & ¿En qué estado quedó su expediente en la gestión 2025? & \casilla{} Completo \quad \casilla{} Incompleto \quad \casilla{} Extravié documentos \quad \casilla{} No sé \\
-        B9 & ¿Sabía cómo se asignaba su curso y paralelo (4to A o 4to B)? & \casilla{} Sí, conocía los criterios \quad \casilla{} Parcialmente \quad \casilla{} No \\
-        B10 & ¿Presentó conflictos de horario entre el Módulo y su unidad educativa? & \casilla{} Sí \quad \casilla{} No \\
+        B1 & ¿Participó en inscripciones presenciales del MTP antes de la gestión 2026?\newline
+            \mbox{\casilla{} Sí}\quad \mbox{\casilla{} No} \\
+        \addlinespace
+        B2 & ¿Cuánto sumó su tiempo de espera en fila en la inscripción presencial?\newline
+            \mbox{\casilla{} Ninguno}\quad \mbox{\casilla{} Menos de 1 día}\quad \mbox{\casilla{} 1 a 2 días}\quad \mbox{\casilla{} 3 a 5 días}\quad \mbox{\casilla{} Más de 5 días} \\
+        \addlinespace
+        B3 & ¿Cuánto gastó en pasajes y fotocopias durante el proceso?\newline
+            \mbox{\casilla{} Menos de 20}\quad \mbox{\casilla{} 20 a 50}\quad \mbox{\casilla{} 51 a 100}\quad \mbox{\casilla{} Más de 100 Bs} \\
+        \addlinespace
+        B4 & ¿Olvidó su contraseña de la página de preinscripción de la gestión 2025?\newline
+            \mbox{\casilla{} Sí}\quad \mbox{\casilla{} No} \\
+        \addlinespace
+        B5 & ¿Cómo resolvió la recuperación de su contraseña?\newline
+            \mbox{\casilla{} La recuperé por internet sin ayuda}\quad \mbox{\casilla{} Acudí al Módulo y esperé varios días}\quad \mbox{\casilla{} No pude recuperarla}\quad \mbox{\casilla{} No la olvidé} \\
+        \addlinespace
+        B6 & ¿Qué le ocasionó principalmente esa dificultad?\newline
+            \mbox{\casilla{} Pérdida de tiempo}\quad \mbox{\casilla{} Pérdida del cupo que deseaba}\quad \mbox{\casilla{} Gasto adicional}\quad \mbox{\casilla{} Ninguna} \\
+        \addlinespace
+        B7 & ¿Qué documentos exigía el BTH para completar la matriculación (libretas de 1ro a 3ro, cédula del tutor, carné y certificado de nacimiento)?\newline
+            \mbox{\casilla{} Ninguno}\quad \mbox{\casilla{} Algunos}\quad \mbox{\casilla{} Todos} \\
+        \addlinespace
+        B8 & ¿En qué estado quedó su expediente en la gestión 2025?\newline
+            \mbox{\casilla{} Completo}\quad \mbox{\casilla{} Incompleto}\quad \mbox{\casilla{} Extravié documentos}\quad \mbox{\casilla{} No sé} \\
+        \addlinespace
+        B9 & ¿Sabía cómo se asignaba su curso y paralelo (4to A o 4to B)?\newline
+            \mbox{\casilla{} Sí, conocía los criterios}\quad \mbox{\casilla{} Parcialmente}\quad \mbox{\casilla{} No} \\
+        \addlinespace
+        B10 & ¿Presentó conflictos de horario entre el Módulo y su unidad educativa?\newline
+            \mbox{\casilla{} Sí}\quad \mbox{\casilla{} No} \\
         \bottomrule
     \end{tabularx}
 \end{table}
 
+\Needspace{22cm}
 \noindent\textbf{Bloque C. Ítems diagnósticos en escala Likert (1--5):}
 
-\begin{table}[htbp]
+\begin{table}[H]
     \centering
     \caption{Cuadrícula de respuesta del bloque C (escala Likert 1--5) del cuestionario D-1.}
     \label{tab:d1_likert}
+    \renewcommand{\arraystretch}{1.15}
+    \small
     \begin{tabularx}{\textwidth}{X c c c c c}
         \toprule
         \textbf{Ítem} & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} \\
@@ -97,18 +126,23 @@ Cuestionarios de preguntas cerradas con diseño de respuesta para diagnosticar l
     \notatabla{Escala Likert: 1 Totalmente en desacuerdo, 2 En desacuerdo, 3 Neutral, 4 De acuerdo, 5 Totalmente de acuerdo.}
 \end{table}
 
+\Needspace{6cm}
 \noindent\textbf{Bloque D. Priorización de necesidades (opción única):}
 
-\begin{table}[htbp]
+\begin{table}[H]
     \centering
     \caption{Diseño de respuesta del bloque D (priorización) del cuestionario D-1.}
     \label{tab:d1_priorizacion}
-    \begin{tabularx}{\textwidth}{c L L}
+    \renewcommand{\arraystretch}{1.60}
+    \begin{tabularx}{\textwidth}{c L}
         \toprule
-        \textbf{N.º} & \textbf{Pregunta} & \textbf{Opciones de respuesta} \\
+        \textbf{N.º} & \textbf{Pregunta y opciones de respuesta} \\
         \midrule
-        D1 & ¿Cuál fue su mayor dificultad en el proceso de inscripción? & \casilla{} Recuperar la contraseña \quad \casilla{} Reunir y entregar los documentos \quad \casilla{} Obtener la especialidad y paralelo deseados \quad \casilla{} Ninguna \\
-        D2 & ¿Qué función considera más importante para la página de inscripción? & \casilla{} Recuperación autónoma de la contraseña \quad \casilla{} Registro y verificación de documentos \quad \casilla{} Asignación automática de paralelos \quad \casilla{} Comprobante con código de verificación \\
+        D1 & ¿Cuál fue su mayor dificultad en el proceso de inscripción?\newline
+            \mbox{\casilla{} Recuperar la contraseña}\quad \mbox{\casilla{} Reunir y entregar los documentos}\quad \mbox{\casilla{} Obtener la especialidad y paralelo deseados}\quad \mbox{\casilla{} Ninguna} \\
+        \addlinespace
+        D2 & ¿Qué función considera más importante para la página de inscripción?\newline
+            \mbox{\casilla{} Recuperación autónoma de la contraseña}\quad \mbox{\casilla{} Registro y verificación de documentos}\quad \mbox{\casilla{} Asignación automática de paralelos}\quad \mbox{\casilla{} Comprobante con código de verificación} \\
         \bottomrule
     \end{tabularx}
 \end{table}
@@ -116,7 +150,7 @@ Cuestionarios de preguntas cerradas con diseño de respuesta para diagnosticar l
 \vspace{0.4cm}
 \noindent\textbf{Cuestionario D-2: Diagnóstico del proceso de inscripción --- Personal administrativo y docente (n = 5, entrevista estandarizada)}
 
-\begin{table}[htbp]
+\begin{table}[H]
     \centering
     \caption{Encabezado e instrucciones del cuestionario D-2 (funcionarios).}
     \label{tab:d2_encabezado}
@@ -134,51 +168,77 @@ Cuestionarios de preguntas cerradas con diseño de respuesta para diagnosticar l
     \end{tabularx}
 \end{table}
 
+\Needspace{6cm}
 \noindent\textbf{Bloque A. Identificación (anonimizada):}
 
-\begin{table}[htbp]
+\begin{table}[H]
     \centering
     \caption{Diseño de respuesta del bloque A (identificación) del cuestionario D-2.}
     \label{tab:d2_identificacion}
+    \renewcommand{\arraystretch}{1.60}
     \begin{tabularx}{\textwidth}{c L}
         \toprule
         \textbf{N.º} & \textbf{Pregunta y opciones de respuesta} \\
         \midrule
-        A1 & Cargo: \casilla{} Director \quad \casilla{} Secretaría Académica \quad \casilla{} Docente (Tutor de Curso) \\
-        A2 & Antigüedad en el MTP: \casilla{} Menos de 5 años \quad \casilla{} 5 a 10 años \quad \casilla{} 11 a 15 años \quad \casilla{} Más de 15 años \\
+        A1 & Cargo:\newline
+            \mbox{\casilla{} Director}\quad \mbox{\casilla{} Secretaría Académica}\quad \mbox{\casilla{} Docente (Tutor de Curso)} \\
+        \addlinespace
+        A2 & Antigüedad en el MTP:\newline
+            \mbox{\casilla{} Menos de 5 años}\quad \mbox{\casilla{} 5 a 10 años}\quad \mbox{\casilla{} 11 a 15 años}\quad \mbox{\casilla{} Más de 15 años} \\
         \bottomrule
     \end{tabularx}
 \end{table}
 
+\Needspace{22cm}
 \noindent\textbf{Bloque B. Preguntas cerradas sobre las deficiencias del proceso (2022-2025):}
 
-\begin{table}[htbp]
+\begin{table}[H]
     \centering
     \caption{Diseño de respuesta del bloque B (preguntas cerradas) del cuestionario D-2.}
     \label{tab:d2_cerradas}
-    \begin{tabularx}{\textwidth}{c L L}
+    \renewcommand{\arraystretch}{1.60}
+    \begin{tabularx}{\textwidth}{c L}
         \toprule
-        \textbf{N.º} & \textbf{Pregunta} & \textbf{Opciones de respuesta} \\
+        \textbf{N.º} & \textbf{Pregunta y opciones de respuesta} \\
         \midrule
-        B1 & ¿Cuántos restablecimientos manuales de contraseña se atendieron por gestión en ventanilla? & \casilla{} Menos de 50 \quad \casilla{} 50 a 100 \quad \casilla{} 101 a 200 \quad \casilla{} Más de 200 \quad \casilla{} No sabe \\
-        B2 & ¿Cuántas horas semanales dedicaba su área al proceso de inscripción y matriculación? & \casilla{} Menos de 5 \quad \casilla{} 5 a 10 \quad \casilla{} 11 a 20 \quad \casilla{} Más de 20 \\
-        B3 & ¿Cómo se archivaban los documentos antes de la V2.0? & \casilla{} Carpetas físicas sin registro digital \quad \casilla{} Planillas impresas sin control \quad \casilla{} Carpeta con listado parcial \quad \casilla{} No sabe \\
-        B4 & ¿Qué porcentaje de expedientes quedaba incompleto o sin trazabilidad en 2025? & \casilla{} 0 a 10 \quad \casilla{} 11 a 30 \quad \casilla{} 31 a 50 \quad \casilla{} Más de 50 \quad \casilla{} No sabe \\
-        B5 & ¿Qué errores de transcripción se observaban en la asignación manual de paralelos? & \casilla{} Ninguno \quad \casilla{} Pocos \quad \casilla{} Frecuentes \quad \casilla{} Muy frecuentes \\
-        B6 & ¿Qué conflictos de horario surgían entre el MTP y las unidades educativas de origen? & \casilla{} Ninguno \quad \casilla{} Pocos \quad \casilla{} Frecuentes \quad \casilla{} Muy frecuentes \\
-        B7 & ¿Qué porcentaje de postulantes terminó 2025 en una especialidad distinta a la deseada? & \casilla{} 0 a 10 \quad \casilla{} 11 a 30 \quad \casilla{} 31 a 50 \quad \casilla{} Más de 50 \quad \casilla{} No sabe \\
-        B8 & ¿Cuál es el requisito documental imprescindible para la matriculación? & \casilla{} Libretas de 1ro a 3ro \quad \casilla{} Cédula del tutor \quad \casilla{} Carné del estudiante \quad \casilla{} Certificado de nacimiento \quad \casilla{} Todos en conjunto \\
-        B9 & ¿Qué criterio debe ser prioritario en la asignación automática de paralelos? & \casilla{} Misma cantidad de estudiantes por paralelo \quad \casilla{} Mismo colegio agrupado por paralelo \quad \casilla{} Compatibilidad de horarios \quad \casilla{} No sabe \\
+        B1 & ¿Cuántos restablecimientos manuales de contraseña se atendieron por gestión en ventanilla?\newline
+            \mbox{\casilla{} Menos de 50}\quad \mbox{\casilla{} 50 a 100}\quad \mbox{\casilla{} 101 a 200}\quad \mbox{\casilla{} Más de 200}\quad \mbox{\casilla{} No sabe} \\
+        \addlinespace
+        B2 & ¿Cuántas horas semanales dedicaba su área al proceso de inscripción y matriculación?\newline
+            \mbox{\casilla{} Menos de 5}\quad \mbox{\casilla{} 5 a 10}\quad \mbox{\casilla{} 11 a 20}\quad \mbox{\casilla{} Más de 20} \\
+        \addlinespace
+        B3 & ¿Cómo se archivaban los documentos antes de la V2.0?\newline
+            \mbox{\casilla{} Carpetas físicas sin registro digital}\quad \mbox{\casilla{} Planillas impresas sin control}\quad \mbox{\casilla{} Carpeta con listado parcial}\quad \mbox{\casilla{} No sabe} \\
+        \addlinespace
+        B4 & ¿Qué porcentaje de expedientes quedaba incompleto o sin trazabilidad en 2025?\newline
+            \mbox{\casilla{} 0 a 10}\quad \mbox{\casilla{} 11 a 30}\quad \mbox{\casilla{} 31 a 50}\quad \mbox{\casilla{} Más de 50}\quad \mbox{\casilla{} No sabe} \\
+        \addlinespace
+        B5 & ¿Qué errores de transcripción se observaban en la asignación manual de paralelos?\newline
+            \mbox{\casilla{} Ninguno}\quad \mbox{\casilla{} Pocos}\quad \mbox{\casilla{} Frecuentes}\quad \mbox{\casilla{} Muy frecuentes} \\
+        \addlinespace
+        B6 & ¿Qué conflictos de horario surgían entre el MTP y las unidades educativas de origen?\newline
+            \mbox{\casilla{} Ninguno}\quad \mbox{\casilla{} Pocos}\quad \mbox{\casilla{} Frecuentes}\quad \mbox{\casilla{} Muy frecuentes} \\
+        \addlinespace
+        B7 & ¿Qué porcentaje de postulantes terminó 2025 en una especialidad distinta a la deseada?\newline
+            \mbox{\casilla{} 0 a 10}\quad \mbox{\casilla{} 11 a 30}\quad \mbox{\casilla{} 31 a 50}\quad \mbox{\casilla{} Más de 50}\quad \mbox{\casilla{} No sabe} \\
+        \addlinespace
+        B8 & ¿Cuál es el requisito documental imprescindible para la matriculación?\newline
+            \mbox{\casilla{} Libretas de 1ro a 3ro}\quad \mbox{\casilla{} Cédula del tutor}\quad \mbox{\casilla{} Carné del estudiante}\quad \mbox{\casilla{} Certificado de nacimiento}\quad \mbox{\casilla{} Todos en conjunto} \\
+        \addlinespace
+        B9 & ¿Qué criterio debe ser prioritario en la asignación automática de paralelos?\newline
+            \mbox{\casilla{} Misma cantidad de estudiantes por paralelo}\quad \mbox{\casilla{} Mismo colegio agrupado por paralelo}\quad \mbox{\casilla{} Compatibilidad de horarios}\quad \mbox{\casilla{} No sabe} \\
         \bottomrule
     \end{tabularx}
 \end{table}
 
+\Needspace{8cm}
 \noindent\textbf{Bloque C. Grado de afectación de las brechas diagnosticadas en escala Likert (1--5):}
 
-\begin{table}[htbp]
+\begin{table}[H]
     \centering
     \caption{Cuadrícula de respuesta del bloque C (escala Likert 1--5) del cuestionario D-2.}
     \label{tab:d2_likert}
+    \renewcommand{\arraystretch}{1.30}
     \begin{tabularx}{\textwidth}{X c c c c c}
         \toprule
         \textbf{Brecha} & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} \\
